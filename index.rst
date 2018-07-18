@@ -6,10 +6,16 @@
 GW4-Isambard
 ============
 
+TODO: Overview of system etc
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Isambard User Guide
 
+   user-guide/introduction.rst
+   user-guide/hardware.rst
+   user-guide/filesystem.rst
+   user-guide/jobs.rst
 
 
 Indices and tables
