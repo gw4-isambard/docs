@@ -1,5 +1,6 @@
 install:
   - pip install --user Sphinx
+  - pip install --user sphinx_rtd_theme
 
 script:
   - make html
