@@ -1,0 +1,15 @@
+install:
+  - pip install --user Sphinx
+
+script:
+  - make html
+
+deploy:
+  provider: pages
+  repo: gw4-isambard/docs
+  target-branch: gh-pages
+  local-dir: _build/html
+  github_token: $GITHUB_TOKEN
+  skip-cleanup: true
+  on:
+    branch: master
