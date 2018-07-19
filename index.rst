@@ -48,9 +48,16 @@ Research outputs that have made us of Isambard should acknowledge the facility b
    :maxdepth: 2
    :caption: Applications
 
+   applications/castep
    applications/cp2k
    applications/gromacs
+   applications/hydro3d
+   applications/molpro
+   applications/namd
+   applications/nemo
    applications/openfoam
+   applications/opensbli
+   applications/um
    applications/vasp
 
 
