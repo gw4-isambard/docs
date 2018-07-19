@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-GW4-Isambard
-============
+Isambard User Documentation
+===========================
 
 Isambard is a HPC service provided by `GW4 <http://gw4.ac.uk>`_ and the `UK Met Office <https://www.metoffice.gov.uk>`_.
 The system is funded by `EPSRC <http://www.epsrc.ac.uk>`_ and is one of six Tier-2 HPC facilities in the UK.
@@ -15,11 +15,18 @@ The nodes are connected via Cray Aries interconnect with a Dragonfly topology.
 A Cray Sonexion 3000 storage cabinet provides 480 terabytes of Lustre storage.
 
 
+Acknowledging Isambard
+----------------------
+
+Research outputs that have made us of Isambard should acknowledge the facility by using the following phrase:
+
+*TODO*
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Isambard User Guide
 
-   user-guide/introduction.rst
    user-guide/connecting.rst
    user-guide/filesystem.rst
    user-guide/jobs.rst
