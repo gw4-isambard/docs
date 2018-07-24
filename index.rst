@@ -18,7 +18,7 @@ A Cray Sonexion 3000 storage cabinet provides 480 terabytes of Lustre storage.
 Acknowledging Isambard
 ----------------------
 
-Research outputs that have made us of Isambard should acknowledge the facility by using the following phrase:
+Research outputs that have made use of Isambard should acknowledge the facility by using the following phrase:
 
 *TODO*
 
