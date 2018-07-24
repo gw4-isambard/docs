@@ -104,6 +104,14 @@ html_static_path = ['_static']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'GW4-Isambarddoc'
 
+html_context = {
+  # Create an "Edit on GitHub" link in the page headers.
+  'display_github': True,
+  'github_user': 'gw4-isambard',
+  'github_repo': 'docs',
+  'github_version': 'master/'
+}
+
 
 # -- Options for LaTeX output ------------------------------------------------
 
