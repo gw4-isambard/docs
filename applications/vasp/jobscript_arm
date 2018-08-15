@@ -1,0 +1,3 @@
+#PBS -N vasp_job_script
+
+mpirun -n 13 vasp_std

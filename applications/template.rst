@@ -4,6 +4,7 @@ TEMPLATE
 Useful links
 -----
 
+`Based on Archer <http://archer.ac.uk/documentation/software/>`_
 `Google <https://www.google.com>`_
 `Documentation <https://lmgtfy.com>`_
 

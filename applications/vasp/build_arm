@@ -1,0 +1,5 @@
+Copy the makefile provided here to makefile.include in the build directory.  To make specific versions of vasp substitute <std,gam,ncl> for all.
+
+.. code-block:: bash
+
+    make all
