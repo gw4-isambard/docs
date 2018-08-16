@@ -27,10 +27,19 @@ Versions:
 
 The use and build instructions are for Vasp 5.4.4.
 
-Example Job Submission Script
+Example Job Submission Scripts
 -----
 
-.. literalinclude:: vasp/jobscript
+Arm
+...
+
+.. literalinclude:: vasp/jobscript_arm
+   :language: bash
+
+x86
+...
+
+.. literalinclude:: vasp/jobscript_x86
    :language: bash
 
 Compilation
