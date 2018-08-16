@@ -1,7 +1,7 @@
 # GW4 Isambard Application Documentation
 
 This folder contains the application documentation for the Isambard Tier-2 HPC facility.
-The documentation broadly follows the format of [Archer's scientific software pckages] (http://archer.ac.uk/documentation/software/).
+The documentation broadly follows the format of [Archer's scientific software packages] (http://archer.ac.uk/documentation/software/).
 
 ## Format
 
