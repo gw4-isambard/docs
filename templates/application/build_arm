@@ -1,7 +1,12 @@
+# Load modules for build
+
 module use /lustre/projects/bristol/modules-arm/modulefiles
 module load gcc/7.2.0
 module load openmpi/3.0.0/gcc-7.2
 module load scalapack/2.0.2-openblas
-module load openblas/0.2.20-nothread
+module load openblas/0.2.20-nothreads
 
-mpirun -n 64 vasp_std
+
+# Now build.
+
+make template 

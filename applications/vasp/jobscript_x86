@@ -1,3 +1,26 @@
-#PBS -N vasp_job_script
+#!/bin/bash --login
+#PBS -N vasp_job
 
-mpirun -n 13 vasp_std
+# Select 1 nodes (maximum of 36 cores)
+#PBS -l select=1:ncpus=36
+#PBS -l walltime=10:0:0
+
+# Replace this with your budget code
+#PBS -A pascalq
+
+module purge
+
+module load  craype-network-infiniband
+module load  pbspro/13.1.0.160576
+module load  intel/mkl/64/2017/1.132
+module load  craype-broadwell
+module load  intel-parallel-studio-xe/compilers/64/2017u2/17.0.2
+module load  intel-parallel-studio-xe/mpi/64/2017u2/2.174
+
+# Move to directory that script was submitted from
+export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
+export OMP_NUM_THREADS=1
+cd $PBS_O_WORKDIR
+
+mpirun -np 36 vasp_std 2>&1
+

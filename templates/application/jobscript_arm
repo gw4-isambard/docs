@@ -1,0 +1,12 @@
+#PBS -N template 
+
+# Select 1 nodes (maximum of 64 cores)
+# #PBS -l select=1:ncpus=64
+# #PBS -l walltime=10:0:0
+#
+# # Replace this with your budget code
+# #PBS -A armq
+
+module load template
+
+mpirun -n 64 template

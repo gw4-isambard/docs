@@ -1,0 +1,62 @@
+# Precompiler options
+CPP_OPTIONS= -DHOST=\"LinuxGNU\" \
+             -DMPI -DMPI_BLOCK=8000 \
+             -Duse_collective \
+             -DCACHE_SIZE=4000 \
+             -Davoidalloc \
+             -Duse_bse_te \
+             -Dtbdyn \
+             -Duse_shmem
+
+CPP        = gcc -E -P -C -w $*$(FUFFIX) >$*$(SUFFIX) $(CPP_OPTIONS)
+
+FC         = mpif90
+FCL        = mpif90
+
+FREE       = -ffree-form -ffree-line-length-none
+
+FFLAGS     = -w
+OFLAG      = -O2 -mcpu=thunderx2t99 -ffp-contract=fast -ffast-math
+OFLAG_IN   = $(OFLAG)
+DEBUG      = -O0
+
+LIBDIR     = /lustre/projects/bristol/modules-arm/gcc/7.2.0/lib64/
+BLAS       = /lustre/projects/bristol/modules-arm/openblas/0.2.20-nothreads/lib/libopenblas.a
+LAPACK     = 
+BLACS      =
+SCALAPACK  = /lustre/projects/bristol/modules-arm/scalapack/2.0.2-openblas/lib/libscalapack.a
+
+LLIBS      = $(SCALAPACK) $(BLAS)
+
+FFTW       ?= /opt/cray/pe/fftw/3.3.6.3/arm_thunderx2/lib/libfftw3f_mpi.a  
+LLIBS      += -L/opt/cray/pe/fftw/3.3.6.3/arm_thunderx2/lib -lfftw3
+INCS       += -I/opt/cray/pe/fftw/3.3.6.3/arm_thunderx2/include
+
+OBJECTS    = fftmpiw.o fftmpi_map.o fftw3d.o fft3dlib.o
+OBJECTS_O1 += fftw3d.o fftmpi.o fftmpiw.o 
+OBJECTS_O2 += fft3dlib.o 
+
+#FFTW       ?= /usr/lib/aarch64-linux-gnu/libfftw3.a
+#LLIBS      += -L$(FFTW) -lfftw3
+#INCS       = -I/usr/include/
+
+# For what used to be vasp.5.lib
+CPP_LIB    = $(CPP)
+FC_LIB     = $(FC)
+CC_LIB     = gcc
+CFLAGS_LIB = -O
+FFLAGS_LIB = -O1
+FREE_LIB   = $(FREE)
+
+OBJECTS_LIB= linpack_double.o getshmem.o
+
+# For the parser library
+CXX_PARS   = g++
+
+LIBS       += parser
+LLIBS      += -Lparser -lparser -lstdc++
+
+# Normally no need to change this
+SRCDIR     = ../../src
+BINDIR     = ../../bin
+
