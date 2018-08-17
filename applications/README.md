@@ -6,8 +6,7 @@ The documentation broadly follows the format of [Archer's scientific software pa
 ## Format
 
 There is a template file `templates/application.rst` and currently a partial example for vasp, `applications/vasp.rst`.  
-This includes included/linked files in the folder `applications/vasp/`.
-These files are duplicated in `_static/application/vasp/` which are where the links need to be pointed to ensure that files are available in the html build of the documentation`.
+These refer to included/linked(download) files in the folder `applications/vasp/`.
 
 ## Contributing
 
