@@ -1,0 +1,3 @@
+# Load modules to run template, includes all dependencies 
+
+module load template

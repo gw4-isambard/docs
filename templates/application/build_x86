@@ -10,6 +10,5 @@ module load intel-parallel-studio-xe/mpi/64/2017u2/2.174
 module load intel/mkl/64/2017/1.132
 
 # Now build.
-# To make specific versions of vasp substitute <std,gam,ncl> for `all`.
 
-make all
+make template 

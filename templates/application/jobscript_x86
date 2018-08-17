@@ -1,0 +1,12 @@
+#PBS -N template 
+
+# Select 1 nodes (maximum of 36 cores)
+# #PBS -l select=1:ncpus=i36
+# #PBS -l walltime=10:0:0
+#
+# # Replace this with your budget code
+# #PBS -A pascalq
+
+module load template
+
+mpirun -n 36 template
