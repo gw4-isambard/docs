@@ -1,5 +1,5 @@
 Running jobs
-############
+------------
 
 Isambard Phase 1 uses the PBS Pro scheduler to manage compute resources.
 
