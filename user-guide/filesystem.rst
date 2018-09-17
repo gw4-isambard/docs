@@ -1,5 +1,5 @@
 Filesystem
-##########
+----------
 
 A Cray Sonexion 3000 storage cabinet provides 480 terabytes of Lustre storage.
 

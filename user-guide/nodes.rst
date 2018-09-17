@@ -1,5 +1,5 @@
 Node types
-##########
+----------
 
 The first phase of the Isambard system hosts many nodes of different architectures:
 
