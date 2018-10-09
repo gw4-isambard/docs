@@ -37,7 +37,7 @@ Isambard hosts two generations of Nvidia `General-Purpose GPUs <https://en.wikip
 * Volta GPUs are a component of the `IBM Power 9`_ nodes
 
 Load CUDA Toolkit on Pascal
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To load the default version of CUDA run:
 
     ``module load cudatoolkit``
@@ -65,7 +65,7 @@ The nodes are available interactively via SSH:
   ssh power-002
 
 Software
---------
+^^^^^^^^
 
 These nodes use Red Hat Enterprise Linux for Little-Endian 7.5 and have access to Red Hat's software repositories.
 
