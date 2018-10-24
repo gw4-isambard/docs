@@ -1,9 +1,9 @@
 Running jobs
 ------------
 
-Isambard Phase 1 uses the PBS Pro scheduler to manage compute resources.
+Isambard uses the PBS Pro scheduler to manage compute resources. Phase 1 uses `PBS Pro 13.1 <http://www.pbsworks.com/pdfs/PBSProUserGuide13.1.pdf>`_ & Phase 2 uses `PBS Pro 18.2 <https://www.pbsworks.com/pdfs/PBSUserGuide18.2.pdf>`_.
 
-`PBS Pro 13.1 User Guide <http://www.pbsworks.com/pdfs/PBSProUserGuide13.1.pdf>`_
+Phase 1 and Phase 2 use separate schedulers, jobs must be submitted from the login nodes for the relevant system.
 
 Limits
 ======
