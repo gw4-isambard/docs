@@ -30,6 +30,11 @@ Software
 * Python 2.7 (loaded by ``cray-python/2.7``)
 * Python 3.6 (loaded by ``cray-python/3.6``
 
+Caveats
+^^^^^^^
+
+The default python version on login nodes is a system-bundled version, be sure to load a version of ``cray-python`` before running code. 
+
 Available modules
 ^^^^^^^^^^^^^^^^^
 
