@@ -5,7 +5,7 @@ Cray XC50 cabinet containing 10'000 ARM cores, available since November 2018.
 
 * Cavium ThunderX2 ARM v8.1
 
-  * 16nm FinFET CPU @ 2.2GHz
+  * 16nm FinFET CPU @ 2.1GHz
   * 4-way simultaneous multi-threading
   * 128-bit SIMD "NEON"
   * 32KB L1 instruction & data cache, 256KB L2 per core, 32MB distributed L3 cache
