@@ -30,7 +30,8 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    user-guide/connecting.rst
    user-guide/filesystem.rst
    user-guide/jobs.rst
-   user-guide/nodes.rst
+   user-guide/phase1.rst
+   user-guide/phase2.rst
    user-guide/debugging.rst
    user-guide/profiling.rst
 

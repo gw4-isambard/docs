@@ -19,5 +19,17 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
     Hostname login-02
     User XX-USERNAME
     ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
+  
+  Host xcil00.isambard.gw4.ac.uk xcil00.isambard xci.isambard
+    Hostname xcil00
+    User XX-USERNAME
+    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
+  
+  Host xcil01.isambard.gw4.ac.uk xcil01.isambard
+    Hostname xcil01
+    User XX-USERNAME
+    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
 
-Run either ``ssh login-XX.isambard`` or ``ssh login.isambard`` to access the Isambard Phase 1 system.
+To access the Isambard Phase 1 mixed-arch system, run either ``ssh login-XX.isambard`` or ``ssh login.isambard``
+
+To access the Isambard Phase 2 XC50 ARM system, run either ``ssh xcil00.isambard`` or ``ssh xci.isambard``
