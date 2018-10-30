@@ -21,7 +21,7 @@ Both Phase 1 & 2 use the same authentication system and Lustre filesystem.
 Queues
 ======
 
-N/A
+Work is submitted via the ``normal`` queue.
 
 Software
 ========
