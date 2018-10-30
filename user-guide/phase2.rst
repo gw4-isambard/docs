@@ -16,6 +16,7 @@ Cray XC50 cabinet containing 10'000 ARM cores, available since November 2018.
 
   * Cray Programming Environment with CCE 8.7+ 
 
+Both Phase 1 & 2 use the same authentication system and Lustre filesystem.
 
 Queues
 ======
