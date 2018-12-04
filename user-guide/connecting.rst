@@ -33,3 +33,5 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
 To access the Isambard Phase 1 mixed-arch system, run either ``ssh login-XX.isambard`` or ``ssh login.isambard``
 
 To access the Isambard Phase 2 XC50 ARM system, run either ``ssh xcil00.isambard`` or ``ssh xci.isambard``
+
+Remember to replace ``XX-USERNAME`` with your Isambard username.
