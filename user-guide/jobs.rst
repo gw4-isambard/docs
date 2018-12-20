@@ -13,10 +13,10 @@ Users can submit any number of jobs but only two jobs per-user per-queue will ru
 Queue configuration
 ===================
 
-* normal  - (XC50) To run on Thunder X2 XC50 compute nodes
-* knlq    - To run on the eight single-socket Intel Xeon Phi "Knights Landing" 7210 CPU nodes
-* pascalq - To run on the four dual-card Nvidia Tesla P100 "Pascal" GPU nodes
-* powerq  - To run on the two single-socket IBM Power 9 nodes each with two Nvidia V100 "Volta" GPUs ← ``Queue unavailable, interactive use only``
+* arm    - Run on 164x dual-socket Thunder X2 XC50 compute nodes
+* knl    - Run on 8x single-socket Intel Xeon Phi "Knights Landing" 7210 CPU nodes
+* pascal - Run on 4x dual-card Nvidia Tesla P100 "Pascal" GPU nodes
+* power  - Run on 2x single-socket IBM Power 9 nodes, each with dual-card Nvidia V100 "Volta" GPUs ← ``Queue unavailable, interactive use only, hosts: power-001, power-002``
 
 knlq is split into two sets of MCDRAM configuration, nodes 001-004 are in cache memory mode (quad_0) and nodes 005-008 are in flat memory mode (quad_100). These modes can be targeted using the ``aoe=`` PBS attribute.
 
@@ -34,7 +34,7 @@ Phase 1 example:
 .. code-block:: bash
 
  #!/bin/bash
- #PBS -q pascalq
+ #PBS -q pascal
  #PBS -l select=2
  #PBS -l walltime=00:01:00
  
@@ -75,7 +75,7 @@ For example, this command declares that your job will run on a single node and w
 
 .. code-block:: bash
 
-  qsub -I -q pascalq -l select=1:ngpus=1
+  qsub -I -q pascal -l select=1:ngpus=1
 
 If you request `ngpus=2`, then any subsequently submitted job requesting a GPU will not run on the same node until a node is freed. Similarly setting `ncpus=36` will block any jobs from running.
 
