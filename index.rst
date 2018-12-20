@@ -20,7 +20,7 @@ Acknowledging Isambard
 
 Research outputs that have made use of Isambard should acknowledge the facility by using the following phrase:
 
-*TODO*
+    *This work used the Isambard UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/P020224/1)*
 
 
 .. toctree::
@@ -30,7 +30,8 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    user-guide/connecting.rst
    user-guide/filesystem.rst
    user-guide/jobs.rst
-   user-guide/nodes.rst
+   user-guide/phase1.rst
+   user-guide/phase2.rst
    user-guide/debugging.rst
    user-guide/profiling.rst
 
