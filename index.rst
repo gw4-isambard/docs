@@ -27,6 +27,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    :maxdepth: 2
    :caption: Isambard User Guide
 
+   user-guide/requestaccount.rst
    user-guide/connecting.rst
    user-guide/filesystem.rst
    user-guide/jobs.rst
