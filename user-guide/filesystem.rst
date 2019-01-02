@@ -4,6 +4,11 @@ Filesystem
 A Cray Sonexion 3000 storage cabinet provides 480 terabytes of Lustre storage.
 
 Each organisation is allocated 75TB of high performance Lustre storage, by default each user has a quota of 50GB which can be increased on-request by your local GW4 admin. There is currently only one user quota which applies across all directories.
+Your current quota and usage can be viewed with the following command:
+
+.. code-block:: bash
+
+   lfs quota -hu $USER /lustre
 
 The /scratch directory is where files exist during a job run, they are immediately deleted upon completion or failure of the job. Any results should be saved elsewhere before the job ends.
 
