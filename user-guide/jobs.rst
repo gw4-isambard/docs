@@ -65,7 +65,7 @@ For example, to request an interactive job on one of the Pascal nodes utilizing 
 
     qsub -I -q pascalq -l select=1:ncpus=16:ngpus=1
 
-Interative jobs are not enabled on Phase 2, compilations can be run on the login nodes ``xcil00`` & ``xcil01``.
+For XCI (Phase 2), compilations can be run on the login nodes ``xcil00`` & ``xcil01``. Small development jobs can be run in the interactive queue ``arm-dev``.
 
 Specifying resources
 ====================
