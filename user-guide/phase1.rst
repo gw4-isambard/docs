@@ -64,6 +64,13 @@ The nodes are available interactively via SSH:
   ssh power-001
   ssh power-002
 
+Hardware
+^^^^^^^^
+
+There are two nodes, power-001 & power-002 - Each with two sockets of Power 9 CPU. Each socket is attached to an Nvidia V100 GPU via NVLink at aprox. 150GB/s with coherent memory access to the 280GB of system memory. There is an X-Bus link between the two GPUs.
+
+External documentation: `IBM Power System AC922 Technical Overview - IBM Redbooks <https://www.redbooks.ibm.com/redpapers/pdfs/redp5472.pdf>`_
+
 Software
 ^^^^^^^^
 
