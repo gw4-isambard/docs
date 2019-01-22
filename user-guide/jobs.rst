@@ -13,10 +13,11 @@ Users can submit any number of jobs but only two jobs per-user per-queue will ru
 Queue configuration
 ===================
 
-* arm    - Run on 164x dual-socket Thunder X2 XC50 compute nodes
-* knl    - Run on 8x single-socket Intel Xeon Phi "Knights Landing" 7210 CPU nodes
-* pascal - Run on 4x dual-card Nvidia Tesla P100 "Pascal" GPU nodes
-* power  - Run on 2x single-socket IBM Power 9 nodes, each with dual-card Nvidia V100 "Volta" GPUs ← ``Queue unavailable, interactive use only, hosts: power-001, power-002``
+* arm     - Run on 164x Thunder X2 XC50 compute nodes
+* arm-dev - Run interatively on up to 4x Thunder X2 XC50 compute nodes
+* knl     - Run on 8x Intel Xeon Phi "Knights Landing" 7210 CPU nodes
+* pascal  - Run on 4x dual-card Nvidia Tesla P100 "Pascal" GPU nodes
+* power   - Run on 2x IBM Power 9 nodes, each with dual-card Nvidia V100 "Volta" GPUs ← ``Queue unavailable, interactive use only, hosts: power-001, power-002``
 
 knlq is split into two sets of MCDRAM configuration, nodes 001-004 are in cache memory mode (quad_0) and nodes 005-008 are in flat memory mode (quad_100). These modes can be targeted using the ``aoe=`` PBS attribute.
 
@@ -46,7 +47,7 @@ Phase 2 XC50 example:
 .. code-block:: bash
 
  #!/bin/bash
- #PBS -q normal
+ #PBS -q arm
  #PBS -l select=2
  #PBS -l walltime=00:01:00
 

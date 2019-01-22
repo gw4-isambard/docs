@@ -28,8 +28,8 @@ Intel Math Kernel Library       intel/mkl
 ==========================      ======
 
 
-Nvidia
-======
+Nvidia "Pascal"
+===============
 
 Isambard hosts two generations of Nvidia `General-Purpose GPUs <https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units>`_: `P100 "Pascal" <https://www.nvidia.com/en-us/data-center/pascal-gpu-architecture/>`_ and `V100 "Volta" <https://www.nvidia.com/en-us/data-center/volta-gpu-architecture/>`_.
 

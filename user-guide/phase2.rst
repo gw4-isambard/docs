@@ -1,7 +1,7 @@
 Phase 2 - XC50 ARM
 ------------------
 
-Cray XC50 cabinet containing 10'000 ARM cores, available since November 2018.
+Cray XC50 cabinet, codenamed XCI, containing 10'000 ARM cores, available since November 2018.
 
 * Cavium ThunderX2 ARM v8.1
 
