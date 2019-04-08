@@ -35,7 +35,7 @@ Phase 1 example:
 .. code-block:: bash
 
  #!/bin/bash
- #PBS -q pascal
+ #PBS -q pascalq
  #PBS -l select=2
  #PBS -l walltime=00:01:00
  
@@ -76,7 +76,7 @@ For example, this command declares that your job will run on a single node and w
 
 .. code-block:: bash
 
-  qsub -I -q pascal -l select=1:ngpus=1
+  qsub -I -q pascalq -l select=1:ngpus=1
 
 If you request `ngpus=2`, then any subsequently submitted job requesting a GPU will not run on the same node until a node is freed. Similarly setting `ncpus=36` will block any jobs from running.
 
