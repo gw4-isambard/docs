@@ -15,9 +15,9 @@ Queue configuration
 
 * arm     - Run on 164x Thunder X2 XC50 compute nodes
 * arm-dev - Run interatively on up to 4x Thunder X2 XC50 compute nodes
-* knl     - Run on 8x Intel Xeon Phi "Knights Landing" 7210 CPU nodes
-* pascal  - Run on 4x dual-card Nvidia Tesla P100 "Pascal" GPU nodes
-* power   - Run on 2x IBM Power 9 nodes, each with dual-card Nvidia V100 "Volta" GPUs ← ``Queue unavailable, interactive use only, hosts: power-001, power-002``
+* knlq    - Run on 8x Intel Xeon Phi "Knights Landing" 7210 CPU nodes
+* pascalq - Run on 4x dual-card Nvidia Tesla P100 "Pascal" GPU nodes
+* powerq  - Run on 2x IBM Power 9 nodes, each with dual-card Nvidia V100 "Volta" GPUs ← ``Queue unavailable, interactive use only, hosts: power-001, power-002``
 
 knlq is split into two sets of MCDRAM configuration, nodes 001-004 are in cache memory mode (quad_0) and nodes 005-008 are in flat memory mode (quad_100). These modes can be targeted using the ``aoe=`` PBS attribute.
 
