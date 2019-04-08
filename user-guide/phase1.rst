@@ -20,6 +20,8 @@ Intel KNL
 
 `Intel Xeon Phi "Knights Landing" 7210 CPU <https://ark.intel.com/products/94033/Intel-Xeon-Phi-Processor-7210-16GB-1_30-GHz-64-core>`_ @ 1.30GHz (1.50GHz Turbo) with AVX-512.
 
+Jobs submitted via the ``knlq`` queue.
+
 ==========================      ======
 Software                        Module (``module load ..``)
 ==========================      ======
@@ -35,6 +37,8 @@ Isambard hosts two generations of Nvidia `General-Purpose GPUs <https://en.wikip
 
 * Pascal nodes are available via the ``pascalq`` queue.
 * Volta GPUs are a component of the `IBM Power 9`_ nodes
+
+Jobs submitted via the ``pascalq`` queue.
 
 Load CUDA Toolkit on Pascal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
