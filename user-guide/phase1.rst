@@ -20,6 +20,8 @@ Intel KNL
 
 `Intel Xeon Phi "Knights Landing" 7210 CPU <https://ark.intel.com/products/94033/Intel-Xeon-Phi-Processor-7210-16GB-1_30-GHz-64-core>`_ @ 1.30GHz (1.50GHz Turbo) with AVX-512.
 
+Jobs submitted via the ``knlq`` queue.
+
 ==========================      ======
 Software                        Module (``module load ..``)
 ==========================      ======
@@ -28,13 +30,15 @@ Intel Math Kernel Library       intel/mkl
 ==========================      ======
 
 
-Nvidia
-======
+Nvidia "Pascal"
+===============
 
 Isambard hosts two generations of Nvidia `General-Purpose GPUs <https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units>`_: `P100 "Pascal" <https://www.nvidia.com/en-us/data-center/pascal-gpu-architecture/>`_ and `V100 "Volta" <https://www.nvidia.com/en-us/data-center/volta-gpu-architecture/>`_.
 
 * Pascal nodes are available via the ``pascalq`` queue.
 * Volta GPUs are a component of the `IBM Power 9`_ nodes
+
+Jobs submitted via the ``pascalq`` queue.
 
 Load CUDA Toolkit on Pascal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -63,6 +67,13 @@ The nodes are available interactively via SSH:
 
   ssh power-001
   ssh power-002
+
+Hardware
+^^^^^^^^
+
+There are two nodes, power-001 & power-002 - Each with two sockets of Power 9 CPU. Each socket is attached to an Nvidia V100 GPU via NVLink at aprox. 150GB/s with coherent memory access to the 280GB of system memory. There is an X-Bus link between the two GPUs.
+
+External documentation: `IBM Power System AC922 Technical Overview - IBM Redbooks <https://www.redbooks.ibm.com/redpapers/pdfs/redp5472.pdf>`_
 
 Software
 ^^^^^^^^
