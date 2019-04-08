@@ -36,6 +36,18 @@ Caveats
 
 The default python version on login nodes is a system-bundled version, be sure to load a version of ``cray-python`` before running code. 
 
+Known errors
+^^^^^^^^^^^^
+
+Some Cray compilers will emit this error message:
+
+``No supported cpu target is set, CRAY_CPU_TARGET=aarch64 will be used.
+Load a valid targeting module or set CRAY_CPU_TARGET``
+
+To silence this message and to ensure the correct CPU optimisations are applied, run the following before using the compiler:
+
+``module load craype-arm-thunderx2``
+
 Available modules
 ^^^^^^^^^^^^^^^^^
 
