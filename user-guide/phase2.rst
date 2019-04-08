@@ -53,15 +53,13 @@ Available modules
 
 .. code-block:: text
 
-  PrgEnv-cray/6.0.5(default)
-  PrgEnv-allinea/6.0.5(default)
-  PrgEnv-gnu/6.0.5(default)
-  cray-python/2.7.13.2(default)                         
-  allinea/18.2.0(default)
-  cray-python/3.6.1.2
-  cray-R/3.3.3(default)
-  gcc/7.3.0(default)
-  gcc/6.1.0
+  PrgEnv-cray
+  PrgEnv-allinea
+  PrgEnv-gnu
+  cray-python
+  cray-python
+  cray-R
+  gcc
   craype-aarch64
   craype-hugepages1G
   craype-hugepages2M
@@ -85,5 +83,4 @@ Available modules
   perftools-lite-loops
   perftools-nwpc
   perftools-preload
-
 
