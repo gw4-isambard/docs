@@ -14,7 +14,7 @@ Cray XC50 cabinet, codenamed XCI, containing 10'000 ARM cores, available since N
 
 * Cray Linux Environment 6 (SUSE SLES 12 SP3+)
 
-  * Cray Programming Environment with CCE 8.7+ 
+  * Cray Programming Environment with CCE 8.7.9 & CCE 9+
 
 Both Phase 1 & 2 use the same authentication system and Lustre filesystem.
 
