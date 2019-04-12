@@ -4,9 +4,9 @@ Phase 1
 The first phase of the Isambard system hosts many nodes of different architectures:
 
 * 2x Login nodes with Intel Xeon CPU
-* 4x GPU nodes with 2x Nvidia P100 "Pascal" GPUs and Intel Xeon E5-7210 "Broadwell" CPU
+* 4x GPU nodes with 2x Nvidia P100 "Pascal" GPUs and Intel Xeon E5-2695 v4 "Broadwell" CPU
 * 8x Intel Xeon Phi with "Knights Landing" 7210 CPU
-* 2x IBM Power 9 nodes 
+* 2x IBM Power 9 nodes
 * * Including 2x Nvidia V100 "Volta" GPU with NVLink
 
 Login, Pascal & KNL nodes run Red Hat Enterprise Linux 7.3 with Cray software stacks.
@@ -80,7 +80,7 @@ Software
 
 These nodes use Red Hat Enterprise Linux for Little-Endian 7.5 and have access to Red Hat's software repositories.
 
-==============  ======    
+==============  ======
 Package         Source
 ==============  ======
 anaconda2       source /opt/anaconda2/latest/bin/activate
@@ -114,4 +114,3 @@ snap-ml-mpi
 tensorboard
 tensorflow      depends on anaconda
 ==============  ======
-

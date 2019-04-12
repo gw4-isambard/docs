@@ -5,8 +5,8 @@
 #PBS -l select=1:ncpus=36
 #PBS -l walltime=10:0:0
 
-# Replace this with your budget code
-#PBS -A pascalq
+# Use the Intel Xeon (Broadwell) nodes
+#PBS -q pascalq
 
 module purge
 
