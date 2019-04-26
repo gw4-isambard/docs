@@ -5,7 +5,7 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
 
 .. code-block:: text
 
-  Host isambard.gw4.ac.uk
+  Host *isambard.gw4.ac.uk *isambard
     User XX-USERNAME
     ForwardAgent yes
     ForwardX11 yes
