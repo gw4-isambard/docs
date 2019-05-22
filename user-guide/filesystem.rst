@@ -15,7 +15,7 @@ The /scratch directory is where files exist during a job run, they are immediate
 The Lustre filesystem is mounted at the following points:
 
 .. code-block:: text
- 
+
  /home
  /projects ← Per-institution directories for shared project work
  /projects/bath
@@ -28,3 +28,4 @@ The Lustre filesystem is mounted at the following points:
  /software/x86
  /software/aarch64
 
+Please note that no backups are performed on the user data areas of the system and you are responsible for ensuring all data stored can be recovered from your own backup or regenerated in the event of a failure.
