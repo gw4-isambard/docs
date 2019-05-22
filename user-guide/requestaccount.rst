@@ -1,9 +1,9 @@
 Request Account
 ===============
 
-Account requests for Isambard are managed via the `SAFE for EPSRC Tier2 system <https://www.archer.ac.uk/tier2/>`_.
+Before requesting an account on Isambard, please read the :ref:`Terms and Conditions of Access <terms>`.
 
-NOTE: Isambard Phase 2 is currently available to early-access users only. Please do not request an account unless you have been specifically invited to do so.
+Account requests for Isambard are managed via the `SAFE for EPSRC Tier2 system <https://www.archer.ac.uk/tier2/>`_.
 
 Create an account on SAFE
 -------------------------
@@ -70,4 +70,3 @@ Please note that usernames on Isambard follow a fixed format and we are unable t
 Your account request will need to approved by the PI for your hosting institution.
 You will receive your login details via email once your account has been approved and created.
 This process may take 1-2 working weeks, depending on availability of the project PI to approve your account.
-
