@@ -1,13 +1,10 @@
-# Load modules for build
+# Load modules for currently recommended VASP build - see build instructions for more info
 
-module use /lustre/projects/bristol/modules-arm/modulefiles
-module load gcc/7.2.0
-module load openmpi/3.0.0/gcc-7.2
-module load scalapack/2.0.2-openblas
-module load openblas/0.2.20-nothreads
+# Currently we recommend compiling with the gnu programming environment
+module swap PrgEnv-cray PrgEnv-gnu
 
+# There is a compilation issue with gcc 8 so switch to gcc 7
+module swap gcc/8.2.0 gcc/7.3.0
 
-# Now build.
-# To make specific versions of vasp substitute <std,gam,ncl> for `all`.
-
+# And build vasp, replace all with std, ncl, gam for individual targets
 make all
