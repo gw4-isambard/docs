@@ -35,6 +35,8 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    user-guide/phase2.rst
    user-guide/debugging.rst
    user-guide/profiling.rst
+   user-guide/end_project.rst
+   user-guide/support.rst
 
 
 .. toctree::
@@ -48,7 +50,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Applications
 
    applications/castep
@@ -62,6 +64,14 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    applications/opensbli
    applications/um
    applications/vasp
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Service Policies
+
+   policies/terms.rst
+   policies/privacy.rst
 
 
 Indices and tables
