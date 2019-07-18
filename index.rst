@@ -35,6 +35,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    user-guide/phase2.rst
    user-guide/debugging.rst
    user-guide/profiling.rst
+   user-guide/sharing_files.rst
    user-guide/end_project.rst
    user-guide/support.rst
 
@@ -55,6 +56,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
 
    applications/castep
    applications/cp2k
+   applications/dlmonte
    applications/gromacs
    applications/hydro3d
    applications/molpro
