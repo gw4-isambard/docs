@@ -61,7 +61,7 @@ IBM Power 9
 
 Isambard's Power nodes comprise two of `IBM Power System AC922 <https://www.ibm.com/uk-en/marketplace/power-systems-ac922>`_ , they are representative of the type of node used in large-scale HPC. Each node has the IBM XL C/C++ (``xlc``) & IBM XL Fortran (``xlf``) compilers installed. To make full use of each node's two Nvidia V100 "Volta" GPUs we have installed the `IBM PowerAI <https://developer.ibm.com/linuxonpower/deep-learning-powerai/>`_ stack for Machine Learning research.
 
-The nodes are available interactively via SSH:
+These nodes are available interactively via SSH. Access is available from `login-01` or `login-02` since these nodes are only connected the Infiniband network.
 
 .. code-block:: text
 
@@ -83,6 +83,8 @@ These nodes use Red Hat Enterprise Linux for Little-Endian 7.5 and have access t
 ==============  ======
 Package         Source
 ==============  ======
+IBM XLC/XLF
+IBM ESSL        /opt/ibmmath/essl
 anaconda2       source /opt/anaconda2/latest/bin/activate
 anaconda3       source /opt/anaconda3/latest/bin/activate
 devtoolset-7    source /opt/rh/devtoolset-7/enable
@@ -113,4 +115,30 @@ snap-ml-local
 snap-ml-mpi
 tensorboard
 tensorflow      depends on anaconda
+==============  ======
+
+Intel Skylake
+=============
+
+These nodes are available interactively via SSH. Access is available from `login-01` or `login-02` since these nodes are only connected the Infiniband network.
+
+.. code-block:: text
+
+  ssh skylake-001
+  ssh skylake-002
+
+Hardware
+^^^^^^^^
+
+Two nodes of Intel Xeon Gold 6152 "Skylake" 22-core @ 2.10GHz with 192GB DDR4-2666MHz RAM, connected via EDR Infiniband.
+
+Software
+^^^^^^^^
+
+==============  ======
+Package         Source
+==============  ======
+GCC, Clang      CentOS
+Anaconda2       source /opt/anaconda2/latest/bin/activate
+Anaconda3       source /opt/anaconda3/latest/bin/activate
 ==============  ======
