@@ -14,7 +14,7 @@ Queue configuration
 ===================
 
 * arm     - Run on 164x Thunder X2 XC50 compute nodes
-* arm-dev - Run interatively on up to 4x Thunder X2 XC50 compute nodes
+* arm-dev - Run interactively on up to 4x Thunder X2 XC50 compute nodes
 * knlq    - Run on 8x Intel Xeon Phi "Knights Landing" 7210 CPU nodes
 * pascalq - Run on 4x dual-card Nvidia Tesla P100 "Pascal" GPU nodes
 * powerq  - Run on 2x IBM Power 9 nodes, each with dual-card Nvidia V100 "Volta" GPUs ← ``Queue unavailable, interactive use only, hosts: power-001, power-002``
