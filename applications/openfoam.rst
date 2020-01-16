@@ -21,6 +21,7 @@ The following versions of OpenFOAM are currently available:
 * ``v1906`` (ESI-OpenCFD)
 * ``v1812`` (ESI-OpenCFD)
 * ``7`` (OpenFOAM Foundation)
+* ``4.1`` (FOAM-EXTEND)
 
 Running
 -------
@@ -47,7 +48,7 @@ Arm
     #PBS -q arm                                                                                                                                  
 
     # Load modules for currently recommended OpenFOAM v1812 build                                                   
-    module swap PrgEnv-cray PrgEnv-allinea
+    module swap PrgEnv-cray PrgEnv-gnu
 
     # Change to directory that script was submitted from                                                                                           
     export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
