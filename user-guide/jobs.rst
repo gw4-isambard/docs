@@ -80,3 +80,14 @@ For example, this command declares that your job will run on a single node and w
 
 If you request `ngpus=2`, then any subsequently submitted job requesting a GPU will not run on the same node until a node is freed. Similarly setting `ncpus=36` will block any jobs from running.
 
+Usage History
+=============
+
+You can see limited amount of job history by using the ``-x`` flag on ``qstat``, for example
+
+..  code-block:: bash
+
+  qstat -x -u $USER
+  qstat -x -f <JOBID>
+
+Isambard job statistics are not currently available in SAFE.
