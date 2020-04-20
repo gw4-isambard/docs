@@ -5,6 +5,8 @@ Isambard uses the PBS Pro scheduler to manage compute resources. Phase 1 uses `P
 
 Phase 1 and Phase 2 use separate schedulers, jobs must be submitted from the login nodes for the relevant system.
 
+The schedulers are set to run jobs according to "fairshare" rather than fixed allocations.
+
 Limits
 ======
 
