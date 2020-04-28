@@ -54,6 +54,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    :caption: Applications
 
    applications/castep
+   applications/covidsim
    applications/cp2k
    applications/gromacs
    applications/hydro3d
