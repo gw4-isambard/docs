@@ -15,6 +15,14 @@ The nodes are connected via Cray Aries interconnect with a Dragonfly topology.
 A Cray Sonexion 3000 storage cabinet provides 480 terabytes of Lustre storage.
 
 
+System Status
+-------------
+
+.. warning::
+    13 May 2020 - Following a security incident at ARCHER we have temporarily disabled access to
+    Isambard. Submitted jobs will continue to run. We hope to return the systems into service as
+    soon as possible.
+
 Acknowledging Isambard
 ----------------------
 
