@@ -19,10 +19,22 @@ System Status
 -------------
 
 .. warning::
-    13 May 2020 - Following a security incident at ARCHER we have temporarily disabled access to
-    Isambard. Submitted jobs will continue to run. We hope to return the systems into service as
-    soon as possible.
-
+    15 May 2020 
+    
+    Dear Isambard users,
+    
+    As many of you know there’s an ongoing security incident affecting several of the Tier-1 and Tier-2 systems in the UK, and several major sites in Europe and beyond. We disabled ssh access to Isambard on Tuesday as soon as we were made aware of the situation, and have been conducting a coordinated assessment of the Isambard systems since then. As far as we can tell Isambard has not been affected by this incident, and wasn’t susceptible to the exploits used elsewhere. We’re taking nothing for granted though, and so we’re going to make sure that all the latest security patches are applied before we reopen the service. We’re also going to follow the approach being advised for the other Tier-1 and Tier-2 services, which will require all users to generate new SSH keys and passwords in order to log back in.
+    
+    Instructions on how to do this will be sent out early next week. In the meantime the queue remains up and the system is actively processing jobs (Isambard is currently running at near 100% utilisation). Any jobs you had already submitted to the queue will continue even while login access is disabled.
+    
+    We’ll be in touch early next week with an update, and with the steps you’ll need to take in order to be able to log back in to Isambard.
+    
+    With best wishes,
+    
+    Prof. Simon McIntosh-Smith  
+    Isambard PI  
+    GW4 / University of Bristol  
+    
 Acknowledging Isambard
 ----------------------
 
