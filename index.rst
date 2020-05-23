@@ -19,21 +19,31 @@ System Status
 -------------
 
 .. warning::
-    15 May 2020 
+    22 May 2020 
     
     Dear Isambard users,
     
-    As many of you know there’s an ongoing security incident affecting several of the Tier-1 and Tier-2 systems in the UK, and several major sites in Europe and beyond. We disabled ssh access to Isambard on Tuesday as soon as we were made aware of the situation, and have been conducting a coordinated assessment of the Isambard systems since then. As far as we can tell Isambard has not been affected by this incident, and wasn’t susceptible to the exploits used elsewhere. We’re taking nothing for granted though, and so we’re going to make sure that all the latest security patches are applied before we reopen the service. We’re also going to follow the approach being advised for the other Tier-1 and Tier-2 services, which will require all users to generate new SSH keys and passwords in order to log back in.
+    The security patches and updates to Isambard have now been applied, so we're reopening access to the main Arm system (phase 2) this afternoon. The x86 and GPU partition (phase 1) is still undergoing updates, so this currently remains unavailable.
     
-    Instructions on how to do this will be sent out early next week. In the meantime the queue remains up and the system is actively processing jobs (Isambard is currently running at near 100% utilisation). Any jobs you had already submitted to the queue will continue even while login access is disabled.
+    To log in to Isambard, you will need to create a new SSH key pair and update it on the Tier2 SAFE if you have not already done so.
     
-    We’ll be in touch early next week with an update, and with the steps you’ll need to take in order to be able to log back in to Isambard.
+    As you may be aware, there has been a recently discovered campaign of information security attacks agains HPC centres worldwide. We do not believe that Isambard has been affected; however, since the attackers have been targeting user credentials (SSH keys and passwords) and some Isambard users are also users of known affected systems, like all the Tier 2 services we are taking the precaution of revoking the credentials on Isambard and asking you to create fresh ones.
     
-    With best wishes,
+    If you are a user of ARCHER or another Tier 2 system you may already have created a new SSH key pair and updated it on SAFE. If so, this will already be sufficient, but if not, you will need to go through this process to re-enable access to Isambard.
     
-    Prof. Simon McIntosh-Smith  
-    Isambard PI  
-    GW4 / University of Bristol  
+    New Key Pair
+    
+    If you have not already done so for one of the other tier 2 systems, then create yourself a new SSH key with a passphrase.     Advice for creating SSH keys on various operating systems can be found at https://arclessons.github.io/security/01_security.html . For SAFE you must use the RSA type.
+    
+    Once created, update your public key in the Tier2 SAFE: https://gw4-isambard.github.io/docs/user-guide/requestaccount.html#register-ssh-key
+    
+    (This will generate an Isambard helpdesk ticket, we will notify you when the change has been made on Isambard's authentication servers).
+    
+    We will be in contact again when the phase 1 system is also available.
+    
+    Thank you for your understanding,
+    
+    The Isambard team.  
     
 Acknowledging Isambard
 ----------------------
