@@ -55,6 +55,11 @@ Phase 2 XC50 example:
 
  aprun -n 32 hostname
 
+Such a script saved as ``filename.pbs`` file can be submitted to queue using:
+
+.. code-block:: bash
+
+ qsub filename.pbs
 
 Interactive job
 ===============
