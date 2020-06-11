@@ -59,7 +59,7 @@ Such a script saved as ``filename.pbs`` file can be submitted to queue using:
 
 .. code-block:: bash
 
- qstat filename.pbs
+ qsub filename.pbs
 
 Interactive job
 ===============
