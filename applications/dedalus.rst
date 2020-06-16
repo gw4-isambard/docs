@@ -12,10 +12,10 @@ Licensing
 
 Dedalus is released under the GNU General Public License. See `Dedalus Project - About <http://dedalus-project.org/about/>`_
 
-The following steps describe how to build Dedalus on Isambard.
-
 Building
 --------
+
+The following steps describe how to build Dedalus on Isambard.
 
 1. Make a directory for your Dedalus build e.g.
 
