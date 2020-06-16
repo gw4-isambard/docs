@@ -55,6 +55,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
 
    applications/castep
    applications/cp2k
+   applications/dedalus
    applications/gromacs
    applications/hydro3d
    applications/molpro
