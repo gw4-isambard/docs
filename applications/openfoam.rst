@@ -18,7 +18,9 @@ Version
 
 The following versions of OpenFOAM are currently available:
 
-* ``v1812``
+* ``v1906`` (ESI-OpenCFD)
+* ``v1812`` (ESI-OpenCFD)
+* ``7`` (OpenFOAM Foundation)
 
 Running
 -------

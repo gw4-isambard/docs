@@ -9,7 +9,7 @@ The first phase of the Isambard system hosts many nodes of different architectur
 * 2x IBM Power 9 nodes
 * * Including 2x Nvidia V100 "Volta" GPU with NVLink
 
-Login, Pascal & KNL nodes run Red Hat Enterprise Linux 7.3 with Cray software stacks.
+Login, Pascal & KNL nodes run Red Hat Enterprise Linux 7.6 with Cray software stacks.
 
 Power 9 nodes run Red Hat Enterprise Linux for Little-Endian 7.5 with IBM C/C++/Fortran compilers & IBM Power AI.
 

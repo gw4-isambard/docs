@@ -1,0 +1,17 @@
+#!/bin/bash
+#PBS -q pascalq
+#PBS -N CSim-UK-bwl-18-intel
+#PBS -l select=1:ncpus=18
+#PBS -l walltime=00:50:00
+#PBS -lplace=excl 
+
+export OMP_PROC_BIND
+
+module use /software/x86_64/modulefiles
+module load covid-19-covidsim/0.8.0
+
+cd ${COVIDSIM_DATA}
+/usr/bin/time python3 run_sample.py \
+    --covidsim CovidSim_uk \
+    --outputdir /scratch/${USER}/CovidSim/out/ \
+    United_Kingdom

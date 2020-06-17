@@ -11,7 +11,7 @@ Licensing
 ---------
 
 Firedrake is released under the terms of the GNU Lesser General Public
-License  (see `the firedrake licence file <https://github.com/firedrakeproject/firedrake/blob/master/LICENSE>`_ for full details.
+License  (see `the Firedrake licence file <https://github.com/firedrakeproject/firedrake/blob/master/LICENSE>`_ for full details.
 
 Building and running
 --------------------
