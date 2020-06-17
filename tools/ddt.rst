@@ -26,7 +26,7 @@ When you have loaded the module you can start the DDT graphical interface by run
 Example session
 ----------------
 
-This example uses an interactive job running in the ``arm-dev`` queue to debug a parallel program. 
+This example uses an interactive job running in the phase 2 ``arm-dev`` queue to debug a parallel program.
 
 Start by compiling your program with a ``-g`` flag to retain extra debugging information. For example to compile a C program called ``myprog.c`` run
 ::
