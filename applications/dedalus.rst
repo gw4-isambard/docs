@@ -50,4 +50,3 @@ points to your installation. You can now submit the test job to the queue
 ::
 
   qsub dedalus_test.pbs
-
