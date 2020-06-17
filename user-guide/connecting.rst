@@ -1,5 +1,7 @@
 Connecting to Isambard
 ----------------------
+.. note::
+  You will need an SSH key-pair to access Isambard. 
 
 Linux
 .....
@@ -12,6 +14,7 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
     User XX-USERNAME
     ForwardAgent yes
     ForwardX11 yes
+    IdentityFile ~/.ssh/id_rsa
   
   Host login-01.isambard.gw4.ac.uk login-01.isambard login.isambard
     Hostname login-01
@@ -33,9 +36,18 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
     User XX-USERNAME
     ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
 
-To access the Isambard Phase 1 mixed-arch system, run either ``ssh login-XX.isambard`` or ``ssh login.isambard``
+.. caution::
+  The ``IndentityFile`` points to the SSH key (private) that will be used for connecting to Isambard, please remember to update this entry. Eg. If the key is  ``~/keystore/isambard``, the entry should be ``IdentityFile ~/keystore/isambard``
 
-To access the Isambard Phase 2 XC50 ARM system, run either ``ssh xcil00.isambard`` or ``ssh xci.isambard``
+Phase 1
+#######
+
+| To access the Isambard Phase 1 mixed-arch system, run either ``ssh login-XX.isambard`` or ``ssh login.isambard``
+
+Phase 2
+#######
+
+| To access the Isambard Phase 2 XC50 ARM system, run either ``ssh xcil00.isambard`` or ``ssh xci.isambard``
 
 Remember to replace ``XX-USERNAME`` with your Isambard username.
 
