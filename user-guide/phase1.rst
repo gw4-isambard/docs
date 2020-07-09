@@ -117,28 +117,3 @@ tensorboard
 tensorflow      depends on anaconda
 ==============  ======
 
-Intel Skylake
-=============
-
-These nodes are available interactively via SSH. Access is available from `login-01` or `login-02` since these nodes are only connected the Infiniband network.
-
-.. code-block:: text
-
-  ssh skylake-001
-  ssh skylake-002
-
-Hardware
-^^^^^^^^
-
-Two nodes of Intel Xeon Gold 6152 "Skylake" 22-core @ 2.10GHz with 192GB DDR4-2666MHz RAM, connected via EDR Infiniband.
-
-Software
-^^^^^^^^
-
-==============  ======
-Package         Source
-==============  ======
-GCC, Clang      CentOS
-Anaconda2       source /opt/anaconda2/latest/bin/activate
-Anaconda3       source /opt/anaconda3/latest/bin/activate
-==============  ======
