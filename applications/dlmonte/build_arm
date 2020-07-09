@@ -3,5 +3,5 @@
 # Currently we recommend compiling with the gnu programming environment
 module swap PrgEnv-cray PrgEnv-gnu
 
-# And build DL_MONTE 
-make isambard-gfortran
+# And build DL_MONTE
+./build: SRL dir isambard-gfortran 
