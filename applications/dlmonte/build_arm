@@ -1,0 +1,7 @@
+# Load modules for currently recommended DL_MONTE build - see build instructions for more info
+
+# Currently we recommend compiling with the gnu programming environment
+module swap PrgEnv-cray PrgEnv-gnu
+
+# And build DL_MONTE
+./build: SRL dir isambard-gfortran 

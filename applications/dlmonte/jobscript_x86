@@ -1,0 +1,24 @@
+#!/bin/bash --login
+#PBS -N dlmonte_job
+
+# Select 1 nodes (maximum of 36 cores)
+#PBS -l select=1:ncpus=36
+#PBS -l walltime=10:0:0
+
+# Use the Intel Xeon (Broadwell) nodes
+#PBS -q pascalq
+
+module purge
+
+module load  craype-network-infiniband
+module load  pbspro/13.1.0.160576
+module load  craype-broadwell
+module load  intel-parallel-studio-xe/compilers/64/2017u2/17.0.2
+
+# Move to directory that script was submitted from
+export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
+export OMP_NUM_THREADS=1
+cd $PBS_O_WORKDIR
+
+DL_MONTE-SRL.X
+
