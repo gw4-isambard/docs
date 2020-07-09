@@ -21,7 +21,9 @@ Both Phase 1 & 2 use the same authentication system and Lustre filesystem.
 Queues
 ======
 
-Work is submitted via the ``arm`` queue.
+Work is submitted via the ``arm`` queue. 
+
+There is also an ``arm-dev`` queue for running interactive development jobs up to three hours in duration. To specify an interactive job add the ``-I`` flag to your ``qsub`` command.
 
 Software
 ========
