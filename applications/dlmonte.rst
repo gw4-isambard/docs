@@ -11,7 +11,7 @@ Useful links
 Licensing
 ---------
 
-DL\_MONTE 2 can be obtained free of charge by `registering <https://www.ccp5.ac.uk/https%3A//www.ccp5.ac.uk/dlmontereg>`_.
+The `current release <https://gitlab.com/dl_monte/dl_monte-releases>`_ of DL\_MONTE 2 can be obtained free of charge.
 
 Access
 ------
@@ -37,6 +37,11 @@ Arm
 .. literalinclude:: dlmonte/jobscript_arm
    :language: bash
 
+Cray XC machines only allow one `aprun` job per node.  In order to run fully populated nodes, you will need to use a taskfarmer such as:
+
+- `Taskfarmer <https://github.com/lohedges/taskfarmer>`_ by Lester Hedges
+- `Simple taskfarmer <https://github.com/wrs20/simple_taskfarm>`_ by William Saunders
+
 x86
 ...
 
@@ -48,6 +53,14 @@ Compilation
 
 Arm
 ...
+
+As of 9th July 2020 the latest version of DL\_MONTE 2 can be downloaded directly with:
+
+::
+
+  wget https://gitlab.com/dl_monte/dl_monte-releases/-/raw/master/dl_monte_release_v2.07.tar.gz
+
+
 
 Instructions for building DL\_MONTE 2 on Arm:
 
