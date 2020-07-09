@@ -6,9 +6,6 @@ Connecting to Isambard
 Linux
 .....
 
-Linux
-.....
-
 The following stanza is required in your local ``~/.ssh/config`` in order to traverse the bastion hosts transparently and enable SCP usage:
 
 .. code-block:: text
