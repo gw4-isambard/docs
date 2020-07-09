@@ -8,6 +8,5 @@ module load pbspro
 module load intel-parallel-studio-xe/compilers/64/2017u2/17.0.2
 
 # Now build.
-# To make specific versions of vasp substitute <std,gam,ncl> for `all`.
 
 ./build: SRL dir intel
