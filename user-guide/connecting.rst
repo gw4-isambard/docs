@@ -19,12 +19,14 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
   Host login-01.isambard.gw4.ac.uk login-01.isambard login.isambard
     Hostname login-01
     User XX-USERNAME
+    ForwardAgent yes
     IdentityFile ~/.ssh/id_rsa
     ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
   
   Host login-02.isambard.gw4.ac.uk login-02.isambard
     Hostname login-02
     User XX-USERNAME
+    ForwardAgent yes
     IdentityFile ~/.ssh/id_rsa
     ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
   
