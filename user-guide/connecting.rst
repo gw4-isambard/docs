@@ -10,35 +10,27 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
 
 .. code-block:: text
 
-  Host *isambard.gw4.ac.uk *isambard
-    User XX-USERNAME
-    ForwardAgent yes
-    ForwardX11 yes
-    IdentityFile ~/.ssh/id_rsa
-  
-  Host login-01.isambard.gw4.ac.uk login-01.isambard login.isambard
-    Hostname login-01
-    User XX-USERNAME
-    IdentityFile ~/.ssh/id_rsa
-    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
-  
-  Host login-02.isambard.gw4.ac.uk login-02.isambard
-    Hostname login-02
-    User XX-USERNAME
-    IdentityFile ~/.ssh/id_rsa
-    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
-  
-  Host xcil00.isambard.gw4.ac.uk xcil00.isambard xci.isambard
-    Hostname xcil00
-    User XX-USERNAME
-    IdentityFile ~/.ssh/id_rsa
-    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
-  
-  Host xcil01.isambard.gw4.ac.uk xcil01.isambard
-    Hostname xcil01
-    User XX-USERNAME
-    IdentityFile ~/.ssh/id_rsa
-    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
+ Host *isambard.gw4.ac.uk *isambard
+   User XX-USERNAME
+   ForwardAgent yes
+   ForwardX11 yes
+   IdentityFile ~/.ssh/id_rsa
+
+ Host login-01.isambard.gw4.ac.uk login-01.isambard login.isambard
+   Hostname login-01
+   ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
+
+ Host login-02.isambard.gw4.ac.uk login-02.isambard
+   Hostname login-02
+   ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
+
+ Host xcil00.isambard.gw4.ac.uk xcil00.isambard xci.isambard
+   Hostname xcil00
+   ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
+
+ Host xcil01.isambard.gw4.ac.uk xcil01.isambard
+   Hostname xcil01
+   ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
 
 .. caution::
   Update the ``~/.ssh/config`` with your details:-
