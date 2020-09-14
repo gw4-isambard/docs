@@ -18,33 +18,6 @@ A Cray Sonexion 3000 storage cabinet provides 480 terabytes of Lustre storage.
 System Status
 -------------
 
-.. warning::
-    22 May 2020 
-    
-    Dear Isambard users,
-    
-    The security patches and updates to Isambard have now been applied, so we're reopening access to the main Arm system (phase 2) this afternoon. The x86 and GPU partition (phase 1) is still undergoing updates, so this currently remains unavailable.
-    
-    To log in to Isambard, you will need to create a new SSH key pair and update it on the Tier2 SAFE if you have not already done so.
-    
-    As you may be aware, there has been a recently discovered campaign of information security attacks agains HPC centres worldwide. We do not believe that Isambard has been affected; however, since the attackers have been targeting user credentials (SSH keys and passwords) and some Isambard users are also users of known affected systems, like all the Tier 2 services we are taking the precaution of revoking the credentials on Isambard and asking you to create fresh ones.
-    
-    If you are a user of ARCHER or another Tier 2 system you may already have created a new SSH key pair and updated it on SAFE. If so, this will already be sufficient, but if not, you will need to go through this process to re-enable access to Isambard.
-    
-    New Key Pair
-    
-    If you have not already done so for one of the other tier 2 systems, then create yourself a new SSH key with a passphrase.     Advice for creating SSH keys on various operating systems can be found at https://arclessons.github.io/security/01_security.html . For SAFE you must use the RSA type.
-    
-    Once created, update your public key in the Tier2 SAFE: https://gw4-isambard.github.io/docs/user-guide/requestaccount.html#register-ssh-key
-    
-    (This will generate an Isambard helpdesk ticket, we will notify you when the change has been made on Isambard's authentication servers).
-    
-    We will be in contact again when the phase 1 system is also available.
-    
-    Thank you for your understanding,
-    
-    The Isambard team.  
-    
 Acknowledging Isambard
 ----------------------
 
