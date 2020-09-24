@@ -23,9 +23,9 @@ System Status
     
     Dear users,
     
-    Good progress has been made with the upgrade to Isambard2. We are pleased to reopen service on the expanded XC50 Arm partition (up from 164 to 328 compute nodes, or 20,992 cores). We have also doubled doubling of storage capacity to 1 PByte. 
+    Good progress has been made with the upgrade to Isambard2. We are pleased to reopen service on the expanded XC50 Arm partition (up from 164 to 328 compute nodes, or 20,992 cores). We have also doubled the storage capacity to 1 PByte. 
     
-    Work is now bring carried out on the 72 Fujitsu A64FX nodes which will be installed as a new Apollo 80 system. Also the Multi Architecture Comparison system is being expanded and and we will keep you informed as to progress.
+    Work is now bring carried out on the 72 Fujitsu A64FX nodes which will be installed as a new Apollo 80 system. Also the Multi Architecture Comparison system is being expanded and we will keep you informed as to progress.
     
 Acknowledging Isambard
 ----------------------
