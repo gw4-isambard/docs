@@ -19,16 +19,14 @@ System Status
 -------------
 
 .. important::
-    14 Sept 2020
+    24 Sept 2020
     
     Dear users,
     
-    We’re delighted to be able to announce that the long-awaited upgrade to Isambard will take place next week, starting on Monday September 21st. The upgrade is likely to take most of the week, and we anticipate that the system will be down for most of this time. 
+    Good progress has been made with the upgrade to Isambard2. We are pleased to reopen service on the expanded XC50 Arm partition (up from 164 to 328 compute nodes, or 20,992 cores). We have also doubled doubling of storage capacity to 1 PByte. 
     
-    Once the system is back up as Isambard 2, it will have twice the capacity in its XC50 Arm partition (up from 164 to 328 compute nodes, or 20,992 cores), as well as a doubling of storage capacity to 1 PByte. At the same time, the 72 Fujitsu A64FX nodes will be installed as a new Apollo 80 system.
+    Work is now bring carried out on the 72 Fujitsu A64FX nodes which will be installed as a new Apollo 80 system. Also the Multi Architecture Comparison system is being expanded and and we will keep you informed as to progress.
     
-    We will keep you informed as to progress, but do keep in mind that Isambard is likely to be unavailable for most of the week of Sep 21st during these upgrades.
-
 Acknowledging Isambard
 ----------------------
 
