@@ -51,16 +51,22 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
 
   - Substitute ``XX-USERNAME`` with your Isambard username 
   - The ``IndentityFile`` points to the SSH key (private) that will be used for connecting to Isambard, the default for most users will be ``~/.ssh/id_rsa``. If you are using a different key Eg. ``~/keystore/isambard``, the entry should be ``IdentityFile ~/keystore/isambard``
+  - We recommend you overwrite previous versions of this configuration when updating in to ensure your configuration matches the documentation
 
-Phase 1
-#######
+MACS - Multi-Architecture Comparison System
+###########################################
 
-| To access the Isambard Phase 1 mixed-arch system, run either ``ssh login-XX.isambard`` or ``ssh login.isambard``
+| To access the MACS, run either ``ssh login-XX.isambard`` or ``ssh login.isambard``
 
-Phase 2
-#######
+XCI - Marvell Thunder X2
+########################
 
-| To access the Isambard Phase 2 XC50 ARM system, run either ``ssh xcil00.isambard`` or ``ssh xci.isambard``
+| To access the XCI XC50 Arm system, run either ``ssh xcil00.isambard`` or ``ssh xci.isambard``
+
+A64FX - Fujitsu A64FX
+#####################
+
+| To access the Fujitsu A64FX Arm system, run either ``ssh a64fxlogin00.isambard`` or ``ssh a64fx.isambard``
 
 Remember to replace ``XX-USERNAME`` with your Isambard username.
 
