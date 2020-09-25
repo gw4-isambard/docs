@@ -36,6 +36,16 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
    Hostname xcil01
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
 
+ # Isambard: A64FX
+ Host gw4a64fxlogin00.isambard.gw4.ac.uk a64fxlogin00.isambard a64fx.isambard
+   Hostname gw4a64fxlogin00
+   ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
+
+ Host gw4a64fxlogin01.isambard.gw4.ac.uk a64fxlogin01.isambard
+   Hostname gw4a64fxlogin01
+   ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
+
+
 .. caution::
   Update the ``~/.ssh/config`` with your details:-
 
