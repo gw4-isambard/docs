@@ -10,12 +10,15 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
 
 .. code-block:: text
 
+ # --- GW4 Isambard --- #
  Host *isambard.gw4.ac.uk *isambard
    User XX-USERNAME
    ForwardAgent yes
    ForwardX11 yes
+   ServerAliveInterval 60
    IdentityFile ~/.ssh/id_rsa
 
+ # Isambard: MACS
  Host login-01.isambard.gw4.ac.uk login-01.isambard login.isambard
    Hostname login-01
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
@@ -24,6 +27,7 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
    Hostname login-02
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
 
+ # Isambard: XCI
  Host xcil00.isambard.gw4.ac.uk xcil00.isambard xci.isambard
    Hostname xcil00
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
