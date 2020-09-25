@@ -1,7 +1,7 @@
-Phase 2 - XC50 ARM
-------------------
+XCI - Marvell Thunder X2
+------------------------
 
-Cray XC50 cabinet, codenamed XCI, containing 10'000 ARM cores, available since November 2018.
+Cray XC50 cabinet, codenamed XCI, containing 20’992 ARM cores, available since November 2018.
 
 * Cavium ThunderX2 ARM v8.1
 
@@ -14,9 +14,9 @@ Cray XC50 cabinet, codenamed XCI, containing 10'000 ARM cores, available since N
 
 * Cray Linux Environment 7 (Suse SLES 15)
 
-  * Cray Programming Environment with CCE 8.7.9
+  * Cray Programming Environment
 
-Both Phase 1 & 2 use the same authentication system and Lustre filesystem.
+Both MACS & XCI share the same Lustre filesystem.
 
 Queues
 ======
@@ -36,7 +36,7 @@ Software
 Caveats
 ^^^^^^^
 
-The default python version on login nodes is a system-bundled version, be sure to load a version of ``cray-python`` before running code. 
+The default python version on login nodes is a system-bundled version, be sure to load a version of ``cray-python``. 
 
 Known errors
 ^^^^^^^^^^^^
