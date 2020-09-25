@@ -9,10 +9,11 @@ Isambard User Documentation
 Isambard is a HPC service provided by `GW4 <http://gw4.ac.uk>`_ and the `UK Met Office <https://www.metoffice.gov.uk>`_.
 The system is funded by `EPSRC <http://www.epsrc.ac.uk>`_ and is one of six Tier-2 HPC facilities in the UK.
 
-Isambard is a Cray XC50 system which comprises 10,496 cores, and is one of the worlds first production Arm-based supercomputers.
-Each of the 164 compute nodes contains two 32-core Cavium ThunderX2 processors running at 2.1 GHz, and has 256 GB of DDR4-2666 memory.
-The nodes are connected via Cray Aries interconnect with a Dragonfly topology.
-A Cray Sonexion 3000 storage cabinet provides 480 terabytes of Lustre storage.
+Isambard is a Cray XC50 system which comprises 20'992 cores, and is one of the worlds first production Arm-based supercomputers.
+
+Each of the 329 compute nodes contain two 32-core Cavium ThunderX2 processors running at 2.1 GHz and have 256 GB of DDR4-2666 memory.
+The nodes are connected via Cray Aries interconnect in a Dragonfly topology.
+A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.
 
 
 System Status
