@@ -44,6 +44,8 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    user-guide/connecting.rst
    user-guide/filesystem.rst
    user-guide/jobs.rst
+   user-guide/MACS.rst
+   user-guide/XCI.rst
    user-guide/A64FX.rst
    user-guide/debugging.rst
    user-guide/profiling.rst
