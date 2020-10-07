@@ -61,6 +61,8 @@ IBM Power 9
 
 Isambard's Power nodes comprise two of `IBM Power System AC922 <https://www.ibm.com/uk-en/marketplace/power-systems-ac922>`_ , they are representative of the type of node used in large-scale HPC. Each node has the IBM XL C/C++ (``xlc``) & IBM XL Fortran (``xlf``) compilers installed. To make full use of each node's two Nvidia V100 "Volta" GPUs we have installed the `IBM PowerAI <https://developer.ibm.com/linuxonpower/deep-learning-powerai/>`_ stack for Machine Learning research.
 
+.. warning:: These nodes are not part of the Cray supplied system and have a lower Service Level Agreement. As of 7 Oct 2020 both nodes have crashed and require in person intervention to be rebooted.
+
 .. note:: These nodes are available interactively via SSH (i.e without submitting to the scheduler). Access is available from ``login-01`` or ``login-02`` since these nodes are only connected the Infiniband network.
 
 .. code-block:: text
