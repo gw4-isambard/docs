@@ -1,7 +1,7 @@
 XCI - Marvell Thunder X2
 ------------------------
 
-Cray XC50 cabinet, codenamed XCI, containing 20’992 ARM cores, available since November 2018.
+Cray XC50 cabinet, codenamed XCI, containing 20’992 ARM cores. Available since November 2018, expanded September 2020.
 
 * Marvell ThunderX2 ARM v8.1
 
