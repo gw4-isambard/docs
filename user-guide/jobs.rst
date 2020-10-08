@@ -15,8 +15,8 @@ Queue configuration
 
 * `arm`     - Run on XCI Marvell Thunder X2 nodes
 * `arm-dev` - Run interactively on up to 4x XCI Thunder X2 nodes
-* `rome`    - Run on MACS 4x AMD Epyc "Rome" 7742 nodes
-* `clxq`    - Run on MACS 4x Intel Xeon 6230 "Cascade Lake" (CXL) nodes
+* `romeq`    - Run on MACS 4x AMD Epyc "Rome" 7742 nodes
+* `clxq`    - Run on MACS 4x Intel Xeon 6230 "Cascade Lake" (CLX) nodes
 * `voltaq`  - Run on MACS 4x Nvidia Tesla V100 "Volta" GPU nodes
 * `pascalq` - Run on MACS 4x dual-card Nvidia Tesla P100 "Pascal" GPU nodes
 * `knlq`    - Run on MACS 8x Intel Xeon Phi "Knights Landing" 7210 CPU nodes

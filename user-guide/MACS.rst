@@ -5,9 +5,9 @@ Isambard MACS hosts many nodes of different architectures:
 
 * 2x Login nodes with Intel Xeon "Broadwell" CPU
 * 4x Nvidia Pascal GPU nodes with 2x Nvidia P100 "Pascal" GPUs and Intel Xeon E5-2695 v4 "Broadwell" CPU
-* 4x Nvidia Volta GPU nodes with 1x Nvidia V100 "Volta" GPU and Intel Xeon Gold 6230 "Cascade Lake (CXL)" CPU
+* 4x Nvidia Volta GPU nodes with 1x Nvidia V100 "Volta" GPU and Intel Xeon Gold 6230 "Cascade Lake (CLX)" CPU
 * 4x AMD Epyc 7742 "Rome" CPUs
-* 4x Intel Xeon 6230 "Cascade Lake (CXL)" CPU
+* 4x Intel Xeon 6230 "Cascade Lake (CLX)" CPU
 * 8x Intel Xeon Phi "Knights Landing" 7210 CPU
 * 2x IBM Power 9 nodes each with 2x Nvidia V100 "Volta" GPU
 
@@ -30,7 +30,7 @@ AMD Epyc
 Intel Xeon "Cascade Lake"
 =========================
 
-`Intel Xeon Gold 6230 "Cascade Lake (CXL)" <https://ark.intel.com/content/www/us/en/ark/products/192437/intel-xeon-gold-6230-processor-27-5m-cache-2-10-ghz.html>`_ 2.10GHz 20-core CPU nodes with DDR4-2933MHz over 6 memory channels.
+`Intel Xeon Gold 6230 "Cascade Lake (CLX)" <https://ark.intel.com/content/www/us/en/ark/products/192437/intel-xeon-gold-6230-processor-27-5m-cache-2-10-ghz.html>`_ 2.10GHz 20-core CPU nodes with DDR4-2933MHz over 6 memory channels.
 
 Intel Xeon Phi "Knights Landing"
 ================================
