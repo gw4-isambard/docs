@@ -10,12 +10,15 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
 
 .. code-block:: text
 
+ # --- GW4 Isambard --- #
  Host *isambard.gw4.ac.uk *isambard
    User XX-USERNAME
    ForwardAgent yes
    ForwardX11 yes
+   ServerAliveInterval 60
    IdentityFile ~/.ssh/id_rsa
 
+ # Isambard: MACS
  Host login-01.isambard.gw4.ac.uk login-01.isambard login.isambard
    Hostname login-01
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
@@ -24,6 +27,7 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
    Hostname login-02
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
 
+ # Isambard: XCI
  Host xcil00.isambard.gw4.ac.uk xcil00.isambard xci.isambard
    Hostname xcil00
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
@@ -32,21 +36,37 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
    Hostname xcil01
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
 
+ # Isambard: A64FX
+ Host gw4a64fxlogin00.isambard.gw4.ac.uk a64fxlogin00.isambard a64fx.isambard
+   Hostname gw4a64fxlogin00
+   ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
+
+ Host gw4a64fxlogin01.isambard.gw4.ac.uk a64fxlogin01.isambard
+   Hostname gw4a64fxlogin01
+   ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
+
+
 .. caution::
   Update the ``~/.ssh/config`` with your details:-
 
   - Substitute ``XX-USERNAME`` with your Isambard username 
   - The ``IndentityFile`` points to the SSH key (private) that will be used for connecting to Isambard, the default for most users will be ``~/.ssh/id_rsa``. If you are using a different key Eg. ``~/keystore/isambard``, the entry should be ``IdentityFile ~/keystore/isambard``
+  - We recommend you overwrite previous versions of this configuration when updating in to ensure your configuration matches the documentation
 
-Phase 1
-#######
+MACS - Multi-Architecture Comparison System
+###########################################
 
-| To access the Isambard Phase 1 mixed-arch system, run either ``ssh login-XX.isambard`` or ``ssh login.isambard``
+| To access the MACS, run either ``ssh login-XX.isambard`` or ``ssh login.isambard``
 
-Phase 2
-#######
+XCI - Marvell Thunder X2
+########################
 
-| To access the Isambard Phase 2 XC50 ARM system, run either ``ssh xcil00.isambard`` or ``ssh xci.isambard``
+| To access the XCI XC50 Arm system, run either ``ssh xcil00.isambard`` or ``ssh xci.isambard``
+
+A64FX - Fujitsu A64FX
+#####################
+
+| To access the Fujitsu A64FX Arm system, run either ``ssh a64fxlogin00.isambard`` or ``ssh a64fx.isambard``
 
 Remember to replace ``XX-USERNAME`` with your Isambard username.
 
