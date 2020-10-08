@@ -11,7 +11,7 @@ The system is funded by `EPSRC <http://www.epsrc.ac.uk>`_ and is one of six Tier
 
 Isambard is a Cray XC50 system which comprises 20'992 cores, and is one of the worlds first production Arm-based supercomputers.
 
-Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors running at 2.1 GHz and have 256 GB of DDR4-2666 memory.
+Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors running at 2.1 GHz. 160 nodes have 256 GB and 169 have 512 GB of memory, both at DDR4-2666MHz.
 The nodes are connected via Cray Aries interconnect in a Dragonfly topology.
 A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.
 

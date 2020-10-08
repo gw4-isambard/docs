@@ -9,7 +9,8 @@ Cray XC50 cabinet, codenamed XCI, containing 20’992 ARM cores, available since
   * 4-way simultaneous multi-threading
   * 128-bit SIMD "NEON"
   * 32KB L1 instruction & data cache, 256KB L2 per core, 32MB distributed L3 cache
-  * 256GB RAM across 8 DDR4 DIMMs @ 2400MHz
+  * 8 DDR4 DIMMs @ 2666MHz
+    * 160 nodes of 256GB, 169 nodes of 512GB
   * Cray Aries interconnect in dragonfly topology operating at 14Gbps~
 
 * Cray Linux Environment 7 (Suse SLES 15)
