@@ -4,6 +4,8 @@ This repository contains the user documentation for the Isambard Tier-2 HPC faci
 
 ## Contributing
 
+Full advice on contributing to this project is given [in CONTRIBUTING.md](CONTRIBUTING.md).
+
 Anyone is welcome to contribute to this documentation via GitHub's pull request feature.
 Start by [forking the repository](https://help.github.com/articles/fork-a-repo/) and cloning it to your local machine.
 
