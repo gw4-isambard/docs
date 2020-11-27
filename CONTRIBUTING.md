@@ -24,7 +24,8 @@ Table of Contents
 
 ## What you need to know
 
-Isambard docs provides user documentation for the GW4 Tier-2 HPC, Isambard, funded by EPSRC and operated by the Universities of Bath, Bristol, Cardiff and Exeter, hosted at the MetOffice and supported by HPE Cray, Arm and Marvell
+Isambard docs provides user documentation for the GW4 Tier-2 HPC, Isambard.
+The project is funded by EPSRC and operated by the Universities of Bath, Bristol, Cardiff and Exeter, hosted at the MetOffice and supported by HPE Cray, Arm and Marvell.
 It is built using [sphinx](http://www.sphinx-doc.org/en/master/) with pages written using the [reStructuredText format](http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html).
 You will need to install `sphinx` to build the documentation locally (available from most package managers or via `pip install sphinx`.
 Run `make html` to build the HTML documentation, which is generated into the `_build/html/` directory.
@@ -85,7 +86,7 @@ Master is our  `stable` branch.
 
 ### Documenting
 
-When adding to documentation, use `rst`.
+When adding to documentation, use reStructuredText format `rst`.
 
 ## Notes
 
