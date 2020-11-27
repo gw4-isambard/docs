@@ -1,7 +1,7 @@
 # Contributing to Intro to CPP
 
-The following is a set of guidelines for contributing to the training material: Introduction to Cloud Pilot Project.
-These are not rules but will help to avoid conflict and help to ensure the smooth development of the project and adoption of Pull Requests.
+The following is a set of guidelines for contributing to the GW4 Isambard documentation: https://github.com/gw4-isambard/docs.
+These are not rules but will help to avoid conflict and help to ensure the smooth development of the material.
 
 Table of Contents
 
@@ -24,15 +24,17 @@ Table of Contents
 
 ## What you need to know
 
-Introductiuon to Cloud Pilot Project contains tutorials onborading users of the University of Bath cloud pilot project to use the cloud for HPC and HTC workloads.
-It is built using [nbfancy](https://github.com/JDBetteridge/nbfancy) which allows the ready use of Jupyter notebooks to produce the rendered content.
+Isambard docs provides user documentation for the GW4 Tier-2 HPC, Isambard, funded by EPSRC and operated by the Universities of Bath, Bristol, Cardiff and Exeter, hosted at the MetOffice and supported by HPE Cray, Arm and Marvell
+It is built using [sphinx](http://www.sphinx-doc.org/en/master/) with pages written using the [reStructuredText format](http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html).
+You will need to install `sphinx` to build the documentation locally (available from most package managers or via `pip install sphinx`.
+Run `make html` to build the HTML documentation, which is generated into the `_build/html/` directory.
 Content is written in Ipthon notebooks allowing the intermixing of `md` and code.
 To facilitate the initial development we will not be making full use of nbfancy's capability will principally be using `md` and not the ability to render IO from code.
 Wherever possible you should avoid use md rather than html to simplify contributions.
 
 ## How to Contribute
 
-If you have questions about the Cloud Pilot Project you should contact one of the team or raise a ticket.
+If you have questions about the Isambard documentation you should contact one of the team or raise a ticket by emailing `isambard-support@gw4.ac.uk`.
 Issues identifying bugs and suggesting new features should be used to improve the documentation.
 
 ### Reporting Bugs
@@ -47,24 +49,24 @@ If it is a new bug raise an issue:
 
 ### Suggesting Enhancements
 
-If you feel that the material culd be improved, or important content is missing please check whether it has already been siggesting in the issues.
+If you feel that the material culd be improved, or important content is missing please check whether it has already been suggested in the issues.
 
 If it is a new enhancement raise an issue:
 
 * Use a clear and descriptive title
 * Describe in more detail if necessary
-* Add a :sparkles: label to the issue
+* *Optionally* add a :sparkles: label to the issue
 
 ### Pull Requests
 
-If you wish to fix a bug or develop a new feature then these will be gratefull received.
-This project follows the [branching guide](https://gist.github.com/digitaljhelms/4287848#file-gistfile1-md)
-We do not currently have a `stable` branch which will be created once a first release of the tutorial is ready.
+If you wish to fix a bug or develop a new feature then these will be gratefully received.
+You're encouraged to follow the [branching guide](https://gist.github.com/digitaljhelms/4287848#file-gistfile1-md)
+Master is our  `stable` branch.
 
 * First fork the repository
 * Branches from `master` should be of the form:
   * `topic-#<issue id>[- optional brief description]`
-* Verify that nbfancy renders the tutorial correctly
+* Verify that sphinx materials the docs correctly
 * Create a pull request from the branch to upstream/master
   * Reference the `#<issue id>`
   * Provide an additional description if necessary
@@ -83,8 +85,7 @@ We do not currently have a `stable` branch which will be created once a first re
 
 ### Documenting
 
-When adding to documentation, including content in Jupyter notebooks, use plain `md` (+`nbfancy` decorators) as far as possible.
-This avoids contributors having to write in html.
+When adding to documentation, use `rst`.
 
 ## Notes
 
