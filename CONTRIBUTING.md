@@ -1,4 +1,4 @@
-# Contributing to Intro to CPP
+# Contributing to Isambard Documentation
 
 The following is a set of guidelines for contributing to the GW4 Isambard documentation: https://github.com/gw4-isambard/docs.
 These are not rules but will help to avoid conflict and help to ensure the smooth development of the material.
@@ -80,13 +80,12 @@ Master is our  `stable` branch.
 
 * Title should briefly describe changes - use multi-line where necessary
 * Should be imperative
-* Typically use past tense
 * Do not need to issue self-reference as this is in the branch
 * Reference other issues/PR in multi-line
 
 ### Documenting
 
-When adding to documentation, use reStructuredText format `rst`.
+When adding to documentation, use [reStructuredText format](http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html), `rst`.
 
 ## Notes
 
