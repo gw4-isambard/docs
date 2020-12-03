@@ -75,8 +75,7 @@ Package         Source
 ==============  ======
 IBM XLC/XLF
 IBM ESSL        /opt/ibmmath/essl
-anaconda2       source /opt/anaconda2/latest/bin/activate
-anaconda3       source /opt/anaconda3/latest/bin/activate
+anaconda3       source /opt/anaconda/bin/activate
 devtoolset-7    source /opt/rh/devtoolset-7/enable
 rh-python36     source /opt/rh/rh-python36/enable
 rh-ruby25       source /opt/rh/rh-ruby25/enable
