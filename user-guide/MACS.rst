@@ -1,26 +1,41 @@
-Phase 1
--------
+Multi-Architecture Comparison System
+------------------------------------
 
-The first phase of the Isambard system hosts many nodes of different architectures:
+Isambard MACS hosts many nodes of different architectures:
 
-* 2x Login nodes with Intel Xeon CPU
-* 4x GPU nodes with 2x Nvidia P100 "Pascal" GPUs and Intel Xeon E5-2695 v4 "Broadwell" CPU
-* 8x Intel Xeon Phi with "Knights Landing" 7210 CPU
-* 2x IBM Power 9 nodes
-* * Including 2x Nvidia V100 "Volta" GPU with NVLink
+* 2x Login nodes with Intel Xeon "Broadwell" CPU
+* 4x Nvidia Pascal GPU nodes with 2x Nvidia P100 "Pascal" GPUs and Intel Xeon E5-2695 v4 "Broadwell" CPU
+* 4x Nvidia Volta GPU nodes with 1x Nvidia V100 "Volta" GPU and Intel Xeon Gold 6230 "Cascade Lake (CLX)" CPU
+* 4x AMD Epyc 7742 "Rome" CPUs
+* 4x Intel Xeon 6230 "Cascade Lake (CLX)" CPU
+* 8x Intel Xeon Phi "Knights Landing" 7210 CPU
+* 2x IBM Power 9 nodes each with 2x Nvidia V100 "Volta" GPU
 
-Login, Pascal & KNL nodes run Red Hat Enterprise Linux 7.3 with Cray software stacks.
+Most MACS nodes run Red Hat Enterprise Linux 7.x with the Cray software stack.
 
-Power 9 nodes run Red Hat Enterprise Linux for Little-Endian 7.5 with IBM C/C++/Fortran compilers & IBM Power AI.
+Power 9 nodes run Red Hat Enterprise Linux (Little-Endian) with IBM compilers & IBM Power AI.
 
 All nodes are connected via 100 Gigabit EDR Infiniband. The login nodes are connected to the Internet via a 10 Gigabit link to the `Janet Network <https://www.jisc.ac.uk/janet>`_.
 
-Intel KNL
-=========
+Nvidia GPU
+==========
+
+Isambard hosts two generations of Nvidia GPUs: `P100 "Pascal" <https://www.nvidia.com/en-us/data-center/pascal-gpu-architecture/>`_ & `V100 "Volta" <https://www.nvidia.com/en-us/data-center/volta-gpu-architecture/>`_.
+
+AMD Epyc
+========
+
+`AMD Epyc 7742 "Rome" <https://www.amd.com/en/products/cpu/amd-epyc-7742>`_ 2.25GHz 64-core CPU nodes with DDR4-3200Mhz over 8 memory channels.
+
+Intel Xeon "Cascade Lake"
+=========================
+
+`Intel Xeon Gold 6230 "Cascade Lake (CLX)" <https://ark.intel.com/content/www/us/en/ark/products/192437/intel-xeon-gold-6230-processor-27-5m-cache-2-10-ghz.html>`_ 2.10GHz 20-core CPU nodes with DDR4-2933MHz over 6 memory channels.
+
+Intel Xeon Phi "Knights Landing"
+================================
 
 `Intel Xeon Phi "Knights Landing" 7210 CPU <https://ark.intel.com/products/94033/Intel-Xeon-Phi-Processor-7210-16GB-1_30-GHz-64-core>`_ @ 1.30GHz (1.50GHz Turbo) with AVX-512.
-
-Jobs submitted via the ``knlq`` queue.
 
 ==========================      ======
 Software                        Module (``module load ..``)
@@ -29,39 +44,18 @@ Intel Parallel Studio XE        intel-parallel-studio-xe/mpi
 Intel Math Kernel Library       intel/mkl
 ==========================      ======
 
-
-Nvidia "Pascal"
-===============
-
-Isambard hosts two generations of Nvidia `General-Purpose GPUs <https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units>`_: `P100 "Pascal" <https://www.nvidia.com/en-us/data-center/pascal-gpu-architecture/>`_ and `V100 "Volta" <https://www.nvidia.com/en-us/data-center/volta-gpu-architecture/>`_.
-
-* Pascal nodes are available via the ``pascalq`` queue.
-* Volta GPUs are a component of the `IBM Power 9`_ nodes
-
-Jobs submitted via the ``pascalq`` queue.
-
-Load CUDA Toolkit on Pascal
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To load the default version of CUDA run:
-
-    ``module load cudatoolkit``
-
-Specific versions can be found with:
-
-    ``module avail cudatoolkit``
-
-Although the version loaded must match the current Nvidia driver version, this can be determined by running:
-
-    ``nvidia-smi``
-
-The version can be found on the first line of output.
-
 IBM Power 9
 ===========
 
-Isambard's Power nodes comprise two of `IBM Power System AC922 <https://www.ibm.com/uk-en/marketplace/power-systems-ac922>`_ , they are representative of the type of node used in large-scale HPC. Each node has the IBM XL C/C++ (``xlc``) & IBM XL Fortran (``xlf``) compilers installed. To make full use of each node's two Nvidia V100 "Volta" GPUs we have installed the `IBM PowerAI <https://developer.ibm.com/linuxonpower/deep-learning-powerai/>`_ stack for Machine Learning research.
+Isambard's Power nodes comprise two of `IBM Power System AC922 <https://www.ibm.com/uk-en/marketplace/power-systems-ac922>`_ , they are representative of a type of node used in large-scale HPC. Each node has the IBM XL C/C++ (``xlc``) & IBM XL Fortran (``xlf``) compilers installed. To make full use of each node's two Nvidia V100 "Volta" GPUs we have installed the `IBM PowerAI <https://developer.ibm.com/linuxonpower/deep-learning-powerai/>`_ stack for Machine Learning research.
 
+<<<<<<< HEAD:user-guide/phase1.rst
 These nodes are available interactively via SSH. Access is available from `login-01` or `login-02` since these nodes are only connected the Infiniband network.
+=======
+.. warning:: These nodes are not part of the Cray supplied system and have a lower Service Level Agreement. As of 7 Oct 2020 both nodes have crashed and require in person intervention to be rebooted.
+
+.. note:: These nodes are available interactively via SSH (i.e without submitting to the scheduler). Access is available from ``login-01`` or ``login-02`` since these nodes are only connected the Infiniband network.
+>>>>>>> upstream/master:user-guide/MACS.rst
 
 .. code-block:: text
 
@@ -117,6 +111,7 @@ tensorboard
 tensorflow      depends on anaconda
 ==============  ======
 
+<<<<<<< HEAD:user-guide/phase1.rst
 Intel Skylake
 =============
 
@@ -142,3 +137,5 @@ GCC, Clang      CentOS
 Anaconda2       source /opt/anaconda2/latest/bin/activate
 Anaconda3       source /opt/anaconda3/latest/bin/activate
 ==============  ======
+=======
+>>>>>>> upstream/master:user-guide/MACS.rst

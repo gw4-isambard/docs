@@ -1,0 +1,12 @@
+# Load modules for build
+
+module purge
+module load shared
+module load craype-network-infiniband
+module load craype-broadwell
+module load pbspro
+module load intel-parallel-studio-xe/compilers/64/2017u2/17.0.2
+
+# Now build.
+
+./build: SRL dir intel

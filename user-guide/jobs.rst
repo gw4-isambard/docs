@@ -1,9 +1,9 @@
 Running jobs
 ------------
 
-Isambard uses the PBS Pro scheduler to manage compute resources. Phase 1 uses `PBS Pro 13.1 <http://www.pbsworks.com/pdfs/PBSProUserGuide13.1.pdf>`_ & Phase 2 uses `PBS Pro 18.2 <https://www.pbsworks.com/pdfs/PBSUserGuide18.2.pdf>`_.
+Isambard uses the PBS Pro scheduler to manage compute resources and run jobs according to "fairshare" rather than fixed allocations.
 
-Phase 1 and Phase 2 use separate schedulers, jobs must be submitted from the login nodes for the relevant system.
+The MACS, XCI & A64FX use separate schedulers, jobs must be submitted from the login nodes for the relevant system.
 
 Limits
 ======
@@ -13,13 +13,16 @@ Users can submit any number of jobs but only two jobs per-user per-queue will ru
 Queue configuration
 ===================
 
-* arm     - Run on 164x Thunder X2 XC50 compute nodes
-* arm-dev - Run interatively on up to 4x Thunder X2 XC50 compute nodes
-* knlq    - Run on 8x Intel Xeon Phi "Knights Landing" 7210 CPU nodes
-* pascalq - Run on 4x dual-card Nvidia Tesla P100 "Pascal" GPU nodes
-* powerq  - Run on 2x IBM Power 9 nodes, each with dual-card Nvidia V100 "Volta" GPUs ← ``Queue unavailable, interactive use only, hosts: power-001, power-002``
+* `arm`     - Run on XCI Marvell Thunder X2 nodes
+* `arm-dev` - Run interactively on up to 4x XCI Thunder X2 nodes
+* `romeq`    - Run on MACS 4x AMD Epyc "Rome" 7742 nodes
+* `clxq`    - Run on MACS 4x Intel Xeon 6230 "Cascade Lake" (CLX) nodes
+* `voltaq`  - Run on MACS 4x Nvidia Tesla V100 "Volta" GPU nodes
+* `pascalq` - Run on MACS 4x dual-card Nvidia Tesla P100 "Pascal" GPU nodes
+* `knlq`    - Run on MACS 8x Intel Xeon Phi "Knights Landing" 7210 CPU nodes
+* `powerq`  - Run on MACS 2x IBM Power 9 nodes, each with dual-card Nvidia V100 "Volta" GPUs ← ``Queue unavailable, interactive use only, hosts: power-001, power-002``
 
-knlq is split into two sets of MCDRAM configuration, nodes 001-004 are in cache memory mode (quad_0) and nodes 005-008 are in flat memory mode (quad_100). These modes can be targeted using the ``aoe=`` PBS attribute.
+`knlq` is split into two sets of MCDRAM configuration, nodes 001-004 are in cache memory mode (quad_0) and nodes 005-008 are in flat memory mode (quad_100). These modes can be targeted using the ``aoe=`` PBS attribute.
 
 To see the available queues and their current state:
 
@@ -53,6 +56,11 @@ Phase 2 XC50 example:
 
  aprun -n 32 hostname
 
+Such a script saved as ``filename.pbs`` file can be submitted to queue using:
+
+.. code-block:: bash
+
+ qsub filename.pbs
 
 Interactive job
 ===============
@@ -80,3 +88,14 @@ For example, this command declares that your job will run on a single node and w
 
 If you request `ngpus=2`, then any subsequently submitted job requesting a GPU will not run on the same node until a node is freed. Similarly setting `ncpus=36` will block any jobs from running.
 
+Usage History
+=============
+
+You can see limited amount of job history by using the ``-x`` flag on ``qstat``, for example
+
+..  code-block:: bash
+
+  qstat -x -u $USER
+  qstat -x -f <JOBID>
+
+Isambard job statistics are not currently available in SAFE.

@@ -1,5 +1,5 @@
-Getting Support
-===============
+Support
+=======
 
 The first point of contact for all issues and queries is the Isambard Support helpdesk, which can be reached via email at isambard-support@gw4.ac.uk.
 

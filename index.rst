@@ -9,12 +9,25 @@ Isambard User Documentation
 Isambard is a HPC service provided by `GW4 <http://gw4.ac.uk>`_ and the `UK Met Office <https://www.metoffice.gov.uk>`_.
 The system is funded by `EPSRC <http://www.epsrc.ac.uk>`_ and is one of six Tier-2 HPC facilities in the UK.
 
-Isambard is a Cray XC50 system which comprises 10,496 cores, and is one of the worlds first production Arm-based supercomputers.
-Each of the 164 compute nodes contains two 32-core Cavium ThunderX2 processors running at 2.1 GHz, and has 256 GB of DDR4-2666 memory.
-The nodes are connected via Cray Aries interconnect with a Dragonfly topology.
-A Cray Sonexion 3000 storage cabinet provides 480 terabytes of Lustre storage.
+Isambard is a Cray XC50 system which comprises 20'992 cores, and is one of the worlds first production Arm-based supercomputers.
+
+Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors running at 2.1 GHz. 160 nodes have 256 GB and 169 have 512 GB of memory, both at DDR4-2666MHz.
+The nodes are connected via Cray Aries interconnect in a Dragonfly topology.
+A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.
 
 
+System Status
+-------------
+
+.. important::
+    24 Sept 2020
+    
+    Dear users,
+    
+    Good progress has been made with the upgrade to Isambard2. We are pleased to reopen service on the expanded XC50 Arm partition (up from 164 to 328 compute nodes, or 20,992 cores). We have also doubled the storage capacity to 1 PByte. 
+    
+    Work is now bring carried out on the 72 Fujitsu A64FX nodes which will be installed as a new Apollo 80 system. Also the Multi Architecture Comparison system is being expanded and we will keep you informed as to progress.
+    
 Acknowledging Isambard
 ----------------------
 
@@ -31,8 +44,9 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    user-guide/connecting.rst
    user-guide/filesystem.rst
    user-guide/jobs.rst
-   user-guide/phase1.rst
-   user-guide/phase2.rst
+   user-guide/MACS.rst
+   user-guide/XCI.rst
+   user-guide/A64FX.rst
    user-guide/debugging.rst
    user-guide/profiling.rst
    user-guide/end_project.rst
@@ -54,7 +68,11 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    :caption: Applications
 
    applications/castep
+   applications/covidsim
    applications/cp2k
+   applications/dedalus
+   applications/dlmonte
+   applications/firedrake
    applications/gromacs
    applications/hydro3d
    applications/molpro
