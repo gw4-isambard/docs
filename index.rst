@@ -25,7 +25,7 @@ System Status
     Dear users,
     
     As user support for the Isambard system is provided by the GW4 Alliance
-    university partners and most University are generally closing over the
+    university partners and most Universities are generally closing over the
     Christmas holiday period, Isambard support will also be unavailable from Monday
     21 December until Tuesday 5th January. Please do continue to submit support
     tickets but do not expect a reply until the new year.
