@@ -20,14 +20,20 @@ System Status
 -------------
 
 .. important::
-    24 Sept 2020
+    15 Dec. 2020
     
     Dear users,
     
-    Good progress has been made with the upgrade to Isambard2. We are pleased to reopen service on the expanded XC50 Arm partition (up from 164 to 328 compute nodes, or 20,992 cores). We have also doubled the storage capacity to 1 PByte. 
+    As user support for the Isambard system is provided by the GW4 Alliance
+    university partners and most University are generally closing over the
+    Christmas holiday period, Isambard support will also be unavailable from Monday
+    21 December until Tuesday 5th January. Please do continue to submit support
+    tickets but do not expect a reply until the new year.
     
-    Work is now bring carried out on the 72 Fujitsu A64FX nodes which will be installed as a new Apollo 80 system. Also the Multi Architecture Comparison system is being expanded and we will keep you informed as to progress.
-    
+    The Isambard systems themselves will continue to be available during the
+    break but should be considered "at risk". If there is a problem it will be
+    resolved on a best efforts basis over the holiday period.
+
 Acknowledging Isambard
 ----------------------
 
