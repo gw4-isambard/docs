@@ -20,19 +20,11 @@ System Status
 -------------
 
 .. important::
-    15 Dec. 2020
+    5 Jan. 2021
     
-    Dear users,
-    
-    As user support for the Isambard system is provided by the GW4 Alliance
-    university partners and most Universities are generally closing over the
-    Christmas holiday period, Isambard support will also be unavailable from Monday
-    21 December until Tuesday 5th January. Please do continue to submit support
-    tickets but do not expect a reply until the new year.
-    
-    The Isambard systems themselves will continue to be available during the
-    break but should be considered "at risk". If there is a problem it will be
-    resolved on a best efforts basis over the holiday period.
+    - XCI (ARM ThunderX2): Available
+    - MACS: Available
+    - A64fx: In testing
 
 Acknowledging Isambard
 ----------------------
