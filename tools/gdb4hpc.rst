@@ -1,7 +1,10 @@
+.. _gdb4hpc:
+
 gdb4hpc
 =======
 
-gdb4hpc is a parallel debugger for C, C++ and Fortran programs and is available on both phase 1 and phase 2 as part of the Cray Programming Environment.
+gdb4hpc is a parallel debugger for C, C++ and Fortran programs and is
+available on both the MACS and XCI systems as part of the Cray Programming Environment.
 It is a command line tool (based on gdb) and it can be used either to launch an application or attach to application which is already running.
 
 Modules

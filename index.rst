@@ -7,11 +7,11 @@ Isambard User Documentation
 ===========================
 
 Isambard is a HPC service provided by `GW4 <http://gw4.ac.uk>`_ and the `UK Met Office <https://www.metoffice.gov.uk>`_.
-The system is funded by `EPSRC <http://www.epsrc.ac.uk>`_ and is one of six Tier-2 HPC facilities in the UK.
+The system is funded by `EPSRC <http://www.epsrc.ac.uk>`_ and is one of a number of `Tier-2 HPC facilities http://www.hpc-uk.ac.uk/facilities/` in the UK.
 
-Isambard is a Cray XC50 system which comprises 20'992 cores, and is one of the worlds first production Arm-based supercomputers.
+Isambard is a Cray XC50 system which comprises 20,992 cores, and is one of the worlds first production Arm-based supercomputers. While Isambard is not based on the more common x86 processors from Intel and AMD, most software compiles and runs on Isambard with no or minimal changes.
 
-Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors running at 2.1 GHz. 160 nodes have 256 GB and 169 have 512 GB of memory, both at DDR4-2666MHz.
+Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors running at 2.5 GHz. 160 nodes have 256 GB and 169 have 512 GB of memory, both at DDR4-2666MHz.
 The nodes are connected via Cray Aries interconnect in a Dragonfly topology.
 A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.
 
@@ -20,14 +20,12 @@ System Status
 -------------
 
 .. important::
-    24 Sept 2020
+    5 Jan. 2021
     
-    Dear users,
-    
-    Good progress has been made with the upgrade to Isambard2. We are pleased to reopen service on the expanded XC50 Arm partition (up from 164 to 328 compute nodes, or 20,992 cores). We have also doubled the storage capacity to 1 PByte. 
-    
-    Work is now bring carried out on the 72 Fujitsu A64FX nodes which will be installed as a new Apollo 80 system. Also the Multi Architecture Comparison system is being expanded and we will keep you informed as to progress.
-    
+    - XCI (ARM ThunderX2): Available
+    - MACS: Available
+    - A64fx: In testing
+
 Acknowledging Isambard
 ----------------------
 
