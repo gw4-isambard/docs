@@ -60,6 +60,15 @@ Select ``Request login account`` under ``Login accounts``:
 
 In the list of projects select the GW4 project that corresponds to your hosting institution.
 
+.. note::
+    GW4 Isambard projects
+        - GW02: Bath
+        - GW03: Bristol
+        - GW04: Cardiff
+        - GW05: Exeter
+        - GW06: Met Office
+        - GW07: External (i.e. None of the above)
+
 On the next screen, select ``Isambard`` and click ``Select Machine``:
 
 .. image:: https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-isambard-request.png
