@@ -20,11 +20,11 @@ System Status
 -------------
 
 .. important::
-    5 Jan. 2021
+    18 Jan. 2021
     
     - XCI (ARM ThunderX2): Available
     - MACS: Available
-    - A64fx: In testing
+    - A64fx: In testing - Will be UNAVAILABLE on Thurs 21 Jan for scheduled maintennce
 
 Acknowledging Isambard
 ----------------------
