@@ -22,6 +22,8 @@ Nvidia GPU
 
 Isambard hosts two generations of Nvidia GPUs: `P100 "Pascal" <https://www.nvidia.com/en-us/data-center/pascal-gpu-architecture/>`_ & `V100 "Volta" <https://www.nvidia.com/en-us/data-center/volta-gpu-architecture/>`_.
 
+Please note the default module craype-accel-nvidia70 assumes the location of the cudart library will be provided by you. To avoid this behaviour, you can load the cudaX.Y/toolkit module instead of the cudatoolkit module.
+
 AMD Epyc
 ========
 
