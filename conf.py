@@ -20,11 +20,11 @@
 # -- Project information -----------------------------------------------------
 
 project = u'GW4-Isambard'
-copyright = u'2018, GW4'
+copyright = u'2021, GW4'
 author = u'GW4'
 
 # The short X.Y version
-version = u''
+version = u'2.0'
 # The full version, including alpha/beta/rc tags
 release = u''
 
