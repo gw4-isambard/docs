@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>gdb4hpc &mdash; GW4-Isambard  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arm MAP" href="map.html" />
+    <link rel="prev" title="Arm DDT" href="ddt.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GW4-Isambard
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Isambard User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/requestaccount.html">Request Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/connecting.html">Connecting to Isambard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/jobs.html">Running jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/MACS.html">Multi-Architecture Comparison System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/XCI.html">XCI - Marvell Thunder X2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/profiling.html">Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/end_project.html">End of life procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ddt.html">Arm DDT</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">gdb4hpc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-session">Example session</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="map.html">Arm MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="perftools.html">Cray perftools (CrayPAT)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../applications/castep.html">CASTEP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/covidsim.html">CovidSim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/cp2k.html">CP2K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/dedalus.html">Dedalus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/dlmonte.html">DL_MONTE 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/hydro3d.html">Hydro3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/molpro.html">MolPro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/namd.html">NAMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/nemo.html">NEMO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/opensbli.html">OpenSBLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/um.html">Unified Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Service Policies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../policies/terms.html">Terms and Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies/privacy.html">Privacy Statement</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GW4-Isambard</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>gdb4hpc</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gw4-isambard/docs/blob/master/tools/gdb4hpc.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gdb4hpc">
+<span id="id1"></span><h1>gdb4hpc<a class="headerlink" href="#gdb4hpc" title="Permalink to this headline">¶</a></h1>
+<p>gdb4hpc is a parallel debugger for C, C++ and Fortran programs and is
+available on both the MACS and XCI systems as part of the Cray Programming Environment.
+It is a command line tool (based on gdb) and it can be used either to launch an application or attach to application which is already running.</p>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>To use gdb4hpc you will need to load the gdb4hpc module by running the command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">gdb4hpc</span>
+</pre></div>
+</div>
+<p>When you have loaded the module you can see gdb4hpc documentation by running the command <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">gdb4hpc</span></code>.</p>
+</div>
+<div class="section" id="example-session">
+<h2>Example session<a class="headerlink" href="#example-session" title="Permalink to this headline">¶</a></h2>
+<p>This example shows how to use gdb4hpc to attach to a program which is already running. In this example we have a C program parallelised with MPI but there is a bug causing a deadlock and we want to find out where in the program this is happening.</p>
+<p>Start by building the program using a <code class="docutils literal notranslate"><span class="pre">-g</span></code> flag so that we can see line numbers in the debugger:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">o</span> <span class="n">deadlock</span> <span class="n">deadlock</span><span class="o">.</span><span class="n">c</span>
+</pre></div>
+</div>
+<p>where the source code is in a file called <code class="docutils literal notranslate"><span class="pre">deadlock.c</span></code> and the executable is called <code class="docutils literal notranslate"><span class="pre">deadlock</span></code>.  Now submit the program to queue as usual:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qsub</span> <span class="n">debug</span><span class="o">.</span><span class="n">pbs</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">debug.pbs</span></code> is the job script. The application will deadlock and sit in the queue so we can now attach the debugger. We need to find a ID number for the application which we will obtain with the <code class="docutils literal notranslate"><span class="pre">apstat</span></code> command as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>xx-user@xcil00:~&gt; apstat -u $USER
+Compute node summary
+    arch config     up   resv    use  avail   down rebootq
+      XT    163    160    155    142      5      3       0
+
+No pending applications are present
+
+Total (filtered) placed applications: 1
+   Apid  ResId    User PEs Nodes   Age State Command
+1324249 492947 xx-user   2     1 0h00m   run deadlock
+
+No applications or reservations are being cleaned up
+xx-user@xcil00:~&gt;
+</pre></div>
+</div>
+<p>The application ID is 1324249 (shown underneath Apid) and we will use this ID number to attach to the application.  Next load the gdb4hpc module and start the debugger:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">gdb4hpc</span>
+<span class="n">xx</span><span class="o">-</span><span class="n">user</span><span class="nd">@xcil00</span><span class="p">:</span><span class="o">~&gt;</span> <span class="n">gdb4hpc</span>
+<span class="n">gdb4hpc</span> <span class="mf">3.0</span> <span class="o">-</span> <span class="n">Cray</span> <span class="n">Line</span> <span class="n">Mode</span> <span class="n">Parallel</span> <span class="n">Debugger</span>
+<span class="n">With</span> <span class="n">Cray</span> <span class="n">Comparative</span> <span class="n">Debugging</span> <span class="n">Technology</span><span class="o">.</span>
+<span class="n">Copyright</span> <span class="mi">2007</span><span class="o">-</span><span class="mi">2018</span> <span class="n">Cray</span> <span class="n">Inc</span><span class="o">.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="o">.</span>
+<span class="n">Copyright</span> <span class="mi">1996</span><span class="o">-</span><span class="mi">2016</span> <span class="n">University</span> <span class="n">of</span> <span class="n">Queensland</span><span class="o">.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="o">.</span>
+
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span> <span class="k">for</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">commands</span><span class="o">.</span>
+<span class="n">Type</span> <span class="s2">&quot;help &lt;cmd&gt;&quot;</span> <span class="k">for</span> <span class="n">detailed</span> <span class="n">help</span> <span class="n">about</span> <span class="n">a</span> <span class="n">command</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>To attach to the application we use the <code class="docutils literal notranslate"><span class="pre">attach</span></code> command followed by a handle (we will call this <code class="docutils literal notranslate"><span class="pre">prog1</span></code>) and the applicaton ID (1324249) which we obtained from from <code class="docutils literal notranslate"><span class="pre">apstat</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dbg all&gt; attach $prog1 1324249
+Attaching to application, please wait...
+Creating MRNet communication network...
+Waiting for debug servers to attach to MRNet communications network...
+Timeout in 400 seconds. Please wait for the attach to complete.
+Number of dbgsrvs connected: [1];  Timeout Counter: [0]
+Number of dbgsrvs connected: [1];  Timeout Counter: [1]
+Number of dbgsrvs connected: [2];  Timeout Counter: [0]
+Finalizing setup...
+Attach complete.
+Current rank location:
+prog1{1}: #0  0x00004000002a2dc0 in MPIDI_CH3I_Progress
+prog1{1}: #1  0x00004000001b2e74 in PMPI_Recv
+prog1{1}: #2  0x0000000000400c28 in main at /lustre/home/xx-user/deadlock.c:20
+prog1{0}: #0  0x000040000029ef2c in poll_active_fboxes
+prog1{0}: #1  0x00004000002a2d94 in MPIDI_CH3I_Progress
+prog1{0}: #2  0x00004000001fa9d4 in MPIC_Wait
+prog1{0}: #3  0x00004000001fb134 in MPIC_Sendrecv
+prog1{0}: #4  0x00004000001333a8 in MPIR_Barrier_intra
+prog1{0}: #5  0x000040000013395c in MPIR_Barrier
+prog1{0}: #6  0x000040000020e7f4 in MPIDI_Cray_shared_mem_coll_opt_cleanup
+prog1{0}: #7  0x000040000020bf4c in MPIDI_Cray_coll_finalize
+prog1{0}: #8  0x000040000028f374 in MPID_Finalize
+prog1{0}: #9  0x00004000001a9a8c in PMPI_Finalize
+prog1{0}: #10 0x0000000000400c48 in main at /lustre/home/xx-user/deadlock.c:24
+</pre></div>
+</div>
+<p>The debugger shows us that the rank 0 process is at a <code class="docutils literal notranslate"><span class="pre">PMPI_Finalise</span></code> call on line 24 and the rank 1 process is at a <code class="docutils literal notranslate"><span class="pre">PMPI_Recv</span></code> call on line 20.</p>
+<p>To exit the debugging session use the <cite>quit</cite> command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dbg</span> <span class="nb">all</span><span class="o">&gt;</span> <span class="n">quit</span>
+<span class="n">Shutting</span> <span class="n">down</span> <span class="n">debugger</span> <span class="ow">and</span> <span class="n">resuming</span> <span class="n">application</span> <span class="k">for</span> <span class="s1">&#39;prog1&#39;</span><span class="o">.</span>
+<span class="n">xx</span><span class="o">-</span><span class="n">user</span><span class="nd">@xcil00</span><span class="p">:</span><span class="o">~&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="map.html" class="btn btn-neutral float-right" title="Arm MAP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ddt.html" class="btn btn-neutral float-left" title="Arm DDT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, GW4.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

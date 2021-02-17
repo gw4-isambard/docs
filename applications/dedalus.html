@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Dedalus &mdash; GW4-Isambard  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DL_MONTE 2" href="dlmonte.html" />
+    <link rel="prev" title="CP2K" href="cp2k.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GW4-Isambard
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Isambard User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/requestaccount.html">Request Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/connecting.html">Connecting to Isambard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/jobs.html">Running jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/MACS.html">Multi-Architecture Comparison System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/XCI.html">XCI - Marvell Thunder X2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/profiling.html">Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/end_project.html">End of life procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/map.html">Arm MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/perftools.html">Cray perftools (CrayPAT)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Applications</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="castep.html">CASTEP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="covidsim.html">CovidSim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cp2k.html">CP2K</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dedalus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#useful-links">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#licensing">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building">Building</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dlmonte.html">DL_MONTE 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firedrake.html">Firedrake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gromacs.html">GROMACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hydro3d.html">Hydro3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="molpro.html">MolPro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="namd.html">NAMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nemo.html">NEMO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opensbli.html">OpenSBLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="um.html">Unified Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vasp.html">VASP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Service Policies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../policies/terms.html">Terms and Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies/privacy.html">Privacy Statement</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GW4-Isambard</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Dedalus</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gw4-isambard/docs/blob/master/applications/dedalus.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dedalus">
+<h1>Dedalus<a class="headerlink" href="#dedalus" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://dedalus-project.org">Dedalus Project</a></li>
+<li><a class="reference external" href="https://dedalus-project.readthedocs.io/en/latest/">Dedalus documentation</a></li>
+</ul>
+</div>
+<div class="section" id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
+<p>Dedalus is released under the GNU General Public License. See <a class="reference external" href="http://dedalus-project.org/about/">Dedalus Project - About</a></p>
+</div>
+<div class="section" id="building">
+<h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
+<p>The following steps describe how to build Dedalus on Isambard.</p>
+<ol class="arabic simple">
+<li>Make a directory for your Dedalus build e.g.</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
+<span class="n">mkdir</span> <span class="n">dedalus</span>
+<span class="n">cd</span> <span class="n">dedalus</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Take a copy of the install script and run it</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">exeter</span><span class="o">/</span><span class="n">dedalus</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">install_dedalus_isambard</span><span class="o">.</span><span class="n">sh</span>  <span class="o">.</span>
+<span class="o">./</span><span class="n">install_dedalus_isambard</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>The script will build a python distribution with the required packages installed
+and then install Dedalus itself.</p>
+<ol class="arabic simple" start="3">
+<li>Test your installation with an example</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">test</span>
+<span class="n">cd</span> <span class="n">test</span>
+<span class="n">cp</span> <span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">exeter</span><span class="o">/</span><span class="n">dedalus</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">dedalus_test</span><span class="o">.</span><span class="n">pbs</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>If your Dedalus installation is in <code class="docutils literal notranslate"><span class="pre">~/dedalus</span></code> then you do not need to modify the job script.
+If your Dedalus installation is somewhere else then edit the scipt so that the <code class="docutils literal notranslate"><span class="pre">my_dedlus</span></code> variable
+points to your installation. You can now submit the test job to the queue</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qsub</span> <span class="n">dedalus_test</span><span class="o">.</span><span class="n">pbs</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="dlmonte.html" class="btn btn-neutral float-right" title="DL_MONTE 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cp2k.html" class="btn btn-neutral float-left" title="CP2K" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, GW4.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

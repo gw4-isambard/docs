@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>CovidSim &mdash; GW4-Isambard  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CP2K" href="cp2k.html" />
+    <link rel="prev" title="CASTEP" href="castep.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GW4-Isambard
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Isambard User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/requestaccount.html">Request Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/connecting.html">Connecting to Isambard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/jobs.html">Running jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/MACS.html">Multi-Architecture Comparison System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/XCI.html">XCI - Marvell Thunder X2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/profiling.html">Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/end_project.html">End of life procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/map.html">Arm MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/perftools.html">Cray perftools (CrayPAT)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Applications</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="castep.html">CASTEP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CovidSim</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#useful-links">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#versions">Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running">Running</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-job-submission-scripts">Example Job Submission Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x86">x86</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arm">Arm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cp2k.html">CP2K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dedalus.html">Dedalus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dlmonte.html">DL_MONTE 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firedrake.html">Firedrake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gromacs.html">GROMACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hydro3d.html">Hydro3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="molpro.html">MolPro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="namd.html">NAMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nemo.html">NEMO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opensbli.html">OpenSBLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="um.html">Unified Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vasp.html">VASP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Service Policies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../policies/terms.html">Terms and Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies/privacy.html">Privacy Statement</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GW4-Isambard</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>CovidSim</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gw4-isambard/docs/blob/master/applications/covidsim.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="covidsim">
+<h1>CovidSim<a class="headerlink" href="#covidsim" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/mrc-ide/covid-sim">mrc-ide/covid-sim</a> on GitHub</li>
+</ul>
+</div>
+<div class="section" id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Permalink to this headline">¶</a></h2>
+<p>The currently installed version is 0.8.0</p>
+</div>
+<div class="section" id="running">
+<h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-job-submission-scripts">
+<h3>Example Job Submission Scripts<a class="headerlink" href="#example-job-submission-scripts" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="x86">
+<h3>x86<a class="headerlink" href="#x86" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -q pascalq</span>
+<span class="c1">#PBS -N CSim-UK-bwl-18-intel</span>
+<span class="c1">#PBS -l select=1:ncpus=18</span>
+<span class="c1">#PBS -l walltime=00:50:00</span>
+<span class="c1">#PBS -lplace=excl </span>
+
+<span class="nb">export</span> OMP_PROC_BIND
+
+module use /software/x86_64/modulefiles
+module load covid-19-covidsim/0.8.0
+
+<span class="nb">cd</span> <span class="si">${</span><span class="nv">COVIDSIM_DATA</span><span class="si">}</span>
+/usr/bin/time python3 run_sample.py <span class="se">\</span>
+    --covidsim CovidSim_uk <span class="se">\</span>
+    --outputdir /scratch/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/CovidSim/out/ <span class="se">\</span>
+    United_Kingdom
+</pre></div>
+</div>
+</div>
+<div class="section" id="arm">
+<h3>Arm<a class="headerlink" href="#arm" title="Permalink to this headline">¶</a></h3>
+<p>Please enquire via <a class="reference external" href="mailto:isambard-supprt&#37;&#52;&#48;gw4&#46;ac&#46;uk">isambard-supprt<span>&#64;</span>gw4<span>&#46;</span>ac<span>&#46;</span>uk</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="cp2k.html" class="btn btn-neutral float-right" title="CP2K" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="castep.html" class="btn btn-neutral float-left" title="CASTEP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, GW4.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

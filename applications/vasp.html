@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>VASP &mdash; GW4-Isambard  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Terms and Conditions" href="../policies/terms.html" />
+    <link rel="prev" title="Unified Model" href="um.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GW4-Isambard
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Isambard User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/requestaccount.html">Request Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/connecting.html">Connecting to Isambard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/jobs.html">Running jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/MACS.html">Multi-Architecture Comparison System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/XCI.html">XCI - Marvell Thunder X2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/profiling.html">Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/end_project.html">End of life procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/map.html">Arm MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/perftools.html">Cray perftools (CrayPAT)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Applications</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="castep.html">CASTEP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="covidsim.html">CovidSim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cp2k.html">CP2K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dedalus.html">Dedalus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dlmonte.html">DL_MONTE 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firedrake.html">Firedrake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gromacs.html">GROMACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hydro3d.html">Hydro3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="molpro.html">MolPro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="namd.html">NAMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nemo.html">NEMO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opensbli.html">OpenSBLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="um.html">Unified Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">VASP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#useful-links">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#licensing">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#access">Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#versions">Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running">Running</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-job-submission-scripts">Example Job Submission Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arm">Arm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x86">x86</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#compilation">Compilation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Arm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">x86</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Service Policies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../policies/terms.html">Terms and Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies/privacy.html">Privacy Statement</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GW4-Isambard</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>VASP</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gw4-isambard/docs/blob/master/applications/vasp.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vasp">
+<h1>VASP<a class="headerlink" href="#vasp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://www.vasp.at/">Vasp</a></li>
+<li><a class="reference external" href="http://www.vasp.at/index.php/documentation">Documentation</a></li>
+</ul>
+</div>
+<div class="section" id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
+<p>Vasp is licensed software and is not currently provided on Isambard.  If you hold a license you can build Vasp using the instructions below.  For further details about the license and to purchase one please visit the <a class="reference external" href="http://www.vasp.at/">Vasp website</a>.</p>
+</div>
+<div class="section" id="access">
+<h2>Access<a class="headerlink" href="#access" title="Permalink to this headline">¶</a></h2>
+<p>Vasp is not currently available on Isambard.</p>
+</div>
+<div class="section" id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Permalink to this headline">¶</a></h2>
+<p>The use and build instructions are for Vasp 5.4.4.</p>
+</div>
+<div class="section" id="running">
+<h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
+<p>To run Vasp on Isambard you will need to provide your source code.  Instructions for compiling on Isambard are provided below.</p>
+<div class="section" id="example-job-submission-scripts">
+<h3>Example Job Submission Scripts<a class="headerlink" href="#example-job-submission-scripts" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="arm">
+<h3>Arm<a class="headerlink" href="#arm" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
+<span class="c1">#PBS -N vasp_job</span>
+
+<span class="c1"># Select 1 nodes (maximum of 64 cores)</span>
+<span class="c1">#PBS -l select=1:ncpus=64</span>
+
+<span class="c1"># Select wall time 10 hours</span>
+<span class="c1">#PBS -l walltime=10:0:0</span>
+
+<span class="c1"># Use the arm nodes</span>
+<span class="c1">#PBS -q arm</span>
+
+<span class="c1"># Load modules for currently recommended VASP build - see build instructions for more info</span>
+module swap PrgEnv-cray PrgEnv-gnu
+module swap gcc gcc/7.3.0
+
+<span class="c1"># Move to directory that script was submitted from</span>
+<span class="nb">export</span> <span class="nv">PBS_O_WORKDIR</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="nv">$PBS_O_WORKDIR</span><span class="k">)</span>
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+
+<span class="c1"># XC requires use of aprun to launch job on compute notes</span>
+aprun -n <span class="m">64</span>  vasp_std <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; vasp_job.log
+</pre></div>
+</div>
+</div>
+<div class="section" id="x86">
+<h3>x86<a class="headerlink" href="#x86" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
+<span class="c1">#PBS -N vasp_job</span>
+
+<span class="c1"># Select 1 nodes (maximum of 36 cores)</span>
+<span class="c1">#PBS -l select=1:ncpus=36</span>
+<span class="c1">#PBS -l walltime=10:0:0</span>
+
+<span class="c1"># Use the Intel Xeon (Broadwell) nodes</span>
+<span class="c1">#PBS -q pascalq</span>
+
+module purge
+
+module load  craype-network-infiniband
+module load  pbspro/13.1.0.160576
+module load  intel/mkl/64/2017/1.132
+module load  craype-broadwell
+module load  intel-parallel-studio-xe/compilers/64/2017u2/17.0.2
+module load  intel-parallel-studio-xe/mpi/64/2017u2/2.174
+
+<span class="c1"># Move to directory that script was submitted from</span>
+<span class="nb">export</span> <span class="nv">PBS_O_WORKDIR</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="nv">$PBS_O_WORKDIR</span><span class="k">)</span>
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+
+mpirun -np <span class="m">36</span> vasp_std <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="compilation">
+<h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Arm<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Instructions for building Vasp on Arm:</p>
+<p>Download <a class="reference download internal" download="" href="../_downloads/12777f28e358c09fa9dfa83a5752b589/makefile.include.arm"><code class="xref download docutils literal notranslate"><span class="pre">makefile.include.arm</span></code></a> and copy it to <cite>makefile.include</cite> in the root of the source folder</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load modules for currently recommended VASP build - see build instructions for more info</span>
+
+<span class="c1"># Currently we recommend compiling with the gnu programming environment</span>
+module swap PrgEnv-cray PrgEnv-gnu
+
+<span class="c1"># There is a compilation issue with gcc 8 so switch to gcc 7</span>
+module swap gcc gcc/7.3.0
+
+<span class="c1"># And build vasp, replace all with std, ncl, gam for individual targets</span>
+make all
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>x86<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Instructions for building Vasp on x86:</p>
+<p>Download <a class="reference download internal" download="" href="../_downloads/42699a84820667e4efa3e20d10835413/makefile.include.x86"><code class="xref download docutils literal notranslate"><span class="pre">makefile.include.x86</span></code></a> and copy it to <cite>makefile.include</cite> in the root of the source folder.  Alternatively copy makefile.include.linux_intel from the <cite>arch</cite> folder as these files are identical.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load modules for build</span>
+
+module purge
+module load shared
+module load craype-network-infiniband
+module load craype-broadwell
+module load pbspro/13.1.0.160576
+module load intel-parallel-studio-xe/compilers/64/2017u2/17.0.2
+module load intel-parallel-studio-xe/mpi/64/2017u2/2.174
+module load intel/mkl/64/2017/1.132
+
+<span class="c1"># Now build.</span>
+<span class="c1"># To make specific versions of vasp substitute &lt;std,gam,ncl&gt; for `all`.</span>
+
+make all
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../policies/terms.html" class="btn btn-neutral float-right" title="Terms and Conditions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="um.html" class="btn btn-neutral float-left" title="Unified Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, GW4.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

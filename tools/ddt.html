@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Arm DDT &mdash; GW4-Isambard  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="gdb4hpc" href="gdb4hpc.html" />
+    <link rel="prev" title="Support" href="../user-guide/support.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GW4-Isambard
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Isambard User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/requestaccount.html">Request Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/connecting.html">Connecting to Isambard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/jobs.html">Running jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/MACS.html">Multi-Architecture Comparison System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/XCI.html">XCI - Marvell Thunder X2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/profiling.html">Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/end_project.html">End of life procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Arm DDT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#useful-links">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-session">Example session</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gdb4hpc.html">gdb4hpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map.html">Arm MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="perftools.html">Cray perftools (CrayPAT)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../applications/castep.html">CASTEP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/covidsim.html">CovidSim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/cp2k.html">CP2K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/dedalus.html">Dedalus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/dlmonte.html">DL_MONTE 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/hydro3d.html">Hydro3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/molpro.html">MolPro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/namd.html">NAMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/nemo.html">NEMO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/opensbli.html">OpenSBLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/um.html">Unified Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Service Policies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../policies/terms.html">Terms and Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies/privacy.html">Privacy Statement</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GW4-Isambard</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Arm DDT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gw4-isambard/docs/blob/master/tools/ddt.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arm-ddt">
+<span id="ddt"></span><h1>Arm DDT<a class="headerlink" href="#arm-ddt" title="Permalink to this headline">¶</a></h1>
+<p>DDT is a tool for debugging C, C++ and Fortran parallel programs. It
+is available on the MACS and XCI systems as part of the Forge suite.</p>
+<div class="section" id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<p>A User Guide and Getting Started guide are available from <a class="reference external" href="https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/arm-ddt">https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/arm-ddt</a></p>
+</div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>To use DDT you will need to load the Forge module. On MACS the command is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">allinea</span><span class="o">/</span><span class="n">forge</span>
+</pre></div>
+</div>
+<p>and on the XCI system the command is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">tools</span><span class="o">/</span><span class="n">arm</span><span class="o">-</span><span class="n">forge</span>
+</pre></div>
+</div>
+<p>When you have loaded the module you can start the DDT graphical interface by running the command <code class="docutils literal notranslate"><span class="pre">ddt</span> <span class="pre">&amp;</span></code>.</p>
+</div>
+<div class="section" id="example-session">
+<h2>Example session<a class="headerlink" href="#example-session" title="Permalink to this headline">¶</a></h2>
+<p>This example uses an interactive job running in the XCI <code class="docutils literal notranslate"><span class="pre">arm-dev</span></code> queue to debug a parallel program.</p>
+<p>Start by compiling your program with a <code class="docutils literal notranslate"><span class="pre">-g</span></code> flag to retain extra debugging information. For example to compile a C program called <code class="docutils literal notranslate"><span class="pre">myprog.c</span></code> run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">o</span> <span class="n">myprog</span> <span class="n">myprog</span><span class="o">.</span><span class="n">c</span>
+</pre></div>
+</div>
+<p>which will produce an executable file called <code class="docutils literal notranslate"><span class="pre">myprog</span></code>.</p>
+<p>Next start an interactive job by running the command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qsub</span> <span class="o">-</span><span class="n">I</span> <span class="o">-</span><span class="n">X</span> <span class="o">-</span><span class="n">q</span> <span class="n">arm</span><span class="o">-</span><span class="n">dev</span> <span class="o">-</span><span class="n">l</span> <span class="n">select</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">l</span> <span class="n">walltime</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+</pre></div>
+</div>
+<p>This starts an interactive job (<code class="docutils literal notranslate"><span class="pre">-I</span></code>) with X11 graphics forwarding (<code class="docutils literal notranslate"><span class="pre">-X</span></code>) using 1 compute node for up to 1 hour.</p>
+<p>When the job starts load the Forge module</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">tools</span><span class="o">/</span><span class="n">arm</span><span class="o">-</span><span class="n">forge</span>
+</pre></div>
+</div>
+<p>We can now run <code class="docutils literal notranslate"><span class="pre">ddt</span></code> and tell it to start our program</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddt</span> <span class="n">aprun</span> <span class="o">-</span><span class="n">n</span> <span class="mi">2</span> <span class="o">./</span><span class="n">myprog</span>
+</pre></div>
+</div>
+<p>This example runs <code class="docutils literal notranslate"><span class="pre">myprog</span></code> with with 2 MPI processes. The <code class="docutils literal notranslate"><span class="pre">ddt</span></code> graphical interface will open and from here you can launch and debug your program.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="gdb4hpc.html" class="btn btn-neutral float-right" title="gdb4hpc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../user-guide/support.html" class="btn btn-neutral float-left" title="Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018, GW4.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
