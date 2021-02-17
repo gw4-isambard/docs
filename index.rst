@@ -24,7 +24,7 @@ System Status
     
     - XCI (ARM ThunderX2): Available
     - MACS: Available
-    - A64fx: In testing - Will be UNAVAILABLE on Thurs 21 Jan for scheduled maintennce
+    - A64fx: In testing
 
 Acknowledging Isambard
 ----------------------
