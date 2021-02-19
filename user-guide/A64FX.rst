@@ -19,3 +19,8 @@ Queues
 ......
 
 The default queue is `a64fx`.
+
+Documentation
+.............
+
+Fujitsu's website includes an A64FX Datasheet and Microarchitecture Manual: https://www.fujitsu.com/global/products/computing/servers/supercomputer/a64fx/
