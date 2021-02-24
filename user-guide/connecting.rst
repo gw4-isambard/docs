@@ -50,7 +50,7 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
   Update the ``~/.ssh/config`` with your details:-
 
   - Substitute ``XX-USERNAME`` with your Isambard username 
-  - The ``IndentityFile`` points to the SSH key (private) that will be used for connecting to Isambard, the default for most users will be ``~/.ssh/id_rsa``. If you are using a different key Eg. ``~/keystore/isambard``, the entry should be ``IdentityFile ~/keystore/isambard``
+  - The ``IdentityFile`` points to the SSH key (private) that will be used for connecting to Isambard, the default for most users will be ``~/.ssh/id_rsa``. If you are using a different key Eg. ``~/keystore/isambard``, the entry should be ``IdentityFile ~/keystore/isambard``
   - We recommend you overwrite previous versions of this configuration when updating in to ensure your configuration matches the documentation
 
 MACS - Multi-Architecture Comparison System
