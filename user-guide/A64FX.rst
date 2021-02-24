@@ -20,13 +20,6 @@ Queues
 
 The default queue is `a64fx`.
 
-In order to request a full node(s) exclusively for your job, the job script must include `-l select=XX:ncpus=48`, where XX is the number of nodes requested. If your job uses MPI you must also set `mpiprocs=Y` where Y is the number of MPI threads you need per node.
-
-The following example saturates two nodes with 48 MPI threads each.
-
-.. code-block:: text
- #PBS -l select2:ncpus=48:mpiprocs=48
-
 Documentation
 .............
 
