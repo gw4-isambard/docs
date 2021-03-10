@@ -96,19 +96,15 @@
 <li class="toctree-l1"><a class="reference internal" href="filesystem.html">Filesystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jobs.html">Running jobs</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Multi-Architecture Comparison System</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#nvidia-gpu">Nvidia GPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#amd-epyc">AMD Epyc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#intel-xeon-cascade-lake">Intel Xeon “Cascade Lake”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#intel-xeon-phi-knights-landing">Intel Xeon Phi “Knights Landing”</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ibm-power-9">IBM Power 9</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#hardware">Hardware</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#software">Software</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
@@ -205,59 +201,23 @@
 <h1>Multi-Architecture Comparison System<a class="headerlink" href="#multi-architecture-comparison-system" title="Permalink to this headline">¶</a></h1>
 <p>Isambard MACS hosts many nodes of different architectures:</p>
 <ul class="simple">
-<li><p>2x Login nodes with Intel Xeon “Broadwell” CPU</p></li>
-<li><p>4x Nvidia Pascal GPU nodes with 2x Nvidia P100 “Pascal” GPUs and Intel Xeon E5-2695 v4 “Broadwell” CPU</p></li>
-<li><p>4x Nvidia Volta GPU nodes with 1x Nvidia V100 “Volta” GPU and Intel Xeon Gold 6230 “Cascade Lake (CLX)” CPU</p></li>
-<li><p>4x AMD Epyc 7742 “Rome” CPUs</p></li>
-<li><p>4x Intel Xeon 6230 “Cascade Lake (CLX)” CPU</p></li>
-<li><p>8x Intel Xeon Phi “Knights Landing” 7210 CPU</p></li>
-<li><p>2x IBM Power 9 nodes each with 2x Nvidia V100 “Volta” GPU</p></li>
+<li><p>2x Login nodes with <a class="reference external" href="https://ark.intel.com/content/www/us/en/ark/products/91316/intel-xeon-processor-e5-2695-v4-45m-cache-2-10-ghz.html">Intel Xeon “Broadwell”</a> CPU</p></li>
+<li><p>4x nodes of Nvidia Pascal GPU with 2x <a class="reference external" href="https://www.nvidia.com/en-us/data-center/pascal-gpu-architecture/">Nvidia P100 “Pascal”</a> GPUs and Intel Xeon E5-2695 v4 “Broadwell” CPU</p></li>
+<li><p>4x nodes of Nvidia Volta GPU nodes with 1x <a class="reference external" href="https://www.nvidia.com/en-us/data-center/volta-gpu-architecture/">Nvidia V100 “Volta”</a> GPU and Intel Xeon Gold 6230 “Cascade Lake (CLX)” CPU</p></li>
+<li><p>4x nodes of <a class="reference external" href="https://www.amd.com/en/products/cpu/amd-epyc-7742">AMD Epyc 7742 “Rome”</a> &#64; 2.25GHz 64-core CPU nodes with DDR4-3200Mhz over 8 memory channels.</p></li>
+<li><p>4x nodes of <a class="reference external" href="https://ark.intel.com/content/www/us/en/ark/products/192437/intel-xeon-gold-6230-processor-27-5m-cache-2-10-ghz.html">Intel Xeon Gold 6230 “Cascade Lake (CLX)”</a> &#64; 2.10GHz 20-core CPU nodes with DDR4-2933MHz over 6 memory channels.</p></li>
+<li><p>8x nodes of <a class="reference external" href="https://ark.intel.com/products/94033/Intel-Xeon-Phi-Processor-7210-16GB-1_30-GHz-64-core">Intel Xeon Phi “Knights Landing” 7210 CPU</a> &#64; 1.30GHz (1.50GHz Turbo) with AVX-512.</p></li>
+<li><p>2x nodes of <a class="reference external" href="https://www.ibm.com/uk-en/marketplace/power-systems-ac922">IBM Power 9 System AC922</a> each with 2x Nvidia V100 “Volta” GPU</p></li>
 </ul>
-<p>Most MACS nodes run Red Hat Enterprise Linux 7.x with the Cray software stack.</p>
-<p>Power 9 nodes run Red Hat Enterprise Linux (Little-Endian) with IBM compilers &amp; IBM Power AI.</p>
+<p>Most MACS nodes run Red Hat Enterprise Linux 7 with the Cray software stack. Power 9 nodes run Red Hat Enterprise Linux (Little-Endian) 7 with IBM compilers &amp; IBM Power AI.</p>
 <p>All nodes are connected via 100 Gigabit EDR Infiniband. The login nodes are connected to the Internet via a 10 Gigabit link to the <a class="reference external" href="https://www.jisc.ac.uk/janet">Janet Network</a>.</p>
-<div class="section" id="nvidia-gpu">
-<h2>Nvidia GPU<a class="headerlink" href="#nvidia-gpu" title="Permalink to this headline">¶</a></h2>
-<p>Isambard hosts two generations of Nvidia GPUs: <a class="reference external" href="https://www.nvidia.com/en-us/data-center/pascal-gpu-architecture/">P100 “Pascal”</a> &amp; <a class="reference external" href="https://www.nvidia.com/en-us/data-center/volta-gpu-architecture/">V100 “Volta”</a>.</p>
-</div>
-<div class="section" id="amd-epyc">
-<h2>AMD Epyc<a class="headerlink" href="#amd-epyc" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.amd.com/en/products/cpu/amd-epyc-7742">AMD Epyc 7742 “Rome”</a> 2.25GHz 64-core CPU nodes with DDR4-3200Mhz over 8 memory channels.</p>
-</div>
-<div class="section" id="intel-xeon-cascade-lake">
-<h2>Intel Xeon “Cascade Lake”<a class="headerlink" href="#intel-xeon-cascade-lake" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://ark.intel.com/content/www/us/en/ark/products/192437/intel-xeon-gold-6230-processor-27-5m-cache-2-10-ghz.html">Intel Xeon Gold 6230 “Cascade Lake (CLX)”</a> 2.10GHz 20-core CPU nodes with DDR4-2933MHz over 6 memory channels.</p>
-</div>
-<div class="section" id="intel-xeon-phi-knights-landing">
-<h2>Intel Xeon Phi “Knights Landing”<a class="headerlink" href="#intel-xeon-phi-knights-landing" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://ark.intel.com/products/94033/Intel-Xeon-Phi-Processor-7210-16GB-1_30-GHz-64-core">Intel Xeon Phi “Knights Landing” 7210 CPU</a> &#64; 1.30GHz (1.50GHz Turbo) with AVX-512.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 48%" />
-<col style="width: 52%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Software</p></th>
-<th class="head"><p>Module (<code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">..</span></code>)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Intel Parallel Studio XE</p></td>
-<td><p>intel-parallel-studio-xe/mpi</p></td>
-</tr>
-<tr class="row-odd"><td><p>Intel Math Kernel Library</p></td>
-<td><p>intel/mkl</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 <div class="section" id="ibm-power-9">
 <h2>IBM Power 9<a class="headerlink" href="#ibm-power-9" title="Permalink to this headline">¶</a></h2>
-<p>Isambard’s Power nodes comprise two of <a class="reference external" href="https://www.ibm.com/uk-en/marketplace/power-systems-ac922">IBM Power System AC922</a> , they are representative of a type of node used in large-scale HPC. Each node has the IBM XL C/C++ (<code class="docutils literal notranslate"><span class="pre">xlc</span></code>) &amp; IBM XL Fortran (<code class="docutils literal notranslate"><span class="pre">xlf</span></code>) compilers installed. To make full use of each node’s two Nvidia V100 “Volta” GPUs we have installed the <a class="reference external" href="https://developer.ibm.com/linuxonpower/deep-learning-powerai/">IBM PowerAI</a> stack for Machine Learning research.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>These nodes are not part of the Cray supplied system and have a lower Service Level Agreement. As of 7 Oct 2020 both nodes have crashed and require in person intervention to be rebooted.</p>
+<p>Service unavailable as of 7 Oct 2020 both nodes have crashed and require in person intervention to be rebooted.</p>
 </div>
+<p>Isambard’s Power nodes comprise two of <a class="reference external" href="https://www.ibm.com/uk-en/marketplace/power-systems-ac922">IBM Power System AC922</a> , they are representative of a type of node used in large-scale HPC. Each node has the IBM XL C/C++ (<code class="docutils literal notranslate"><span class="pre">xlc</span></code>) &amp; IBM XL Fortran (<code class="docutils literal notranslate"><span class="pre">xlf</span></code>) compilers installed. To make full use of each node’s two Nvidia V100 “Volta” GPUs we have installed the <a class="reference external" href="https://developer.ibm.com/linuxonpower/deep-learning-powerai/">IBM PowerAI</a> stack for Machine Learning research.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These nodes are available interactively via SSH (i.e without submitting to the scheduler). Access is available from <code class="docutils literal notranslate"><span class="pre">login-01</span></code> or <code class="docutils literal notranslate"><span class="pre">login-02</span></code> since these nodes are only connected the Infiniband network.</p>
@@ -270,47 +230,6 @@ ssh power-002
 <h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h3>
 <p>There are two nodes, power-001 &amp; power-002 - Each with two sockets of Power 9 CPU. Each socket is attached to an Nvidia V100 GPU via NVLink at aprox. 150GB/s with coherent memory access to the 280GB of system memory. There is an X-Bus link between the two GPUs.</p>
 <p>External documentation: <a class="reference external" href="https://www.redbooks.ibm.com/redpapers/pdfs/redp5472.pdf">IBM Power System AC922 Technical Overview - IBM Redbooks</a></p>
-</div>
-<div class="section" id="software">
-<h3>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h3>
-<p>These nodes use Red Hat Enterprise Linux for Little-Endian 7.5 and have access to Red Hat’s software repositories.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 75%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Package</p></th>
-<th class="head"><p>Source</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>IBM XLC/XLF</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>IBM ESSL</p></td>
-<td><p>/opt/ibmmath/essl</p></td>
-</tr>
-<tr class="row-even"><td><p>anaconda2</p></td>
-<td><p>source /opt/anaconda2/latest/bin/activate</p></td>
-</tr>
-<tr class="row-odd"><td><p>anaconda3</p></td>
-<td><p>source /opt/anaconda3/latest/bin/activate</p></td>
-</tr>
-<tr class="row-even"><td><p>devtoolset-7</p></td>
-<td><p>source /opt/rh/devtoolset-7/enable</p></td>
-</tr>
-<tr class="row-odd"><td><p>rh-python36</p></td>
-<td><p>source /opt/rh/rh-python36/enable</p></td>
-</tr>
-<tr class="row-even"><td><p>rh-ruby25</p></td>
-<td><p>source /opt/rh/rh-ruby25/enable</p></td>
-</tr>
-<tr class="row-odd"><td><p>rh-nodejs8</p></td>
-<td><p>source /opt/rh/rh-nodejs8/enable</p></td>
-</tr>
-</tbody>
-</table>
 <p>Power AI frameworks found under <code class="docutils literal notranslate"><span class="pre">/opt/DL</span></code>, add them to your environment by running <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/DL/&lt;framework&gt;/bin/&lt;framework&gt;-activate</span></code> unless stated in the right-column:</p>
 <table class="docutils align-default">
 <colgroup>

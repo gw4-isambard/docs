@@ -1,0 +1,1317 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Software &mdash; GW4-Isambard  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging" href="debugging.html" />
+    <link rel="prev" title="A64FX - Fujitsu" href="A64FX.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GW4-Isambard
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Isambard User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="requestaccount.html">Request Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connecting.html">Connecting to Isambard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobs.html">Running jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MACS.html">Multi-Architecture Comparison System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#macs">MACS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xci">XCI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a64fx">A64FX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="end_project.html">End of life procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../applications/covidsim.html">CovidSim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/dedalus.html">Dedalus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/dlmonte.html">DL_MONTE 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Service Policies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../policies/terms.html">Terms and Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies/privacy.html">Privacy Statement</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GW4-Isambard</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Software</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gw4-isambard/docs/blob/master/user-guide/software.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="software">
+<h1>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h1>
+<p>This page summarises the software available across the cluster, please keep in mind that available packages and versions may vary between the different architectures of GW4 Isambard.</p>
+<div class="section" id="macs">
+<h2>MACS<a class="headerlink" href="#macs" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>allinea/forge</p></td>
+<td><p>Allinea Forge - Allinea DDT and Allinea MAP</p></td>
+</tr>
+<tr class="row-odd"><td><p>allinea/reports</p></td>
+<td><p>Allinea Performance Reports 7.0.6 - Allinea Performance Reports</p></td>
+</tr>
+<tr class="row-even"><td><p>anaconda/3</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>arm/forge/20.1.1</p></td>
+<td><p>allinea forge</p></td>
+</tr>
+<tr class="row-even"><td><p>bazel</p></td>
+<td><p>adds bazel  to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>blacs/openmpi/gcc/64</p></td>
+<td><p>adds Blacs to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>blas/gcc/64</p></td>
+<td><p>Adds BLAS library for GNU Fortran 64 bits to your environment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bonnie++</p></td>
+<td><p>Adds bonnie++ to your environment</p></td>
+</tr>
+<tr class="row-even"><td><p>cce</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cce/10.0.0</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cdt/17.11</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cdt/19.09</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cdt/19.12</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cdt/20.05</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cluster-tools</p></td>
+<td><p>Adds cluster-tools to your environment</p></td>
+</tr>
+<tr class="row-odd"><td><p>cmake</p></td>
+<td><p>adds CMake 3.12.3 to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>cmd</p></td>
+<td><p>Adds the CMDaemon binaries to your path.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cm-pmix3</p></td>
+<td><p>Sets up PMIx v3.1.4 in your enviornment</p></td>
+</tr>
+<tr class="row-even"><td><p>covid-19-covidsim</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cray-ccdb</p></td>
+<td><p>Loads the CCDB gui.</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-cti</p></td>
+<td><p>Loads the Cray Tools Interface.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-fftw</p></td>
+<td><p>FFTW 3.3.6.2 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-fftw</p></td>
+<td><p>FFTW 3.3.8.3 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-fftw</p></td>
+<td><p>FFTW 3.3.8.4 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-fftw</p></td>
+<td><p>FFTW 3.3.8.5 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-fftw_impi</p></td>
+<td><p>FFTW 3.3.6.2 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-fftw_impi</p></td>
+<td><p>FFTW 3.3.8.3 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-fftw_impi</p></td>
+<td><p>FFTW 3.3.8.4 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-fftw_impi</p></td>
+<td><p>FFTW 3.3.8.5 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-impi/5</p></td>
+<td><p>loads the Intel MPI software development environment driver</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-impi</p></td>
+<td><p>loads the Intel MPI software development environment driver</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-impi</p></td>
+<td><p>loads the Intel MPI software development environment driver  Cray PE Intel MPI</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-lgdb</p></td>
+<td><p>Loads the Cray Line Mode Parallel Debugger.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-libsci/16.09.1</p></td>
+<td><p>Cray Scientific Libraries</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-libsci/17.11.1</p></td>
+<td><p>Cray Scientific Libraries</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-libsci/19.06.1</p></td>
+<td><p>Cray Scientific Libraries</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-libsci/20.03.1</p></td>
+<td><p>Cray Scientific Libraries</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-libsci_acc/16.09.1</p></td>
+<td><p>Cray Scientific Libraries for GPU</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-libsci_acc/17.03.1</p></td>
+<td><p>Cray Scientific Libraries for GPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-libsci_acc/19.06.1</p></td>
+<td><p>Cray Scientific Libraries for GPU</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-libsci_acc/19.10.1</p></td>
+<td><p>Cray Scientific Libraries for GPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-libsci_acc/20.03.1</p></td>
+<td><p>Cray Scientific Libraries for GPU</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-mvapich2</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-mvapich2-gdr-2_2</p></td>
+<td><p>Cray PE MVAPICH2 GDR</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-mvapich2-gdr-4.cuda8.0.mofed3.4pbs</p></td>
+<td><p>Cray PE MVAPICH2 GDR</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-mvapich2_gnu</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-mvapich2_nogpu</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-mvapich2_nogpu_gnu</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-mvapich2_noslurm_cuda101</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-mvapich2_noslurm_cuda102</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-mvapich2_noslurm_nogpu</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-accel-nvidia20</p></td>
+<td><p>Sets options and paths required to build for target=nvidia20 (Fermi GPU)</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-accel-nvidia35</p></td>
+<td><p>Sets options and paths required to build for target=nvidia35 (Kepler GK110 GPU)</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-accel-nvidia52</p></td>
+<td><p>Sets options and paths required to build for target=nvidia52 (Maxwell GPU)</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-accel-nvidia60</p></td>
+<td><p>Sets options and paths required to build for target=nvidia60 (Pascal GPU)</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-accel-nvidia70</p></td>
+<td><p>Sets options and paths required to build for target=nvidia70 (Volta GPU)</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-broadwell</p></td>
+<td><p>Targeting module for the Intel Broadwell processor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-dl-plugin-py2/mvapich/19.09.1</p></td>
+<td><p>craype-dl-plugin - Cray PE DL Plugin</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-dl-plugin-py2/openmpi/19.09.1</p></td>
+<td><p>craype-dl-plugin - Cray PE DL Plugin</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-dl-plugin-py3/mvapich/19.09.1</p></td>
+<td><p>craype-dl-plugin - Cray PE DL Plugin</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-dl-plugin-py3/mvapich/19.12.1</p></td>
+<td><p>craype-dl-plugin - Cray PE DL Plugin</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-dl-plugin-py3/mvapich/20.05.1</p></td>
+<td><p>craype-dl-plugin - Cray PE DL Plugin</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-dl-plugin-py3/openmpi/19.09.1</p></td>
+<td><p>craype-dl-plugin - Cray PE DL Plugin</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-dl-plugin-py3/openmpi/19.12.1</p></td>
+<td><p>craype-dl-plugin - Cray PE DL Plugin</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-dl-plugin-py3/openmpi/20.05.1</p></td>
+<td><p>craype-dl-plugin - Cray PE DL Plugin</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-haswell</p></td>
+<td><p>Targeting module for the Intel Haswell processor.</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-ivybridge</p></td>
+<td><p>Targeting module for the Intel Ivybridge processor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-mic-knl</p></td>
+<td><p>Targeting module for the Intel Knights Landing processor.</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-network-infiniband</p></td>
+<td><p>Targeting module for Infinband interconnect.</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-network-opa</p></td>
+<td><p>Targeting module for Intel Omnipath Architecture interconnect.</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-sandybridge</p></td>
+<td><p>Targeting module for the Intel Sandybridge processor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype</p></td>
+<td><p>Setup for Cray PE driver set and targeting modules.</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-x86-rome</p></td>
+<td><p>Targeting module for the AMD Rome processor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-x86-skylake</p></td>
+<td><p>Targeting module for the Intel Skylake processor.</p></td>
+</tr>
+<tr class="row-even"><td><p>craypkg-gen</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cuda10.1/blas/10.1.243</p></td>
+<td><p>adds CUDA 10.1 BLAS libraries to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>cuda10.1/fft/10.1.243</p></td>
+<td><p>adds CUDA 10.1  FFT libraries to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>cuda10.1/nsight/10.1.243</p></td>
+<td><p>adds NVIDIA CUDA 10.1 Visual Profiler to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>cuda10.1/profiler/10.1.243</p></td>
+<td><p>adds NVIDIA CUDA 10.1 Visual Profiler to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>cuda10.1/toolkit/10.1.243</p></td>
+<td><p>adds NVIDIA CUDA 10.1 Toolkit to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>cuda10.2/blas/10.2.89</p></td>
+<td><p>adds CUDA 10.2 BLAS libraries to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>cuda10.2/fft/10.2.89</p></td>
+<td><p>adds CUDA 10.2  FFT libraries to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>cuda10.2/toolkit/10.2.89</p></td>
+<td><p>adds NVIDIA CUDA 10.2 Toolkit to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>cuda80/blas</p></td>
+<td><p>adds CUDA 8.0 BLAS libraries to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>cuda80/fft</p></td>
+<td><p>adds CUDA 8.0  FFT libraries to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>cuda80/nsight</p></td>
+<td><p>adds NVIDIA CUDA 8.0 Visual Profiler to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>cuda80/profiler</p></td>
+<td><p>adds NVIDIA CUDA 8.0 Visual Profiler to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>cuda80/toolkit</p></td>
+<td><p>adds NVIDIA CUDA 8.0 Toolkit to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>cudatoolkit</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cudnn</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>default-environment</p></td>
+<td><p>adds default environment modules</p></td>
+</tr>
+<tr class="row-odd"><td><p>dot</p></td>
+<td><p>adds <a href="#id1"><span class="problematic" id="id2">`</span></a>.’ to your PATH environment variable</p></td>
+</tr>
+<tr class="row-even"><td><p>fftw2/openmpi/gcc/64/double</p></td>
+<td><p>Adds FFTW library for 64 bits to your environment</p></td>
+</tr>
+<tr class="row-odd"><td><p>fftw2/openmpi/gcc/64/float</p></td>
+<td><p>Adds FFTW library for 64 bits to your environment</p></td>
+</tr>
+<tr class="row-even"><td><p>fftw3/openmpi/gcc/64</p></td>
+<td><p>Adds FFTW library for 64 bits to your environment</p></td>
+</tr>
+<tr class="row-odd"><td><p>fftw</p></td>
+<td><p>FFTW 3.3.4.11 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-even"><td><p>fftw_impi</p></td>
+<td><p>FFTW 3.3.4.11 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-odd"><td><p>freeipmi</p></td>
+<td><p>adds FREEIPMI to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>gcc</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>gcc</p></td>
+<td><p>adds GNU Cross Compilers to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>gdb4hpc</p></td>
+<td><p>Loads the Cray Line Mode Parallel Debugger.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gdb</p></td>
+<td><p>adds GNU Cross Compilers to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>globalarrays/openmpi/gcc/64</p></td>
+<td><p>Adds Globalarrays library for 64 bits to your environment</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdf5_18</p></td>
+<td><p>adds HDF5 to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>hdf5</p></td>
+<td><p>adds HDF5 to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>hpl</p></td>
+<td><p>adds HPL to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>hwloc</p></td>
+<td><p>Adds hwloc to your environment</p></td>
+</tr>
+<tr class="row-odd"><td><p>intel/compiler/32/2017/17.0.1</p></td>
+<td><p>adds Intel compilers to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>intel/compiler/64/2017/17.0.1</p></td>
+<td><p>adds Intel compilers to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>intel/mkl/64/2017</p></td>
+<td><p>adds Intel Math Kernel Library to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>intel/mkl/mic/2017</p></td>
+<td><p>adds Intel Math Kernel Library to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>intel-parallel-studio-xe/compilers/64/2017u2/17.0.2</p></td>
+<td><p>adds Intel compilers to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>intel-parallel-studio-xe/compilers/64/2019u4/19.0.4</p></td>
+<td><p>adds Intel compilers to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>intel-parallel-studio-xe/compilers/64/2020u4/20.0.4</p></td>
+<td><p>adds Intel compilers to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>intel-parallel-studio-xe/mpi/64/2017u2</p></td>
+<td><p>adds Intel MPI Library to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>intel-parallel-studio-xe/mpi/64/2019u4</p></td>
+<td><p>adds Intel MPI Library to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>intel-parallel-studio-xe/mpi/64/2020u4/20.0.4</p></td>
+<td><p>adds Intel MPI Library to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>intel-parallel-studio-xe/vtune_amplifier_xe/2017</p></td>
+<td><p>adds Intel compilers to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>intel-tbb-oss/ia32/2020.1</p></td>
+<td><p>adds Intel TBB libraries to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>intel-tbb-oss/intel64/2020.1</p></td>
+<td><p>adds Intel TBB libraries to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>iozone/3_482</p></td>
+<td><p>Adds iozone to your environment</p></td>
+</tr>
+<tr class="row-odd"><td><p>ipmitool</p></td>
+<td><p>adds IPMItool to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>lapack/gcc/64</p></td>
+<td><p>Adds LAPACK library for GCC 64 bits to your environment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>lua</p></td>
+<td><p>adds LUA to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>module-git</p></td>
+<td><p>get last version of the module sources from GitHub</p></td>
+</tr>
+<tr class="row-odd"><td><p>module-info</p></td>
+<td><p>returns all various module-info values</p></td>
+</tr>
+<tr class="row-even"><td><p>mpich/ge/gcc/64</p></td>
+<td><p>adds MPICH-gcc to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>mvapich2_cce</p></td>
+<td><p>Cray PE MVAPICH</p></td>
+</tr>
+<tr class="row-even"><td><p>mvapich2/gcc/64</p></td>
+<td><p>adds MVAPICH2-gcc to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>mvapich2_gnu</p></td>
+<td><p>Cray PE MVAPICH</p></td>
+</tr>
+<tr class="row-even"><td><p>netcdf/gcc/64</p></td>
+<td><p>Adds NetCDF to your environment</p></td>
+</tr>
+<tr class="row-odd"><td><p>netperf</p></td>
+<td><p>adds NETPERF to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>null</p></td>
+<td><p>does absolutely nothing</p></td>
+</tr>
+<tr class="row-odd"><td><p>nvhpc/20.11</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>openblas/dynamic</p></td>
+<td><p>adds OpenBLAS libraries to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>openldap</p></td>
+<td><p>Adds the OpenLDAP binaries to your path.</p></td>
+</tr>
+<tr class="row-even"><td><p>openmpi</p></td>
+<td><p>Adds library to environment</p></td>
+</tr>
+<tr class="row-odd"><td><p>openmpi/gcc/64</p></td>
+<td><p>adds OpenMPI to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>papi</p></td>
+<td><p>PAPI - The Performance API (PAPI) project specifies a standard application programming interface (API) for accessing hardware performance counters available on most Cray systems.</p></td>
+</tr>
+<tr class="row-odd"><td><p>pbspro/19.2.4.20190830141245</p></td>
+<td><p>adds PBS Pro to your environment variables.</p></td>
+</tr>
+<tr class="row-even"><td><p>perftools</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>perftools-base/20.03.0</p></td>
+<td><p>The Performance Tools module sets up environments for CrayPat, Apprentice2 and Reveal</p></td>
+</tr>
+<tr class="row-even"><td><p>perftools-base</p></td>
+<td><p>The Performance Tools module sets up environments for CrayPat, Apprentice2 and Reveal</p></td>
+</tr>
+<tr class="row-odd"><td><p>perftools-lite</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>pgi/18.10</p></td>
+<td><p>Changes the PGI home directory to linux86-64 18.10</p></td>
+</tr>
+<tr class="row-odd"><td><p>pgi/19.10</p></td>
+<td><p>Changes the PGI home directory to linux86-64-llvm 19.10</p></td>
+</tr>
+<tr class="row-even"><td><p>pgi/19.4</p></td>
+<td><p>Changes the PGI home directory to linux86-64-llvm 19.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>pgi/2018</p></td>
+<td><p>Changes the PGI home directory to linux86-64-llvm 2018</p></td>
+</tr>
+<tr class="row-even"><td><p>pgi/2019</p></td>
+<td><p>Changes the PGI home directory to linux86-64-llvm 2019</p></td>
+</tr>
+<tr class="row-odd"><td><p>pgi/64/19.4</p></td>
+<td><p>adds Portland Group compilers to your environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>pgi-llvm</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PrgEnv-cray</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PrgEnv-pgi/18.10</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PrgEnv-pgi/19.10</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PrgEnv-pgi/19.4</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>python2</p></td>
+<td><p>Description: Python is a programming language that lets you work more quickly and integrate your systems more effectively. - Homepage: <a class="reference external" href="https://www.python.org/">https://www.python.org/</a></p></td>
+</tr>
+<tr class="row-even"><td><p>python36</p></td>
+<td><p>Description: Python is a programming language that lets you work more quickly and integrate your systems more effectively. - Homepage: <a class="reference external" href="https://www.python.org/">https://www.python.org/</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>R</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>scalapack/openmpi/gcc/64</p></td>
+<td><p>adds Scalapack to your environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>sge/2011.11p1</p></td>
+<td><p>Adds sge to your environment</p></td>
+</tr>
+<tr class="row-even"><td><p>shared</p></td>
+<td><p>adds shared modules</p></td>
+</tr>
+<tr class="row-odd"><td><p>slurm/18.08.9</p></td>
+<td><p>Adds SLURM to your environment</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/arm-forge/20.1</p></td>
+<td><p>Arm Forge</p></td>
+</tr>
+<tr class="row-odd"><td><p>valgrind4hpc</p></td>
+<td><p>Valgrind for HPC.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xci">
+<h2>XCI<a class="headerlink" href="#xci" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>allinea</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>allinea/19.2.0.0</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>allinea/19.3.0.0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>allinea/20.0.0.0</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>apps/covidsim</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>apps/gromacs/2018.4</p></td>
+<td><p>gromacs 2018.4 with MPI</p></td>
+</tr>
+<tr class="row-even"><td><p>apps/gromacs/2019.1</p></td>
+<td><p>gromacs 2019.1 with MPI</p></td>
+</tr>
+<tr class="row-odd"><td><p>apps/gromacs/2019.3</p></td>
+<td><p>gromacs 2019.3 with MPI</p></td>
+</tr>
+<tr class="row-even"><td><p>apps/gromacs/2020.2</p></td>
+<td><p>gromacs 2020.2 with MPI</p></td>
+</tr>
+<tr class="row-odd"><td><p>apps/gromacs/2020.2-plumed-2.6.1</p></td>
+<td><p>gromacs 2020.2 with MPI, patched with Plumed 2.6.1</p></td>
+</tr>
+<tr class="row-even"><td><p>apps/julia</p></td>
+<td><p>Julia 1.4.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>apps/openfoam/v1812-gcc7.3-craympich-7.7.6</p></td>
+<td><p>Adds OpenFOAM v1812 to your path</p></td>
+</tr>
+<tr class="row-even"><td><p>apps/openfoam/v1906-gcc7.3-craympich-7.7.6</p></td>
+<td><p>Adds OpenFOAM v1906 to your path</p></td>
+</tr>
+<tr class="row-odd"><td><p>apps/openfoam/v7.0-gcc7.3-craympich-7.7.6</p></td>
+<td><p>Adds OpenFOAM 7 to your path</p></td>
+</tr>
+<tr class="row-even"><td><p>apps/plumed</p></td>
+<td><p>Plumed 2.6.1 - The community-developed PLUgin for MolEcular Dynamics</p></td>
+</tr>
+<tr class="row-odd"><td><p>apps/VTK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>atp</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>atp</p></td>
+<td><p>Loads Abnormal Termination Processing (ATP).</p></td>
+</tr>
+<tr class="row-even"><td><p>Base-opts</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>capmc</p></td>
+<td><p>Cray Power Capping configuration tool.</p></td>
+</tr>
+<tr class="row-even"><td><p>cce</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cce/10.0.0.1043-sve-alpha</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cce/10.0.1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cce/11.0.0.7500</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cce/11.0.1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cdt/19.03</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cdt/19.06</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cdt/19.08</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cdt/19.12</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cdt/20.03</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cdt/20.06</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cdt/20.12</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cray-ccdb</p></td>
+<td><p>Loads the CCDB gui.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-cti</p></td>
+<td><p>Loads the Cray Common Tools Interface.</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-cti</p></td>
+<td><p>Loads the Cray Tools Interface.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-fftw</p></td>
+<td><p>FFTW 3.3.8.2 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-fftw</p></td>
+<td><p>FFTW 3.3.8.3 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-fftw</p></td>
+<td><p>FFTW 3.3.8.5 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-fftw</p></td>
+<td><p>FFTW 3.3.8.6 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-fftw</p></td>
+<td><p>FFTW 3.3.8.8 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-ga</p></td>
+<td><p>Loads the Global Arrays library</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-hdf5</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cray-hdf5-parallel</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cray-jemalloc</p></td>
+<td><p>jemalloc for use on XC systems.</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-lgdb</p></td>
+<td><p>Loads the Cray Line Mode Parallel Debugger.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-libsci/18.12.1</p></td>
+<td><p>Cray Scientific Libraries</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-libsci/19.06.1</p></td>
+<td><p>Cray Scientific Libraries</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-libsci/20.06.1</p></td>
+<td><p>Cray Scientific Libraries</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-libsci/20.09.1</p></td>
+<td><p>Cray Scientific Libraries</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-mpich-abi</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cray-mpich-abi</p></td>
+<td><p>cray-mpich-abi - Cray MPICH ABI Compatibility Module</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-mpich</p></td>
+<td><p>cray-mpich - Cray MPICH Message Passing Interface</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-netcdf</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cray-netcdf-hdf5parallel</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cray-openshmemx</p></td>
+<td><p>cray-openshmemx - Logically shared distributed memory access routines</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-parallel-netcdf</p></td>
+<td><p>cray-parallel-netcdf - A parallel I/O library for NetCDF file access</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-aarch64</p></td>
+<td><p>Targeting module for generic aarch64 cpu.</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-arm-thunderx2</p></td>
+<td><p>Targeting module for ThunderX2 aarch64 processor.</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-hugepages128M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>craype-hugepages16M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>craype-hugepages1G</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>craype-hugepages256M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>craype-hugepages2G</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>craype-hugepages2M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>craype-hugepages32M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>craype-hugepages4M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>craype-hugepages512M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>craype-hugepages64M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>craype-hugepages8M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>craype-network-aries</p></td>
+<td><p>Targeting module for the Aries interconnect.</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-network-none</p></td>
+<td><p>Targeting module for ommiting network specific libraries.</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype</p></td>
+<td><p>Setup for Cray PE driver set and targeting modules.</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-python</p></td>
+<td><p>Python compatible with Cray PE libraries</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-python</p></td>
+<td><p>python for XC</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-R</p></td>
+<td><p>R for use on XC systems.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-snplauncher</p></td>
+<td><p>cray-snplauncher - Cray single parallel node application launcher for Service MAMU</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-stat</p></td>
+<td><p>Loads the Cray Stack Trace Analysis Tool.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gcc</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>gcc/10.1.0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>gdb4hpc</p></td>
+<td><p>Loads the Cray Line Mode Parallel Debugger.</p></td>
+</tr>
+<tr class="row-even"><td><p>lustre-cray_ari_s</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>modules</p></td>
+<td><p>loads the modules environment</p></td>
+</tr>
+<tr class="row-even"><td><p>modules</p></td>
+<td><p>Setup for the Cray Programming Enironment. Sets env vars to define user environment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>papi</p></td>
+<td><p>PAPI - The Performance API (PAPI) project specifies a standard application programming interface (API) for accessing hardware performance counters available on most Cray systems.</p></td>
+</tr>
+<tr class="row-even"><td><p>perftools</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>perftools-base/20.03.0</p></td>
+<td><p>The Performance Tools module sets up environments for CrayPat, Apprentice2 and Reveal</p></td>
+</tr>
+<tr class="row-even"><td><p>perftools-base/20.06.0</p></td>
+<td><p>The Performance Tools module sets up environments for CrayPat, Apprentice2 and Reveal</p></td>
+</tr>
+<tr class="row-odd"><td><p>perftools-base/20.12.0</p></td>
+<td><p>The Performance Tools module sets up environments for CrayPat, Apprentice2 and Reveal</p></td>
+</tr>
+<tr class="row-even"><td><p>perftools-base</p></td>
+<td><p>The Performance Tools module sets up environments for CrayPat, Apprentice2 and Reveal</p></td>
+</tr>
+<tr class="row-odd"><td><p>perftools-lite</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>perftools-lite-events</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>perftools-lite-gpu</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>perftools-lite-hbm</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>perftools-lite-loops</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>perftools-nwpc</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>perftools-preload</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>pmi-lib</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>pmi</p></td>
+<td><p>pmi - Cray Process Management Interface</p></td>
+</tr>
+<tr class="row-even"><td><p>PrgEnv-allinea</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PrgEnv-cray</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PrgEnv-gnu</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>stat</p></td>
+<td><p>STAT - Stack Trace Analysis Tool</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/arm-compiler/20.1</p></td>
+<td><p>Arm C/C++/Fortran Compiler 20.1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/arm-forge/19.1</p></td>
+<td><p>Arm Forge</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/arm-forge/20.1.1</p></td>
+<td><p>Arm Forge</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/arm-forge/21.0</p></td>
+<td><p>Arm Forge</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/armie/19.0</p></td>
+<td><p>Arm Instruction Emulator 19.0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/armie/19.1</p></td>
+<td><p>Arm Instruction Emulator 19.1.</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/cmake</p></td>
+<td><p>CMake</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/cylc</p></td>
+<td><p>Cylc is a workflow engine for cycling systems</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/EasyBuild</p></td>
+<td><p>Description: EasyBuild is a software build and installation framework Homepage: <a class="reference external" href="https://easybuilders.github.io/easybuild">https://easybuilders.github.io/easybuild</a>  URL: <a class="reference external" href="https://easybuilders.github.io/easybuild">https://easybuilders.github.io/easybuild</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/fcm/2019.05.0</p></td>
+<td><p>FCM: a modern Fortran build system + wrappers to Subversion for scientific software development</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/gcc</p></td>
+<td><p>GCC</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/gnu-parallel/20190422</p></td>
+<td><p>GNU Parallel</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/rose/2019.01.2</p></td>
+<td><p>Rose is a toolkit for writing, editing and running application configurations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/singularity</p></td>
+<td><p>Singularity container tool</p></td>
+</tr>
+<tr class="row-even"><td><p>valgrind4hpc</p></td>
+<td><p>Loads Parallel Valgrind tool (valgrind4hpc).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="a64fx">
+<h2>A64FX<a class="headerlink" href="#a64fx" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>apps/covidsim</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>apps/gromacs/2018.4</p></td>
+<td><p>gromacs 2018.4 with MPI</p></td>
+</tr>
+<tr class="row-even"><td><p>apps/gromacs/2019.1</p></td>
+<td><p>gromacs 2019.1 with MPI</p></td>
+</tr>
+<tr class="row-odd"><td><p>apps/gromacs/2019.3</p></td>
+<td><p>gromacs 2019.3 with MPI</p></td>
+</tr>
+<tr class="row-even"><td><p>apps/gromacs/2020.2</p></td>
+<td><p>gromacs 2020.2 with MPI</p></td>
+</tr>
+<tr class="row-odd"><td><p>apps/gromacs/2020.2-plumed-2.6.1</p></td>
+<td><p>gromacs 2020.2 with MPI, patched with Plumed 2.6.1</p></td>
+</tr>
+<tr class="row-even"><td><p>apps/julia</p></td>
+<td><p>Julia 1.4.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>apps/openfoam/v1812-gcc7.3-craympich-7.7.6</p></td>
+<td><p>Adds OpenFOAM v1812 to your path</p></td>
+</tr>
+<tr class="row-even"><td><p>apps/openfoam/v1906-gcc7.3-craympich-7.7.6</p></td>
+<td><p>Adds OpenFOAM v1906 to your path</p></td>
+</tr>
+<tr class="row-odd"><td><p>apps/openfoam/v7.0-gcc7.3-craympich-7.7.6</p></td>
+<td><p>Adds OpenFOAM 7 to your path</p></td>
+</tr>
+<tr class="row-even"><td><p>apps/plumed</p></td>
+<td><p>Plumed 2.6.1 - The community-developed PLUgin for MolEcular Dynamics</p></td>
+</tr>
+<tr class="row-odd"><td><p>apps/VTK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>atp</p></td>
+<td><p>Loads Abnormal Termination Processing (ATP).</p></td>
+</tr>
+<tr class="row-odd"><td><p>cce/10.0.3</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cce-sve/10.0.1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cpe-cray</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cray-ccdb</p></td>
+<td><p>Loads the CCDB gui.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-cti</p></td>
+<td><p>Loads the Cray Common Tools Interface.</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-fftw</p></td>
+<td><p>FFTW 3.3.8.8 - Fastest Fourier Transform in the West</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-hdf5</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cray-hdf5-parallel</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cray-libsci/20.09.1.1</p></td>
+<td><p>Cray Scientific Libraries</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-libsci/20.10.1.2</p></td>
+<td><p>Cray Scientific Libraries</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-mvapich2_nogpu</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-mvapich2_nogpu_noregcache</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-mvapich2_nogpu_noregcache_svealpha</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-mvapich2_nogpu_svealpha</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-odd"><td><p>cray-mvapich2_noslurm_nogpu</p></td>
+<td><p>Cray PE MVAPICH2</p></td>
+</tr>
+<tr class="row-even"><td><p>cray-netcdf</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>cray-netcdf-hdf5parallel</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cray-parallel-netcdf</p></td>
+<td><p>cray-parallel-netcdf - A parallel I/O library for NetCDF file access</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-arm-nsp1</p></td>
+<td><p>Targeting module for sve aarch64 processor.</p></td>
+</tr>
+<tr class="row-even"><td><p>craype-arm-thunderx2</p></td>
+<td><p>Targeting module for ThunderX2 aarch64 processor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>craype-network-infiniband</p></td>
+<td><p>Targeting module for Infinband interconnect.</p></td>
+</tr>
+<tr class="row-even"><td><p>craype</p></td>
+<td><p>Setup for Cray PE driver set and targeting modules.</p></td>
+</tr>
+<tr class="row-odd"><td><p>craypkg-gen</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cray-stat</p></td>
+<td><p>Loads the Cray Stack Trace Analysis Tool.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gcc</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>gdb4hpc</p></td>
+<td><p>Loads the Cray Line Mode Parallel Debugger.</p></td>
+</tr>
+<tr class="row-odd"><td><p>papi</p></td>
+<td><p>PAPI - The Performance API (PAPI) project specifies a standard application programming interface (API) for accessing hardware performance counters available on most Cray systems.</p></td>
+</tr>
+<tr class="row-even"><td><p>perftools-base/20.10.0</p></td>
+<td><p>The Performance Tools module sets up environments for CrayPat, Apprentice2 and Reveal</p></td>
+</tr>
+<tr class="row-odd"><td><p>PrgEnv-cray</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>tools/arm-compiler/20.1</p></td>
+<td><p>Arm C/C++/Fortran Compiler 20.1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/arm-forge/19.1</p></td>
+<td><p>Arm Forge</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/arm-forge/20.1.1</p></td>
+<td><p>Arm Forge</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/arm-forge/21.0</p></td>
+<td><p>Arm Forge</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/armie/19.0</p></td>
+<td><p>Arm Instruction Emulator 19.0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/armie/19.1</p></td>
+<td><p>Arm Instruction Emulator 19.1.</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/armie/19.1</p></td>
+<td><p>Arm Instruction Emulator 19.1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/cmake</p></td>
+<td><p>CMake</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/cylc</p></td>
+<td><p>Cylc is a workflow engine for cycling systems</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/EasyBuild</p></td>
+<td><p>Description: EasyBuild is a software build and installation framework Homepage: <a class="reference external" href="https://easybuilders.github.io/easybuild">https://easybuilders.github.io/easybuild</a> URL: <a class="reference external" href="https://easybuilders.github.io/easybuild">https://easybuilders.github.io/easybuild</a></p></td>
+</tr>
+<tr class="row-even"><td><p>tools/fcm/2019.05.0</p></td>
+<td><p>FCM: a modern Fortran build system + wrappers to Subversion for scientific software development</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/gcc</p></td>
+<td><p>GCC</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/gnu-parallel/20190422</p></td>
+<td><p>GNU Parallel</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/rose/2019.01.2</p></td>
+<td><p>Rose is a toolkit for writing, editing and running application configurations.</p></td>
+</tr>
+<tr class="row-even"><td><p>tools/singularity</p></td>
+<td><p>Singularity container tool</p></td>
+</tr>
+<tr class="row-odd"><td><p>valgrind4hpc</p></td>
+<td><p>Loads Parallel Valgrind tool (valgrind4hpc).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="debugging.html" class="btn btn-neutral float-right" title="Debugging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="A64FX.html" class="btn btn-neutral float-left" title="A64FX - Fujitsu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, GW4.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

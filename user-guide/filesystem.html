@@ -98,6 +98,7 @@
 <li class="toctree-l1"><a class="reference internal" href="MACS.html">Multi-Architecture Comparison System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
@@ -192,7 +193,7 @@
             
   <div class="section" id="filesystem">
 <h1>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this headline">¶</a></h1>
-<p>A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.</p>
+<p>A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage. This filesystem is shared amongst the whole GW4 Isambard service, including MACS, XCI &amp; A64FX.</p>
 <p>Each organisation is allocated 75TB of high performance Lustre storage, by default each user has a quota of 50GB which can be increased on-request by your local GW4 admin. There is currently only one user quota which applies across all directories.
 Your current quota and usage can be viewed with the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lfs quota -hu <span class="nv">$USER</span> /lustre
