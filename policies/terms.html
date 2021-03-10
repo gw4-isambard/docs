@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -29,10 +29,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -62,6 +62,10 @@
 
           
             
+            
+              <div class="version">
+                2.0
+              </div>
             
           
 
@@ -93,9 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/jobs.html">Running jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/MACS.html">Multi-Architecture Comparison System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/XCI.html">XCI - Marvell Thunder X2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user-guide/profiling.html">Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/support.html">Support</a></li>
 </ul>
@@ -103,25 +106,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/map.html">Arm MAP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/perftools.html">Cray perftools (CrayPAT)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Applications</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../applications/castep.html">CASTEP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/covidsim.html">CovidSim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/cp2k.html">CP2K</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/dedalus.html">Dedalus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/dlmonte.html">DL_MONTE 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/hydro3d.html">Hydro3D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/molpro.html">MolPro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/namd.html">NAMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/nemo.html">NEMO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/opensbli.html">OpenSBLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/um.html">Unified Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Service Policies</span></p>
@@ -155,7 +148,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -215,41 +208,41 @@ These Terms and Conditions are offered only in English.</p>
 <div class="section" id="you-agree">
 <h2>You agree:<a class="headerlink" href="#you-agree" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>only to use the service for the purposes for which you were given access, for example as specified in your research project’s grant award</li>
-<li>not to disrupt the working of the service, for example by knowingly introducing malicious software into it, nor to try to breach its security or use resources which aren’t assigned to you</li>
-<li>not to interfere with other users’ work, corrupt their data or invade their privacy</li>
-<li>not to infringe copyright or other intellectual property rights</li>
-<li>not to take data from any database or dataset without the explicit or implied permission of its owner</li>
-<li>not to use another person’s account, nor to let other people use your accounts, except by agreement with us</li>
-<li>to keep your SAFE and machine passwords confidential, and to inform us if someone else learns any of them or if you become aware that the security of our systems is compromised in any way</li>
-<li>not to misuse the Internet, for example by sending spam or malicious software, by pretending to be someone else or by doing anything that might hinder or prevent someone else from using the Internet legitimately</li>
-<li>not to use the service for illegal or immoral purposes, such as theft, fraud, drug-trafficking, money-laundering, terrorism, pornography, violence, cruelty, incitement to racial hatred, prostitution, paedophilia, or for offensive, obscene, abusive, menacing, defamatory or insulting behaviour</li>
-<li>to observe the <a class="reference external" href="https://community.ja.net/library/acceptable-use-policy">JANET Acceptable Use Policy</a></li>
-<li>to comply with any special conditions that may apply to particular software packages</li>
+<li><p>only to use the service for the purposes for which you were given access, for example as specified in your research project’s grant award</p></li>
+<li><p>not to disrupt the working of the service, for example by knowingly introducing malicious software into it, nor to try to breach its security or use resources which aren’t assigned to you</p></li>
+<li><p>not to interfere with other users’ work, corrupt their data or invade their privacy</p></li>
+<li><p>not to infringe copyright or other intellectual property rights</p></li>
+<li><p>not to take data from any database or dataset without the explicit or implied permission of its owner</p></li>
+<li><p>not to use another person’s account, nor to let other people use your accounts, except by agreement with us</p></li>
+<li><p>to keep your SAFE and machine passwords confidential, and to inform us if someone else learns any of them or if you become aware that the security of our systems is compromised in any way</p></li>
+<li><p>not to misuse the Internet, for example by sending spam or malicious software, by pretending to be someone else or by doing anything that might hinder or prevent someone else from using the Internet legitimately</p></li>
+<li><p>not to use the service for illegal or immoral purposes, such as theft, fraud, drug-trafficking, money-laundering, terrorism, pornography, violence, cruelty, incitement to racial hatred, prostitution, paedophilia, or for offensive, obscene, abusive, menacing, defamatory or insulting behaviour</p></li>
+<li><p>to observe the <a class="reference external" href="https://community.ja.net/library/acceptable-use-policy">JANET Acceptable Use Policy</a></p></li>
+<li><p>to comply with any special conditions that may apply to particular software packages</p></li>
 </ul>
 </div>
 <div class="section" id="we-agree">
 <h2>We agree:<a class="headerlink" href="#we-agree" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>as far as we reasonably can, to provide a 24-hour service as described on <a class="reference external" href="https://gw4-isambard.github.io/">this website</a>, it being understood that there will be times when the service is unavailable, for example as a result of unexpected failures, maintenance work or upgrades</li>
-<li>to take reasonable steps to protect your data from being lost or corrupted. However, no backups are performed on the user data areas of the system and you are responsible for ensuring all data stored can be recovered from your own backup or regenerated in the event of a failure.</li>
-<li>to protect the security and privacy of the data we hold about you, as described in our <a class="reference internal" href="privacy.html#privacy"><span class="std std-ref">Personal Data and Privacy Policy</span></a></li>
-<li>that we will acquire no intellectual property rights over your software and data</li>
-<li>to respond promptly to any complaints or suggestions you make about the Service</li>
+<li><p>as far as we reasonably can, to provide a 24-hour service as described on <a class="reference external" href="https://gw4-isambard.github.io/">this website</a>, it being understood that there will be times when the service is unavailable, for example as a result of unexpected failures, maintenance work or upgrades</p></li>
+<li><p>to take reasonable steps to protect your data from being lost or corrupted. However, no backups are performed on the user data areas of the system and you are responsible for ensuring all data stored can be recovered from your own backup or regenerated in the event of a failure.</p></li>
+<li><p>to protect the security and privacy of the data we hold about you, as described in our <a class="reference internal" href="privacy.html#privacy"><span class="std std-ref">Personal Data and Privacy Policy</span></a></p></li>
+<li><p>that we will acquire no intellectual property rights over your software and data</p></li>
+<li><p>to respond promptly to any complaints or suggestions you make about the Service</p></li>
 </ul>
 </div>
 <div class="section" id="you-accept">
 <h2>You accept:<a class="headerlink" href="#you-accept" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>that the service is provided “as is” and we can’t guarantee 100% perfection. In legal terms, this means that we are excluding all warranties and conditions applying to the service, including those implied by law. We are not liable if things go wrong and you suffer damage as a result, although if our negligence results in anyone’s death or personal injury we do not limit or exclude our liability for that.</li>
-<li>that you are responsible for your use of any advice or information we may give you. We will take reasonable steps to ensure that it’s true and useful, but we can’t guarantee this. In legal terms, this means that we expressly disclaim any and all liability for all representations, statements, conditions or warranties to that or any other effect except to the extent that such liability may not be lawfully excluded.</li>
-<li>that we may make changes in the service</li>
-<li>that we will use the personal details which you supply to us, together with records of your use of the service, as described in our <a class="reference internal" href="privacy.html#privacy"><span class="std std-ref">Personal Data and Privacy Policy</span></a></li>
-<li>that we may suspend your access to the service and discuss this with your PI if it seems to us that you are breaking these Terms and Conditions; that if it is necessary to protect the service or other users’ work or data, we can halt the execution of any program which you start or halt or limit the transfer rate of any data transfers that you may undertake; and that we have the right to close your accounts</li>
-<li>that you alone are responsible for what you do when using the service. If you break the law you alone must answer for it, and if you cause damage to anyone else, you alone are liable, not us</li>
-<li>that you will acquire no intellectual property rights over the software or any information we provide</li>
-<li>that the use of the service by nationals of certain countries is controlled by special regulations laid down by the UK Government in connection with the <a class="reference external" href="http://www.wassenaar.org/">Wassenaar Arrangement</a></li>
-<li>that we may make reasonable changes to these Terms and Conditions at any time, and, once we have posted those changes on our website, the new version will then apply to you</li>
+<li><p>that the service is provided “as is” and we can’t guarantee 100% perfection. In legal terms, this means that we are excluding all warranties and conditions applying to the service, including those implied by law. We are not liable if things go wrong and you suffer damage as a result, although if our negligence results in anyone’s death or personal injury we do not limit or exclude our liability for that.</p></li>
+<li><p>that you are responsible for your use of any advice or information we may give you. We will take reasonable steps to ensure that it’s true and useful, but we can’t guarantee this. In legal terms, this means that we expressly disclaim any and all liability for all representations, statements, conditions or warranties to that or any other effect except to the extent that such liability may not be lawfully excluded.</p></li>
+<li><p>that we may make changes in the service</p></li>
+<li><p>that we will use the personal details which you supply to us, together with records of your use of the service, as described in our <a class="reference internal" href="privacy.html#privacy"><span class="std std-ref">Personal Data and Privacy Policy</span></a></p></li>
+<li><p>that we may suspend your access to the service and discuss this with your PI if it seems to us that you are breaking these Terms and Conditions; that if it is necessary to protect the service or other users’ work or data, we can halt the execution of any program which you start or halt or limit the transfer rate of any data transfers that you may undertake; and that we have the right to close your accounts</p></li>
+<li><p>that you alone are responsible for what you do when using the service. If you break the law you alone must answer for it, and if you cause damage to anyone else, you alone are liable, not us</p></li>
+<li><p>that you will acquire no intellectual property rights over the software or any information we provide</p></li>
+<li><p>that the use of the service by nationals of certain countries is controlled by special regulations laid down by the UK Government in connection with the <a class="reference external" href="http://www.wassenaar.org/">Wassenaar Arrangement</a></p></li>
+<li><p>that we may make reasonable changes to these Terms and Conditions at any time, and, once we have posted those changes on our website, the new version will then apply to you</p></li>
 </ul>
 <p>These Terms and Conditions are governed by the laws of England and the English courts.</p>
 <p>If you have any questions about these Terms and Conditions, please send an email to <a class="reference external" href="mailto:isambard-support&#37;&#52;&#48;gw4&#46;ac&#46;uk">Isambard Support</a>.</p>
@@ -270,7 +263,7 @@ These Terms and Conditions are offered only in English.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018, GW4.
+        &#169; Copyright 2021, GW4.
 
     </p>
   </div>

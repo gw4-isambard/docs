@@ -33,7 +33,7 @@ To see the available queues and their current state:
 Batch job
 =========
 
-Phase 1 example:
+MACS example:
 
 .. code-block:: bash
 
@@ -45,7 +45,7 @@ Phase 1 example:
  module load intel-parallel-studio-xe/compilers/64
  mpirun hostname
 
-Phase 2 XC50 example:
+XC50 example:
 
 .. code-block:: bash
 
@@ -73,7 +73,7 @@ For example, to request an interactive job on one of the Pascal nodes utilizing 
 
     qsub -I -q pascalq -l select=1:ncpus=16:ngpus=1
 
-For XCI (Phase 2), compilations can be run on the login nodes ``xcil00`` & ``xcil01``. Small development jobs can be run in the interactive queue ``arm-dev``.
+For XCI, compilations can be run on the login nodes ``xcil00`` & ``xcil01``. Small development jobs can be run in the interactive queue ``arm-dev``.
 
 Specifying resources
 ====================

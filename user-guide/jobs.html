@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -29,10 +29,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -62,6 +62,10 @@
 
           
             
+            
+              <div class="version">
+                2.0
+              </div>
             
           
 
@@ -101,9 +105,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="MACS.html">Multi-Architecture Comparison System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profiling.html">Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
@@ -111,25 +114,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/map.html">Arm MAP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/perftools.html">Cray perftools (CrayPAT)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Applications</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../applications/castep.html">CASTEP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/covidsim.html">CovidSim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/cp2k.html">CP2K</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/dedalus.html">Dedalus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/dlmonte.html">DL_MONTE 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/hydro3d.html">Hydro3D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/molpro.html">MolPro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/namd.html">NAMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/nemo.html">NEMO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/opensbli.html">OpenSBLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/um.html">Unified Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Service Policies</span></p>
@@ -158,7 +151,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -216,14 +209,14 @@
 <div class="section" id="queue-configuration">
 <h2>Queue configuration<a class="headerlink" href="#queue-configuration" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><cite>arm</cite>     - Run on XCI Marvell Thunder X2 nodes</li>
-<li><cite>arm-dev</cite> - Run interactively on up to 4x XCI Thunder X2 nodes</li>
-<li><cite>romeq</cite>    - Run on MACS 4x AMD Epyc “Rome” 7742 nodes</li>
-<li><cite>clxq</cite>    - Run on MACS 4x Intel Xeon 6230 “Cascade Lake” (CLX) nodes</li>
-<li><cite>voltaq</cite>  - Run on MACS 4x Nvidia Tesla V100 “Volta” GPU nodes</li>
-<li><cite>pascalq</cite> - Run on MACS 4x dual-card Nvidia Tesla P100 “Pascal” GPU nodes</li>
-<li><cite>knlq</cite>    - Run on MACS 8x Intel Xeon Phi “Knights Landing” 7210 CPU nodes</li>
-<li><cite>powerq</cite>  - Run on MACS 2x IBM Power 9 nodes, each with dual-card Nvidia V100 “Volta” GPUs ← <code class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">unavailable,</span> <span class="pre">interactive</span> <span class="pre">use</span> <span class="pre">only,</span> <span class="pre">hosts:</span> <span class="pre">power-001,</span> <span class="pre">power-002</span></code></li>
+<li><p><cite>arm</cite>     - Run on XCI Marvell Thunder X2 nodes</p></li>
+<li><p><cite>arm-dev</cite> - Run interactively on up to 4x XCI Thunder X2 nodes</p></li>
+<li><p><cite>romeq</cite>    - Run on MACS 4x AMD Epyc “Rome” 7742 nodes</p></li>
+<li><p><cite>clxq</cite>    - Run on MACS 4x Intel Xeon 6230 “Cascade Lake” (CLX) nodes</p></li>
+<li><p><cite>voltaq</cite>  - Run on MACS 4x Nvidia Tesla V100 “Volta” GPU nodes</p></li>
+<li><p><cite>pascalq</cite> - Run on MACS 4x dual-card Nvidia Tesla P100 “Pascal” GPU nodes</p></li>
+<li><p><cite>knlq</cite>    - Run on MACS 8x Intel Xeon Phi “Knights Landing” 7210 CPU nodes</p></li>
+<li><p><cite>powerq</cite>  - Run on MACS 2x IBM Power 9 nodes, each with dual-card Nvidia V100 “Volta” GPUs ← <code class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">unavailable,</span> <span class="pre">interactive</span> <span class="pre">use</span> <span class="pre">only,</span> <span class="pre">hosts:</span> <span class="pre">power-001,</span> <span class="pre">power-002</span></code></p></li>
 </ul>
 <p><cite>knlq</cite> is split into two sets of MCDRAM configuration, nodes 001-004 are in cache memory mode (quad_0) and nodes 005-008 are in flat memory mode (quad_100). These modes can be targeted using the <code class="docutils literal notranslate"><span class="pre">aoe=</span></code> PBS attribute.</p>
 <p>To see the available queues and their current state:</p>
@@ -233,7 +226,7 @@
 </div>
 <div class="section" id="batch-job">
 <h2>Batch job<a class="headerlink" href="#batch-job" title="Permalink to this headline">¶</a></h2>
-<p>Phase 1 example:</p>
+<p>MACS example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -q pascalq</span>
 <span class="c1">#PBS -l select=2</span>
@@ -243,7 +236,7 @@ module load intel-parallel-studio-xe/compilers/64
 mpirun hostname
 </pre></div>
 </div>
-<p>Phase 2 XC50 example:</p>
+<p>XC50 example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -q arm</span>
 <span class="c1">#PBS -l select=2</span>
@@ -264,7 +257,7 @@ aprun -n <span class="m">32</span> hostname
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub -I -q pascalq -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">16</span>:ngpus<span class="o">=</span><span class="m">1</span>
 </pre></div>
 </div>
-<p>For XCI (Phase 2), compilations can be run on the login nodes <code class="docutils literal notranslate"><span class="pre">xcil00</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">xcil01</span></code>. Small development jobs can be run in the interactive queue <code class="docutils literal notranslate"><span class="pre">arm-dev</span></code>.</p>
+<p>For XCI, compilations can be run on the login nodes <code class="docutils literal notranslate"><span class="pre">xcil00</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">xcil01</span></code>. Small development jobs can be run in the interactive queue <code class="docutils literal notranslate"><span class="pre">arm-dev</span></code>.</p>
 </div>
 <div class="section" id="specifying-resources">
 <h2>Specifying resources<a class="headerlink" href="#specifying-resources" title="Permalink to this headline">¶</a></h2>
@@ -300,7 +293,7 @@ qstat -x -f &lt;JOBID&gt;
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018, GW4.
+        &#169; Copyright 2021, GW4.
 
     </p>
   </div>

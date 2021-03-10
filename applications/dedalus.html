@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -29,10 +29,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="DL_MONTE 2" href="dlmonte.html" />
-    <link rel="prev" title="CP2K" href="cp2k.html" /> 
+    <link rel="prev" title="CovidSim" href="covidsim.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,6 +62,10 @@
 
           
             
+            
+              <div class="version">
+                2.0
+              </div>
             
           
 
@@ -93,9 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/jobs.html">Running jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/MACS.html">Multi-Architecture Comparison System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/XCI.html">XCI - Marvell Thunder X2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user-guide/profiling.html">Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/support.html">Support</a></li>
 </ul>
@@ -103,14 +106,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/map.html">Arm MAP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/perftools.html">Cray perftools (CrayPAT)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Applications</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="castep.html">CASTEP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="covidsim.html">CovidSim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cp2k.html">CP2K</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Dedalus</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#useful-links">Useful links</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#licensing">Licensing</a></li>
@@ -120,13 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dlmonte.html">DL_MONTE 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gromacs.html">GROMACS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hydro3d.html">Hydro3D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="molpro.html">MolPro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="namd.html">NAMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nemo.html">NEMO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="openfoam.html">OpenFOAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="opensbli.html">OpenSBLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="um.html">Unified Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vasp.html">VASP</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Service Policies</span></p>
@@ -155,7 +148,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -207,8 +200,8 @@
 <div class="section" id="useful-links">
 <h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="http://dedalus-project.org">Dedalus Project</a></li>
-<li><a class="reference external" href="https://dedalus-project.readthedocs.io/en/latest/">Dedalus documentation</a></li>
+<li><p><a class="reference external" href="http://dedalus-project.org">Dedalus Project</a></p></li>
+<li><p><a class="reference external" href="https://dedalus-project.readthedocs.io/en/latest/">Dedalus documentation</a></p></li>
 </ul>
 </div>
 <div class="section" id="licensing">
@@ -219,7 +212,7 @@
 <h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
 <p>The following steps describe how to build Dedalus on Isambard.</p>
 <ol class="arabic simple">
-<li>Make a directory for your Dedalus build e.g.</li>
+<li><p>Make a directory for your Dedalus build e.g.</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
 <span class="n">mkdir</span> <span class="n">dedalus</span>
@@ -227,7 +220,7 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Take a copy of the install script and run it</li>
+<li><p>Take a copy of the install script and run it</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">exeter</span><span class="o">/</span><span class="n">dedalus</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">install_dedalus_isambard</span><span class="o">.</span><span class="n">sh</span>  <span class="o">.</span>
 <span class="o">./</span><span class="n">install_dedalus_isambard</span><span class="o">.</span><span class="n">sh</span>
@@ -236,7 +229,7 @@
 <p>The script will build a python distribution with the required packages installed
 and then install Dedalus itself.</p>
 <ol class="arabic simple" start="3">
-<li>Test your installation with an example</li>
+<li><p>Test your installation with an example</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">test</span>
 <span class="n">cd</span> <span class="n">test</span>
@@ -259,14 +252,14 @@ points to your installation. You can now submit the test job to the queue</p>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="dlmonte.html" class="btn btn-neutral float-right" title="DL_MONTE 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="cp2k.html" class="btn btn-neutral float-left" title="CP2K" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="covidsim.html" class="btn btn-neutral float-left" title="CovidSim" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018, GW4.
+        &#169; Copyright 2021, GW4.
 
     </p>
   </div>

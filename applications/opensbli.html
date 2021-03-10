@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -29,18 +29,16 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Unified Model" href="um.html" />
-    <link rel="prev" title="OpenFOAM" href="openfoam.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,6 +60,10 @@
 
           
             
+            
+              <div class="version">
+                2.0
+              </div>
             
           
 
@@ -93,9 +95,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/jobs.html">Running jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/MACS.html">Multi-Architecture Comparison System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/XCI.html">XCI - Marvell Thunder X2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user-guide/profiling.html">Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/support.html">Support</a></li>
 </ul>
@@ -103,25 +104,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/map.html">Arm MAP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/perftools.html">Cray perftools (CrayPAT)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Applications</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="castep.html">CASTEP</a></li>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="covidsim.html">CovidSim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cp2k.html">CP2K</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dedalus.html">Dedalus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dlmonte.html">DL_MONTE 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gromacs.html">GROMACS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hydro3d.html">Hydro3D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="molpro.html">MolPro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="namd.html">NAMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nemo.html">NEMO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="openfoam.html">OpenFOAM</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">OpenSBLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="um.html">Unified Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vasp.html">VASP</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Service Policies</span></p>
@@ -150,7 +141,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -207,16 +198,12 @@
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="um.html" class="btn btn-neutral float-right" title="Unified Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="openfoam.html" class="btn btn-neutral float-left" title="OpenFOAM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018, GW4.
+        &#169; Copyright 2021, GW4.
 
     </p>
   </div>

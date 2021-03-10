@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -29,10 +29,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -61,6 +61,10 @@
 
           
             
+            
+              <div class="version">
+                2.0
+              </div>
             
           
 
@@ -92,9 +96,8 @@
 <li class="toctree-l1"><a class="reference internal" href="user-guide/jobs.html">Running jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user-guide/MACS.html">Multi-Architecture Comparison System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user-guide/XCI.html">XCI - Marvell Thunder X2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user-guide/A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user-guide/debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user-guide/profiling.html">Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user-guide/end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user-guide/support.html">Support</a></li>
 </ul>
@@ -102,25 +105,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tools/ddt.html">Arm DDT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools/gdb4hpc.html">gdb4hpc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools/map.html">Arm MAP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools/perftools.html">Cray perftools (CrayPAT)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Applications</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="applications/castep.html">CASTEP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/covidsim.html">CovidSim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/cp2k.html">CP2K</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/dedalus.html">Dedalus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/dlmonte.html">DL_MONTE 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/gromacs.html">GROMACS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/hydro3d.html">Hydro3D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/molpro.html">MolPro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/namd.html">NAMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/nemo.html">NEMO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/openfoam.html">OpenFOAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/opensbli.html">OpenSBLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/um.html">Unified Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/vasp.html">VASP</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Service Policies</span></p>
@@ -149,7 +142,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -207,12 +200,12 @@ A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.</
 <div class="section" id="system-status">
 <h2>System Status<a class="headerlink" href="#system-status" title="Permalink to this headline">¶</a></h2>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>18 Jan. 2021</p>
-<ul class="last simple">
-<li>XCI (ARM ThunderX2): Available</li>
-<li>MACS: Available</li>
-<li>A64fx: In testing</li>
+<ul class="simple">
+<li><p>XCI (ARM ThunderX2): Available</p></li>
+<li><p>MACS: Available</p></li>
+<li><p>A64fx: In testing</p></li>
 </ul>
 </div>
 </div>
@@ -220,7 +213,8 @@ A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.</
 <h2>Acknowledging Isambard<a class="headerlink" href="#acknowledging-isambard" title="Permalink to this headline">¶</a></h2>
 <p>Research outputs that have made use of Isambard should acknowledge the facility by using the following phrase:</p>
 <blockquote>
-<div><em>This work used the Isambard UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/P020224/1)</em></div></blockquote>
+<div><p><em>This work used the Isambard UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/P020224/1)</em></p>
+</div></blockquote>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Isambard User Guide</span></p>
 <ul>
@@ -260,9 +254,12 @@ A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.</
 <li class="toctree-l2"><a class="reference internal" href="user-guide/XCI.html#software">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="user-guide/A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/A64FX.html">A64FX - Fujitsu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/A64FX.html#queues">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/A64FX.html#documentation">Documentation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="user-guide/debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user-guide/profiling.html">Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user-guide/end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user-guide/support.html">Support</a></li>
 </ul>
@@ -281,27 +278,17 @@ A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.</
 <li class="toctree-l2"><a class="reference internal" href="tools/gdb4hpc.html#example-session">Example session</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tools/map.html">Arm MAP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools/perftools.html">Cray perftools (CrayPAT)</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Applications</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="applications/castep.html">CASTEP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/covidsim.html">CovidSim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/cp2k.html">CP2K</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/dedalus.html">Dedalus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/dlmonte.html">DL_MONTE 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/gromacs.html">GROMACS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/hydro3d.html">Hydro3D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/molpro.html">MolPro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/namd.html">NAMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/nemo.html">NEMO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/openfoam.html">OpenFOAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/opensbli.html">OpenSBLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications/um.html">Unified Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications/vasp.html">VASP</a></li>
 </ul>
 </div>
@@ -317,9 +304,9 @@ A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.</
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </div>
 
@@ -336,7 +323,7 @@ A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.</
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018, GW4.
+        &#169; Copyright 2021, GW4.
 
     </p>
   </div>

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -29,10 +29,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Support" href="support.html" />
-    <link rel="prev" title="Profiling" href="profiling.html" /> 
+    <link rel="prev" title="Debugging" href="debugging.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,6 +62,10 @@
 
           
             
+            
+              <div class="version">
+                2.0
+              </div>
             
           
 
@@ -93,9 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="jobs.html">Running jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MACS.html">Multi-Architecture Comparison System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profiling.html">Profiling</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
@@ -103,25 +106,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/map.html">Arm MAP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/perftools.html">Cray perftools (CrayPAT)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Applications</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../applications/castep.html">CASTEP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/covidsim.html">CovidSim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/cp2k.html">CP2K</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/dedalus.html">Dedalus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/dlmonte.html">DL_MONTE 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/hydro3d.html">Hydro3D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/molpro.html">MolPro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/namd.html">NAMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/nemo.html">NEMO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/opensbli.html">OpenSBLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/um.html">Unified Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Service Policies</span></p>
@@ -150,7 +143,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -201,14 +194,14 @@
 <h1>End of life procedures<a class="headerlink" href="#end-of-life-procedures" title="Permalink to this headline">¶</a></h1>
 <p>This page describes what happens when an account or project is no longer required on Isambard, or a user leaves a project. These situations are most likely to come about during one of the following three scenarios:</p>
 <ol class="arabic simple">
-<li>The retirement of project (usually three months after project end)</li>
-<li>A PI tidying up a project requesting the removal of user(s) no longer working on the project</li>
-<li>A user wishing his/her own account to be removed</li>
+<li><p>The retirement of project (usually three months after project end)</p></li>
+<li><p>A PI tidying up a project requesting the removal of user(s) no longer working on the project</p></li>
+<li><p>A user wishing his/her own account to be removed</p></li>
 </ol>
 <p>For each user account involved, assuming the relevant consent is given the next step can be summarised as one of the following actions</p>
 <ol class="upperalpha simple">
-<li>Removal of Isambard account and deletion of all data from the account</li>
-<li>The re-owning of the data associated with an account (typically to PI)</li>
+<li><p>Removal of Isambard account and deletion of all data from the account</p></li>
+<li><p>The re-owning of the data associated with an account (typically to PI)</p></li>
 </ol>
 <p>A user’s right to use Isambard is granted either through membership one of the host institutions or through external calls. Our policy is to treat the account and associated data as the property of the user and it is the user’s responsibility to ensure that any data they store on Isambard is handled appropriately.</p>
 <p>A user may request their account be deleted or have its ownership transferred to the PI.</p>
@@ -224,14 +217,14 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="support.html" class="btn btn-neutral float-right" title="Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="profiling.html" class="btn btn-neutral float-left" title="Profiling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="debugging.html" class="btn btn-neutral float-left" title="Debugging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018, GW4.
+        &#169; Copyright 2021, GW4.
 
     </p>
   </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Firedrake &mdash; GW4-Isambard  documentation</title>
+  <title>GW4 Isambard Application Documentation &mdash; GW4-Isambard  documentation</title>
   
 
   
@@ -38,9 +38,7 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="GROMACS" href="gromacs.html" />
-    <link rel="prev" title="DL_MONTE 2" href="dlmonte.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,16 +106,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Applications</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="covidsim.html">CovidSim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dedalus.html">Dedalus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dlmonte.html">DL_MONTE 2</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Firedrake</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#useful-links">Useful links</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#licensing">Licensing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#building-and-running">Building and running</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gromacs.html">GROMACS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="openfoam.html">OpenFOAM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vasp.html">VASP</a></li>
@@ -174,14 +167,14 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Firedrake</li>
+      <li>GW4 Isambard Application Documentation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/gw4-isambard/docs/blob/master/applications/firedrake.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gw4-isambard/docs/blob/master/applications/README.md" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -195,24 +188,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="firedrake">
-<h1>Firedrake<a class="headerlink" href="#firedrake" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="useful-links">
-<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.firedrakeproject.org">Firedrake Project</a></p></li>
-<li><p><a class="reference external" href="https://github.com/firedrakeproject/firedrake">Firedrake Github</a></p></li>
-</ul>
+  <div class="section" id="gw4-isambard-application-documentation">
+<h1>GW4 Isambard Application Documentation<a class="headerlink" href="#gw4-isambard-application-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This folder contains the application documentation for the Isambard Tier-2 HPC facility.
+The documentation broadly follows the format of [Archer’s scientific software packages] (http://archer.ac.uk/documentation/software/).</p>
+<div class="section" id="format">
+<h2>Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h2>
+<p>There is a template file <code class="docutils literal notranslate"><span class="pre">templates/application.rst</span></code> and currently a partial example for vasp, <code class="docutils literal notranslate"><span class="pre">applications/vasp.rst</span></code>.<br />These refer to included/linked(download) files in the folder <code class="docutils literal notranslate"><span class="pre">applications/vasp/</span></code>.</p>
 </div>
-<div class="section" id="licensing">
-<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
-<p>Firedrake is released under the terms of the GNU Lesser General Public
-License  (see <a class="reference external" href="https://github.com/firedrakeproject/firedrake/blob/master/LICENSE">the Firedrake licence file</a> for full details.</p>
-</div>
-<div class="section" id="building-and-running">
-<h2>Building and running<a class="headerlink" href="#building-and-running" title="Permalink to this headline">¶</a></h2>
-<p>Instructions for building and running Firedrake can be found in the
-<a class="reference external" href="https://github.com/firedrakeproject/isambard">Firedrake Project on Github</a></p>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>Anyone is welcome to contribute to this documentation via GitHub’s pull request feature.
+Start by <a class="reference external" href="https://help.github.com/articles/fork-a-repo/">forking the repository</a> and cloning it to your local machine.</p>
+<p>The documentation is generated using <a class="reference external" href="http://www.sphinx-doc.org/en/master/">sphinx</a>, with pages written using the <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">reStructuredText format</a>.
+You will need to install <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> to build the documentation locally (available from most package managers or via <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sphinx</span></code>.
+Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> to build the HTML documentation, which is generated into the <code class="docutils literal notranslate"><span class="pre">_build/html/</span></code> directory.</p>
+<p>After you have pushed your changes to your fork on GitHub, <a class="reference external" href="https://help.github.com/articles/using-pull-requests/">open a pull request</a> to submit your contributions.</p>
 </div>
 </div>
 
@@ -221,10 +212,6 @@ License  (see <a class="reference external" href="https://github.com/firedrakepr
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="gromacs.html" class="btn btn-neutral float-right" title="GROMACS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="dlmonte.html" class="btn btn-neutral float-left" title="DL_MONTE 2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
 
   <hr/>
 

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -29,10 +29,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -62,6 +62,10 @@
 
           
             
+            
+              <div class="version">
+                2.0
+              </div>
             
           
 
@@ -102,9 +106,8 @@
 <li class="toctree-l1"><a class="reference internal" href="jobs.html">Running jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MACS.html">Multi-Architecture Comparison System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="A64FX.html">Fujitsu A64FX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profiling.html">Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
@@ -112,25 +115,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/map.html">Arm MAP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/perftools.html">Cray perftools (CrayPAT)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Applications</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../applications/castep.html">CASTEP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/covidsim.html">CovidSim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/cp2k.html">CP2K</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/dedalus.html">Dedalus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/dlmonte.html">DL_MONTE 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/hydro3d.html">Hydro3D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/molpro.html">MolPro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/namd.html">NAMD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/nemo.html">NEMO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/opensbli.html">OpenSBLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../applications/um.html">Unified Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Service Policies</span></p>
@@ -159,7 +152,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -209,8 +202,8 @@
   <div class="section" id="connecting-to-isambard">
 <h1>Connecting to Isambard<a class="headerlink" href="#connecting-to-isambard" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You will need an SSH key-pair to access Isambard.</p>
+<p class="admonition-title">Note</p>
+<p>You will need an SSH key-pair to access Isambard.</p>
 </div>
 <div class="section" id="linux">
 <h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
@@ -252,12 +245,12 @@ Host gw4a64fxlogin01.isambard.gw4.ac.uk a64fxlogin01.isambard
 </pre></div>
 </div>
 <div class="admonition caution">
-<p class="first admonition-title">Caution</p>
+<p class="admonition-title">Caution</p>
 <p>Update the <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> with your details:-</p>
-<ul class="last simple">
-<li>Substitute <code class="docutils literal notranslate"><span class="pre">XX-USERNAME</span></code> with your Isambard username</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">IdentityFile</span></code> points to the SSH key (private) that will be used for connecting to Isambard, the default for most users will be <code class="docutils literal notranslate"><span class="pre">~/.ssh/id_rsa</span></code>. If you are using a different key Eg. <code class="docutils literal notranslate"><span class="pre">~/keystore/isambard</span></code>, the entry should be <code class="docutils literal notranslate"><span class="pre">IdentityFile</span> <span class="pre">~/keystore/isambard</span></code></li>
-<li>We recommend you overwrite previous versions of this configuration when updating in to ensure your configuration matches the documentation</li>
+<ul class="simple">
+<li><p>Substitute <code class="docutils literal notranslate"><span class="pre">XX-USERNAME</span></code> with your Isambard username</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">IdentityFile</span></code> points to the SSH key (private) that will be used for connecting to Isambard, the default for most users will be <code class="docutils literal notranslate"><span class="pre">~/.ssh/id_rsa</span></code>. If you are using a different key Eg. <code class="docutils literal notranslate"><span class="pre">~/keystore/isambard</span></code>, the entry should be <code class="docutils literal notranslate"><span class="pre">IdentityFile</span> <span class="pre">~/keystore/isambard</span></code></p></li>
+<li><p>We recommend you overwrite previous versions of this configuration when updating in to ensure your configuration matches the documentation</p></li>
 </ul>
 </div>
 <div class="section" id="macs-multi-architecture-comparison-system">
@@ -284,24 +277,26 @@ Host gw4a64fxlogin01.isambard.gw4.ac.uk a64fxlogin01.isambard
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <p>If you are using windows then the simplest way to set up access to Isambard is to with WinSCP:</p>
 <ol class="arabic simple">
-<li>First create a New Site<ul>
-<li>Enter Hostname and your Username</li>
-<li>Note that for Phase 2 (xcil00/01) the names are ‘ex’, ‘see’, ‘eye’, ‘el’, ‘zero’, ‘zero’/’one’.</li>
-<li>For Phase 1 replace this with login-01/02 as per the ssh config above.</li>
+<li><p>First create a New Site</p>
+<ul class="simple">
+<li><p>Enter Hostname and your Username</p></li>
+<li><p>Note that for Phase 2 (xcil00/01) the names are ‘ex’, ‘see’, ‘eye’, ‘el’, ‘zero’, ‘zero’/’one’.</p></li>
+<li><p>For Phase 1 replace this with login-01/02 as per the ssh config above.</p></li>
 </ul>
 </li>
 </ol>
 <img alt="../_images/winscp_session.jpg" src="../_images/winscp_session.jpg" />
 <ol class="arabic simple" start="2">
-<li>Next click on Advanced and Connection -&gt; Tunnel.<ul>
-<li>Select to ‘Connect through SSH tunnel’</li>
-<li>Enter the proxy hostname ‘isambard.gw4.ac.uk’ and your username.</li>
+<li><p>Next click on Advanced and Connection -&gt; Tunnel.</p>
+<ul class="simple">
+<li><p>Select to ‘Connect through SSH tunnel’</p></li>
+<li><p>Enter the proxy hostname ‘isambard.gw4.ac.uk’ and your username.</p></li>
 </ul>
 </li>
 </ol>
 <img alt="../_images/winscp_tunnel.jpg" src="../_images/winscp_tunnel.jpg" />
 <ol class="arabic simple" start="3">
-<li>Click OK and Save, then Login and Enjoy …</li>
+<li><p>Click OK and Save, then Login and Enjoy …</p></li>
 </ol>
 </div>
 </div>
@@ -320,7 +315,7 @@ Host gw4a64fxlogin01.isambard.gw4.ac.uk a64fxlogin01.isambard
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018, GW4.
+        &#169; Copyright 2021, GW4.
 
     </p>
   </div>
