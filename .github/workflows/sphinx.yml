@@ -15,9 +15,12 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
-      - name: Install and Build 🔧
+      - name: Prepare 🍱
         run: |
           echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Install and Build 🔧
+        run: |
           python3 -m pip install -r requirements.txt
           sphinx-build -M html . _build
 
