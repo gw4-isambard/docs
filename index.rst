@@ -46,9 +46,11 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    user-guide/XCI.rst
    user-guide/A64FX.rst
    user-guide/debugging.rst
-   user-guide/profiling.rst
    user-guide/end_project.rst
    user-guide/support.rst
+
+.. TODO
+   user-guide/profiling.rst
 
 
 .. toctree::
@@ -57,6 +59,8 @@ Research outputs that have made use of Isambard should acknowledge the facility 
 
    tools/ddt
    tools/gdb4hpc
+
+.. TODO
    tools/map
    tools/perftools
 
@@ -65,22 +69,23 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    :maxdepth: 1
    :caption: Applications
 
-   applications/castep
    applications/covidsim
-   applications/cp2k
    applications/dedalus
    applications/dlmonte
    applications/firedrake
    applications/gromacs
+   applications/openfoam
+   applications/vasp
+
+.. TODO
+  applications/castep
+   applications/cp2k
    applications/hydro3d
    applications/molpro
    applications/namd
    applications/nemo
-   applications/openfoam
    applications/opensbli
    applications/um
-   applications/vasp
-
 
 .. toctree::
    :maxdepth: 1
