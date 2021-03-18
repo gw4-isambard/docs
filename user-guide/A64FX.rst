@@ -77,4 +77,4 @@ Documentation
 -------------
 
 `Fujitsu's website <https://www.fujitsu.com/global/products/computing/servers/supercomputer/a64fx>`_ includes an A64FX Datasheet and Microarchitecture Manual.
-The architectrure manual can also be found `on GitHub <https://github.com/fujitsu/A64FX>`_.
+The architecture manual can also be found `on GitHub <https://github.com/fujitsu/A64FX>`_.
