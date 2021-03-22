@@ -1,7 +1,7 @@
 A64FX - Fujitsu
 ===============
 
-All documentation for the A64fx Isambard hackathon on March 23/24 2021 can be found `here <https://github.com/gw4-isambard/docs/tree/master/hackathons>`.
+All documentation for the A64fx Isambard hackathon on March 23/24 2021 can be found `here. <https://github.com/gw4-isambard/docs/tree/master/hackathons>`_
 
 HPE Apollo 80 cabinet, codenamed A64FX. Available since February 2021.
 
