@@ -3,7 +3,7 @@ A64FX - Fujitsu
 
 HPE Apollo 80 cabinet, codenamed A64FX. Available since February 2021.
 
-* Fujitsu A64FX Processors
+* Fujitsu A64FX Processors @ 1.8GHz, 72 nodes
     * 48 ARMv8.2 cores with 512-bit SVE
     * 32 GB HBM2 memory arranged in 4 core memory groups (CMGs) with 12 cores and 8 GB each
     * 64 KB private L1 cache, 8 MB shared L2 cache per CMG
