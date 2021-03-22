@@ -1,6 +1,8 @@
 A64FX - Fujitsu
 ===============
 
+All documentation for the A64fx Isambard hackathon on March 23/24 2021 can be found here.
+
 HPE Apollo 80 cabinet, codenamed A64FX. Available since February 2021.
 
 * Fujitsu A64FX Processors @ 1.8GHz, 72 nodes
