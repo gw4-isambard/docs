@@ -20,6 +20,20 @@ Queues
 
 The default queue is `a64fx`.
 
+Software
+........
+
+Default modules:
+
+* cpe-cray
+* cce-sve
+* craype
+* craype-arm-nsp1
+* craype-network-infiniband
+* cray-libsci
+
+Additional modules are made available on the cluster and on the shared filesystem (/software), more info can be found on the Software page.
+
 Documentation
 .............
 
