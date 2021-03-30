@@ -24,14 +24,14 @@ System Status
     
     - XCI (ARM ThunderX2): Available
     - MACS: Available
-    - A64fx: In testing
+    - A64fx: Available
 
 Acknowledging Isambard
 ----------------------
 
 Research outputs that have made use of Isambard should acknowledge the facility by using the following phrase:
 
-    *This work used the Isambard UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/P020224/1)*
+    *This work used the Isambard 2 UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/T022078/1)*
 
 
 .. toctree::
