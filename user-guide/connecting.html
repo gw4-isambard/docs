@@ -277,6 +277,7 @@ Host gw4a64fxlogin01.isambard.gw4.ac.uk a64fxlogin01.isambard
 </div>
 <div class="section" id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<p>SSH keys can be created with Puttygen and managed with Putty’s Pageant to make them available to Putty and WinSCP.  Especially useful if you use a passphrase to protect your SSH private key.</p>
 <p>If you are using windows then the simplest way to set up access to Isambard is to with WinSCP:</p>
 <ol class="arabic simple">
 <li><p>First create a New Site</p>
@@ -299,6 +300,29 @@ Host gw4a64fxlogin01.isambard.gw4.ac.uk a64fxlogin01.isambard
 <img alt="../_images/winscp_tunnel.jpg" src="../_images/winscp_tunnel.jpg" />
 <ol class="arabic simple" start="3">
 <li><p>Click OK and Save, then Login and Enjoy …</p></li>
+</ol>
+<p>Putty provides a shell to a remote server.  As in the instructions for Linux a proxy command will be used to access the login node of the system you want.</p>
+<ol class="arabic simple">
+<li><p>Set hostname to the the login node of the Isambard system, such as xcil00</p></li>
+</ol>
+<img alt="../_images/putty_connection.png" src="../_images/putty_connection.png" />
+<ol class="arabic simple" start="2">
+<li><p>Next click on Connection -&gt; Data and add your username to ‘Auto-login username’ e.g. xx-myname</p></li>
+</ol>
+<img alt="../_images/putty_data.png" src="../_images/putty_data.png" />
+<ol class="arabic simple" start="3">
+<li><p>Next click on Connection -&gt; Proxy</p>
+<ul class="simple">
+<li><p>Select ‘Local’ for ‘Proxy type’</p></li>
+<li><p>Enter ‘isambard.gw4.ac.uk’ for ‘Proxy hostname’</p></li>
+<li><p>Enter your username for ‘Username’</p></li>
+<li><p>Enter ‘plink %proxyhost -l %user -agent -nc %host:%port’ for ‘Telnet command, or local proxy command’</p></li>
+</ul>
+</li>
+</ol>
+<img alt="../_images/putty_proxy.png" src="../_images/putty_proxy.png" />
+<ol class="arabic simple" start="4">
+<li><p>Click back to Session and save your connection settings and connect.  If using ssh keys you should not need to use a password.</p></li>
 </ol>
 </div>
 </div>
