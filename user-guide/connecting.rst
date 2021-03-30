@@ -53,6 +53,8 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
   - The ``IdentityFile`` points to the SSH key (private) that will be used for connecting to Isambard, the default for most users will be ``~/.ssh/id_rsa``. If you are using a different key Eg. ``~/keystore/isambard``, the entry should be ``IdentityFile ~/keystore/isambard``
   - We recommend you overwrite previous versions of this configuration when updating in to ensure your configuration matches the documentation
 
+To test the connection please first try connecting to the MACS system.  This will ensure any initial configuration is performed for the first-time user.
+
 MACS - Multi-Architecture Comparison System
 ###########################################
 
@@ -73,6 +75,11 @@ Remember to replace ``XX-USERNAME`` with your Isambard username.
 Windows
 .......
 
+SSH keys can be created with Puttygen and managed with Putty's Pageant to make them available to Putty and WinSCP.  Especially useful if you use a passphrase to protect your SSH private key.
+
+WinSCP
+^^^^^^
+
 If you are using windows then the simplest way to set up access to Isambard is to with WinSCP:
 
 1. First create a New Site
@@ -92,3 +99,29 @@ If you are using windows then the simplest way to set up access to Isambard is t
 .. image:: ../images/winscp_tunnel.jpg
 
 3. Click OK and Save, then Login and Enjoy ...
+
+Putty
+^^^^^
+
+Putty provides a shell to a remote server.  As in the instructions for Linux a proxy command will be used to access the login node of the system you want.
+
+1. Set hostname to the the login node of the Isambard system, such as xcil00
+
+.. image:: ../images/putty_connection.png
+
+2. Next click on Connection -> Data and add your username to 'Auto-login username' e.g. xx-myname
+
+.. image:: ../images/putty_data.png
+
+3. Next click on Connection -> Proxy
+
+   - Select 'Local' for 'Proxy type'
+   - Enter 'isambard.gw4.ac.uk' for 'Proxy hostname'
+   - Enter your username for 'Username'
+   - Enter 'plink %proxyhost -l %user -agent -nc %host:%port' for 'Telnet command, or local proxy command'
+
+.. image:: ../images/putty_proxy.png
+
+4. Click back to Session and save your connection settings and connect.  If using ssh keys you should not need to use a password.
+
+
