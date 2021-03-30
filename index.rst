@@ -20,7 +20,7 @@ System Status
 -------------
 
 .. important::
-    18 Jan. 2021
+    30 Mar. 2021
     
     - XCI (ARM ThunderX2): Available
     - MACS: Available
