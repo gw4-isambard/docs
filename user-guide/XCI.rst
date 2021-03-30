@@ -24,6 +24,11 @@ Work is submitted via the ``arm`` queue.
 
 There is also an ``arm-dev`` queue for running interactive development jobs up to three hours in duration. To specify an interactive job add the ``-I`` flag to your ``qsub`` command.
 
+To target the larger memory nodes, add the following to your job script:
+
+.. code-block::
+
+  #PBS -l mem=500GB
 
 Caveats
 ^^^^^^^
@@ -35,8 +40,10 @@ Known errors
 
 Some Cray compilers will emit this error message:
 
-``No supported cpu target is set, CRAY_CPU_TARGET=aarch64 will be used.
-Load a valid targeting module or set CRAY_CPU_TARGET``
+.. code-block::
+
+  No supported cpu target is set, CRAY_CPU_TARGET=aarch64 will be used.
+  Load a valid targeting module or set CRAY_CPU_TARGET
 
 To silence this message and to ensure the correct CPU optimisations are applied, run the following before using the compiler:
 
