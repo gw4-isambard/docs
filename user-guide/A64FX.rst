@@ -74,21 +74,6 @@ There are older builds of Open MPI without UCX, but *these can only be used for 
 * ``openmpi/4.0.4/gcc-11.0`` (also works with GCC 10.2)
 * ``openmpi/4.0.4/arm-20.3``
 
-
-Software
-........
-
-Default modules:
-
-* cpe-cray
-* cce-sve
-* craype
-* craype-arm-nsp1
-* craype-network-infiniband
-* cray-libsci
-
-Additional modules are made available on the cluster and on the shared filesystem (/software), more info can be found on the Software page.
-
 Documentation
 -------------
 
