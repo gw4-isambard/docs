@@ -15,6 +15,17 @@ Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors r
 The nodes are connected via Cray Aries interconnect in a Dragonfly topology.
 A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.
 
+Maintenance
+-----------
+
+.. important::
+   The GW4 Isambard **Multi-Architecture Comparison System** will be unavailable for the week of 19th April to perform planned upgrades & maintenance of the software stack.
+
+   This is a major software upgrade to Red Hat Enterprise Linux 8, bringing the Operating System major version inline with the A64FX service, it provides a better base for software development and improves the MACS compability with scientific software, including the Cray software stack.
+
+   Some user software compatibility issues are to be expected due to changed/updated libraries, recompilations may be required to continue running on MACS.
+
+   XCI & A64FX remain available during this time.
 
 System Status
 -------------
