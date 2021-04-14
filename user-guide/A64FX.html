@@ -102,6 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compilers">Compilers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mpi">MPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hdf5">HDF5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
 </ul>
 </li>
@@ -295,6 +296,24 @@ It can be used with the GCC and Cray Compilers.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">openmpi/4.0.4/gcc-11.0</span></code> (also works with GCC 10.2)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">openmpi/4.0.4/arm-20.3</span></code></p></li>
 </ul>
+</div>
+<div class="section" id="hdf5">
+<h2>HDF5<a class="headerlink" href="#hdf5" title="Permalink to this headline">¶</a></h2>
+<p>Current versions of Cray HDF5 Parallel (<cite>cray-hdf5-parallel/1.12.0.2</cite>) require the following modules and environment variables in order to work.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; module load cray-mvapich2_noslurm_nogpu
+&gt; module load cray-hdf5-parallel
+&gt; export PE_HDF5_PARALLEL_REQUIRED_PRODUCTS=PE_MVAPICH2
+&gt; export PKG_CONFIG_PATH=/projects/bristol/hackathon/fix/cray-hdf5-parallel-mvapich:${PKG_CONFIG_PATH}
+
+&gt; cc HDF5_File_create.c -o HDF5_File_create
+&gt; ./HDF5_File_create
+Warning: Process to core binding is enabled and OMP_NUM_THREADS is greater than one (48).
+If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
+To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
+Use MV2_USE_THREAD_WARNING=0 to suppress this message
+</pre></div>
+</div>
+<p>Fixes are planned for later versions of Cray PE.</p>
 </div>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
