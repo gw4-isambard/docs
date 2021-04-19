@@ -19,7 +19,7 @@ Maintenance
 -----------
 
 .. important::
-   The GW4 Isambard **Multi-Architecture Comparison System** will be unavailable for the week of 19th April to perform planned upgrades & maintenance of the software stack.
+   The GW4 Isambard **Multi-Architecture Comparison System** is unavailable for the week of 19th April to perform planned upgrades & maintenance of the software stack.
 
    This is a major software upgrade to Red Hat Enterprise Linux 8, bringing the Operating System major version inline with the A64FX service, it provides a better base for software development and improves the MACS compability with scientific software, including the Cray software stack.
 
@@ -31,10 +31,10 @@ System Status
 -------------
 
 .. important::
-    30 Mar. 2021
+    19 Apr. 2021
     
     - XCI (ARM ThunderX2): Available
-    - MACS: Available
+    - MACS: Unavailable, upgrades in progress
     - A64fx: Available
 
 Acknowledging Isambard
