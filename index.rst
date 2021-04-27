@@ -26,6 +26,8 @@ Maintenance
    Some user software compatibility issues are to be expected due to changed/updated libraries, recompilations may be required to continue running on MACS.
 
    XCI & A64FX remain available during this time.
+   
+   Update: Work has continued into the week of 26th April, we aim to restore service as soon as possible.
 
 System Status
 -------------
