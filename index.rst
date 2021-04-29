@@ -29,6 +29,8 @@ Maintenance
    
    Update: Work has continued into the week of 26th April, we aim to restore service as soon as possible.
 
+   Update 2: The compiler licences will also be unavailable until the MACs update is complete.
+
 System Status
 -------------
 
