@@ -19,7 +19,7 @@ Maintenance
 -----------
 
 .. important::
-   The GW4 Isambard XCI Arm ThunderX2 system will be unavailable during 8th and 9th June to perform planned upgrades & maintenance of the software stack. 
+   The GW4 Isambard **XCI Arm ThunderX2** system will be unavailable during 8th and 9th June to perform planned upgrades & maintenance of the software stack. 
    MACS & A64FX remain available during this time.
 
 System Status
