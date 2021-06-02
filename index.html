@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Isambard User Documentation &mdash; GW4-Isambard  documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -190,7 +195,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="isambard-user-documentation">
+  <section id="isambard-user-documentation">
 <h1>Isambard User Documentation<a class="headerlink" href="#isambard-user-documentation" title="Permalink to this headline">¶</a></h1>
 <p>Isambard is a HPC service provided by <a class="reference external" href="http://gw4.ac.uk">GW4</a> and the <a class="reference external" href="https://www.metoffice.gov.uk">UK Met Office</a>.
 The system is funded by <a class="reference external" href="http://www.epsrc.ac.uk">EPSRC</a> and is one of a number of <a class="reference external" href="http://www.hpc-uk.ac.uk/facilities/">Tier-2 HPC facilities</a> in the UK.</p>
@@ -198,31 +203,27 @@ The system is funded by <a class="reference external" href="http://www.epsrc.ac.
 <p>Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors running at 2.5 GHz. 160 nodes have 256 GB and 169 have 512 GB of memory, both at DDR4-2666MHz.
 The nodes are connected via Cray Aries interconnect in a Dragonfly topology.
 A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.</p>
-<div class="section" id="maintenance">
+<section id="maintenance">
 <h2>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this headline">¶</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The GW4 Isambard <strong>Multi-Architecture Comparison System</strong> is unavailable for the week of 19th April to perform planned upgrades &amp; maintenance of the software stack.</p>
-<p>This is a major software upgrade to Red Hat Enterprise Linux 8, bringing the Operating System major version inline with the A64FX service, it provides a better base for software development and improves the MACS compability with scientific software, including the Cray software stack.</p>
-<p>Some user software compatibility issues are to be expected due to changed/updated libraries, recompilations may be required to continue running on MACS.</p>
-<p>XCI &amp; A64FX remain available during this time.</p>
-<p>Update: Work has continued into the week of 26th April, we aim to restore service as soon as possible.</p>
-<p>Update 2: The compiler licences will also be unavailable until the MACs update is complete.</p>
+<p>The GW4 Isambard XCI Arm ThunderX2 system will be unavailable during 8th and 9th June to perform planned upgrades &amp; maintenance of the software stack.
+MACS &amp; A64FX remain available during this time.</p>
 </div>
-</div>
-<div class="section" id="system-status">
+</section>
+<section id="system-status">
 <h2>System Status<a class="headerlink" href="#system-status" title="Permalink to this headline">¶</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>19 Apr. 2021</p>
+<p>2 Jun. 2021</p>
 <ul class="simple">
 <li><p>XCI (ARM ThunderX2): Available</p></li>
-<li><p>MACS: Unavailable, upgrades in progress</p></li>
+<li><p>MACS: Available</p></li>
 <li><p>A64fx: Available</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="acknowledging-isambard">
+</section>
+<section id="acknowledging-isambard">
 <h2>Acknowledging Isambard<a class="headerlink" href="#acknowledging-isambard" title="Permalink to this headline">¶</a></h2>
 <p>Research outputs that have made use of Isambard should acknowledge the facility by using the following phrase:</p>
 <blockquote>
@@ -318,16 +319,16 @@ A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.</
 <li class="toctree-l1"><a class="reference internal" href="policies/privacy.html">Privacy Statement</a></li>
 </ul>
 </div>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
+</section>
+</section>
+<section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</div>
+</section>
 
 
            </div>

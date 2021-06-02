@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>A64FX - Fujitsu &mdash; GW4-Isambard  documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -199,7 +204,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="a64fx-fujitsu">
+  <section id="a64fx-fujitsu">
 <h1>A64FX - Fujitsu<a class="headerlink" href="#a64fx-fujitsu" title="Permalink to this headline">¶</a></h1>
 <p>All documentation for the A64fx Isambard hackathon on March 23/24 2021 can be found <a class="reference external" href="https://github.com/gw4-isambard/docs/tree/master/hackathons">here.</a></p>
 <p>HPE Apollo 80 cabinet, codenamed A64FX. Available since February 2021.</p>
@@ -224,7 +229,7 @@
 <li><p>Dedicated Lustre filesystem for job scratch directories: <code class="docutils literal notranslate"><span class="pre">/scratch</span></code></p></li>
 <li><p>Shared Lustre filesystem with XCI &amp; MACS: <code class="docutils literal notranslate"><span class="pre">/home</span></code>, <code class="docutils literal notranslate"><span class="pre">/projects</span></code>, <code class="docutils literal notranslate"><span class="pre">/software</span></code></p></li>
 </ul>
-<div class="section" id="running-jobs">
+<section id="running-jobs">
 <h2>Running Jobs<a class="headerlink" href="#running-jobs" title="Permalink to this headline">¶</a></h2>
 <p>The system uses PBS Pro and the queue for the A64FX nodes is <code class="docutils literal notranslate"><span class="pre">a64fx</span></code>.
 It can only be used from the A64FX login nodes.</p>
@@ -233,8 +238,8 @@ It can only be used from the A64FX login nodes.</p>
 </pre></div>
 </div>
 <p>…where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the number of nodes required.</p>
-</div>
-<div class="section" id="modules">
+</section>
+<section id="modules">
 <h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
 <p>By default, the Cray programming environment is loaded.
 A64FX-specific modules are exposed from <code class="docutils literal notranslate"><span class="pre">/lustre/software/aarch64/modulefiles</span></code>.</p>
@@ -242,8 +247,8 @@ A64FX-specific modules are exposed from <code class="docutils literal notranslat
 To use it: <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">use</span> <span class="pre">/lustre/projects/bristol/modules-a64fx/modulefiles</span></code>.</p>
 <p>Note that this system <em>resets modules when starting a job</em>.
 Make sure that your job scripts load all the modules needed to run your application.</p>
-</div>
-<div class="section" id="compilers">
+</section>
+<section id="compilers">
 <h2>Compilers<a class="headerlink" href="#compilers" title="Permalink to this headline">¶</a></h2>
 <p>All major HPC compilers targetting AArch64 are available through modules:</p>
 <ul class="simple">
@@ -280,8 +285,8 @@ Make sure that your job scripts load all the modules needed to run your applicat
 </dl>
 </li>
 </ul>
-</div>
-<div class="section" id="mpi">
+</section>
+<section id="mpi">
 <h2>MPI<a class="headerlink" href="#mpi" title="Permalink to this headline">¶</a></h2>
 <p>The default MPI library is CRAY MVAPICH, available though <code class="docutils literal notranslate"><span class="pre">cray-mvapich2_noslurm_nogpu</span></code>.
 It can be used with the GCC and Cray Compilers.</p>
@@ -296,8 +301,8 @@ It can be used with the GCC and Cray Compilers.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">openmpi/4.0.4/gcc-11.0</span></code> (also works with GCC 10.2)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">openmpi/4.0.4/arm-20.3</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="hdf5">
+</section>
+<section id="hdf5">
 <h2>HDF5<a class="headerlink" href="#hdf5" title="Permalink to this headline">¶</a></h2>
 <p>Current versions of Cray HDF5 Parallel (<cite>cray-hdf5-parallel/1.12.0.2</cite>) require the following modules and environment variables in order to work.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; module load cray-mvapich2_noslurm_nogpu
@@ -314,13 +319,13 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
 </pre></div>
 </div>
 <p>Fixes are planned for later versions of Cray PE.</p>
-</div>
-<div class="section" id="documentation">
+</section>
+<section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.fujitsu.com/global/products/computing/servers/supercomputer/a64fx">Fujitsu’s website</a> includes an A64FX Datasheet and Microarchitecture Manual.
 The architecture manual can also be found <a class="reference external" href="https://github.com/fujitsu/A64FX">on GitHub</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

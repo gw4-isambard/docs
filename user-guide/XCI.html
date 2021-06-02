@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>XCI - Marvell Thunder X2 &mdash; GW4-Isambard  documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -198,7 +203,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="xci-marvell-thunder-x2">
+  <section id="xci-marvell-thunder-x2">
 <h1>XCI - Marvell Thunder X2<a class="headerlink" href="#xci-marvell-thunder-x2" title="Permalink to this headline">¶</a></h1>
 <p>Cray XC50 cabinet, codenamed XCI, containing 20’992 ARM cores. Available since November 2018, expanded September 2020.</p>
 <ul class="simple">
@@ -219,7 +224,7 @@
 </ul>
 </li>
 </ul>
-<div class="section" id="queues">
+<section id="queues">
 <h2>Queues<a class="headerlink" href="#queues" title="Permalink to this headline">¶</a></h2>
 <p>Work is submitted via the <code class="docutils literal notranslate"><span class="pre">arm</span></code> queue.</p>
 <p>There is also an <code class="docutils literal notranslate"><span class="pre">arm-dev</span></code> queue for running interactive development jobs up to three hours in duration. To specify an interactive job add the <code class="docutils literal notranslate"><span class="pre">-I</span></code> flag to your <code class="docutils literal notranslate"><span class="pre">qsub</span></code> command.</p>
@@ -227,11 +232,11 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#PBS -l mem=500GB</span>
 </pre></div>
 </div>
-<div class="section" id="caveats">
+<section id="caveats">
 <h3>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h3>
 <p>The default python version on login nodes is a system-bundled version, be sure to load a version of <code class="docutils literal notranslate"><span class="pre">cray-python</span></code>.</p>
-</div>
-<div class="section" id="known-errors">
+</section>
+<section id="known-errors">
 <h3>Known errors<a class="headerlink" href="#known-errors" title="Permalink to this headline">¶</a></h3>
 <p>Some Cray compilers will emit this error message:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">supported</span> <span class="n">cpu</span> <span class="n">target</span> <span class="ow">is</span> <span class="nb">set</span><span class="p">,</span> <span class="n">CRAY_CPU_TARGET</span><span class="o">=</span><span class="n">aarch64</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
@@ -240,9 +245,9 @@
 </div>
 <p>To silence this message and to ensure the correct CPU optimisations are applied, run the following before using the compiler:</p>
 <p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">craype-arm-thunderx2</span></code></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

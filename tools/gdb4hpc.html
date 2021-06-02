@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>gdb4hpc &mdash; GW4-Isambard  documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -195,20 +200,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gdb4hpc">
+  <section id="gdb4hpc">
 <span id="id1"></span><h1>gdb4hpc<a class="headerlink" href="#gdb4hpc" title="Permalink to this headline">¶</a></h1>
 <p>gdb4hpc is a parallel debugger for C, C++ and Fortran programs and is
 available on both the MACS and XCI systems as part of the Cray Programming Environment.
 It is a command line tool (based on gdb) and it can be used either to launch an application or attach to application which is already running.</p>
-<div class="section" id="modules">
+<section id="modules">
 <h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
 <p>To use gdb4hpc you will need to load the gdb4hpc module by running the command</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">gdb4hpc</span>
 </pre></div>
 </div>
 <p>When you have loaded the module you can see gdb4hpc documentation by running the command <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">gdb4hpc</span></code>.</p>
-</div>
-<div class="section" id="example-session">
+</section>
+<section id="example-session">
 <h2>Example session<a class="headerlink" href="#example-session" title="Permalink to this headline">¶</a></h2>
 <p>This example shows how to use gdb4hpc to attach to a program which is already running. In this example we have a C program parallelised with MPI but there is a bug causing a deadlock and we want to find out where in the program this is happening.</p>
 <p>Start by building the program using a <code class="docutils literal notranslate"><span class="pre">-g</span></code> flag so that we can see line numbers in the debugger:</p>
@@ -282,8 +287,8 @@ prog1{0}: #10 0x0000000000400c48 in main at /lustre/home/xx-user/deadlock.c:24
 <span class="n">xx</span><span class="o">-</span><span class="n">user</span><span class="nd">@xcil00</span><span class="p">:</span><span class="o">~&gt;</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

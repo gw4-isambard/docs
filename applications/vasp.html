@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>VASP &mdash; GW4-Isambard  documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -208,34 +213,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vasp">
+  <section id="vasp">
 <h1>VASP<a class="headerlink" href="#vasp" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="useful-links">
+<section id="useful-links">
 <h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.vasp.at/">Vasp</a></p></li>
 <li><p><a class="reference external" href="http://www.vasp.at/index.php/documentation">Documentation</a></p></li>
 </ul>
-</div>
-<div class="section" id="licensing">
+</section>
+<section id="licensing">
 <h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
 <p>Vasp is licensed software and is not currently provided on Isambard.  If you hold a license you can build Vasp using the instructions below.  For further details about the license and to purchase one please visit the <a class="reference external" href="http://www.vasp.at/">Vasp website</a>.</p>
-</div>
-<div class="section" id="access">
+</section>
+<section id="access">
 <h2>Access<a class="headerlink" href="#access" title="Permalink to this headline">¶</a></h2>
 <p>Vasp is not currently available on Isambard.</p>
-</div>
-<div class="section" id="versions">
+</section>
+<section id="versions">
 <h2>Versions<a class="headerlink" href="#versions" title="Permalink to this headline">¶</a></h2>
 <p>The use and build instructions are for Vasp 5.4.4.</p>
-</div>
-<div class="section" id="running">
+</section>
+<section id="running">
 <h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
 <p>To run Vasp on Isambard you will need to provide your source code.  Instructions for compiling on Isambard are provided below.</p>
-<div class="section" id="example-job-submission-scripts">
+<section id="example-job-submission-scripts">
 <h3>Example Job Submission Scripts<a class="headerlink" href="#example-job-submission-scripts" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="arm">
+</section>
+<section id="arm">
 <h3>Arm<a class="headerlink" href="#arm" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#PBS -N vasp_job</span>
@@ -262,8 +267,8 @@ module swap gcc gcc/7.3.0
 aprun -n <span class="m">64</span>  vasp_std <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; vasp_job.log
 </pre></div>
 </div>
-</div>
-<div class="section" id="x86">
+</section>
+<section id="x86">
 <h3>x86<a class="headerlink" href="#x86" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#PBS -N vasp_job</span>
@@ -292,11 +297,11 @@ module load  intel-parallel-studio-xe/mpi/64/2017u2/2.174
 mpirun -np <span class="m">36</span> vasp_std <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="compilation">
+</section>
+</section>
+<section id="compilation">
 <h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
+<section id="id2">
 <h3>Arm<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Instructions for building Vasp on Arm:</p>
 <p>Download <a class="reference download internal" download="" href="../_downloads/c272c94bc89242c938e46b59b25bb1e9/makefile.include.arm"><code class="xref download docutils literal notranslate"><span class="pre">makefile.include.arm</span></code></a> and copy it to <cite>makefile.include</cite> in the root of the source folder</p>
@@ -312,8 +317,8 @@ module swap gcc gcc/7.3.0
 make all
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h3>x86<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Instructions for building Vasp on x86:</p>
 <p>Download <a class="reference download internal" download="" href="../_downloads/6731eab6e80d1ed229ae5e08407d317c/makefile.include.x86"><code class="xref download docutils literal notranslate"><span class="pre">makefile.include.x86</span></code></a> and copy it to <cite>makefile.include</cite> in the root of the source folder.  Alternatively copy makefile.include.linux_intel from the <cite>arch</cite> folder as these files are identical.</p>
@@ -334,9 +339,9 @@ module load intel/mkl/64/2017/1.132
 make all
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Request Account &mdash; GW4-Isambard  documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -198,19 +203,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="request-account">
+  <section id="request-account">
 <h1>Request Account<a class="headerlink" href="#request-account" title="Permalink to this headline">¶</a></h1>
 <p>Before requesting an account on Isambard, please read the <a class="reference internal" href="../policies/terms.html#terms"><span class="std std-ref">Terms and Conditions of Access</span></a>.</p>
 <p>Account requests for Isambard are managed via the <a class="reference external" href="https://www.archer.ac.uk/tier2/">SAFE for EPSRC Tier2 system</a>.</p>
-<div class="section" id="create-an-account-on-safe">
+<section id="create-an-account-on-safe">
 <h2>Create an account on SAFE<a class="headerlink" href="#create-an-account-on-safe" title="Permalink to this headline">¶</a></h2>
 <p>(If you already have an account on SAFE, you can skip this step.)</p>
 <p>Navigate to the <a class="reference external" href="https://www.archer.ac.uk/tier2/">Tier-2 SAFE login page</a>.
 At the bottom of the login screen, choose to create a new account:</p>
 <img alt="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-create-account.png" src="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-create-account.png" />
 <p>Fill in the form with your details and click <code class="docutils literal notranslate"><span class="pre">Register</span></code>.</p>
-</div>
-<div class="section" id="register-institutional-id">
+</section>
+<section id="register-institutional-id">
 <h2>Register institutional ID<a class="headerlink" href="#register-institutional-id" title="Permalink to this headline">¶</a></h2>
 <p>(If you have already registered your institutional ID to your SAFE account, you can skip this step.)</p>
 <p>Once logged in with your SAFE account, click <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">institutional</span> <span class="pre">ID</span></code> underneath <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">details</span></code>:</p>
@@ -218,12 +223,12 @@ At the bottom of the login screen, choose to create a new account:</p>
 <p>After entering your institutional login details (if necessary), you should see a message stating <code class="docutils literal notranslate"><span class="pre">Identity</span> <span class="pre">registered</span></code>.</p>
 <p>Now logout of your SAFE account:</p>
 <img alt="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-logout.png" src="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-logout.png" />
-</div>
-<div class="section" id="login-to-safe-via-institutional-login">
+</section>
+<section id="login-to-safe-via-institutional-login">
 <h2>Login to SAFE via institutional login<a class="headerlink" href="#login-to-safe-via-institutional-login" title="Permalink to this headline">¶</a></h2>
 <img alt="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-institutional-login.png" src="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-institutional-login.png" />
-</div>
-<div class="section" id="register-ssh-key">
+</section>
+<section id="register-ssh-key">
 <h2>Register SSH key<a class="headerlink" href="#register-ssh-key" title="Permalink to this headline">¶</a></h2>
 <p>If you haven’t already registered an SSH key to your account, do so via <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">personal</span> <span class="pre">details</span></code>:</p>
 <img alt="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-update-details.png" src="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-update-details.png" />
@@ -231,8 +236,8 @@ At the bottom of the login screen, choose to create a new account:</p>
 <img alt="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-ssh-key.png" src="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-ssh-key.png" />
 <p>On Linux/macOS systems, your public SSH key will typically be found under <code class="docutils literal notranslate"><span class="pre">.ssh/id_rsa.pub</span></code> in your home directory.
 If you do not have one yet, you can create one by running <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span></code> from a terminal.</p>
-</div>
-<div class="section" id="request-account-on-isambard">
+</section>
+<section id="request-account-on-isambard">
 <h2>Request account on Isambard<a class="headerlink" href="#request-account-on-isambard" title="Permalink to this headline">¶</a></h2>
 <p>Select <code class="docutils literal notranslate"><span class="pre">Request</span> <span class="pre">login</span> <span class="pre">account</span></code> under <code class="docutils literal notranslate"><span class="pre">Login</span> <span class="pre">accounts</span></code>:</p>
 <img alt="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-request-account.png" src="https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-request-account.png" />
@@ -258,8 +263,8 @@ Please note that usernames on Isambard follow a fixed format and we are unable t
 <p>Your account request will need to approved by the PI for your hosting institution.
 You will receive your login details via email once your account has been approved and created.
 This process may take 1-2 working weeks, depending on availability of the project PI to approve your account.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Connecting to Isambard &mdash; GW4-Isambard  documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -200,13 +205,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="connecting-to-isambard">
+  <section id="connecting-to-isambard">
 <h1>Connecting to Isambard<a class="headerlink" href="#connecting-to-isambard" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You will need an SSH key-pair to access Isambard.</p>
 </div>
-<div class="section" id="linux">
+<section id="linux">
 <h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
 <p>The following stanza is required in your local <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> in order to traverse the bastion hosts transparently and enable SCP usage:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># --- GW4 Isambard --- #
@@ -255,27 +260,27 @@ Host gw4a64fxlogin01.isambard.gw4.ac.uk a64fxlogin01.isambard
 </ul>
 </div>
 <p>To test the connection please first try connecting to the MACS system.  This will ensure any initial configuration is performed for the first-time user.</p>
-<div class="section" id="macs-multi-architecture-comparison-system">
+<section id="macs-multi-architecture-comparison-system">
 <h3>MACS - Multi-Architecture Comparison System<a class="headerlink" href="#macs-multi-architecture-comparison-system" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">To access the MACS, run either <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">login-XX.isambard</span></code> or <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">login.isambard</span></code></div>
 </div>
-</div>
-<div class="section" id="xci-marvell-thunder-x2">
+</section>
+<section id="xci-marvell-thunder-x2">
 <h3>XCI - Marvell Thunder X2<a class="headerlink" href="#xci-marvell-thunder-x2" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">To access the XCI XC50 Arm system, run either <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">xcil00.isambard</span></code> or <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">xci.isambard</span></code></div>
 </div>
-</div>
-<div class="section" id="a64fx-fujitsu-a64fx">
+</section>
+<section id="a64fx-fujitsu-a64fx">
 <h3>A64FX - Fujitsu A64FX<a class="headerlink" href="#a64fx-fujitsu-a64fx" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">To access the Fujitsu A64FX Arm system, run either <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">a64fxlogin00.isambard</span></code> or <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">a64fx.isambard</span></code></div>
 </div>
 <p>Remember to replace <code class="docutils literal notranslate"><span class="pre">XX-USERNAME</span></code> with your Isambard username.</p>
-</div>
-</div>
-<div class="section" id="windows">
+</section>
+</section>
+<section id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <p>SSH keys can be created with Puttygen and managed with Putty’s Pageant to make them available to Putty and WinSCP.  Especially useful if you use a passphrase to protect your SSH private key.</p>
 <p>If you are using windows then the simplest way to set up access to Isambard is to with WinSCP:</p>
@@ -324,8 +329,8 @@ Host gw4a64fxlogin01.isambard.gw4.ac.uk a64fxlogin01.isambard
 <ol class="arabic simple" start="4">
 <li><p>Click back to Session and save your connection settings and connect.  If using ssh keys you should not need to use a password.</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

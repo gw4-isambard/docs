@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>DL_MONTE 2 &mdash; GW4-Isambard  documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -208,35 +213,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dl-monte-2">
+  <section id="dl-monte-2">
 <h1>DL_MONTE 2<a class="headerlink" href="#dl-monte-2" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="useful-links">
+<section id="useful-links">
 <h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ccp5.ac.uk/DL_MONTE">DL_MONTE 2</a></p></li>
 <li><p><a class="reference external" href="https://gitlab.com/dl_monte/user-hub">User-hub</a></p></li>
 <li><p><a class="reference external" href="https://dl_monte.gitlab.io/dl_monte-tutorials-pages/">Tutorials</a></p></li>
 </ul>
-</div>
-<div class="section" id="licensing">
+</section>
+<section id="licensing">
 <h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://gitlab.com/dl_monte/dl_monte-releases">current release</a> of DL_MONTE 2 can be obtained free of charge.</p>
-</div>
-<div class="section" id="access">
+</section>
+<section id="access">
 <h2>Access<a class="headerlink" href="#access" title="Permalink to this headline">¶</a></h2>
 <p>DL_MONTE is not currently available on Isambard.</p>
-</div>
-<div class="section" id="versions">
+</section>
+<section id="versions">
 <h2>Versions<a class="headerlink" href="#versions" title="Permalink to this headline">¶</a></h2>
 <p>The use and build instructions are for release 2.07.</p>
-</div>
-<div class="section" id="running">
+</section>
+<section id="running">
 <h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
 <p>To run DL_MONTE 2 on Isambard you will need to provide your source code.  Instructions for compiling on Isambard are provided below.</p>
-<div class="section" id="example-job-submission-scripts">
+<section id="example-job-submission-scripts">
 <h3>Example Job Submission Scripts<a class="headerlink" href="#example-job-submission-scripts" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="arm">
+</section>
+<section id="arm">
 <h3>Arm<a class="headerlink" href="#arm" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#PBS -N dlmnote_job</span>
@@ -269,8 +274,8 @@ aprun -n <span class="m">1</span> DL_MONTE-SRL.X
 <li><p><a class="reference external" href="https://github.com/lohedges/taskfarmer">Taskfarmer</a> by Lester Hedges</p></li>
 <li><p><a class="reference external" href="https://github.com/wrs20/simple_taskfarm">Simple taskfarmer</a> by William Saunders</p></li>
 </ul>
-</div>
-<div class="section" id="x86">
+</section>
+<section id="x86">
 <h3>x86<a class="headerlink" href="#x86" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#PBS -N dlmonte_job</span>
@@ -297,11 +302,11 @@ module load  intel-parallel-studio-xe/compilers/64/2017u2/17.0.2
 DL_MONTE-SRL.X
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="compilation">
+</section>
+</section>
+<section id="compilation">
 <h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
+<section id="id2">
 <h3>Arm<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>As of 9th July 2020 the latest version of DL_MONTE 2 can be downloaded directly with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gitlab</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dl_monte</span><span class="o">/</span><span class="n">dl_monte</span><span class="o">-</span><span class="n">releases</span><span class="o">/-/</span><span class="n">raw</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">dl_monte_release_v2</span><span class="o">.</span><span class="mf">07.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
@@ -317,8 +322,8 @@ module swap PrgEnv-cray PrgEnv-gnu
 ./build: SRL dir isambard-gfortran 
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h3>x86<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Instructions for building DL_MONTE 2 on x86:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load modules for build</span>
@@ -335,9 +340,9 @@ module load intel-parallel-studio-xe/compilers/64/2017u2/17.0.2
 ./build: SRL dir intel
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

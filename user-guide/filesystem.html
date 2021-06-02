@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Filesystem &mdash; GW4-Isambard  documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -191,7 +196,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="filesystem">
+  <section id="filesystem">
 <h1>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this headline">¶</a></h1>
 <p>A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage. This filesystem is shared amongst the whole GW4 Isambard service, including MACS, XCI &amp; A64FX.</p>
 <p>Each organisation is allocated 75TB of high performance Lustre storage, by default each user has a quota of 50GB which can be increased on-request by your local GW4 admin. There is currently only one user quota which applies across all directories.
@@ -215,7 +220,7 @@ Your current quota and usage can be viewed with the following command:</p>
 </pre></div>
 </div>
 <p>Please note that no backups are performed on the user data areas of the system and you are responsible for ensuring all data stored can be recovered from your own backup or regenerated in the event of a failure.</p>
-</div>
+</section>
 
 
            </div>

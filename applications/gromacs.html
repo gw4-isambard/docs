@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>GROMACS &mdash; GW4-Isambard  documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -202,31 +207,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gromacs">
+  <section id="gromacs">
 <h1>GROMACS<a class="headerlink" href="#gromacs" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="useful-links">
+<section id="useful-links">
 <h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://manual.gromacs.org/documentation/current/user-guide/index.html">GROMACS user documentation</a></p></li>
 </ul>
-</div>
-<div class="section" id="licensing">
+</section>
+<section id="licensing">
 <h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
 <p>GROMACS is open source (see the <a class="reference external" href="https://github.com/gromacs/gromacs/blob/master/COPYING">GROMACS License Agreement</a>).</p>
-</div>
-<div class="section" id="version">
+</section>
+<section id="version">
 <h2>Version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h2>
 <p>The following versions of GROMACS are currently available:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">apps/gromacs/2018.4</span></code> (MPI enabled, no double precision)</p></li>
 </ul>
-</div>
-<div class="section" id="running">
+</section>
+<section id="running">
 <h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="example-job-submission-script">
+<section id="example-job-submission-script">
 <h3>Example Job Submission Script<a class="headerlink" href="#example-job-submission-script" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="arm">
+</section>
+<section id="arm">
 <h3>Arm<a class="headerlink" href="#arm" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
@@ -249,15 +254,15 @@ aprun -n <span class="m">8192</span> -d <span class="m">4</span> -j <span class=
   gmx_mpi mdrun -s input.tpr -ntomp <span class="m">4</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="notes">
+</section>
+<section id="notes">
 <h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
 <p>For maximum performance, you may wish to tune the MPI/OpenMP decomposition.
 At large scale, you may find that reducing the number of MPI ranks and increasing the number of OpenMP threads yields better performance.</p>
 <p>GROMACS can also use tabulated Ewald non-bonded kernels instead of an analytical approach, which can improve performance for smaller node counts (use <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">GMX_NBNXN_EWALD_TABLE=1</span></code> to enable this feature).</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
