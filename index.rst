@@ -28,7 +28,7 @@ System Status
 .. important::
     2 Jun. 2021
     
-    - XCI (ARM ThunderX2): Available
+    - XCI (ARM ThunderX2): Unavailable (Maintenance)
     - MACS: Available
     - A64fx: Available
 
