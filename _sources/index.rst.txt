@@ -15,12 +15,11 @@ Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors r
 The nodes are connected via Cray Aries interconnect in a Dragonfly topology.
 A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.
 
-Maintenance
------------
-
-.. important::
-   The GW4 Isambard **XCI Arm ThunderX2** system will be unavailable during 8th and 9th June to perform planned upgrades & maintenance of the software stack. 
-   MACS & A64FX remain available during this time.
+.. Maintenance
+.. -----------
+..
+.. .. important::
+   
 
 System Status
 -------------
@@ -28,7 +27,7 @@ System Status
 .. important::
     2 Jun. 2021
     
-    - XCI (ARM ThunderX2): Unavailable (Maintenance)
+    - XCI (ARM ThunderX2): Available
     - MACS: Available
     - A64fx: Available
 
