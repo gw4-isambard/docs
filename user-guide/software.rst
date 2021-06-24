@@ -19,6 +19,36 @@ This page summarises the software available across the cluster, please keep in m
     Generate these CSV with the following, convoluted commands:
         module av --terse 2>&1 | grep -v : | sed 's/(default)//' | xargs -n1 -I{} bash -c "printf 'ISM_{},\"\n'; module show '{}' 2>&1 | egrep 'ISM_|^module-whatis'" | sed -re 's/^module-whatis(\t|\s)+//; s/\/[0-9]\..*?,/,/' | sed ':a;N;$!ba; s/\n/ /g; s/ISM_/\n/g;' | sort -u -t, -k1 | sed -re 's/$/"/; s/ ?" ?/"/'
 
+Cray
+====
+
+The Cray Programming Environment is available on MACS, XCI & A64FX, we aim to keep a consistent version available across all three clusters where possible, specific newer versions may also on certain clusters.
+
+Current support version of CDT/21.05 with CCE 11.0.4
+
+MACS
+----
+
+.. code-block::
+
+    > module load PrgEnv-cray
+    > module load cdt/21.05
+
+XCI
+---
+
+CDT/21.05 is loaded by default, although if you run the following the output will sound as though it wasn't loaded.
+
+.. code-block::
+    > module load cdt/21.05
+
+A64FX
+-----
+
+CDT/21.05 is not yet available on A64FX.
+
+CCE 10.0.3 is available by default.
+
 Python
 ======
 
