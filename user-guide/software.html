@@ -104,6 +104,12 @@
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cray">Cray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#macs">MACS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xci">XCI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a64fx">A64FX</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#python">Python</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#macs-python">MACS Python</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#xci-python">XCI Python</a></li>
@@ -111,9 +117,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#virtualenv">VirtualEnv</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#macs">MACS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#xci">XCI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#a64fx">A64FX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">MACS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">XCI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">A64FX</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
@@ -211,6 +217,27 @@
   <section id="software">
 <h1>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h1>
 <p>This page summarises the software available across the cluster, please keep in mind that available packages and versions may vary between the different architectures of GW4 Isambard.</p>
+<section id="cray">
+<h2>Cray<a class="headerlink" href="#cray" title="Permalink to this headline">¶</a></h2>
+<p>The Cray Programming Environment is available on MACS, XCI &amp; A64FX, we aim to keep a consistent version available across all three clusters where possible, specific newer versions may also on certain clusters.</p>
+<p>Current support version of CDT/21.05 with CCE 11.0.4</p>
+<section id="macs">
+<h3>MACS<a class="headerlink" href="#macs" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">PrgEnv</span><span class="o">-</span><span class="n">cray</span>
+<span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">cdt</span><span class="o">/</span><span class="mf">21.05</span>
+</pre></div>
+</div>
+</section>
+<section id="xci">
+<h3>XCI<a class="headerlink" href="#xci" title="Permalink to this headline">¶</a></h3>
+<p>CDT/21.05 is loaded by default, although if you run the following the output will sound as though it wasn’t loaded.</p>
+</section>
+<section id="a64fx">
+<h3>A64FX<a class="headerlink" href="#a64fx" title="Permalink to this headline">¶</a></h3>
+<p>CDT/21.05 is not yet available on A64FX.</p>
+<p>CCE 10.0.3 is available by default.</p>
+</section>
+</section>
 <section id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <section id="macs-python">
@@ -256,8 +283,8 @@
 </div>
 </section>
 </section>
-<section id="macs">
-<h2>MACS<a class="headerlink" href="#macs" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h2>MACS<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -543,7 +570,7 @@
 <td><p>adds default environment modules</p></td>
 </tr>
 <tr class="row-odd"><td><p>dot</p></td>
-<td><p>adds <a href="#id1"><span class="problematic" id="id2">`</span></a>.’ to your PATH environment variable</p></td>
+<td><p>adds <a href="#id2"><span class="problematic" id="id3">`</span></a>.’ to your PATH environment variable</p></td>
 </tr>
 <tr class="row-even"><td><p>fftw2/openmpi/gcc/64/double</p></td>
 <td><p>Adds FFTW library for 64 bits to your environment</p></td>
@@ -764,8 +791,8 @@
 </tbody>
 </table>
 </section>
-<section id="xci">
-<h2>XCI<a class="headerlink" href="#xci" title="Permalink to this headline">¶</a></h2>
+<section id="id4">
+<h2>XCI<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -1131,8 +1158,8 @@
 </tbody>
 </table>
 </section>
-<section id="a64fx">
-<h2>A64FX<a class="headerlink" href="#a64fx" title="Permalink to this headline">¶</a></h2>
+<section id="id5">
+<h2>A64FX<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
