@@ -105,6 +105,8 @@ Putty
 
 Putty provides a shell to a remote server.  As in the instructions for Linux a proxy command will be used to access the login node of the system you want.
 
+0. First from a command prompt run ``plink.exe isambard.gw4.ac.uk`` and accept the fingerprint ``07:bc:14:f8:d4:64:32:f8:c3:e3:2f:7c:41:a3:6a:3c``, this will trust the server and cache this fingerprint so plink can be used as a proxy where any unknown fingerprints will raise a prompt that cannot be answered when used as a proxy.
+
 1. Set hostname to the the login node of the Isambard system, such as xcil00
 
 .. image:: ../images/putty_connection.png
