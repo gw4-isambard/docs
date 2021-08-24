@@ -51,6 +51,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    user-guide/XCI.rst
    user-guide/A64FX.rst
    user-guide/software.md
+   user-guide/spack.md
    user-guide/debugging.rst
    user-guide/end_project.rst
    user-guide/support.rst

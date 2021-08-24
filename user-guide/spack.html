@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Profiling &mdash; GW4-Isambard  documentation</title>
+  <title>Spack &mdash; GW4-Isambard  documentation</title>
   
 
   
@@ -43,7 +43,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging" href="debugging.html" />
+    <link rel="prev" title="Software" href="software.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,7 +95,7 @@
             
             
               <p class="caption" role="heading"><span class="caption-text">Isambard User Guide</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="requestaccount.html">Request Account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="connecting.html">Connecting to Isambard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filesystem.html">Filesystem</a></li>
@@ -102,7 +104,10 @@
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
-<li class="toctree-l1"><a class="reference internal" href="spack.html">Spack</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Spack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
@@ -174,14 +179,14 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Profiling</li>
+      <li>Spack</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/gw4-isambard/docs/blob/master/user-guide/profiling.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gw4-isambard/docs/blob/master/user-guide/spack.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -195,9 +200,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="profiling">
-<h1>Profiling<a class="headerlink" href="#profiling" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
+  <section id="spack">
+<h1>Spack<a class="headerlink" href="#spack" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is an experimental service, packages provided via centrally installed Spack have no guarantees of availability or performance. This will hopefully change in future!</p>
+</div>
+<p>We aim to provide software via a centrally managed Spack instance.</p>
+<p>Load the Spack modules by running:</p>
+<ul class="simple">
+<li><p>XCI: <code class="code docutils literal notranslate"><span class="pre">module</span> <span class="pre">use</span> <span class="pre">/software/arm64/spack/share/spack/modules/cray-cnl7-aarch64/</span></code></p></li>
+<li><p>A64FX: <code class="code docutils literal notranslate"><span class="pre">module</span> <span class="pre">use</span> <span class="pre">/software/arm64/spack/share/spack/modules/cray-rhel8-aarch64/</span></code></p></li>
+<li><p>MACS: <code class="code docutils literal notranslate"><span class="pre">module</span> <span class="pre">use</span> <span class="pre">/software/arm64/spack/share/spack/modules/cray-rhel8-aarch64/</span></code></p></li>
+</ul>
+<p>If you need to use the Spack commands for more granularity, run:</p>
+<ul class="simple">
+<li><p>XCI: <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">/software/arm64/spack/share/spack/setup-env.sh</span></code></p></li>
+<li><p>A64FX: <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">/software/arm64/spack/share/spack/setup-env.sh</span></code></p></li>
+<li><p>MACS: <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">/software/x86_64/spack/share/spack/setup-env.sh</span></code></p></li>
+</ul>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>Using <code class="code docutils literal notranslate"><span class="pre">module</span></code>:</p>
+<p>You can get basic information from the module name, specifically: <code class="code docutils literal notranslate"><span class="pre">ModuleName/ModuleVersion-CompiledWith-CompilerVersion-&quot;module&quot;-SpackHash</span></code></p>
+<p>Using <code class="code docutils literal notranslate"><span class="pre">spack</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xcil01</span><span class="p">:</span><span class="o">~&gt;</span> <span class="n">spack</span> <span class="n">find</span> <span class="o">-</span><span class="n">lvx</span> <span class="n">gcc</span> <span class="n">arch</span><span class="o">=</span><span class="n">cray</span><span class="o">-</span><span class="n">cnl7</span><span class="o">-</span><span class="n">aarch64</span>
+<span class="o">==&gt;</span> <span class="mi">2</span> <span class="n">installed</span> <span class="n">packages</span>
+<span class="o">--</span> <span class="n">cray</span><span class="o">-</span><span class="n">cnl7</span><span class="o">-</span><span class="n">aarch64</span> <span class="o">/</span> <span class="n">gcc</span><span class="nd">@10</span><span class="o">.</span><span class="mf">3.0</span> <span class="o">-------------------------------</span>
+<span class="mi">3</span><span class="n">kq2ehp</span> <span class="n">gcc</span><span class="nd">@10</span><span class="o">.</span><span class="mf">3.0</span><span class="o">+</span><span class="n">binutils</span><span class="o">+</span><span class="n">bootstrap</span><span class="o">~</span><span class="n">graphite</span><span class="o">~</span><span class="n">nvptx</span><span class="o">~</span><span class="n">piclibs</span><span class="o">~</span><span class="n">strip</span> <span class="n">languages</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="n">c</span><span class="o">++</span><span class="p">,</span><span class="n">fortran</span><span class="p">,</span><span class="n">go</span> <span class="n">patches</span><span class="o">=</span><span class="mi">2</span><span class="n">c18531a23623596e1daf6f0dd963cf72c208945ecad90515640c3ab23991159</span>
+<span class="n">ixozztx</span> <span class="n">gcc</span><span class="nd">@11</span><span class="o">.</span><span class="mf">2.0</span><span class="o">+</span><span class="n">binutils</span><span class="o">+</span><span class="n">bootstrap</span><span class="o">~</span><span class="n">graphite</span><span class="o">~</span><span class="n">nvptx</span><span class="o">~</span><span class="n">piclibs</span><span class="o">~</span><span class="n">strip</span> <span class="n">languages</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="n">c</span><span class="o">++</span><span class="p">,</span><span class="n">fortran</span><span class="p">,</span><span class="n">go</span>
+</pre></div>
+</div>
+<p>This lists the package Hash, followed by the installed package spec. Packages can be loaded using a spec but this will break if the package is updated or replaced, it is best to load using the spec.</p>
+</section>
 </section>
 
 
@@ -205,6 +240,10 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="debugging.html" class="btn btn-neutral float-right" title="Debugging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="software.html" class="btn btn-neutral float-left" title="Software" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

@@ -44,7 +44,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Debugging" href="debugging.html" />
+    <link rel="next" title="Spack" href="spack.html" />
     <link rel="prev" title="A64FX - Fujitsu" href="A64FX.html" /> 
 </head>
 
@@ -94,7 +94,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Isambard User Guide</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Isambard User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="requestaccount.html">Request Account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="connecting.html">Connecting to Isambard</a></li>
@@ -104,34 +104,35 @@
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Software</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cray">Cray</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#macs">MACS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#xci">XCI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a64fx">A64FX</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#python">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#python-virtualenv">Python VirtualEnv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macs">MACS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#macs-python">MACS Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macs-module-list">MACS Module list</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#xci">XCI</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#xci-python">XCI Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xci-module-list">XCI Module list</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a64fx">A64FX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#a64fx-python">A64FX Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#virtualenv">VirtualEnv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a64fx-module-list">A64FX Module list</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">MACS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">XCI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">A64FX</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="spack.html">Spack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="end_project.html">End of life procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Development Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Development Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Applications</span></p>
+<p class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../applications/covidsim.html">CovidSim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/dedalus.html">Dedalus</a></li>
@@ -141,7 +142,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Service Policies</span></p>
+<p class="caption" role="heading"><span class="caption-text">Service Policies</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../policies/terms.html">Terms and Conditions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../policies/privacy.html">Privacy Statement</a></li>
@@ -217,29 +218,19 @@
   <section id="software">
 <h1>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h1>
 <p>This page summarises the software available across the cluster, please keep in mind that available packages and versions may vary between the different architectures of GW4 Isambard.</p>
-<section id="cray">
-<h2>Cray<a class="headerlink" href="#cray" title="Permalink to this headline">¶</a></h2>
-<p>The Cray Programming Environment is available on MACS, XCI &amp; A64FX, we aim to keep a consistent version available across all three clusters where possible, specific newer versions may also on certain clusters.</p>
-<p>Current support version of CDT/21.05 with CCE 11.0.4</p>
-<section id="macs">
-<h3>MACS<a class="headerlink" href="#macs" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">PrgEnv</span><span class="o">-</span><span class="n">cray</span>
-<span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">cdt</span><span class="o">/</span><span class="mf">21.05</span>
+<section id="python-virtualenv">
+<h2>Python VirtualEnv<a class="headerlink" href="#python-virtualenv" title="Permalink to this headline">¶</a></h2>
+<p>Python Virtual Environments provide a self-contained Python installation where you can install modules without altering your profile and other project’s python environemnts.</p>
+<p>Load an appropriate python module.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">myvenv</span>
+<span class="o">&gt;</span> <span class="n">cd</span> <span class="n">myvenv</span>
+<span class="o">&gt;</span> <span class="n">source</span> <span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="o">&gt;</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pip</span>
 </pre></div>
 </div>
 </section>
-<section id="xci">
-<h3>XCI<a class="headerlink" href="#xci" title="Permalink to this headline">¶</a></h3>
-<p>CDT/21.05 is loaded by default, although if you run the following the output will sound as though it wasn’t loaded.</p>
-</section>
-<section id="a64fx">
-<h3>A64FX<a class="headerlink" href="#a64fx" title="Permalink to this headline">¶</a></h3>
-<p>CDT/21.05 is not yet available on A64FX.</p>
-<p>CCE 10.0.3 is available by default.</p>
-</section>
-</section>
-<section id="python">
-<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<section id="macs">
+<h2>MACS<a class="headerlink" href="#macs" title="Permalink to this headline">¶</a></h2>
 <section id="macs-python">
 <h3>MACS Python<a class="headerlink" href="#macs-python" title="Permalink to this headline">¶</a></h3>
 <p>Python3 is provided as part of the MACS system</p>
@@ -250,41 +241,9 @@
 </pre></div>
 </div>
 </section>
-<section id="xci-python">
-<h3>XCI Python<a class="headerlink" href="#xci-python" title="Permalink to this headline">¶</a></h3>
-<p>Cray provides an optimzied Python3 build via the <code class="docutils literal notranslate"><span class="pre">cray-python</span></code> module.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">cray</span><span class="o">-</span><span class="n">python</span>
-<span class="o">&gt;</span> <span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
-<span class="n">Python</span> <span class="mf">3.7</span><span class="o">.</span><span class="mi">3</span>
-</pre></div>
-</div>
-<p>Without this module loaded, <code class="docutils literal notranslate"><span class="pre">python</span></code> points to python2. Python2 can be invoked even with <code class="docutils literal notranslate"><span class="pre">cray-python</span></code> loaded by running <code class="docutils literal notranslate"><span class="pre">python2</span></code> explicitly.</p>
-</section>
-<section id="a64fx-python">
-<h3>A64FX Python<a class="headerlink" href="#a64fx-python" title="Permalink to this headline">¶</a></h3>
-<p>Builds exist in both <code class="docutils literal notranslate"><span class="pre">/projects/bristol/modules-arm/modulefiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">/projects/bristol/modules-a64fx/modulefiles</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">module</span> <span class="n">use</span>
-<span class="o">&gt;</span> <span class="n">module</span> <span class="n">avail</span> <span class="n">python</span>
-<span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">.</span><span class="mi">2</span>
-<span class="o">&gt;</span> <span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
-<span class="n">Python</span> <span class="mf">3.9</span><span class="o">.</span><span class="mi">2</span>
-</pre></div>
-</div>
-</section>
-<section id="virtualenv">
-<h3>VirtualEnv<a class="headerlink" href="#virtualenv" title="Permalink to this headline">¶</a></h3>
-<p>Python Virtual Environments provide a self-contained Python installation where you can install modules without altering your profile and other project’s python environemnts.</p>
-<p>Load an appropriate python module.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">myvenv</span>
-<span class="o">&gt;</span> <span class="n">cd</span> <span class="n">myvenv</span>
-<span class="o">&gt;</span> <span class="n">source</span> <span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
-<span class="o">&gt;</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pip</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="id1">
-<h2>MACS<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<section id="macs-module-list">
+<h3>MACS Module list<a class="headerlink" href="#macs-module-list" title="Permalink to this headline">¶</a></h3>
+<p>Last updated 2021-07-27</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -570,7 +529,7 @@
 <td><p>adds default environment modules</p></td>
 </tr>
 <tr class="row-odd"><td><p>dot</p></td>
-<td><p>adds <a href="#id2"><span class="problematic" id="id3">`</span></a>.’ to your PATH environment variable</p></td>
+<td><p>adds <a href="#id1"><span class="problematic" id="id2">`</span></a>.’ to your PATH environment variable</p></td>
 </tr>
 <tr class="row-even"><td><p>fftw2/openmpi/gcc/64/double</p></td>
 <td><p>Adds FFTW library for 64 bits to your environment</p></td>
@@ -791,8 +750,22 @@
 </tbody>
 </table>
 </section>
-<section id="id4">
-<h2>XCI<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="xci">
+<h2>XCI<a class="headerlink" href="#xci" title="Permalink to this headline">¶</a></h2>
+<section id="xci-python">
+<h3>XCI Python<a class="headerlink" href="#xci-python" title="Permalink to this headline">¶</a></h3>
+<p>Cray provides an optimzied Python3 build via the <code class="docutils literal notranslate"><span class="pre">cray-python</span></code> module.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">cray</span><span class="o">-</span><span class="n">python</span>
+<span class="o">&gt;</span> <span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">Python</span> <span class="mf">3.7</span><span class="o">.</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>Without this module loaded, <code class="docutils literal notranslate"><span class="pre">python</span></code> points to python2. Python2 can be invoked even with <code class="docutils literal notranslate"><span class="pre">cray-python</span></code> loaded by running <code class="docutils literal notranslate"><span class="pre">python2</span></code> explicitly.</p>
+</section>
+<section id="xci-module-list">
+<h3>XCI Module list<a class="headerlink" href="#xci-module-list" title="Permalink to this headline">¶</a></h3>
+<p>Last updated 2021-07-27</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -1158,8 +1131,23 @@
 </tbody>
 </table>
 </section>
-<section id="id5">
-<h2>A64FX<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a64fx">
+<h2>A64FX<a class="headerlink" href="#a64fx" title="Permalink to this headline">¶</a></h2>
+<section id="a64fx-python">
+<h3>A64FX Python<a class="headerlink" href="#a64fx-python" title="Permalink to this headline">¶</a></h3>
+<p>Builds exist in both <code class="docutils literal notranslate"><span class="pre">/projects/bristol/modules-arm/modulefiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">/projects/bristol/modules-a64fx/modulefiles</span></code></p>
+</section>
+<section id="a64fx-module-list">
+<h3>A64FX Module list<a class="headerlink" href="#a64fx-module-list" title="Permalink to this headline">¶</a></h3>
+<p>Last updated 2021-07-27</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">module</span> <span class="n">use</span>
+<span class="o">&gt;</span> <span class="n">module</span> <span class="n">avail</span> <span class="n">python</span>
+<span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">.</span><span class="mi">2</span>
+<span class="o">&gt;</span> <span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">Python</span> <span class="mf">3.9</span><span class="o">.</span><span class="mi">2</span>
+</pre></div>
+</div>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -1349,6 +1337,7 @@
 </table>
 </section>
 </section>
+</section>
 
 
            </div>
@@ -1356,7 +1345,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="debugging.html" class="btn btn-neutral float-right" title="Debugging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="spack.html" class="btn btn-neutral float-right" title="Spack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="A64FX.html" class="btn btn-neutral float-left" title="A64FX - Fujitsu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
