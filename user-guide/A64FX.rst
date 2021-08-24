@@ -74,6 +74,26 @@ There are older builds of Open MPI without UCX, but *these can only be used for 
 * ``openmpi/4.0.4/gcc-11.0`` (also works with GCC 10.2)
 * ``openmpi/4.0.4/arm-20.3``
 
+HDF5
+----
+
+Current versions of Cray HDF5 Parallel (`cray-hdf5-parallel/1.12.0.2`) require the following modules and environment variables in order to work.
+
+.. code-block:: text
+
+    > module load cray-mvapich2_noslurm_nogpu
+    > module load cray-hdf5-parallel
+    > export PE_HDF5_PARALLEL_REQUIRED_PRODUCTS=PE_MVAPICH2
+    > export PKG_CONFIG_PATH=/projects/bristol/hackathon/fix/cray-hdf5-parallel-mvapich:${PKG_CONFIG_PATH}
+
+    > cc HDF5_File_create.c -o HDF5_File_create
+    > ./HDF5_File_create
+    Warning: Process to core binding is enabled and OMP_NUM_THREADS is greater than one (48).
+    If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
+    To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
+    Use MV2_USE_THREAD_WARNING=0 to suppress this message
+
+Fixes are planned for later versions of Cray PE.
 
 Documentation
 -------------
