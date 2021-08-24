@@ -8,15 +8,15 @@ We aim to provide software via a centrally managed Spack instance.
 
 Load the Spack modules by running:
 
-- XCI: :code:`module use /software/arm64/spack/share/spack/modules/cray-cnl7-aarch64/`
-- A64FX: :code:`module use /software/arm64/spack/share/spack/modules/cray-rhel8-aarch64/`
-- MACS: :code:`module use /software/arm64/spack/share/spack/modules/cray-rhel8-aarch64/`
+* XCI: :code:`module use /software/arm64/spack/share/spack/modules/cray-cnl7-aarch64/`
+* A64FX: :code:`module use /software/arm64/spack/share/spack/modules/cray-rhel8-aarch64/`
+* MACS: :code:`module use /software/arm64/spack/share/spack/modules/cray-rhel8-aarch64/`
 
 If you need to use the Spack commands for more granularity, run:
 
-- XCI: :code:`source /software/arm64/spack/share/spack/setup-env.sh`
-- A64FX: :code:`source /software/arm64/spack/share/spack/setup-env.sh`
-- MACS: :code:`source /software/x86_64/spack/share/spack/setup-env.sh`
+* XCI: :code:`source /software/arm64/spack/share/spack/setup-env.sh`
+* A64FX: :code:`source /software/arm64/spack/share/spack/setup-env.sh`
+* MACS: :code:`source /software/x86_64/spack/share/spack/setup-env.sh`
 
 Modules
 -------
@@ -24,6 +24,7 @@ Modules
 Using :code:`module`:
 
 .. code-block::
+
   xcil01:~> module avail gcc
   -- /lustre/software/aarch64/spack/share/spack/modules/cray-cnl7-aarch64 --
   gcc/10.3.0-gcc-10.3.0-module-3kq2ehp gcc/11.2.0-gcc-10.3.0-module-ixozztx
