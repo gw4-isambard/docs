@@ -20,8 +20,11 @@ Service Interruption
 
 .. important::
     15 Sep. 2021
+    
     Authentication issues have resulted in jobs failing and login issues early this morning, the cause has been identified and the issue fixed, with improvements to avoid it reoccuring.
+    
     Users are recommended to check their jobs: Any running jobs likely failed due to Permission Denied filesystem errors; Queued jobs likely attempted to run and failed immediately.
+    
     Apologies for any inconvenience, please contact isambard-support@gw4.ac.uk if you experience any further issues.
 
 
