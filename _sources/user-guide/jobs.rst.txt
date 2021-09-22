@@ -10,7 +10,7 @@ Limits
 
 Users can submit any number of jobs but only two jobs per-user per-queue will run at the same time.
 
-All job queues limit job walltime to 1 hour by default but users can request up to 24 hours in their job script.
+All jobs default to 24 hours walltime, you can set this lower in your job script to increase the chance of your job starting.
 
 Queue configuration
 ===================
