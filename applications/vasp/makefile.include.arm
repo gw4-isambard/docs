@@ -1,5 +1,5 @@
 # Precompiler options
-CPP_OPTIONS= -DHOST=\"tx2_gcc-7.3_libsci-18.07_cray-fftw-3.3.8\" \
+CPP_OPTIONS= -DHOST=\"tx2_gcc-9.3_libsci-20.09.1_cray-fftw-3.3.8.10\" \
              -DMPI -DMPI_BLOCK=8000 \
              -Duse_collective \
              -DscaLAPACK \
@@ -21,8 +21,8 @@ OFLAG      = -O3 -mcpu=thunderx2t99 -ffp-contract=fast -ffast-math
 OFLAG_IN   = $(OFLAG)
 DEBUG      = -O0
 
-LLIBS      =  -L/opt/cray/pe/fftw/3.3.8.2/arm_thunderx2/lib -lfftw3
-INCS       =  -I/opt/cray/pe/fftw/3.3.8.2/arm_thunderx2/include
+LLIBS      =  -L/opt/cray/pe/fftw/3.3.8.10/arm_thunderx2/lib -lfftw3
+INCS       =  -I/opt/cray/pe/fftw/3.3.8.10/arm_thunderx2/include
 
 OBJECTS    = fftmpiw.o fftmpi_map.o  fftw3d.o  fft3dlib.o
 
