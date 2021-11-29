@@ -12,7 +12,6 @@
 
 # Load modules for currently recommended VASP build - see build instructions for more info
 module swap PrgEnv-cray PrgEnv-gnu
-module swap gcc gcc/7.3.0
 
 # Move to directory that script was submitted from
 export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
