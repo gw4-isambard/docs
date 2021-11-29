@@ -216,9 +216,6 @@ mpirun -np <span class="m">36</span> vasp_std <span class="m">2</span>&gt;<span 
 <span class="c1"># Currently we recommend compiling with the gnu programming environment</span>
 module swap PrgEnv-cray PrgEnv-gnu
 
-<span class="c1"># There is a compilation issue with gcc 8 so switch to gcc 7</span>
-module swap gcc gcc/7.3.0
-
 <span class="c1"># And build vasp, replace all with std, ncl, gam for individual targets</span>
 make all
 </pre></div>
