@@ -5,7 +5,7 @@ Cray XC50 cabinet, codenamed XCI, containing 20’992 ARM cores. Available since
 
 * Marvell ThunderX2 ARM v8.1
 
-  * 16nm FinFET CPU @ 2.1GHz
+  * 16nm FinFET CPU @ 2.1GHz (permanent turbo to 2.5GHz)
   * 4-way simultaneous multi-threading
   * 128-bit SIMD "NEON"
   * 32KB L1 instruction & data cache, 256KB L2 per core, 32MB distributed L3 cache
