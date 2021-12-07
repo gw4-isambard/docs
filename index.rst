@@ -19,13 +19,11 @@ Service Interruption
 --------------------
 
 .. important::
-    15 Sep. 2021
+    9 Dec. 2021
     
-    Authentication issues have resulted in jobs failing and login issues early this morning, the cause has been identified and the issue fixed, with improvements to avoid it reoccuring.
+    Due to upgrades to Isambard to provide further access to new systems, Isambard will require a maintenance sessions requiring all access to be restricted until the work has completed.  We have been advised that just a day is needed to integrate the systems but please keep an eye on announcements.
     
-    Users are recommended to check their jobs: Any running jobs likely failed due to Permission Denied filesystem errors; Queued jobs likely attempted to run and failed immediately.
-    
-    Apologies for any inconvenience, please contact isambard-support@gw4.ac.uk if you experience any further issues.
+    Apologies for any inconvenience, please contact isambard-support@gw4.ac.uk if you have any questions.
 
 
 System Status
