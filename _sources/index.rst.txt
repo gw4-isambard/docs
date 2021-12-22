@@ -19,22 +19,22 @@ Service Interruption
 --------------------
 
 .. important::
-    9 Dec. 2021
+    23 Dec. 2021
     
-    Due to upgrades to Isambard to provide further access to new systems, Isambard will require a maintenance sessions requiring all access to be restricted until the work has completed.  We have been advised that just a day is needed to integrate the systems but please keep an eye on announcements.
+    No major service interruptions expected.  
     
-    Apologies for any inconvenience, please contact isambard-support@gw4.ac.uk if you have any questions.
+    Support desk responses will be limited until the New Year (week of 3 Jan. 2022).
 
 
 System Status
 -------------
 
 .. important::
-    2 Jun. 2021
+    23 Dec. 2021
     
-    - XCI (ARM ThunderX2): Available
+    - XCI (ARM ThunderX2): Available - possible minor issues with scheduler, investigations ongoing.
     - MACS: Available
-    - A64fx: Available
+    - A64fx: Available - 1 of 2 login nodes currently down.
 
 Acknowledging Isambard
 ----------------------
