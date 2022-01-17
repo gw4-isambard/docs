@@ -19,20 +19,18 @@ Service Interruption
 --------------------
 
 .. important::
-    23 Dec. 2021
+    17 Jan. 2022
     
-    No major service interruptions expected.  
-    
-    Support desk responses will be limited until the New Year (week of 3 Jan. 2022).
+    No major service interruptions expected.
 
 
 System Status
 -------------
 
 .. important::
-    23 Dec. 2021
+    17 Jan. 2022
     
-    - XCI (ARM ThunderX2): Available - possible minor issues with scheduler, investigations ongoing.
+    - XCI (ARM ThunderX2): Available - previous queue issues have now been fixed.
     - MACS: Available
     - A64fx: Available - 1 of 2 login nodes currently down.
 
