@@ -156,16 +156,13 @@ Host gw4a64fxlogin00.isambard.gw4.ac.uk a64fxlogin00.isambard a64fx.isambard
 Host gw4a64fxlogin01.isambard.gw4.ac.uk a64fxlogin01.isambard
   Hostname gw4a64fxlogin01
   ProxyCommand ssh isambard.gw4.ac.uk &#39;nc %h %p&#39;
+
+# Isambard: Phase-3
+Host p3login01.isambard.gw4.ac.uk p3login01.isambard p3login.isambard
+  Hostname p3login01
+  ProxyCommand ssh isambard.gw4.ac.uk &#39;nc %h %p&#39;
 </pre></div>
 </div>
-<dl class="simple">
-<dt># Isambard: Phase-3</dt><dd><dl class="simple">
-<dt>Host p3login01.isambard.gw4.ac.uk p3login01.isambard p3login.isambard</dt><dd><p>Hostname p3login01
-ProxyCommand ssh isambard.gw4.ac.uk ‘nc %h %p’</p>
-</dd>
-</dl>
-</dd>
-</dl>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Update the <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> with your details:-</p>

@@ -45,7 +45,7 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
    Hostname gw4a64fxlogin01
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
 
-# Isambard: Phase-3
+ # Isambard: Phase-3
  Host p3login01.isambard.gw4.ac.uk p3login01.isambard p3login.isambard
    Hostname p3login01
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
