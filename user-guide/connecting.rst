@@ -45,6 +45,10 @@ The following stanza is required in your local ``~/.ssh/config`` in order to tra
    Hostname gw4a64fxlogin01
    ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
 
+# Isambard: Phase-3
+ Host p3login01.isambard.gw4.ac.uk p3login01.isambard p3login.isambard
+   Hostname p3login01
+   ProxyCommand ssh isambard.gw4.ac.uk 'nc %h %p'
 
 .. caution::
   Update the ``~/.ssh/config`` with your details:-
@@ -69,6 +73,11 @@ A64FX - Fujitsu A64FX
 #####################
 
 | To access the Fujitsu A64FX Arm system, run either ``ssh a64fxlogin00.isambard`` or ``ssh a64fx.isambard``
+
+Phase-3 - GPUs and Milan
+#####################
+
+| To access the Phase-3 system, run either ``ssh p3login01.isambard`` or ``ssh p3login.isambard``
 
 Remember to replace ``XX-USERNAME`` with your Isambard username.
 
