@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Running jobs &mdash; GW4-Isambard  documentation</title>
@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
@@ -79,6 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/orca.html">ORCA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Service Policies</span></p>
@@ -112,16 +114,16 @@
            <div itemprop="articleBody">
              
   <section id="running-jobs">
-<h1>Running jobs<a class="headerlink" href="#running-jobs" title="Permalink to this headline"></a></h1>
+<h1>Running jobs<a class="headerlink" href="#running-jobs" title="Permalink to this heading"></a></h1>
 <p>Isambard uses the PBS Pro scheduler to manage compute resources and run jobs according to “fairshare” rather than fixed allocations.</p>
 <p>The MACS, XCI &amp; A64FX use separate schedulers, jobs must be submitted from the login nodes for the relevant system.</p>
 <section id="limits">
-<h2>Limits<a class="headerlink" href="#limits" title="Permalink to this headline"></a></h2>
+<h2>Limits<a class="headerlink" href="#limits" title="Permalink to this heading"></a></h2>
 <p>Users can submit any number of jobs but only two jobs per-user per-queue will run at the same time.</p>
 <p>All jobs default to 24 hours walltime, you can set this lower in your job script to increase the chance of your job starting.</p>
 </section>
 <section id="queue-configuration">
-<h2>Queue configuration<a class="headerlink" href="#queue-configuration" title="Permalink to this headline"></a></h2>
+<h2>Queue configuration<a class="headerlink" href="#queue-configuration" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><cite>arm</cite>     - Run on XCI Marvell Thunder X2 nodes</p></li>
 <li><p><cite>arm-dev</cite> - Run interactively on up to 4x XCI Thunder X2 nodes</p></li>
@@ -139,7 +141,7 @@
 </div>
 </section>
 <section id="batch-job">
-<h2>Batch job<a class="headerlink" href="#batch-job" title="Permalink to this headline"></a></h2>
+<h2>Batch job<a class="headerlink" href="#batch-job" title="Permalink to this heading"></a></h2>
 <p>MACS example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -q pascalq</span>
@@ -165,7 +167,7 @@ aprun -n <span class="m">32</span> hostname
 </div>
 </section>
 <section id="interactive-job">
-<h2>Interactive job<a class="headerlink" href="#interactive-job" title="Permalink to this headline"></a></h2>
+<h2>Interactive job<a class="headerlink" href="#interactive-job" title="Permalink to this heading"></a></h2>
 <p>Passing the <code class="docutils literal notranslate"><span class="pre">-I</span></code> flag to <code class="docutils literal notranslate"><span class="pre">qsub</span></code> allows a compute node to be used interactively.</p>
 <p>For example, to request an interactive job on one of the Pascal nodes utilizing 1 GPU and 16 of the 36 available Broadwell CPU cores, use the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub -I -q pascalq -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">16</span>:ngpus<span class="o">=</span><span class="m">1</span>
@@ -174,7 +176,7 @@ aprun -n <span class="m">32</span> hostname
 <p>For XCI, compilations can be run on the login nodes <code class="docutils literal notranslate"><span class="pre">xcil00</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">xcil01</span></code>. Small development jobs can be run in the interactive queue <code class="docutils literal notranslate"><span class="pre">arm-dev</span></code>.</p>
 </section>
 <section id="specifying-resources">
-<h2>Specifying resources<a class="headerlink" href="#specifying-resources" title="Permalink to this headline"></a></h2>
+<h2>Specifying resources<a class="headerlink" href="#specifying-resources" title="Permalink to this heading"></a></h2>
 <p>To avoid blocking resources which aren’t being used by your job, it is important to specify the correct amount of resources in your job script.</p>
 <p>For example, this command declares that your job will run on a single node and will use one of the two available GPUs. The omission of the <cite>ncpus</cite> attribute causes it to default to <cite>1</cite>, meaning other jobs can enter the system to use any of the remaining 35 Broadwell CPU cores and the unused GPU.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub -I -q pascalq -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ngpus<span class="o">=</span><span class="m">1</span>
@@ -183,7 +185,7 @@ aprun -n <span class="m">32</span> hostname
 <p>If you request <cite>ngpus=2</cite>, then any subsequently submitted job requesting a GPU will not run on the same node until a node is freed. Similarly setting <cite>ncpus=36</cite> will block any jobs from running.</p>
 </section>
 <section id="usage-history">
-<h2>Usage History<a class="headerlink" href="#usage-history" title="Permalink to this headline"></a></h2>
+<h2>Usage History<a class="headerlink" href="#usage-history" title="Permalink to this heading"></a></h2>
 <p>You can see limited amount of job history by using the <code class="docutils literal notranslate"><span class="pre">-x</span></code> flag on <code class="docutils literal notranslate"><span class="pre">qstat</span></code>, for example</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qstat -x -u <span class="nv">$USER</span>
 qstat -x -f &lt;JOBID&gt;

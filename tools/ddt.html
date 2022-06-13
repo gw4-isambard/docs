@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arm DDT &mdash; GW4-Isambard  documentation</title>
@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
@@ -76,6 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/orca.html">ORCA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Service Policies</span></p>
@@ -109,15 +111,15 @@
            <div itemprop="articleBody">
              
   <section id="arm-ddt">
-<span id="ddt"></span><h1>Arm DDT<a class="headerlink" href="#arm-ddt" title="Permalink to this headline"></a></h1>
+<span id="ddt"></span><h1>Arm DDT<a class="headerlink" href="#arm-ddt" title="Permalink to this heading"></a></h1>
 <p>DDT is a tool for debugging C, C++ and Fortran parallel programs. It
 is available on the MACS and XCI systems as part of the Forge suite.</p>
 <section id="useful-links">
-<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline"></a></h2>
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this heading"></a></h2>
 <p>A User Guide and Getting Started guide are available from <a class="reference external" href="https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/arm-ddt">https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/arm-ddt</a></p>
 </section>
 <section id="modules">
-<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline"></a></h2>
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this heading"></a></h2>
 <p>To use DDT you will need to load the Forge module. On MACS the command is</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">allinea</span><span class="o">/</span><span class="n">forge</span>
 </pre></div>
@@ -129,7 +131,7 @@ is available on the MACS and XCI systems as part of the Forge suite.</p>
 <p>When you have loaded the module you can start the DDT graphical interface by running the command <code class="docutils literal notranslate"><span class="pre">ddt</span> <span class="pre">&amp;</span></code>.</p>
 </section>
 <section id="example-session">
-<h2>Example session<a class="headerlink" href="#example-session" title="Permalink to this headline"></a></h2>
+<h2>Example session<a class="headerlink" href="#example-session" title="Permalink to this heading"></a></h2>
 <p>This example uses an interactive job running in the XCI <code class="docutils literal notranslate"><span class="pre">arm-dev</span></code> queue to debug a parallel program.</p>
 <p>Start by compiling your program with a <code class="docutils literal notranslate"><span class="pre">-g</span></code> flag to retain extra debugging information. For example to compile a C program called <code class="docutils literal notranslate"><span class="pre">myprog.c</span></code> run</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">o</span> <span class="n">myprog</span> <span class="n">myprog</span><span class="o">.</span><span class="n">c</span>

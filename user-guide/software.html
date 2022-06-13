@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Software &mdash; GW4-Isambard  documentation</title>
@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
@@ -89,6 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/orca.html">ORCA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Service Policies</span></p>
@@ -122,10 +124,10 @@
            <div itemprop="articleBody">
              
   <section id="software">
-<h1>Software<a class="headerlink" href="#software" title="Permalink to this headline"></a></h1>
+<h1>Software<a class="headerlink" href="#software" title="Permalink to this heading"></a></h1>
 <p>This page summarises the software available across the cluster, please keep in mind that available packages and versions may vary between the different architectures of GW4 Isambard.</p>
 <section id="python-virtualenv">
-<h2>Python VirtualEnv<a class="headerlink" href="#python-virtualenv" title="Permalink to this headline"></a></h2>
+<h2>Python VirtualEnv<a class="headerlink" href="#python-virtualenv" title="Permalink to this heading"></a></h2>
 <p>Python Virtual Environments provide a self-contained Python installation where you can install modules without altering your profile and other project’s python environemnts.</p>
 <p>Load an appropriate python module.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">myvenv</span>
@@ -136,9 +138,9 @@
 </div>
 </section>
 <section id="macs">
-<h2>MACS<a class="headerlink" href="#macs" title="Permalink to this headline"></a></h2>
+<h2>MACS<a class="headerlink" href="#macs" title="Permalink to this heading"></a></h2>
 <section id="macs-python">
-<h3>MACS Python<a class="headerlink" href="#macs-python" title="Permalink to this headline"></a></h3>
+<h3>MACS Python<a class="headerlink" href="#macs-python" title="Permalink to this heading"></a></h3>
 <p>Python3 is provided as part of the MACS system</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
 <span class="n">Python</span> <span class="mf">3.5</span><span class="o">.</span><span class="mi">1</span>
@@ -148,13 +150,9 @@
 </div>
 </section>
 <section id="macs-module-list">
-<h3>MACS Module list<a class="headerlink" href="#macs-module-list" title="Permalink to this headline"></a></h3>
+<h3>MACS Module list<a class="headerlink" href="#macs-module-list" title="Permalink to this heading"></a></h3>
 <p>Last updated 2021-07-27</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Module</p></th>
 <th class="head"><p>Description</p></th>
@@ -658,9 +656,9 @@
 </section>
 </section>
 <section id="xci">
-<h2>XCI<a class="headerlink" href="#xci" title="Permalink to this headline"></a></h2>
+<h2>XCI<a class="headerlink" href="#xci" title="Permalink to this heading"></a></h2>
 <section id="xci-python">
-<h3>XCI Python<a class="headerlink" href="#xci-python" title="Permalink to this headline"></a></h3>
+<h3>XCI Python<a class="headerlink" href="#xci-python" title="Permalink to this heading"></a></h3>
 <p>Cray provides an optimzied Python3 build via the <code class="docutils literal notranslate"><span class="pre">cray-python</span></code> module.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">cray</span><span class="o">-</span><span class="n">python</span>
 <span class="o">&gt;</span> <span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
@@ -670,13 +668,9 @@
 <p>Without this module loaded, <code class="docutils literal notranslate"><span class="pre">python</span></code> points to python2. Python2 can be invoked even with <code class="docutils literal notranslate"><span class="pre">cray-python</span></code> loaded by running <code class="docutils literal notranslate"><span class="pre">python2</span></code> explicitly.</p>
 </section>
 <section id="xci-module-list">
-<h3>XCI Module list<a class="headerlink" href="#xci-module-list" title="Permalink to this headline"></a></h3>
+<h3>XCI Module list<a class="headerlink" href="#xci-module-list" title="Permalink to this heading"></a></h3>
 <p>Last updated 2021-07-27</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Module</p></th>
 <th class="head"><p>Description</p></th>
@@ -1039,13 +1033,13 @@
 </section>
 </section>
 <section id="a64fx">
-<h2>A64FX<a class="headerlink" href="#a64fx" title="Permalink to this headline"></a></h2>
+<h2>A64FX<a class="headerlink" href="#a64fx" title="Permalink to this heading"></a></h2>
 <section id="a64fx-python">
-<h3>A64FX Python<a class="headerlink" href="#a64fx-python" title="Permalink to this headline"></a></h3>
+<h3>A64FX Python<a class="headerlink" href="#a64fx-python" title="Permalink to this heading"></a></h3>
 <p>Builds exist in both <code class="docutils literal notranslate"><span class="pre">/projects/bristol/modules-arm/modulefiles</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">/projects/bristol/modules-a64fx/modulefiles</span></code></p>
 </section>
 <section id="a64fx-module-list">
-<h3>A64FX Module list<a class="headerlink" href="#a64fx-module-list" title="Permalink to this headline"></a></h3>
+<h3>A64FX Module list<a class="headerlink" href="#a64fx-module-list" title="Permalink to this heading"></a></h3>
 <p>Last updated 2021-07-27</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">module</span> <span class="n">use</span>
 <span class="o">&gt;</span> <span class="n">module</span> <span class="n">avail</span> <span class="n">python</span>
@@ -1055,10 +1049,6 @@
 </pre></div>
 </div>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Module</p></th>
 <th class="head"><p>Description</p></th>

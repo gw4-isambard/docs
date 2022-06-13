@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Multi-Architecture Comparison System &mdash; GW4-Isambard  documentation</title>
@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
@@ -77,6 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/orca.html">ORCA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Service Policies</span></p>
@@ -110,7 +112,7 @@
            <div itemprop="articleBody">
              
   <section id="multi-architecture-comparison-system">
-<h1>Multi-Architecture Comparison System<a class="headerlink" href="#multi-architecture-comparison-system" title="Permalink to this headline"></a></h1>
+<h1>Multi-Architecture Comparison System<a class="headerlink" href="#multi-architecture-comparison-system" title="Permalink to this heading"></a></h1>
 <p>Isambard MACS hosts many nodes of different architectures:</p>
 <ul class="simple">
 <li><p>2x Login nodes with <a class="reference external" href="https://ark.intel.com/content/www/us/en/ark/products/91316/intel-xeon-processor-e5-2695-v4-45m-cache-2-10-ghz.html">Intel Xeon “Broadwell”</a> CPU</p></li>
@@ -124,7 +126,7 @@
 <p>Most MACS nodes run Red Hat Enterprise Linux 7 with the Cray software stack. Power 9 nodes run Red Hat Enterprise Linux (Little-Endian) 7 with IBM compilers &amp; IBM Power AI.</p>
 <p>All nodes are connected via 100 Gigabit EDR Infiniband. The login nodes are connected to the Internet via a 10 Gigabit link to the <a class="reference external" href="https://www.jisc.ac.uk/janet">Janet Network</a>.</p>
 <section id="ibm-power-9">
-<h2>IBM Power 9<a class="headerlink" href="#ibm-power-9" title="Permalink to this headline"></a></h2>
+<h2>IBM Power 9<a class="headerlink" href="#ibm-power-9" title="Permalink to this heading"></a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Service unavailable as of 7 Oct 2020 both nodes have crashed and require in person intervention to be rebooted.</p>
@@ -139,15 +141,11 @@ ssh power-002
 </pre></div>
 </div>
 <section id="hardware">
-<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline"></a></h3>
+<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading"></a></h3>
 <p>There are two nodes, power-001 &amp; power-002 - Each with two sockets of Power 9 CPU. Each socket is attached to an Nvidia V100 GPU via NVLink at aprox. 150GB/s with coherent memory access to the 280GB of system memory. There is an X-Bus link between the two GPUs.</p>
 <p>External documentation: <a class="reference external" href="https://www.redbooks.ibm.com/redpapers/pdfs/redp5472.pdf">IBM Power System AC922 Technical Overview - IBM Redbooks</a></p>
 <p>Power AI frameworks found under <code class="docutils literal notranslate"><span class="pre">/opt/DL</span></code>, add them to your environment by running <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/DL/&lt;framework&gt;/bin/&lt;framework&gt;-activate</span></code> unless stated in the right-column:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 74%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Framework</p></th>
 <th class="head"><p>Source</p></th>

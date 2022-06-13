@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NAMD &mdash; GW4-Isambard  documentation</title>
+  <title>ORCA &mdash; GW4-Isambard  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,9 @@
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="VASP" href="vasp.html" />
+    <link rel="prev" title="OpenFOAM" href="openfoam.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -63,14 +65,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Applications</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="covidsim.html">CovidSim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dedalus.html">Dedalus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dlmonte.html">DL_MONTE 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firedrake.html">Firedrake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gromacs.html">GROMACS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="openfoam.html">OpenFOAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="orca.html">ORCA</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ORCA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#useful-links">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#licensing">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running">Running</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-job-submission-script">Example Job Submission Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arm">Arm</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="vasp.html">VASP</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Service Policies</span></p>
@@ -93,9 +105,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>NAMD</li>
+      <li>ORCA</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/gw4-isambard/docs/blob/master/applications/namd.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gw4-isambard/docs/blob/master/applications/orca.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -103,15 +115,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="namd">
-<h1>NAMD<a class="headerlink" href="#namd" title="Permalink to this heading"></a></h1>
-<p>TODO</p>
+  <section id="orca">
+<h1>ORCA<a class="headerlink" href="#orca" title="Permalink to this heading"></a></h1>
+<section id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://orcaforum.kofo.mpg.de/app.php/portal">ORCA user portal</a></p></li>
+</ul>
+</section>
+<section id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this heading"></a></h2>
+<p>ORCA is subject to an EULA (End User License Agreement) (see the <a class="reference external" href="https://orcaforum.kofo.mpg.de/app.php/dlext/?view=detail&amp;df_id=126">ORCA End User License Agreement</a>).</p>
+<p>In order to be given access to ORCA you will need to confirm that you have read and agree to the EULA. Please contact the Isambard support team in order to do this and obtain access.</p>
+</section>
+<section id="version">
+<h2>Version<a class="headerlink" href="#version" title="Permalink to this heading"></a></h2>
+<p>The following versions of ORCA are currently available:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">apps/orca/5.0.2</span></code></p></li>
+</ul>
+</section>
+<section id="running">
+<h2>Running<a class="headerlink" href="#running" title="Permalink to this heading"></a></h2>
+<section id="example-job-submission-script">
+<h3>Example Job Submission Script<a class="headerlink" href="#example-job-submission-script" title="Permalink to this heading"></a></h3>
+</section>
+<section id="arm">
+<h3>Arm<a class="headerlink" href="#arm" title="Permalink to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Select 1 nodes (64 cores)</span>
+<span class="c1">#PBS -l select=1:ncpus=64</span>
+
+<span class="c1"># Set maximum job walltime</span>
+<span class="c1">#PBS -l walltime=00:30:00</span>
+
+<span class="c1"># Change to the directory the script was submitted from</span>
+<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+
+<span class="c1"># Load the desired version of ORCA</span>
+module load apps/orca/5.0.2
+
+<span class="k">$(</span>which orca<span class="k">)</span> my_orca_input.inp <span class="m">1</span>&gt;&gt; out.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="openfoam.html" class="btn btn-neutral float-left" title="OpenFOAM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vasp.html" class="btn btn-neutral float-right" title="VASP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
