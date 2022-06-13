@@ -86,6 +86,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    applications/firedrake
    applications/gromacs
    applications/openfoam
+   applications/orca
    applications/vasp
 
 .. TODO
