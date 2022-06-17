@@ -18,17 +18,20 @@ Compiling
 Compiling can be perfomed on the p3-login node.  Please load the IntelOneApi module for both mpi and compiler
 
 .. code-block:: text
+
   module load IntelOneApi/compiler
   module load IntelOneApi/mpi
 
 This will make the standard Intel tools available - being AMD processors we recommend using advice from AMD which suggests using
 
 .. code-block:: text
+
   icc -march core-avx2 
 
 To compile with MPI, the following can be used:
 
 .. code-block:: text
+
   mpiicc -march core-avx2
   
 

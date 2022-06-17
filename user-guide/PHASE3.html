@@ -123,8 +123,18 @@
 <section id="compiling">
 <h2>Compiling<a class="headerlink" href="#compiling" title="Permalink to this heading"></a></h2>
 <p>Compiling can be perfomed on the p3-login node.  Please load the IntelOneApi module for both mpi and compiler</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>module load IntelOneApi/compiler
+module load IntelOneApi/mpi
+</pre></div>
+</div>
 <p>This will make the standard Intel tools available - being AMD processors we recommend using advice from AMD which suggests using</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>icc -march core-avx2
+</pre></div>
+</div>
 <p>To compile with MPI, the following can be used:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mpiicc -march core-avx2
+</pre></div>
+</div>
 </section>
 <section id="running-a-job">
 <h2>Running a job<a class="headerlink" href="#running-a-job" title="Permalink to this heading"></a></h2>
