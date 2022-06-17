@@ -28,7 +28,7 @@ This will make the standard Intel tools available - being AMD processors we reco
 
 To compile with MPI, the following can be used:
 
-... code-block:: text
+.. code-block:: text
   mpiicc -march core-avx2
   
 
