@@ -52,7 +52,11 @@
 <li class="toctree-l1"><a class="reference internal" href="MACS.html">Multi-Architecture Comparison System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Phase 3 System</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Phase 3 System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#compiling">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-a-job">Running a job</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spack.html">Spack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
@@ -112,10 +116,32 @@
 <li><p>1x Login nodes with <a class="reference external" href="https://www.amd.com/en/products/cpu/amd-epyc-7713">AMD EPYC 7713 64-Core Processor “Milan”</a> CPU</p></li>
 <li><p>2x nodes of Nvidia Ampere GPU with 4x <a class="reference external" href="https://www.nvidia.com/en-gb/data-center/ampere-architecture/">Nvidia A100 40GB SXM “Ampere”</a> GPUs and AMD EPYC 7543P 32-Core Processor “Milan” CPU</p></li>
 <li><p>2x nodes of AMD Instinct GPU nodes with 4x <a class="reference external" href="https://www.amd.com/en/products/server-accelerators/instinct-mi100">AMD Instinct “MI100”</a> GPU and AMD EPYC 7543P 32-Core Processor “Milan” CPU</p></li>
-<li><p>12x nodes of <a class="reference external" href="https://www.amd.com/en/products/cpu/amd-epyc-7713">AMD EPYC 7713 64-Core Processor “Milan”</a> &#64; 2.0 GHz, 256 GB/node 16x16GB-DDR4-3200</p></li>
+<li><p>12x nodes dual socket <a class="reference external" href="https://www.amd.com/en/products/cpu/amd-epyc-7713">AMD EPYC 7713 64-Core Processor “Milan”</a> &#64; 2.0 GHz, 256 GB/node 16x16GB-DDR4-3200</p></li>
 </ul>
 <p>Phase 3 nodes run Red Hat Enterprise Linux 8 with the Cray software stack.</p>
 <p>All nodes are connected via Slingshot 10. The login nodes are connected to the Internet via a 10 Gigabit link to the <a class="reference external" href="https://www.jisc.ac.uk/janet">Janet Network</a>.</p>
+<section id="compiling">
+<h2>Compiling<a class="headerlink" href="#compiling" title="Permalink to this heading"></a></h2>
+<p>Compiling can be perfomed on the p3-login node.  Please load the IntelOneApi module for both mpi and compiler</p>
+<p>This will make the standard Intel tools available - being AMD processors we recommend using advice from AMD which suggests using</p>
+<p>To compile with MPI, the following can be used:</p>
+<dl class="simple">
+<dt>… code-block:: text</dt><dd><p>mpiicc -march core-avx2</p>
+</dd>
+</dl>
+</section>
+<section id="running-a-job">
+<h2>Running a job<a class="headerlink" href="#running-a-job" title="Permalink to this heading"></a></h2>
+<p>The system can use Intel MPI and Compilers.  For example to run a job on a single node the milanq:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -q milanq -l select=1:ncpus=128:mpiprocs=128
+</pre></div>
+</div>
+<p>To run on 2 nodes you could use:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -q milanq -l select=2:ncpus=128:mpiprocs=128 -l place=scatter:excl
+</pre></div>
+</div>
+<p>This will place each request on different nodes - since we have hyperthreading enabled it would otherwise place them on the same node.</p>
+</section>
 </section>
 
 
