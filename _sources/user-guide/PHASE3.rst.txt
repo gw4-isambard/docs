@@ -52,5 +52,11 @@ To run on 2 nodes you could use:
   
 This will place each request on different nodes - since we have hyperthreading enabled it would otherwise place them on the same node.
 
+Then use ssh to laucnh the MPI job
+
+.. code-block:: text
+  
+  mpirun -launcher ssh hostname
+  
   
 

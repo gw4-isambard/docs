@@ -147,6 +147,10 @@ module load IntelOneApi/mpi
 </pre></div>
 </div>
 <p>This will place each request on different nodes - since we have hyperthreading enabled it would otherwise place them on the same node.</p>
+<p>Then use ssh to laucnh the MPI job</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mpirun -launcher ssh hostname
+</pre></div>
+</div>
 </section>
 </section>
 
