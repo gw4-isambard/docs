@@ -12,10 +12,61 @@ Phase 3 nodes run Red Hat Enterprise Linux 8 with the Cray software stack.
 
 All nodes are connected via Slingshot 10. The login nodes are connected to the Internet via a 10 Gigabit link to the `Janet Network <https://www.jisc.ac.uk/janet>`_.
 
-Compiling
-=========
 
-Compiling can be perfomed on the p3-login node.  Please load the IntelOneApi module for both mpi and compiler
+Cray Compiler
+=============
+
+Compiling
+~~~~~~~~~
+
+Compiling can be perfomed on the p3-login node.
+
+The default modules should provide the required environment.
+
+.. code-block:: text
+
+  cc test.c 
+
+To compile with MPI and OpenMP, the following can be used:
+
+.. code-block:: text
+
+  cc -h omp test.c
+  
+
+Running a job
+~~~~~~~~~~~~~
+
+The system can use Intel MPI and Compilers.  For example to run a job on a single node the milanq:
+
+.. code-block:: text
+
+  qsub -q milanq -l select=1:ncpus=128:mpiprocs=128
+
+To run on 2 nodes you could use:
+
+.. code-block:: text
+  
+  qsub -q milanq -l select=2:ncpus=128:mpiprocs=128 -l place=scatter:excl
+  
+This will place each request on different nodes - since we have hyperthreading enabled it would otherwise place them on the same node.
+
+Then use ssh to launch the MPI job
+
+.. code-block:: text
+  
+  module load cray-pals
+  mpirun hostname
+
+Intel OneAPI
+============
+
+Compiling
+~~~~~~~~~
+
+Compiling can be perfomed on the p3-login node.  
+
+Please load the IntelOneApi module for both mpi and compiler
 
 .. code-block:: text
 
@@ -32,11 +83,11 @@ To compile with MPI, the following can be used:
 
 .. code-block:: text
 
-  mpiicc -march core-avx2
+  mpiicc -march core-avx2 -fopenmp
   
 
 Running a job
-=============
+~~~~~~~~~~~~~
 
 The system can use Intel MPI and Compilers.  For example to run a job on a single node the milanq:
 
@@ -57,6 +108,7 @@ Then use ssh to laucnh the MPI job
 .. code-block:: text
   
   mpirun -launcher ssh hostname
-  
+
+
   
 
