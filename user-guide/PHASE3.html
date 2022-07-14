@@ -53,8 +53,16 @@
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Phase 3 System</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#compiling">Compiling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-a-job">Running a job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cray-compiler">Cray Compiler</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#compiling">Compiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-job">Running a job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#intel-oneapi">Intel OneAPI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Compiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Running a job</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
@@ -120,9 +128,44 @@
 </ul>
 <p>Phase 3 nodes run Red Hat Enterprise Linux 8 with the Cray software stack.</p>
 <p>All nodes are connected via Slingshot 10. The login nodes are connected to the Internet via a 10 Gigabit link to the <a class="reference external" href="https://www.jisc.ac.uk/janet">Janet Network</a>.</p>
+<section id="cray-compiler">
+<h2>Cray Compiler<a class="headerlink" href="#cray-compiler" title="Permalink to this heading"></a></h2>
 <section id="compiling">
-<h2>Compiling<a class="headerlink" href="#compiling" title="Permalink to this heading"></a></h2>
-<p>Compiling can be perfomed on the p3-login node.  Please load the IntelOneApi module for both mpi and compiler</p>
+<h3>Compiling<a class="headerlink" href="#compiling" title="Permalink to this heading"></a></h3>
+<p>Compiling can be perfomed on the p3-login node.</p>
+<p>The default modules should provide the required environment.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cc test.c
+</pre></div>
+</div>
+<p>To compile with MPI and OpenMP, the following can be used:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cc -h omp test.c
+</pre></div>
+</div>
+</section>
+<section id="running-a-job">
+<h3>Running a job<a class="headerlink" href="#running-a-job" title="Permalink to this heading"></a></h3>
+<p>The system can use Intel MPI and Compilers.  For example to run a job on a single node the milanq:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -q milanq -l select=1:ncpus=128:mpiprocs=128
+</pre></div>
+</div>
+<p>To run on 2 nodes you could use:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -q milanq -l select=2:ncpus=128:mpiprocs=128 -l place=scatter:excl
+</pre></div>
+</div>
+<p>This will place each request on different nodes - since we have hyperthreading enabled it would otherwise place them on the same node.</p>
+<p>Then use ssh to launch the MPI job</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>module load cray-pals
+mpirun hostname
+</pre></div>
+</div>
+</section>
+</section>
+<section id="intel-oneapi">
+<h2>Intel OneAPI<a class="headerlink" href="#intel-oneapi" title="Permalink to this heading"></a></h2>
+<section id="id2">
+<h3>Compiling<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>Compiling can be perfomed on the p3-login node.</p>
+<p>Please load the IntelOneApi module for both mpi and compiler</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>module load IntelOneApi/compiler
 module load IntelOneApi/mpi
 </pre></div>
@@ -132,12 +175,12 @@ module load IntelOneApi/mpi
 </pre></div>
 </div>
 <p>To compile with MPI, the following can be used:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mpiicc -march core-avx2
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mpiicc -march core-avx2 -fopenmp
 </pre></div>
 </div>
 </section>
-<section id="running-a-job">
-<h2>Running a job<a class="headerlink" href="#running-a-job" title="Permalink to this heading"></a></h2>
+<section id="id3">
+<h3>Running a job<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
 <p>The system can use Intel MPI and Compilers.  For example to run a job on a single node the milanq:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -q milanq -l select=1:ncpus=128:mpiprocs=128
 </pre></div>
@@ -151,6 +194,7 @@ module load IntelOneApi/mpi
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mpirun -launcher ssh hostname
 </pre></div>
 </div>
+</section>
 </section>
 </section>
 
