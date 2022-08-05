@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XCI - Marvell Thunder X2 &mdash; GW4-Isambard  documentation</title>
@@ -51,6 +51,7 @@
 <li class="toctree-l1"><a class="reference internal" href="jobs.html">Running jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MACS.html">Multi-Architecture Comparison System</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">XCI - Marvell Thunder X2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#running">Running</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#queues">Queues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#caveats">Caveats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#known-errors">Known errors</a></li>
@@ -133,6 +134,10 @@
 </ul>
 </li>
 </ul>
+<section id="running">
+<h2>Running<a class="headerlink" href="#running" title="Permalink to this heading"></a></h2>
+<p>Since the XCI system uses Cray ALPS to run jobs all executables run in jobs need to be run with <code class="docutils literal notranslate"><span class="pre">aprun</span></code> otherwise the jobs can run on the MOM nodes that can cause problems.</p>
+</section>
 <section id="queues">
 <h2>Queues<a class="headerlink" href="#queues" title="Permalink to this heading"></a></h2>
 <p>Work is submitted via the <code class="docutils literal notranslate"><span class="pre">arm</span></code> queue.</p>
