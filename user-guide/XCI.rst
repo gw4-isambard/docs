@@ -16,6 +16,11 @@ Cray XC50 cabinet, codenamed XCI, containing 20’992 ARM cores. Available since
 * Cray Linux Environment 7 (Suse SLES 15)
 
   * Cray Programming Environment
+  
+Running
+=======
+
+Since the XCI system uses Cray ALPS to run jobs all executables run in jobs need to be run with ``aprun`` otherwise the jobs can run on the MOM nodes that can cause problems.
 
 Queues
 ======
