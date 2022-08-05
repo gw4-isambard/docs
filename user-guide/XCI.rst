@@ -20,7 +20,7 @@ Cray XC50 cabinet, codenamed XCI, containing 20’992 ARM cores. Available since
 Running
 =======
 
-Since the XCI system uses Cray ALPS to run jobs all executables run in jobs need to be run with ``aprun`` otherwise the jobs can run on the MOM nodes that can cause problems.
+Since the XCI system uses Cray ALPS to run jobs all compute intensive executables need to be run with ``aprun`` to run on the compute nodes otherwise the jobs can run on the MOM nodes that can cause problems.
 
 Queues
 ======
