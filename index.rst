@@ -7,40 +7,39 @@ Isambard User Documentation
 ===========================
 
 Isambard is a HPC service provided by `GW4 <http://gw4.ac.uk>`_ and the `UK Met Office <https://www.metoffice.gov.uk>`_.
-The system is funded by `EPSRC <http://www.epsrc.ac.uk>`_ and is one of six Tier-2 HPC facilities in the UK.
+The system is funded by `EPSRC <http://www.epsrc.ac.uk>`_ and is one of a number of `Tier-2 HPC facilities <http://www.hpc-uk.ac.uk/facilities/>`_ in the UK.
 
-Isambard is a Cray XC50 system which comprises 10,496 cores, and is one of the worlds first production Arm-based supercomputers.
-Each of the 164 compute nodes contains two 32-core Cavium ThunderX2 processors running at 2.1 GHz, and has 256 GB of DDR4-2666 memory.
-The nodes are connected via Cray Aries interconnect with a Dragonfly topology.
-A Cray Sonexion 3000 storage cabinet provides 480 terabytes of Lustre storage.
+Isambard is a Cray XC50 system which comprises 20,992 cores, and is one of the world's first production Arm-based supercomputers. While Isambard is not based on the more common x86 processors from Intel and AMD, most software compiles and runs on Isambard with no or minimal changes.
+
+Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors running at 2.5 GHz. 160 nodes have 256 GB and 169 have 512 GB of memory, both at DDR4-2666MHz.
+The nodes are connected via Cray Aries interconnect in a Dragonfly topology.
+A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.
+
+Service Interruption
+--------------------
+
+.. important::
+    17 Jan. 2022
+    
+    No major service interruptions expected.
 
 
 System Status
 -------------
 
-.. warning::
-    15 May 2020 
+.. important::
+    17 Jan. 2022
     
-    Dear Isambard users,
-    
-    As many of you know there’s an ongoing security incident affecting several of the Tier-1 and Tier-2 systems in the UK, and several major sites in Europe and beyond. We disabled ssh access to Isambard on Tuesday as soon as we were made aware of the situation, and have been conducting a coordinated assessment of the Isambard systems since then. As far as we can tell Isambard has not been affected by this incident, and wasn’t susceptible to the exploits used elsewhere. We’re taking nothing for granted though, and so we’re going to make sure that all the latest security patches are applied before we reopen the service. We’re also going to follow the approach being advised for the other Tier-1 and Tier-2 services, which will require all users to generate new SSH keys and passwords in order to log back in.
-    
-    Instructions on how to do this will be sent out early next week. In the meantime the queue remains up and the system is actively processing jobs (Isambard is currently running at near 100% utilisation). Any jobs you had already submitted to the queue will continue even while login access is disabled.
-    
-    We’ll be in touch early next week with an update, and with the steps you’ll need to take in order to be able to log back in to Isambard.
-    
-    With best wishes,
-    
-    Prof. Simon McIntosh-Smith  
-    Isambard PI  
-    GW4 / University of Bristol  
-    
+    - XCI (ARM ThunderX2): Available - previous queue issues have now been fixed.
+    - MACS: Available
+    - A64fx: Available - 1 of 2 login nodes currently down.
+
 Acknowledging Isambard
 ----------------------
 
 Research outputs that have made use of Isambard should acknowledge the facility by using the following phrase:
 
-    *This work used the Isambard UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/P020224/1)*
+    *This work used the Isambard 2 UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/T022078/1)*
 
 
 .. toctree::
@@ -51,12 +50,18 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    user-guide/connecting.rst
    user-guide/filesystem.rst
    user-guide/jobs.rst
-   user-guide/phase1.rst
-   user-guide/phase2.rst
+   user-guide/MACS.rst
+   user-guide/XCI.rst
+   user-guide/A64FX.rst
+   user-guide/PHASE3.rst
+   user-guide/software.md
+   user-guide/spack.md
    user-guide/debugging.rst
-   user-guide/profiling.rst
    user-guide/end_project.rst
    user-guide/support.rst
+
+.. TODO
+   user-guide/profiling.rst
 
 
 .. toctree::
@@ -65,6 +70,8 @@ Research outputs that have made use of Isambard should acknowledge the facility 
 
    tools/ddt
    tools/gdb4hpc
+
+.. TODO
    tools/map
    tools/perftools
 
@@ -73,19 +80,24 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    :maxdepth: 1
    :caption: Applications
 
-   applications/castep
    applications/covidsim
-   applications/cp2k
+   applications/dedalus
+   applications/dlmonte
+   applications/firedrake
    applications/gromacs
+   applications/openfoam
+   applications/orca
+   applications/vasp
+
+.. TODO
+  applications/castep
+   applications/cp2k
    applications/hydro3d
    applications/molpro
    applications/namd
    applications/nemo
-   applications/openfoam
    applications/opensbli
    applications/um
-   applications/vasp
-
 
 .. toctree::
    :maxdepth: 1

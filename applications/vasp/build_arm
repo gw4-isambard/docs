@@ -3,8 +3,5 @@
 # Currently we recommend compiling with the gnu programming environment
 module swap PrgEnv-cray PrgEnv-gnu
 
-# There is a compilation issue with gcc 8 so switch to gcc 7
-module swap gcc/8.2.0 gcc/7.3.0
-
 # And build vasp, replace all with std, ncl, gam for individual targets
 make all

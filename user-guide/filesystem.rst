@@ -1,7 +1,7 @@
 Filesystem
 ----------
 
-A Cray Sonexion 3000 storage cabinet provides 480 terabytes of Lustre storage.
+A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage. This filesystem is shared amongst the whole GW4 Isambard service, including MACS, XCI & A64FX.
 
 Each organisation is allocated 75TB of high performance Lustre storage, by default each user has a quota of 50GB which can be increased on-request by your local GW4 admin. There is currently only one user quota which applies across all directories.
 Your current quota and usage can be viewed with the following command:
