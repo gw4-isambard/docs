@@ -15,7 +15,7 @@ All nodes are connected via Slingshot 10. The login nodes are connected to the I
 Nvidia GPU
 ==========
 
-On this system there is a Nvidia SDK install on each of the `ampereq` nodes in `/opt/nvidia` but you can also load a latest version using:
+There is a Nvidia SDK install on each of the `ampereq` nodes in `/opt/nvidia` but you can also load a latest version using:
 
 .. code-block:: text
 
@@ -29,6 +29,23 @@ To submit a job with 1 GPU and 1 CPU use:
   qsub -I -q ampereq -l select=1:ncpus=1:ngpus=1
   
 This sets `CUDA_VISIBLE_DEVICES` to a UUID (unique id) of a GPU that PBS provided you.
+
+AMD GPU
+=======
+
+There is a AMD ROCM install on each `instinctq` nodes in `/opt/rocm` but you can also use the Cray compiler.
+
+.. code-block:: text
+
+  module load craype-accel-amd-gfx908
+
+To submit a job with 1 GPU and 1 CPU use:
+
+.. code-block:: text
+
+  qsub -I -q instinctq -l select=1:ncpus=1 -l place=excl
+
+For now the PBS is not setup to support reserving AMD GPUs so we ask users to exclusively use the node (with `-l place=excl`) and not specify `ngpus` in the resource line.
 
 Cray Compiler
 =============
