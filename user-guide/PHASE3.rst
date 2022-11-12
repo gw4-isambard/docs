@@ -12,6 +12,23 @@ Phase 3 nodes run Red Hat Enterprise Linux 8 with the Cray software stack.
 
 All nodes are connected via Slingshot 10. The login nodes are connected to the Internet via a 10 Gigabit link to the `Janet Network <https://www.jisc.ac.uk/janet>`_.
 
+Nvidia GPU
+==========
+
+On this system there is a Nvidia SDK install on each of the `ampereq` nodes in `/opt/nvidia` but you can also load a latest version using:
+
+.. code-block:: text
+
+  module use /software/x86/tools/nvidia/hpc_sdk/modulefiles
+  module load nvhpc/22.9
+
+To submit a job with 1 GPU and 1 CPU use:
+
+.. code-block:: text
+
+  qsub -I -q ampereq -l select=1:ncpus=1:ngpus=1
+  
+This sets `CUDA_VISIBLE_DEVICES` to a UUID (unique id) of a GPU that PBS provided you.
 
 Cray Compiler
 =============
