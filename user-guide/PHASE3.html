@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../_static/js/theme.js"></script>
@@ -53,6 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Phase 3 System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#nvidia-gpu">Nvidia GPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cray-compiler">Cray Compiler</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#compiling">Compiling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-a-job">Running a job</a></li>
@@ -106,8 +108,8 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Phase 3 System</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Phase 3 System</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/gw4-isambard/docs/blob/master/user-guide/PHASE3.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -128,6 +130,19 @@
 </ul>
 <p>Phase 3 nodes run Red Hat Enterprise Linux 8 with the Cray software stack.</p>
 <p>All nodes are connected via Slingshot 10. The login nodes are connected to the Internet via a 10 Gigabit link to the <a class="reference external" href="https://www.jisc.ac.uk/janet">Janet Network</a>.</p>
+<section id="nvidia-gpu">
+<h2>Nvidia GPU<a class="headerlink" href="#nvidia-gpu" title="Permalink to this heading"></a></h2>
+<p>On this system there is a Nvidia SDK install on each of the <cite>ampereq</cite> nodes in <cite>/opt/nvidia</cite> but you can also load a latest version using:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>module use /software/x86/tools/nvidia/hpc_sdk/modulefiles
+module load nvhpc/22.9
+</pre></div>
+</div>
+<p>To submit a job with 1 GPU and 1 CPU use:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -I -q ampereq -l select=1:ncpus=1:ngpus=1
+</pre></div>
+</div>
+<p>This sets <cite>CUDA_VISIBLE_DEVICES</cite> to a UUID (unique id) of a GPU that PBS provided you.</p>
+</section>
 <section id="cray-compiler">
 <h2>Cray Compiler<a class="headerlink" href="#cray-compiler" title="Permalink to this heading"></a></h2>
 <section id="compiling">

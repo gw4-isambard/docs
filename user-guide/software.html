@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../_static/js/theme.js"></script>
@@ -112,8 +113,8 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Software</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Software</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/gw4-isambard/docs/blob/master/user-guide/software.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -143,9 +144,9 @@
 <h3>MACS Python<a class="headerlink" href="#macs-python" title="Permalink to this heading"></a></h3>
 <p>Python3 is provided as part of the MACS system</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
-<span class="n">Python</span> <span class="mf">3.5</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">Python</span> <span class="mf">3.5.1</span>
 <span class="o">&gt;</span> <span class="n">python2</span> <span class="o">--</span><span class="n">version</span>
-<span class="n">Python</span> <span class="mf">2.7</span><span class="o">.</span><span class="mi">5</span>
+<span class="n">Python</span> <span class="mf">2.7.5</span>
 </pre></div>
 </div>
 </section>
@@ -662,7 +663,7 @@
 <p>Cray provides an optimzied Python3 build via the <code class="docutils literal notranslate"><span class="pre">cray-python</span></code> module.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">cray</span><span class="o">-</span><span class="n">python</span>
 <span class="o">&gt;</span> <span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
-<span class="n">Python</span> <span class="mf">3.7</span><span class="o">.</span><span class="mi">3</span>
+<span class="n">Python</span> <span class="mf">3.7.3</span>
 </pre></div>
 </div>
 <p>Without this module loaded, <code class="docutils literal notranslate"><span class="pre">python</span></code> points to python2. Python2 can be invoked even with <code class="docutils literal notranslate"><span class="pre">cray-python</span></code> loaded by running <code class="docutils literal notranslate"><span class="pre">python2</span></code> explicitly.</p>
@@ -1043,9 +1044,9 @@
 <p>Last updated 2021-07-27</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">module</span> <span class="n">use</span>
 <span class="o">&gt;</span> <span class="n">module</span> <span class="n">avail</span> <span class="n">python</span>
-<span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">.</span><span class="mi">2</span>
+<span class="o">&gt;</span> <span class="n">module</span> <span class="n">load</span> <span class="n">python</span><span class="o">/</span><span class="mf">3.9.2</span>
 <span class="o">&gt;</span> <span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
-<span class="n">Python</span> <span class="mf">3.9</span><span class="o">.</span><span class="mi">2</span>
+<span class="n">Python</span> <span class="mf">3.9.2</span>
 </pre></div>
 </div>
 <table class="docutils align-default">
