@@ -1,0 +1,14 @@
+benchmark start : 2022/10/08 20:19:58
+system_configs
+
+uname_result(system='Linux', node='p3-gpu01-compute', release='4.18.0-240.el8.x86_64', version='#1 SMP Wed Sep 23 05:13:10 EDT 2020', machine='x86_64')
+                     scpufreq(current=2012.352390625, min=0.0, max=0.0)
+                    cpu_count: 64
+                    memory_available: 264061964288
+gpu_configs
+
+Number of GPUs on current device : 4
+CUDA Version : 11.3
+Cudnn Version : 8302
+Device Name : NVIDIA A100-SXM4-40GB
+benchmark end : 2022/10/08 20:28:39

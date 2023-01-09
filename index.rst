@@ -59,6 +59,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    user-guide/debugging.rst
    user-guide/end_project.rst
    user-guide/support.rst
+   user-guide/gpus.rst
 
 .. TODO
    user-guide/profiling.rst
