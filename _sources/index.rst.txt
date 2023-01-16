@@ -19,20 +19,21 @@ Service Interruption
 --------------------
 
 .. important::
-    17 Jan. 2022
+    16 Jan. 2023
     
-    No major service interruptions expected.
+    There will be work performed on morning of 17th Jan 2023 to fix the authentication software so there maybe some disruption with logins during that time.
 
 
 System Status
 -------------
 
 .. important::
-    17 Jan. 2022
+    16 Jan. 2023
     
-    - XCI (ARM ThunderX2): Available - previous queue issues have now been fixed.
-    - MACS: Available
-    - A64fx: Available - 1 of 2 login nodes currently down.
+    - XCI (ARM ThunderX2): Available.
+    - MACS: Available.
+    - A64fx: Available.
+    - Phase 3: Available.
 
 Acknowledging Isambard
 ----------------------
