@@ -19,17 +19,18 @@ Service Interruption
 --------------------
 
 .. important::
-    16 Jan. 2023
+    25 Jan. 2023
     
-    There will be work performed on morning of 17th Jan 2023 to fix the authentication software so there maybe some disruption with logins during that time.
+    Isambard is currently experiencing some internal DNS issues and therefore access issues are being encountered - we are working with partners to resolve this issue.
 
 
 System Status
 -------------
 
 .. important::
-    16 Jan. 2023
+    25 Jan. 2023
     
+    - Login: disruption due to DNS issue.
     - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
