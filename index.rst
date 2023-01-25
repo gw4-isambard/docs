@@ -21,8 +21,7 @@ Service Interruption
 .. important::
     25 Jan. 2023
     
-    Isambard is currently experiencing some internal DNS issues and therefore access issues are being encountered - we are working with partners to resolve this issue.
-
+    UPDATE: Issues with DNS are now resolved.
 
 System Status
 -------------
@@ -30,7 +29,7 @@ System Status
 .. important::
     25 Jan. 2023
     
-    - Login: disruption due to DNS issue.
+    - Login: Available.
     - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
