@@ -15,13 +15,13 @@ Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors r
 The nodes are connected via Cray Aries interconnect in a Dragonfly topology.
 A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.
 
-Service Interruption
+Service Status
 --------------------
 
 .. important::
     25 Jan. 2023
     
-    UPDATE: Issues with DNS are now resolved.
+    All services running.
 
 System Status
 -------------
