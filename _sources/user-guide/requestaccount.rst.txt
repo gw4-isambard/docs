@@ -3,7 +3,7 @@ Request Account
 
 Before requesting an account on Isambard, please read the :ref:`Terms and Conditions of Access <terms>`.
 
-Account requests for Isambard are managed via the `SAFE for EPSRC Tier2 system <https://www.archer.ac.uk/tier2/>`_.
+Account requests for Isambard are managed via the `SAFE for EPSRC Tier2 system <https://safe.epcc.ed.ac.uk/>`_.
 
 Create an account on SAFE
 -------------------------
