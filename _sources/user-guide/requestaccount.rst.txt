@@ -10,7 +10,7 @@ Create an account on SAFE
 
 (If you already have an account on SAFE, you can skip this step.)
 
-Navigate to the `Tier-2 SAFE login page <https://www.archer.ac.uk/tier2/>`_.
+Navigate to the `SAFE login page <https://safe.epcc.ed.ac.uk/>`_.
 At the bottom of the login screen, choose to create a new account:
 
 .. image:: https://raw.githubusercontent.com/UoB-HPC/GW4-Isambard/master/docs/images/safe-create-account.png
