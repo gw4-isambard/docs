@@ -3,6 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+Acknowledging Isambard
+----------------------
+
+Research outputs that have made use of Isambard should acknowledge the facility by using the following phrase:
+
+    *This work used the Isambard 2 UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/T022078/1)*
+
 Isambard User Documentation
 ===========================
 
@@ -19,9 +26,9 @@ Service Status
 --------------------
 
 .. important::
-    25 Jan. 2023
+    Since 16 Feb. 2023
     
-    All services running.
+    Login nodes and access to storage are running.
 
 System Status
 -------------
@@ -32,16 +39,8 @@ System Status
     - Login: Available.
     - XCI (ARM ThunderX2): Available.
     - MACS: Available.
-    - A64fx: Available.
+    - A64fx: 17th Feb - down for maintenance.
     - Phase 3: Available.
-
-Acknowledging Isambard
-----------------------
-
-Research outputs that have made use of Isambard should acknowledge the facility by using the following phrase:
-
-    *This work used the Isambard 2 UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/T022078/1)*
-
 
 .. toctree::
    :maxdepth: 2
