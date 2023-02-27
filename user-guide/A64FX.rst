@@ -48,8 +48,8 @@ All major HPC compilers targetting AArch64 are available through modules:
     * ``tools/arm-compiler-a64fx/21.0``
     * ``tools/arm-compiler-a64fx/20.3``
 * Cray Compilation Environment:
-    * Classic frontend, targetting SVE: ``cce-sve/10.0.1``
-    * Clang frontend, no SVE support: ``cce/10.0.3``
+    * Classic frontend, targetting SVE: ``cce-sve/10.0.3``
+    * Classic Clang frontend, no SVE support: ``cce/10.0.3``, new Clang with better C++ support in ``cce/14.0.1``
 * Fujitsu Compiler, optimised for A64FX:
     * ``fujitsu-compiler/4.3.1``
 * GNU Compiler Collection:
