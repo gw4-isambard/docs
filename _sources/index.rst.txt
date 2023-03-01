@@ -3,13 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Acknowledging Isambard
-----------------------
-
-Research outputs that have made use of Isambard should acknowledge the facility by using the following phrase:
-
-    *This work used the Isambard 2 UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/T022078/1)*
-
 Isambard User Documentation
 ===========================
 
@@ -43,6 +36,15 @@ System Status
     - MACS: Available.
     - A64fx: Available.
     - Phase 3: Available.
+
+Acknowledging Isambard
+----------------------
+
+Research outputs that have made use of Isambard should acknowledge the facility by using the following phrase:
+
+    *This work used the Isambard 2 UK National Tier-2 HPC Service (http://gw4.ac.uk/isambard/) operated by GW4 and the UK Met Office, and funded by EPSRC (EP/T022078/1)*
+
+
 
 .. toctree::
    :maxdepth: 2
