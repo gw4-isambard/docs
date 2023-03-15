@@ -53,3 +53,15 @@ Some Cray compilers will emit this error message:
 To silence this message and to ensure the correct CPU optimisations are applied, run the following before using the compiler:
 
 ``module load craype-arm-thunderx2``
+
+To use the Cray compilers it is useful to load the latest cdt module.
+
+``module load cdt``
+
+Then compile your code and inside your job script load cdt before running e.g.
+
+.. code-block::
+
+  module load cdt
+  aprun hello.exe
+

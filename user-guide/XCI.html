@@ -11,7 +11,6 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
@@ -162,6 +161,13 @@
 </div>
 <p>To silence this message and to ensure the correct CPU optimisations are applied, run the following before using the compiler:</p>
 <p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">craype-arm-thunderx2</span></code></p>
+<p>To use the Cray compilers it is useful to load the latest cdt module.</p>
+<p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">cdt</span></code></p>
+<p>Then compile your code and inside your job script load cdt before running e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">cdt</span>
+<span class="n">aprun</span> <span class="n">hello</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
