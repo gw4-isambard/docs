@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using GPUs on Isambard &mdash; GW4-Isambard  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arm DDT" href="../tools/ddt.html" />
+    <link rel="prev" title="Support" href="support.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GW4-Isambard
+          </a>
+              <div class="version">
+                2.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Isambard User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="requestaccount.html">Request Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connecting.html">Connecting to Isambard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filesystem.html">Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobs.html">Running jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MACS.html">Multi-Architecture Comparison System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PHASE3.html">Phase 3 System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spack.html">Spack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="end_project.html">End of life procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using GPUs on Isambard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-gpu-usage">General GPU Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cuda-versions-hardware-differences">CUDA Versions &amp; Hardware Differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operating-mode">Operating mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-a-work-environment">Setting up a work environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-python-based-workflows-on-isambard">Running Python based workflows on Isambard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copying-data">Copying data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-python-libraries">Installing Python libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launching-a-gpu-job">Launching a GPU job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#identifying-memory-access-errors-with-nvidia-compute-sanitizer">Identifying memory access errors with NVIDIA Compute Sanitizer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-memcheck">Accessing memcheck</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compilation">Compilation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-nvidia-compute-sanitizer">Running NVIDIA Compute Sanitizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compute-sanitizer-memcheck-output">Compute Sanitizer memcheck output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#profiling">Profiling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nvidia-nsight-systems">NVIDIA Nsight Systems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#loading-the-profiler">Loading the profiler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-cuda-c-program">Example CUDA C++ program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Compilation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#visualize-profiler-results">Visualize profiler results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#arm-forge-map">Arm Forge MAP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Loading the profiler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiler-flags-and-compilation">Compiler flags and compilation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-profiler">Running the profiler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load-a-profile-data-file">Load a profile data file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#benchmarking">Benchmarking</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/ddt.html">Arm DDT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../applications/covidsim.html">CovidSim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/dedalus.html">Dedalus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/dlmonte.html">DL_MONTE 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/firedrake.html">Firedrake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/gromacs.html">GROMACS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/openfoam.html">OpenFOAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/orca.html">ORCA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/vasp.html">VASP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Service Policies</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../policies/terms.html">Terms and Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies/privacy.html">Privacy Statement</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GW4-Isambard</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Using GPUs on Isambard</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gw4-isambard/docs/blob/master/user-guide/gpus.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-gpus-on-isambard">
+<h1>Using GPUs on Isambard<a class="headerlink" href="#using-gpus-on-isambard" title="Permalink to this heading"></a></h1>
+<p>This section presents information about GPU usage on Isambard. It is divided
+in subsections describing general information about the avaible hardware and
+common tasks associated with GPU-based workflows:</p>
+<ul class="simple">
+<li><p>General GPU usage. This subsection describes the SLURM directives that need
+to be included in a job script to target partitions with GPUs.</p></li>
+<li><p>Available CUDA Versions &amp; Hardware Differences</p></li>
+<li><p>Operating mode</p></li>
+<li><p>Setting up a work environment. Many users working on Machine and Deep
+Learning tend to work with Python-based workflows. This subsection is focused
+on helping them transition from a local system (e.g. laptop) to an HPC system.</p></li>
+</ul>
+<section id="general-gpu-usage">
+<h2>General GPU Usage<a class="headerlink" href="#general-gpu-usage" title="Permalink to this heading"></a></h2>
+<p>The PBS Pro scheduler controls the access to GPUs on a node such that access is
+only granted when the resource is requested specifically. With PBS Pro GPUs can
+be requested at job submission time via the following additional directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#PBS -l select=1:ncpus=64:ngpus=4</span>
+</pre></div>
+</div>
+<p>This directive requires PBS Pro to allocate four GPUs per allocated node, to
+not use nodes without GPUs and to grant access.</p>
+<p>Jobs must also be submitted to the desired GPU-enabled nodes queue, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#PBS -q ampereq  # to request A100 GPUs</span>
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#PBS -q votalq # to request V100 GPUs</span>
+</pre></div>
+</div>
+<p>It is then possible to use CUDA enabled applications or the CUDA toolkit
+modules themselves, for example in the MAC cluster:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load cuda11.2/toolkit/11.2.0
+</pre></div>
+</div>
+</section>
+<section id="cuda-versions-hardware-differences">
+<h2>CUDA Versions &amp; Hardware Differences<a class="headerlink" href="#cuda-versions-hardware-differences" title="Permalink to this heading"></a></h2>
+<p>Isambard currently supports CUDA 11.2 (driver v460.32.03) on the <cite>pascalq</cite> and
+<cite>voltaq</cite> partitions; and CUDA 11.4 (driver v515.65.01) on the <cite>ampereq</cite> partition.
+AMD’s Linux kernel module, AMDgpu, is available on the <cite>instinctq</cite> partition
+(driver v5.11.32.21.40).</p>
+<p>Isambard offer different GPU models with different numbers of devices per node.
+Some important differences between the available GPU devices available on Isambard
+are summarized in the table bellow:</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">GPUs info</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>queue</p></th>
+<th class="head"><p>nodes</p></th>
+<th class="head"><p>Accessible from login node</p></th>
+<th class="head"><p>GPU Model</p></th>
+<th class="head"><p>GPUs per node</p></th>
+<th class="head"><p>Memory per GPU (GB)</p></th>
+<th class="head"><p>Cores per GPU</p></th>
+<th class="head"><p>Tensor cores per GPU</p></th>
+<th class="head"><p>CPU Model</p></th>
+<th class="head"><p>CPUs per node</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pascalq</p></td>
+<td><p>4</p></td>
+<td><p>login-01.isambard.gw4.ac.uk</p></td>
+<td><p>Nvidia Tesla P100</p></td>
+<td><p>2</p></td>
+<td><p>16</p></td>
+<td><p>3584</p></td>
+<td><p>N/A</p></td>
+<td><p>InteL Xeon E5-2695</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-odd"><td><p>voltaq</p></td>
+<td><p>4</p></td>
+<td><p>login-01.isambard.gw4.ac.uk</p></td>
+<td><p>Nvidia Tesla V100</p></td>
+<td><p>1</p></td>
+<td><p>16</p></td>
+<td><p>5120</p></td>
+<td><p>640 (1st gen)</p></td>
+<td><p>Intel Xeon Gold 6230</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-even"><td><p>ampereq</p></td>
+<td><p>2</p></td>
+<td><p>p3login01.isambard.gw4.ac.uk</p></td>
+<td><p>Nvidia Ampere A100</p></td>
+<td><p>4</p></td>
+<td><p>40</p></td>
+<td><p>6912</p></td>
+<td><p>432 (3rd gen)</p></td>
+<td><p>AMD EPYC 7543P</p></td>
+<td><p>64</p></td>
+</tr>
+<tr class="row-odd"><td><p>instinctq</p></td>
+<td><p>2</p></td>
+<td><p>p3login01.isambard.gw4.ac.uk</p></td>
+<td><p>AMD Instinct MI100</p></td>
+<td><p>4</p></td>
+<td><p>32</p></td>
+<td><p>7680</p></td>
+<td><p>N/A</p></td>
+<td><p>AMD EPYC 7543P</p></td>
+<td><p>64</p></td>
+</tr>
+</tbody>
+</table>
+<p>Tensor cores are a new type of programmable core exclusive to GPUs based on the
+Volta architecture that run alongside standard CUDA cores. Tensor cores can
+accelerate mixed-precision matrix multiply and accumulate calculations in a
+single operation. This capability is specially significant for AI/DL/ML
+applications that rely on large matrix operations.</p>
+</section>
+<section id="operating-mode">
+<h2>Operating mode<a class="headerlink" href="#operating-mode" title="Permalink to this heading"></a></h2>
+<p>NVIDIA GPU cards can be operated in a number of Compute Modes. In short the
+difference is whether multiple processes (and, theoretically, users) can access
+(share) a GPU or if a GPU is exclusively bound to a single process.  It is
+typically application-specific whether one or the other mode is needed. On
+Isambard NVIDIA cards are set to “Default” (multiple contexts are allowed per
+device). Contact support if your application requires a different operating
+mode.</p>
+<p>To query the Compute Mode in all cards:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for host in `cat $PBS_NODEFILE`; do
+  ssh $host &quot;nvidia-smi -q | grep &#39;Compute Mode&#39;&quot;
+done
+</pre></div>
+</div>
+<p>A sensible output should appear in the job output file.</p>
+</section>
+<section id="setting-up-a-work-environment">
+<h2>Setting up a work environment<a class="headerlink" href="#setting-up-a-work-environment" title="Permalink to this heading"></a></h2>
+<section id="running-python-based-workflows-on-isambard">
+<h3>Running Python based workflows on Isambard<a class="headerlink" href="#running-python-based-workflows-on-isambard" title="Permalink to this heading"></a></h3>
+<p>The traditional method to interact with remote HPC and cloud systems is through
+the command line (via the <code class="docutils literal notranslate"><span class="pre">ssh</span></code> and <code class="docutils literal notranslate"><span class="pre">scp</span></code> commands), and although this might
+require some adjustments for users more familar with GUIs like JupyterLab, it is
+also the most efficient method and likely to be of benefit in the longer term.
+This sections describes some of the most common steps when setting up a work
+environment, Python in this example, as it is one of the most popular languages
+used by researchers in the fields on Machine and Deep Learning.</p>
+</section>
+<section id="copying-data">
+<h3>Copying data<a class="headerlink" href="#copying-data" title="Permalink to this heading"></a></h3>
+<p>To work on Isambard with Python scripts written locally in our Desktop or Laptop
+computer we need to transfer them over. Depending on our platform we can do this
+using the <code class="docutils literal notranslate"><span class="pre">scp</span></code> command provided by Linux and MacOS to copy individual files and
+<code class="docutils literal notranslate"><span class="pre">scp</span> <span class="pre">-r</span></code> to recursively copy your work directory over to your home directory
+in Isambard:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ scp -r python-code/ login-01.isambard.gw4.ac.uk:.
+WARNING:
+Unauthorised access may constitute a criminal offence.
+All activity on the system is liable to monitoring.
+
+Use of this system constitutes acceptance of our policies:
+https://gw4-isambard.github.io/docs/policies/terms.html
+
+User documentation: https://gw4-isambard.github.io/docs/
+
+For support, please email isambard-support@gw4.ac.uk
+
+python-novice-infla                           100% 7216    91.9KB/s   00:00
+inflammation.png                              100%   19KB 209.3KB/s   00:00
+argv_list.py                                  100%   42     0.5KB/s   00:00
+readings_08.py                                100% 1097    12.4KB/s   00:00
+readings_09.py                                100%  851     9.4KB/s   00:00
+check.py                                      100% 1000    11.0KB/s   00:00
+my_ls.py                                      100%  488     5.2KB/s   00:00
+line_count.py                                 100%  920    10.0KB/s   00:00
+readings_06.py                                100%  718     7.6KB/s   00:00
+...
+</pre></div>
+</div>
+</section>
+<section id="installing-python-libraries">
+<h3>Installing Python libraries<a class="headerlink" href="#installing-python-libraries" title="Permalink to this heading"></a></h3>
+<p>The <strong>recommended approach</strong> is to create a Python  virtual environment with a
+<cite>requirements.txt</cite> file which includes a list of all packages (and possibly
+versions) needed for your work. This file can be created and used in your local
+computer and then copied to Isambard to try to reproduce the same environment.
+An example file is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">==</span><span class="mf">1.19</span>
+<span class="n">pandas</span>
+<span class="n">numba</span>
+</pre></div>
+</div>
+<p>Isambard provides a default Python installation (3.6.8) on both MACS and Phase 3
+clusters that can be used to install your virtual environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 --version
+Python 3.6.8
+</pre></div>
+</div>
+<p>Additionally, on MACS, Python 3.7.5 is avaiable via module files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[login-01 ~]$ module load python37
+[login-01 ~]$ python3 --version
+Python 3.7.5
+</pre></div>
+</div>
+<p>On Phase 3, Python 3.9.4.2 can be accessed through module files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[p3-login ~]$ module load cray-python/3.9.4.2
+[p3-login ~]$ python3 --version
+Python 3.9.4
+</pre></div>
+</div>
+<p>After selecting the appropiate Python version, you can proceed to install the
+virtual environment. In the example below we use the default Python3:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[login-01 ~]$ python3 -m venv --prompt myenv-macs ./myenv-macs
+[login-01 ~]$ source ./myenv-macs/bin/activate
+(myenv-macs) [login-01 ~]$
+</pre></div>
+</div>
+<p>The above command will install a virtual environment named <cite>myenv-macs</cite> in a
+directory with a matching name in the current directory.</p>
+<p>Consider upgrading pip before installing main packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(myenv-macs) [login-01 ~]$ python3 -m pip install --upgrade pip
+Collecting pip
+  Using cached https://files.pythonhosted.org/packages/a4/6d/6463d49a933f547439d6b5b98b46af8742cc03ae83543e4d7688c2420f8b/pip-21.3.1-py3-none-any.whl
+Installing collected packages: pip
+  Found existing installation: pip 9.0.3
+    Uninstalling pip-9.0.3:
+      Successfully uninstalled pip-9.0.3
+Successfully installed pip-21.3.1
+</pre></div>
+</div>
+<p>Then continue with the libraries installation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(myenv-macs) [login-01 ~]$ pip install -r requirements.txt
+Collecting numpy==1.19
+  Downloading numpy-1.19.0-cp36-cp36m-manylinux2010_x86_64.whl (14.6 MB)
+     |████████████████████████████████| 14.6 MB 24 kB/s
+Collecting pandas
+  Downloading pandas-1.1.5-cp36-cp36m-manylinux1_x86_64.whl (9.5 MB)
+     |████████████████████████████████| 9.5 MB 571 bytes/s
+Collecting python-dateutil&gt;=2.7.3
+  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+     |████████████████████████████████| 247 kB 63.4 MB/s
+Collecting pytz&gt;=2017.2
+  Downloading pytz-2022.2.1-py2.py3-none-any.whl (500 kB)
+     |████████████████████████████████| 500 kB 88.8 MB/s
+Collecting six&gt;=1.5
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, pytz, python-dateutil, numpy, pandas
+Successfully installed numpy-1.19.0 pandas-1.1.5 python-dateutil-2.8.2 pytz-2022.2.1 six-1.16.0
+</pre></div>
+</div>
+<p>If all goes well your Python libraries should be avaiable within your virtual
+environment. To deactivate the environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(myenv-macs) [login-01 ~]$ deactivate
+[login-01 ~]$
+</pre></div>
+</div>
+</section>
+<section id="launching-a-gpu-job">
+<h3>Launching a GPU job<a class="headerlink" href="#launching-a-gpu-job" title="Permalink to this heading"></a></h3>
+<p>Consider the following test Python code that uses Numba to compute the value of a
+Gaussian probability density function at x with given mean and sigma:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">vectorize</span>
+
+<span class="n">SQRT_2PI</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="nd">@vectorize</span><span class="p">([</span><span class="s1">&#39;float32(float32, float32, float32)&#39;</span><span class="p">],</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">gaussian_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">SQRT_2PI</span><span class="p">)</span>
+
+<span class="c1"># Evaluate the Gaussian a million times</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+
+<span class="n">gaussian_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;job done&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now that we have our Python script, we need to create an additional file (job
+script) to place it in the queue (submit the job). Make sure to remove any
+commands from the Python script that might need additional confirmation or user
+interaction as you won’t be able to provide it with this method of execution.
+The following is the content an example job script for MACS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#PBS -N pascalq
+#PBS -q pascalq
+#PBS -l select=1:ncpus=18:ngpus=1
+#PBS -l walltime=00:15:00
+
+# select -- allocate # separate nodes
+# ncpus  -- on each node allocate # cpus (cores)
+# ngpus  -- on each node allocate # gpus
+
+set -eu
+
+module purge
+module load cuda11.2/toolkit/11.2.0
+module list
+
+# confirm which python version are we using
+which python3
+python3 --version
+
+# Load local python environment
+source ~/myenv-macs/bin/activate
+
+cp $PBS_O_WORKDIR/gaussian.py .
+
+time python3 gaussian.py
+</pre></div>
+</div>
+<p>To submit (put it queue) the above script, on Isambard:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[login-01 ~]$ qsub run-macs-pascal.sh
+59821.gw4head
+</pre></div>
+</div>
+<p>You can query the current state of this job with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[login-01 ~]$ qstat -u $USER
+
+gw4head:
+                                                            Req&#39;d  Req&#39;d   Elap
+Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
+--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+59823.gw4head   ca-munoz pascalq  pascalq    157907   1  18    --  00:15 R 00:00
+</pre></div>
+</div>
+<p>This particular job might not spend a long time in queue and the above output
+might not show it, but on completion there should be a <cite>pascalq.oXXXXX</cite> and
+<cite>pascalq.eXXXXX</cite> (with the XXXXX matching your job id number) files created in
+the current directory with the output and error messages (if any) produced by
+our script.</p>
+</section>
+</section>
+<section id="identifying-memory-access-errors-with-nvidia-compute-sanitizer">
+<h2>Identifying memory access errors with NVIDIA Compute Sanitizer<a class="headerlink" href="#identifying-memory-access-errors-with-nvidia-compute-sanitizer" title="Permalink to this heading"></a></h2>
+<p>Compute Sanitizer is a functional correctness checking suite included in the CUDA
+toolkit. This suite contains multiple tools that can perform different type of checks.
+The <code class="docutils literal notranslate"><span class="pre">memcheck</span></code> tool is capable of precisely detecting and attributing out of bounds
+and misaligned memory access errors in CUDA applications. The tool can also report
+hardware exceptions encountered by the GPU. The <code class="docutils literal notranslate"><span class="pre">racecheck</span></code> tool can report shared
+memory data access hazards that can cause data races. The <code class="docutils literal notranslate"><span class="pre">initcheck</span></code> tool can report
+cases where the GPU performs uninitialized accesses to global memory. The <code class="docutils literal notranslate"><span class="pre">synccheck</span></code>
+tool can report cases where the application is attempting invalid usages of
+synchronization primitives. This section focuses on the use of <code class="docutils literal notranslate"><span class="pre">memcheck</span></code> and the
+main steps to access the tool on Hawk, and demonstrates how apply it on a simple
+example. You can find more details on the <a class="reference external" href="https://docs.nvidia.com/compute-sanitizer/ComputeSanitizer/index.html">user manual for Compute Sanitizer</a>.</p>
+<section id="accessing-memcheck">
+<h3>Accessing memcheck<a class="headerlink" href="#accessing-memcheck" title="Permalink to this heading"></a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">MACS</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Phase 3</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>To access NVIDIA Compute Sanitizer on Isambard, load the latest CUDA module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load cuda11.2/toolkit/11.2.0
+$ compute-sanitizer --version
+NVIDIA (R) Compute Sanitizer
+Copyright (c) 2020-2020 NVIDIA Corporation
+Version 2020.3.0
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>On Phase 3 NVIDIA Compute Sanitizer on Isambard is only accessible from the
+compute nodes, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[p3-login ~]$ qsub -I -q ampereq -l select=1:ngpus=4 -l walltime=01:00:00
+[p3-gpu01-compute ~]$ module load nvidia/21.11
+[p3-gpu01-compute ~]$ compute-sanitizer --version
+NVIDIA (R) Compute Sanitizer
+Copyright (c) 2020-2021 NVIDIA Corporation
+Version 2021.3.1
+</pre></div>
+</div>
+</div></div>
+<p>Consider the following code (from <a class="reference external" href="https://docs.nvidia.com/cuda/cuda-memcheck/index.html#cuda-memcheck-tool-examples">CUDA-MEMCHECK user manual</a>):</p>
+<div class="code c++ highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="n">__device__</span> <span class="nb">int</span> <span class="n">x</span><span class="p">;</span>
+
+<span class="n">__global__</span> <span class="n">void</span> <span class="n">unaligned_kernel</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">*</span><span class="p">(</span><span class="nb">int</span><span class="o">*</span><span class="p">)</span> <span class="p">((</span><span class="n">char</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">__device__</span> <span class="n">void</span> <span class="n">out_of_bounds_function</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">*</span><span class="p">(</span><span class="nb">int</span><span class="o">*</span><span class="p">)</span> <span class="mh">0x87654320</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">__global__</span> <span class="n">void</span> <span class="n">out_of_bounds_kernel</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">out_of_bounds_function</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">void</span> <span class="n">run_unaligned</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Running unaligned_kernel</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="n">unaligned_kernel</span><span class="o">&lt;&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">&gt;&gt;&gt;</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Ran unaligned_kernel: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">cudaGetErrorString</span><span class="p">(</span><span class="n">cudaGetLastError</span><span class="p">()));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Sync: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cudaGetErrorString</span><span class="p">(</span><span class="n">cudaDeviceSynchronize</span><span class="p">()));</span>
+<span class="p">}</span>
+
+<span class="n">void</span> <span class="n">run_out_of_bounds</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Running out_of_bounds_kernel</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="n">out_of_bounds_kernel</span><span class="o">&lt;&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">&gt;&gt;&gt;</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Ran out_of_bounds_kernel: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">cudaGetErrorString</span><span class="p">(</span><span class="n">cudaGetLastError</span><span class="p">()));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Sync: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cudaGetErrorString</span><span class="p">(</span><span class="n">cudaDeviceSynchronize</span><span class="p">()));</span>
+<span class="p">}</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">int</span> <span class="o">*</span><span class="n">devMem</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Mallocing memory</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="n">cudaMalloc</span><span class="p">((</span><span class="n">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">devMem</span><span class="p">,</span> <span class="mi">1024</span><span class="p">);</span>
+
+    <span class="n">run_unaligned</span><span class="p">();</span>
+    <span class="n">run_out_of_bounds</span><span class="p">();</span>
+
+    <span class="n">cudaDeviceReset</span><span class="p">();</span>
+    <span class="n">cudaFree</span><span class="p">(</span><span class="n">devMem</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="compilation">
+<h3>Compilation<a class="headerlink" href="#compilation" title="Permalink to this heading"></a></h3>
+<p>Use the following command to compile the code above with details about line numbers
+where errors occur:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nvcc -Xcompiler -rdynamic -lineinfo -o memcheck_demo memcheck_demo.cu
+</pre></div>
+</div>
+<p>In the above command the <code class="docutils literal notranslate"><span class="pre">-lineinfo</span></code> option is used to generate line number information
+for applications without affecting the optimization level of the output. The <code class="docutils literal notranslate"><span class="pre">-rdynamic</span></code>
+option is given to the host compiler to retain function symbols names which is useful
+in stack backtrace. Note that when using <code class="docutils literal notranslate"><span class="pre">nvcc</span></code>, flags to the host compiler can be
+specified using the <code class="docutils literal notranslate"><span class="pre">-Xcompiler</span></code> option.</p>
+</section>
+<section id="running-nvidia-compute-sanitizer">
+<h3>Running NVIDIA Compute Sanitizer<a class="headerlink" href="#running-nvidia-compute-sanitizer" title="Permalink to this heading"></a></h3>
+<p>Running CUDA programs on Isambard requires access to a GPU node. There is two options
+available, an interactive session and a job script. If you attempt to run CUDA programs
+on the login nodes or compute nodes without GPU access you may receive a error message
+similar to the one below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ compute-sanitizer --tool memcheck memcheck_demo
+========= COMPUTE-SANITIZER
+Mallocing memory
+Running unaligned_kernel
+Ran unaligned_kernel: no CUDA-capable device is detected
+Sync: no CUDA-capable device is detected
+Running out_of_bounds_kernel
+Ran out_of_bounds_kernel: no CUDA-capable device is detected
+Sync: no CUDA-capable device is detected
+========= Error: Target application terminated before first instrumented API call
+</pre></div>
+</div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Interactive session</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Job script</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><p>On Isambard, you can request an interactive session with the following command
+(example for <cite>pascalq</cite> on MACS, please adapt for <cite>voltaq</cite> of <cite>ampereq</cite> if needed):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ qsub -I -q pascalq -l select=1:ngpus=1 -l walltime=01:00:00
+qsub: waiting for job 59831.gw4head to start
+qsub: job 59831.gw4head ready
+</pre></div>
+</div>
+<p>remember to change the above options to fit your code requirements.</p>
+<p>Load the latest CUDA module, change to your work directory and run compute
+sanitizer in debug mode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load cuda11.2/toolkit/11.2.0
+$ cd $PBS_O_WORKDIR
+$ compute-sanitizer --log-file=memcheck_demo_debug.log --destroy-on-device-error kernel --leak-check full --tool memcheck memcheck_demo
+Mallocing memory
+Running unaligned_kernel
+Ran unaligned_kernel: no error
+Sync: no error
+Running out_of_bounds_kernel
+Ran out_of_bounds_kernel: no error
+Sync: no error
+</pre></div>
+</div>
+<p>In the above command <code class="docutils literal notranslate"><span class="pre">--log-file</span></code> allows you to save the filename of the file
+where the output of <cite>compute-sanitizer</cite> should be saved;
+<code class="docutils literal notranslate"><span class="pre">--destroy-on-device-error</span> <span class="pre">kernel</span></code>
+controls how the application proceeds on hitting a memory access error, in this
+case the <code class="docutils literal notranslate"><span class="pre">kernel</span></code> option specifies that the kernel must be terminated without
+running any subsequent instructions and the application continues launching other
+kernels in the CUDA context; <code class="docutils literal notranslate"><span class="pre">--leak-check</span></code> prints information about all
+allocations that have not been freed via cudaFree at the point when the context was
+destroyed.</p>
+<p>Executing the command above will produce a file named
+<a class="reference download internal" download="" href="../_downloads/40c269f6c40a89250ed5c1beb8ec463b/memcheck_demo_debug_isambard.log"><code class="xref download docutils literal notranslate"><span class="pre">memcheck_demo_debug.log</span></code></a>
+that we can analyze later on.</p>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><p>A potentially more convenient way to run Compute Sanitizer is through the job
+scheduler (especially for jobs with long runtimes). The method is very similar to
+running the application through the command line but a job script with appropiate
+directives to interact with the job scheduler is also needed. On Isambard we use
+PBS Pro and the following job script could give you a good starting point:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#PBS -N pascalq
+#PBS -q pascalq
+#PBS -l select=1:ncpus=18:ngpus=1
+#PBS -l walltime=00:15:00
+
+set -eu
+
+module purge
+module load cuda11.2/toolkit/11.2.0
+module list
+
+code=memcheck_demo
+logfile=memcheck_demo.${PBS_JOBID}.log
+
+echo $PWD
+cp $PBS_O_WORKDIR/$code .
+
+compute-sanitizer --log-file=$logfile --destroy-on-device-error kernel --leak-check full --tool memcheck $code
+
+mv $logfile $PBS_O_WORKDIR
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="compute-sanitizer-memcheck-output">
+<h3>Compute Sanitizer memcheck output<a class="headerlink" href="#compute-sanitizer-memcheck-output" title="Permalink to this heading"></a></h3>
+<p>Exporing the output produced by memcheck we can find useful information like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=========</span> <span class="n">Invalid</span> <span class="n">__global__</span> <span class="n">write</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">4</span> <span class="nb">bytes</span>
+<span class="o">=========</span>     <span class="n">at</span> <span class="mh">0x30</span> <span class="ow">in</span> <span class="o">/</span><span class="n">lustre</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ca</span><span class="o">-</span><span class="n">munozcjj</span><span class="o">/</span><span class="n">gpudocs</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="n">memcheck_demo</span><span class="o">.</span><span class="n">cu</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="n">unaligned_kernel</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
+<span class="o">=========</span>     <span class="n">by</span> <span class="n">thread</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="ow">in</span> <span class="n">block</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">=========</span>     <span class="n">Address</span> <span class="mh">0x15551a800001</span> <span class="ow">is</span> <span class="n">misaligned</span>
+<span class="o">=========</span>     <span class="n">Saved</span> <span class="n">host</span> <span class="n">backtrace</span> <span class="n">up</span> <span class="n">to</span> <span class="n">driver</span> <span class="n">entry</span> <span class="n">point</span> <span class="n">at</span> <span class="n">kernel</span> <span class="n">launch</span> <span class="n">time</span>
+</pre></div>
+</div>
+<p>The above information can hopefully point you towards the region in the code likely to
+benefit from further reviewing (line 6 in this example).</p>
+</section>
+</section>
+<section id="profiling">
+<h2>Profiling<a class="headerlink" href="#profiling" title="Permalink to this heading"></a></h2>
+<section id="nvidia-nsight-systems">
+<h3>NVIDIA Nsight Systems<a class="headerlink" href="#nvidia-nsight-systems" title="Permalink to this heading"></a></h3>
+<p>Isambard offers access to NVIDIA Nsight Systems and NVIDIA compilers as part of its
+standard module files.</p>
+<section id="loading-the-profiler">
+<h4>Loading the profiler<a class="headerlink" href="#loading-the-profiler" title="Permalink to this heading"></a></h4>
+<p>To access NVIDIA Nsight Systems on Isambard run the following command:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">MACS</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Phase 3</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><p>On MACS users can access CUDA either on the login and compute nodes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load cuda11.1/nsight/11.1.1
+$ nsys --version
+NVIDIA Nsight Systems version 2020.3.4.32-52657a0
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><p>On Phase 3, <cite>nsys</cite> is only available through the compute nodes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[username@p3-gpu01-compute ~]$ module load nvidia/21.11
+[username@p3-gpu01-compute ~]$ nsys --version
+NVIDIA Nsight Systems version 2021.4.1.73-08591f7
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="example-cuda-c-program">
+<h4>Example CUDA C++ program<a class="headerlink" href="#example-cuda-c-program" title="Permalink to this heading"></a></h4>
+<p>The usual workflow involves wriing code in CUDA C++, compiling,
+profiling, analysing, optimising and repeating. Consider the
+following code:</p>
+<div class="code c++ highlight-default notranslate"><div class="highlight"><pre><span></span>/*
+ *   Vector addition example using CUDA.
+ *   This is a non-optimised example that is likely to benefit
+ *   from
+ *   - adaptig the main kernel launch configuration, so that
+ *     it creates a grid containing a number of blocks that is
+ *     a multiple of the number of SMs on the device.
+ */
+#include &lt;stdio.h&gt;
+
+/*
+ * Host function to initialize input vector elements. This
+ * function simply initializes each element in the vector to
+ * a constant number &#39;num&#39;.
+ */
+
+void initWith(float num, float *a, int N)
+{
+  for(int i = 0; i &lt; N; ++i)
+  {
+    a[i] = num;
+  }
+}
+
+/*
+ * Device kernel stores into `result` the sum of
+ * corresponding elements in input vectors `a` and
+ * `b`. Note that the function assumes `a` and `b`
+ * are of the same size N.
+ */
+
+__global__
+void addVectorsInto(float *result, float *a, float *b, int N)
+{
+  int index = threadIdx.x + blockIdx.x * blockDim.x;
+  int stride = blockDim.x * gridDim.x;
+
+  for(int i = index; i &lt; N; i += stride)
+  {
+    result[i] = a[i] + b[i];
+  }
+}
+
+/*
+ * Host function to confirm values in `vector`. This function
+ * assumes all values are the same `target` value.
+ */
+
+void checkElementsAre(float target, float *vector, int N)
+{
+  for(int i = 0; i &lt; N; i++)
+  {
+    if(vector[i] != target)
+    {
+      printf(&quot;FAIL: vector[%d] - %0.0f does not equal %0.0f\n&quot;, i, vector[i], target);
+      exit(1);
+    }
+  }
+  printf(&quot;All values were calculated correctly. Well done.\n&quot;);
+}
+
+int main()
+{
+  const int N = 50000000;
+  size_t size = N * sizeof(float);
+
+  float *a;
+  float *b;
+  float *c;
+
+  cudaMallocManaged(&amp;a, size);
+  cudaMallocManaged(&amp;b, size);
+  cudaMallocManaged(&amp;c, size);
+
+  initWith(3, a, N);
+  initWith(7, b, N);
+  initWith(0, c, N);
+
+  size_t threadsPerBlock;
+  size_t numberOfBlocks;
+
+  threadsPerBlock = 32;
+  numberOfBlocks = 32;
+
+  cudaError_t addVectorsErr;
+  cudaError_t asyncErr;
+
+  addVectorsInto&lt;&lt;&lt;numberOfBlocks, threadsPerBlock&gt;&gt;&gt;(c, a, b, N);
+
+  addVectorsErr = cudaGetLastError();
+  if(addVectorsErr != cudaSuccess) printf(&quot;Error: %s\n&quot;, cudaGetErrorString(addVectorsErr));
+
+  asyncErr = cudaDeviceSynchronize();
+  if(asyncErr != cudaSuccess) printf(&quot;Error: %s\n&quot;, cudaGetErrorString(asyncErr));
+
+  checkElementsAre(10, c, N);
+
+  cudaFree(a);
+  cudaFree(b);
+  cudaFree(c);
+}
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h4>Compilation<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">MACS</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Phase 3</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><p>The above code can be compiled and tested using an interactive session:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ qsub -I -q voltaq -l select=1:ngpus=1 -l walltime=01:00:00
+</pre></div>
+</div>
+<p>Once our session is granted and we are placed on the GPU node where
+we can load and check our compilers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load cuda11.2/toolkit/11.2.0
+$ nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2020 NVIDIA Corporation
+Built on Mon_Nov_30_19:08:53_PST_2020
+Cuda compilation tools, release 11.2, V11.2.67
+Build cuda_11.2.r11.2/compiler.29373293_0
+</pre></div>
+</div>
+<p>To compile our code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nvcc -o vector-add -run vector-add.cu
+All values were calculated correctly. Well done.
+</pre></div>
+</div>
+<p>At this point your code is ready to be executed on the GPUs (and it already
+was, since we used the <cite>-run</cite> option in nvcc). To profile the code we can use
+the <cite>nsys</cite> command.</p>
+<p>Notice that <cite>nsys</cite> is part of CUDA 11.1 instead of CUDA 11.2:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module purge
+$ module load cuda11.1/nsight/11.1.1
+$ nsys profile --stats=true ./vector-add
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Collecting</span> <span class="n">data</span><span class="o">...</span>
+<span class="n">All</span> <span class="n">values</span> <span class="n">were</span> <span class="n">calculated</span> <span class="n">correctly</span><span class="o">.</span> <span class="n">Well</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Processing</span> <span class="n">events</span><span class="o">...</span>
+<span class="n">Capturing</span> <span class="n">symbol</span> <span class="n">files</span><span class="o">...</span>
+<span class="n">Saving</span> <span class="n">temporary</span> <span class="s2">&quot;/var/tmp/pbs.59996.gw4head/nsys-report-a2a5-559b-a761-9ba6.qdstrm&quot;</span> <span class="n">file</span> <span class="n">to</span> <span class="n">disk</span><span class="o">...</span>
+<span class="n">Creating</span> <span class="n">final</span> <span class="n">output</span> <span class="n">files</span><span class="o">...</span>
+
+<span class="n">Processing</span> <span class="p">[</span><span class="o">==============================================================</span><span class="mi">100</span><span class="o">%</span><span class="p">]</span>
+<span class="n">Saved</span> <span class="n">report</span> <span class="n">file</span> <span class="n">to</span> <span class="s2">&quot;/var/tmp/pbs.59996.gw4head/nsys-report-a2a5-559b-a761-9ba6.qdrep&quot;</span>
+<span class="n">Exporting</span> <span class="mi">21697</span> <span class="n">events</span><span class="p">:</span> <span class="p">[</span><span class="o">=================================================</span><span class="mi">100</span><span class="o">%</span><span class="p">]</span>
+
+<span class="n">Exported</span> <span class="n">successfully</span> <span class="n">to</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pbs</span><span class="mf">.59996</span><span class="o">.</span><span class="n">gw4head</span><span class="o">/</span><span class="n">nsys</span><span class="o">-</span><span class="n">report</span><span class="o">-</span><span class="n">a2a5</span><span class="o">-</span><span class="mi">559</span><span class="n">b</span><span class="o">-</span><span class="n">a761</span><span class="o">-</span><span class="mi">9</span><span class="n">ba6</span><span class="o">.</span><span class="n">sqlite</span>
+
+<span class="n">Generating</span> <span class="n">CUDA</span> <span class="n">API</span> <span class="n">Statistics</span><span class="o">...</span>
+<span class="n">CUDA</span> <span class="n">API</span> <span class="n">Statistics</span> <span class="p">(</span><span class="n">nanoseconds</span><span class="p">)</span>
+
+<span class="n">Time</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>      <span class="n">Total</span> <span class="n">Time</span>       <span class="n">Calls</span>         <span class="n">Average</span>         <span class="n">Minimum</span>         <span class="n">Maximum</span>  <span class="n">Name</span>
+<span class="o">-------</span>  <span class="o">--------------</span>  <span class="o">----------</span>  <span class="o">--------------</span>  <span class="o">--------------</span>  <span class="o">--------------</span>  <span class="o">--------------------------------------------------------------------------------</span>
+   <span class="mf">64.1</span>       <span class="mi">287742959</span>           <span class="mi">3</span>      <span class="mf">95914319.7</span>           <span class="mi">31610</span>       <span class="mi">287670830</span>  <span class="n">cudaMallocManaged</span>
+   <span class="mf">28.0</span>       <span class="mi">125588589</span>           <span class="mi">1</span>     <span class="mf">125588589.0</span>       <span class="mi">125588589</span>       <span class="mi">125588589</span>  <span class="n">cudaDeviceSynchronize</span>
+    <span class="mf">8.0</span>        <span class="mi">35735765</span>           <span class="mi">3</span>      <span class="mf">11911921.7</span>        <span class="mi">10924248</span>        <span class="mi">12877577</span>  <span class="n">cudaFree</span>
+    <span class="mf">0.0</span>           <span class="mi">49154</span>           <span class="mi">1</span>         <span class="mf">49154.0</span>           <span class="mi">49154</span>           <span class="mi">49154</span>  <span class="n">cudaLaunchKernel</span>
+
+
+
+
+<span class="n">Generating</span> <span class="n">CUDA</span> <span class="n">Kernel</span> <span class="n">Statistics</span><span class="o">...</span>
+<span class="n">CUDA</span> <span class="n">Kernel</span> <span class="n">Statistics</span> <span class="p">(</span><span class="n">nanoseconds</span><span class="p">)</span>
+
+<span class="n">Time</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>      <span class="n">Total</span> <span class="n">Time</span>   <span class="n">Instances</span>         <span class="n">Average</span>         <span class="n">Minimum</span>         <span class="n">Maximum</span>  <span class="n">Name</span>
+<span class="o">-------</span>  <span class="o">--------------</span>  <span class="o">----------</span>  <span class="o">--------------</span>  <span class="o">--------------</span>  <span class="o">--------------</span>  <span class="o">--------------------------------------------------------------------------------------------------------------------</span>
+  <span class="mf">100.0</span>       <span class="mi">125590094</span>           <span class="mi">1</span>     <span class="mf">125590094.0</span>       <span class="mi">125590094</span>       <span class="mi">125590094</span>  <span class="n">addVectorsInto</span><span class="p">(</span><span class="nb">float</span><span class="o">*</span><span class="p">,</span> <span class="nb">float</span><span class="o">*</span><span class="p">,</span> <span class="nb">float</span><span class="o">*</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+
+
+
+<span class="n">Generating</span> <span class="n">CUDA</span> <span class="n">Memory</span> <span class="n">Operation</span> <span class="n">Statistics</span><span class="o">...</span>
+<span class="n">CUDA</span> <span class="n">Memory</span> <span class="n">Operation</span> <span class="n">Statistics</span> <span class="p">(</span><span class="n">nanoseconds</span><span class="p">)</span>
+
+<span class="n">Time</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>      <span class="n">Total</span> <span class="n">Time</span>  <span class="n">Operations</span>         <span class="n">Average</span>         <span class="n">Minimum</span>         <span class="n">Maximum</span>  <span class="n">Name</span>
+<span class="o">-------</span>  <span class="o">--------------</span>  <span class="o">----------</span>  <span class="o">--------------</span>  <span class="o">--------------</span>  <span class="o">--------------</span>  <span class="o">--------------------------------------------------------------------------------</span>
+   <span class="mf">77.8</span>        <span class="mi">27403374</span>        <span class="mi">3450</span>          <span class="mf">7943.0</span>            <span class="mi">1098</span>           <span class="mi">44971</span>  <span class="p">[</span><span class="n">CUDA</span> <span class="n">Unified</span> <span class="n">Memory</span> <span class="n">memcpy</span> <span class="n">HtoD</span><span class="p">]</span>
+   <span class="mf">22.2</span>         <span class="mi">7819653</span>        <span class="mi">1150</span>          <span class="mf">6799.7</span>             <span class="mi">732</span>           <span class="mi">38479</span>  <span class="p">[</span><span class="n">CUDA</span> <span class="n">Unified</span> <span class="n">Memory</span> <span class="n">memcpy</span> <span class="n">DtoH</span><span class="p">]</span>
+
+
+<span class="n">CUDA</span> <span class="n">Memory</span> <span class="n">Operation</span> <span class="n">Statistics</span> <span class="p">(</span><span class="n">KiB</span><span class="p">)</span>
+
+              <span class="n">Total</span>      <span class="n">Operations</span>              <span class="n">Average</span>            <span class="n">Minimum</span>              <span class="n">Maximum</span>  <span class="n">Name</span>
+<span class="o">-------------------</span>  <span class="o">--------------</span>  <span class="o">-------------------</span>  <span class="o">-----------------</span>  <span class="o">-------------------</span>  <span class="o">--------------------------------------------------------------------------------</span>
+         <span class="mf">585948.000</span>            <span class="mi">3450</span>              <span class="mf">169.840</span>              <span class="mf">4.000</span>             <span class="mf">1020.000</span>  <span class="p">[</span><span class="n">CUDA</span> <span class="n">Unified</span> <span class="n">Memory</span> <span class="n">memcpy</span> <span class="n">HtoD</span><span class="p">]</span>
+         <span class="mf">195316.000</span>            <span class="mi">1150</span>              <span class="mf">169.840</span>              <span class="mf">4.000</span>             <span class="mf">1020.000</span>  <span class="p">[</span><span class="n">CUDA</span> <span class="n">Unified</span> <span class="n">Memory</span> <span class="n">memcpy</span> <span class="n">DtoH</span><span class="p">]</span>
+
+
+
+
+<span class="n">Generating</span> <span class="n">Operating</span> <span class="n">System</span> <span class="n">Runtime</span> <span class="n">API</span> <span class="n">Statistics</span><span class="o">...</span>
+<span class="n">Operating</span> <span class="n">System</span> <span class="n">Runtime</span> <span class="n">API</span> <span class="n">Statistics</span> <span class="p">(</span><span class="n">nanoseconds</span><span class="p">)</span>
+
+<span class="n">Time</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>      <span class="n">Total</span> <span class="n">Time</span>       <span class="n">Calls</span>         <span class="n">Average</span>         <span class="n">Minimum</span>         <span class="n">Maximum</span>  <span class="n">Name</span>
+<span class="o">-------</span>  <span class="o">--------------</span>  <span class="o">----------</span>  <span class="o">--------------</span>  <span class="o">--------------</span>  <span class="o">--------------</span>  <span class="o">--------------------------------------------------------------------------------</span>
+   <span class="mf">84.1</span>      <span class="mi">1655258416</span>          <span class="mi">90</span>      <span class="mf">18391760.2</span>           <span class="mi">36428</span>       <span class="mi">100129785</span>  <span class="n">poll</span>
+    <span class="mf">8.7</span>       <span class="mi">171812553</span>          <span class="mi">79</span>       <span class="mf">2174842.4</span>           <span class="mi">18716</span>        <span class="mi">21119503</span>  <span class="n">sem_timedwait</span>
+    <span class="mf">4.6</span>        <span class="mi">90750151</span>         <span class="mi">802</span>        <span class="mf">113154.8</span>            <span class="mi">1020</span>        <span class="mi">32925829</span>  <span class="n">ioctl</span>
+    <span class="mf">2.0</span>        <span class="mi">38514232</span>         <span class="mi">102</span>        <span class="mf">377590.5</span>            <span class="mi">1327</span>        <span class="mi">12830833</span>  <span class="n">mmap</span>
+    <span class="mf">0.2</span>         <span class="mi">3296748</span>          <span class="mi">29</span>        <span class="mf">113681.0</span>            <span class="mi">1075</span>         <span class="mi">1103165</span>  <span class="n">fopen</span>
+    <span class="mf">0.2</span>         <span class="mi">3235094</span>           <span class="mi">1</span>       <span class="mf">3235094.0</span>         <span class="mi">3235094</span>         <span class="mi">3235094</span>  <span class="n">fflush</span>
+    <span class="mf">0.2</span>         <span class="mi">3032036</span>           <span class="mi">6</span>        <span class="mf">505339.3</span>            <span class="mi">1062</span>         <span class="mi">2670607</span>  <span class="n">fclose</span>
+    <span class="mf">0.0</span>          <span class="mi">591167</span>          <span class="mi">98</span>          <span class="mf">6032.3</span>            <span class="mi">1561</span>           <span class="mi">15621</span>  <span class="n">open64</span>
+    <span class="mf">0.0</span>          <span class="mi">533813</span>           <span class="mi">1</span>        <span class="mf">533813.0</span>          <span class="mi">533813</span>          <span class="mi">533813</span>  <span class="n">fwrite</span>
+    <span class="mf">0.0</span>          <span class="mi">500728</span>           <span class="mi">4</span>        <span class="mf">125182.0</span>            <span class="mi">1902</span>          <span class="mi">482612</span>  <span class="n">fread</span>
+    <span class="mf">0.0</span>          <span class="mi">409392</span>           <span class="mi">5</span>         <span class="mf">81878.4</span>            <span class="mi">1267</span>          <span class="mi">125335</span>  <span class="n">fcntl</span>
+    <span class="mf">0.0</span>          <span class="mi">359123</span>           <span class="mi">4</span>         <span class="mf">89780.7</span>           <span class="mi">83207</span>           <span class="mi">97768</span>  <span class="n">pthread_create</span>
+    <span class="mf">0.0</span>          <span class="mi">103816</span>           <span class="mi">3</span>         <span class="mf">34605.3</span>           <span class="mi">30800</span>           <span class="mi">42164</span>  <span class="n">fgets</span>
+    <span class="mf">0.0</span>           <span class="mi">50423</span>          <span class="mi">15</span>          <span class="mf">3361.5</span>            <span class="mi">1556</span>            <span class="mi">4795</span>  <span class="n">write</span>
+    <span class="mf">0.0</span>           <span class="mi">39391</span>          <span class="mi">11</span>          <span class="mf">3581.0</span>            <span class="mi">1379</span>            <span class="mi">5948</span>  <span class="n">munmap</span>
+    <span class="mf">0.0</span>           <span class="mi">24094</span>           <span class="mi">5</span>          <span class="mf">4818.8</span>            <span class="mi">2158</span>            <span class="mi">8960</span>  <span class="nb">open</span>
+    <span class="mf">0.0</span>            <span class="mi">6367</span>           <span class="mi">2</span>          <span class="mf">3183.5</span>            <span class="mi">3012</span>            <span class="mi">3355</span>  <span class="n">socket</span>
+    <span class="mf">0.0</span>            <span class="mi">5262</span>           <span class="mi">1</span>          <span class="mf">5262.0</span>            <span class="mi">5262</span>            <span class="mi">5262</span>  <span class="n">pipe2</span>
+    <span class="mf">0.0</span>            <span class="mi">4426</span>           <span class="mi">1</span>          <span class="mf">4426.0</span>            <span class="mi">4426</span>            <span class="mi">4426</span>  <span class="n">connect</span>
+    <span class="mf">0.0</span>            <span class="mi">2569</span>           <span class="mi">2</span>          <span class="mf">1284.5</span>            <span class="mi">1107</span>            <span class="mi">1462</span>  <span class="n">read</span>
+    <span class="mf">0.0</span>            <span class="mi">2079</span>           <span class="mi">2</span>          <span class="mf">1039.5</span>            <span class="mi">1033</span>            <span class="mi">1046</span>  <span class="n">pthread_mutex_trylock</span>
+    <span class="mf">0.0</span>            <span class="mi">1082</span>           <span class="mi">1</span>          <span class="mf">1082.0</span>            <span class="mi">1082</span>            <span class="mi">1082</span>  <span class="n">bind</span>
+
+
+
+
+<span class="n">Generating</span> <span class="n">NVTX</span> <span class="n">Push</span><span class="o">-</span><span class="n">Pop</span> <span class="n">Range</span> <span class="n">Statistics</span><span class="o">...</span>
+<span class="n">NVTX</span> <span class="n">Push</span><span class="o">-</span><span class="n">Pop</span> <span class="n">Range</span> <span class="n">Statistics</span> <span class="p">(</span><span class="n">nanoseconds</span><span class="p">)</span>
+
+
+
+
+<span class="n">Report</span> <span class="n">file</span> <span class="n">moved</span> <span class="n">to</span> <span class="s2">&quot;/lustre/home/ca-munozcjj/pbs.59996.gw4head.x8z/report1.qdrep&quot;</span>
+<span class="n">Report</span> <span class="n">file</span> <span class="n">moved</span> <span class="n">to</span> <span class="s2">&quot;/lustre/home/ca-munozcjj/pbs.59996.gw4head.x8z/report1.sqlite&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><p>The above code can be compiled and tested using an interactive session:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ qsub -I -q ampereq -l select=1:ngpus=1 -l walltime=01:00:00
+</pre></div>
+</div>
+<p>Once our session is granted and we are placed on the GPU node where  we can
+load and check our compilers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load nvidia
+$ nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2021 NVIDIA Corporation
+Built on Thu_Nov_18_09:45:30_PST_2021
+Cuda compilation tools, release 11.5, V11.5.119
+Build cuda_11.5.r11.5/compiler.30672275_0
+</pre></div>
+</div>
+<p>To compile our code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nvcc -o vector-add -run vector-add.cu
+All values were calculated correctly. Well done.
+</pre></div>
+</div>
+<p>At this point your code is ready to be executed on the GPUs (and it already
+was, since we used the <cite>-run</cite> option in nvcc). To profile the code we can use
+the <cite>nsys</cite> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nsys profile -b dwarf --sample=cpu --trace=nvtx,osrt,opengl --stats=true ./vector-add
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Collecting</span> <span class="n">data</span><span class="o">...</span>
+<span class="n">All</span> <span class="n">values</span> <span class="n">were</span> <span class="n">calculated</span> <span class="n">correctly</span><span class="o">.</span> <span class="n">Well</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Processing</span> <span class="n">events</span><span class="o">...</span>
+<span class="n">Saving</span> <span class="n">temporary</span> <span class="s2">&quot;/var/tmp/pbs.17063.p3-pbs/nsys-report-3b1b-78fd-56ed-e39c.qdstrm&quot;</span> <span class="n">file</span> <span class="n">to</span> <span class="n">disk</span><span class="o">...</span>
+<span class="n">Creating</span> <span class="n">final</span> <span class="n">output</span> <span class="n">files</span><span class="o">...</span>
+<span class="n">Processing</span> <span class="p">[</span><span class="o">===============================================================</span><span class="mi">100</span><span class="o">%</span><span class="p">]</span>
+<span class="n">Saved</span> <span class="n">report</span> <span class="n">file</span> <span class="n">to</span> <span class="s2">&quot;/var/tmp/pbs.17063.p3-pbs/nsys-report-3b1b-78fd-56ed-e39c.nsys-rep&quot;</span>
+<span class="n">Exporting</span> <span class="mi">3807</span> <span class="n">events</span><span class="p">:</span> <span class="p">[</span><span class="o">===================================================</span><span class="mi">100</span><span class="o">%</span><span class="p">]</span>
+
+<span class="n">Exported</span> <span class="n">successfully</span> <span class="n">to</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pbs</span><span class="mf">.17063</span><span class="o">.</span><span class="n">p3</span><span class="o">-</span><span class="n">pbs</span><span class="o">/</span><span class="n">nsys</span><span class="o">-</span><span class="n">report</span><span class="o">-</span><span class="mi">3</span><span class="n">b1b</span><span class="o">-</span><span class="mi">78</span><span class="n">fd</span><span class="o">-</span><span class="mi">56</span><span class="n">ed</span><span class="o">-</span><span class="n">e39c</span><span class="o">.</span><span class="n">sqlite</span>
+
+
+<span class="n">Operating</span> <span class="n">System</span> <span class="n">Runtime</span> <span class="n">API</span> <span class="n">Statistics</span><span class="p">:</span>
+
+ <span class="n">Time</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>  <span class="n">Total</span> <span class="n">Time</span> <span class="p">(</span><span class="n">ns</span><span class="p">)</span>  <span class="n">Num</span> <span class="n">Calls</span>    <span class="n">Avg</span> <span class="p">(</span><span class="n">ns</span><span class="p">)</span>      <span class="n">Med</span> <span class="p">(</span><span class="n">ns</span><span class="p">)</span>    <span class="n">Min</span> <span class="p">(</span><span class="n">ns</span><span class="p">)</span>   <span class="n">Max</span> <span class="p">(</span><span class="n">ns</span><span class="p">)</span>    <span class="n">StdDev</span> <span class="p">(</span><span class="n">ns</span><span class="p">)</span>        <span class="n">Name</span>
+ <span class="o">-------</span>  <span class="o">---------------</span>  <span class="o">---------</span>  <span class="o">------------</span>  <span class="o">------------</span>  <span class="o">--------</span>  <span class="o">-----------</span>  <span class="o">------------</span>  <span class="o">--------------</span>
+    <span class="mf">68.8</span>      <span class="mi">600</span><span class="p">,</span><span class="mi">540</span><span class="p">,</span><span class="mi">655</span>         <span class="mi">20</span>  <span class="mi">30</span><span class="p">,</span><span class="mi">027</span><span class="p">,</span><span class="mf">032.8</span>  <span class="mi">14</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mf">501.5</span>     <span class="mi">3</span><span class="p">,</span><span class="mi">707</span>  <span class="mi">100</span><span class="p">,</span><span class="mi">112</span><span class="p">,</span><span class="mi">106</span>  <span class="mi">38</span><span class="p">,</span><span class="mi">730</span><span class="p">,</span><span class="mf">719.1</span>  <span class="n">poll</span>
+    <span class="mf">27.0</span>      <span class="mi">236</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">370</span>        <span class="mi">829</span>     <span class="mi">284</span><span class="p">,</span><span class="mf">821.9</span>      <span class="mi">15</span><span class="p">,</span><span class="mf">008.0</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">002</span>   <span class="mi">14</span><span class="p">,</span><span class="mi">538</span><span class="p">,</span><span class="mi">905</span>     <span class="mi">775</span><span class="p">,</span><span class="mf">386.5</span>  <span class="n">ioctl</span>
+     <span class="mf">3.8</span>       <span class="mi">33</span><span class="p">,</span><span class="mi">416</span><span class="p">,</span><span class="mi">799</span>         <span class="mi">21</span>   <span class="mi">1</span><span class="p">,</span><span class="mi">591</span><span class="p">,</span><span class="mf">276.1</span>       <span class="mi">3</span><span class="p">,</span><span class="mf">607.0</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">403</span>   <span class="mi">11</span><span class="p">,</span><span class="mi">382</span><span class="p">,</span><span class="mi">042</span>   <span class="mi">3</span><span class="p">,</span><span class="mi">984</span><span class="p">,</span><span class="mf">272.7</span>  <span class="n">mmap</span>
+     <span class="mf">0.1</span>          <span class="mi">827</span><span class="p">,</span><span class="mi">199</span>         <span class="mi">42</span>      <span class="mi">19</span><span class="p">,</span><span class="mf">695.2</span>       <span class="mi">4</span><span class="p">,</span><span class="mf">062.5</span>     <span class="mi">3</span><span class="p">,</span><span class="mi">506</span>      <span class="mi">501</span><span class="p">,</span><span class="mi">792</span>      <span class="mi">76</span><span class="p">,</span><span class="mf">552.0</span>  <span class="n">mmap64</span>
+     <span class="mf">0.1</span>          <span class="mi">805</span><span class="p">,</span><span class="mi">921</span>         <span class="mi">36</span>      <span class="mi">22</span><span class="p">,</span><span class="mf">386.7</span>       <span class="mi">2</span><span class="p">,</span><span class="mf">755.5</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">172</span>      <span class="mi">390</span><span class="p">,</span><span class="mi">502</span>      <span class="mi">72</span><span class="p">,</span><span class="mf">835.0</span>  <span class="n">fopen</span>
+     <span class="mf">0.1</span>          <span class="mi">587</span><span class="p">,</span><span class="mi">804</span>         <span class="mi">12</span>      <span class="mi">48</span><span class="p">,</span><span class="mf">983.7</span>      <span class="mi">27</span><span class="p">,</span><span class="mf">206.0</span>    <span class="mi">18</span><span class="p">,</span><span class="mi">776</span>      <span class="mi">289</span><span class="p">,</span><span class="mi">874</span>      <span class="mi">75</span><span class="p">,</span><span class="mf">952.3</span>  <span class="n">sem_timedwait</span>
+     <span class="mf">0.0</span>          <span class="mi">301</span><span class="p">,</span><span class="mi">588</span>         <span class="mi">66</span>       <span class="mi">4</span><span class="p">,</span><span class="mf">569.5</span>       <span class="mi">4</span><span class="p">,</span><span class="mf">003.0</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">764</span>       <span class="mi">17</span><span class="p">,</span><span class="mi">593</span>       <span class="mi">2</span><span class="p">,</span><span class="mf">163.0</span>  <span class="n">open64</span>
+     <span class="mf">0.0</span>          <span class="mi">289</span><span class="p">,</span><span class="mi">654</span>          <span class="mi">4</span>      <span class="mi">72</span><span class="p">,</span><span class="mf">413.5</span>      <span class="mi">61</span><span class="p">,</span><span class="mf">966.5</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">413</span>      <span class="mi">164</span><span class="p">,</span><span class="mi">308</span>      <span class="mi">83</span><span class="p">,</span><span class="mf">730.8</span>  <span class="n">fcntl</span>
+     <span class="mf">0.0</span>          <span class="mi">233</span><span class="p">,</span><span class="mi">728</span>          <span class="mi">8</span>      <span class="mi">29</span><span class="p">,</span><span class="mf">216.0</span>       <span class="mi">1</span><span class="p">,</span><span class="mf">418.0</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">132</span>      <span class="mi">126</span><span class="p">,</span><span class="mi">287</span>      <span class="mi">52</span><span class="p">,</span><span class="mf">123.7</span>  <span class="n">fclose</span>
+     <span class="mf">0.0</span>          <span class="mi">140</span><span class="p">,</span><span class="mi">393</span>          <span class="mi">2</span>      <span class="mi">70</span><span class="p">,</span><span class="mf">196.5</span>      <span class="mi">70</span><span class="p">,</span><span class="mf">196.5</span>    <span class="mi">69</span><span class="p">,</span><span class="mi">500</span>       <span class="mi">70</span><span class="p">,</span><span class="mi">893</span>         <span class="mf">985.0</span>  <span class="n">pthread_create</span>
+     <span class="mf">0.0</span>           <span class="mi">40</span><span class="p">,</span><span class="mi">718</span>          <span class="mi">3</span>      <span class="mi">13</span><span class="p">,</span><span class="mf">572.7</span>      <span class="mi">15</span><span class="p">,</span><span class="mf">059.0</span>     <span class="mi">4</span><span class="p">,</span><span class="mi">098</span>       <span class="mi">21</span><span class="p">,</span><span class="mi">561</span>       <span class="mi">8</span><span class="p">,</span><span class="mf">825.9</span>  <span class="n">fread</span>
+     <span class="mf">0.0</span>           <span class="mi">40</span><span class="p">,</span><span class="mi">546</span>          <span class="mi">1</span>      <span class="mi">40</span><span class="p">,</span><span class="mf">546.0</span>      <span class="mi">40</span><span class="p">,</span><span class="mf">546.0</span>    <span class="mi">40</span><span class="p">,</span><span class="mi">546</span>       <span class="mi">40</span><span class="p">,</span><span class="mi">546</span>           <span class="mf">0.0</span>  <span class="n">fgets</span>
+     <span class="mf">0.0</span>           <span class="mi">36</span><span class="p">,</span><span class="mi">349</span>         <span class="mi">11</span>       <span class="mi">3</span><span class="p">,</span><span class="mf">304.5</span>       <span class="mi">3</span><span class="p">,</span><span class="mf">236.0</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">092</span>        <span class="mi">7</span><span class="p">,</span><span class="mi">334</span>       <span class="mi">1</span><span class="p">,</span><span class="mf">882.3</span>  <span class="n">munmap</span>
+     <span class="mf">0.0</span>           <span class="mi">34</span><span class="p">,</span><span class="mi">277</span>         <span class="mi">13</span>       <span class="mi">2</span><span class="p">,</span><span class="mf">636.7</span>       <span class="mi">2</span><span class="p">,</span><span class="mf">805.0</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">784</span>        <span class="mi">3</span><span class="p">,</span><span class="mi">487</span>         <span class="mf">567.2</span>  <span class="n">write</span>
+     <span class="mf">0.0</span>           <span class="mi">15</span><span class="p">,</span><span class="mi">130</span>          <span class="mi">4</span>       <span class="mi">3</span><span class="p">,</span><span class="mf">782.5</span>       <span class="mi">3</span><span class="p">,</span><span class="mf">717.5</span>     <span class="mi">2</span><span class="p">,</span><span class="mi">184</span>        <span class="mi">5</span><span class="p">,</span><span class="mi">511</span>       <span class="mi">1</span><span class="p">,</span><span class="mf">472.8</span>  <span class="nb">open</span>
+     <span class="mf">0.0</span>            <span class="mi">5</span><span class="p">,</span><span class="mi">931</span>          <span class="mi">1</span>       <span class="mi">5</span><span class="p">,</span><span class="mf">931.0</span>       <span class="mi">5</span><span class="p">,</span><span class="mf">931.0</span>     <span class="mi">5</span><span class="p">,</span><span class="mi">931</span>        <span class="mi">5</span><span class="p">,</span><span class="mi">931</span>           <span class="mf">0.0</span>  <span class="n">pipe2</span>
+     <span class="mf">0.0</span>            <span class="mi">4</span><span class="p">,</span><span class="mi">559</span>          <span class="mi">3</span>       <span class="mi">1</span><span class="p">,</span><span class="mf">519.7</span>       <span class="mi">1</span><span class="p">,</span><span class="mf">463.0</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">313</span>        <span class="mi">1</span><span class="p">,</span><span class="mi">783</span>         <span class="mf">240.1</span>  <span class="n">read</span>
+     <span class="mf">0.0</span>            <span class="mi">4</span><span class="p">,</span><span class="mi">128</span>          <span class="mi">2</span>       <span class="mi">2</span><span class="p">,</span><span class="mf">064.0</span>       <span class="mi">2</span><span class="p">,</span><span class="mf">064.0</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">763</span>        <span class="mi">2</span><span class="p">,</span><span class="mi">365</span>         <span class="mf">425.7</span>  <span class="n">socket</span>
+     <span class="mf">0.0</span>            <span class="mi">3</span><span class="p">,</span><span class="mi">487</span>          <span class="mi">1</span>       <span class="mi">3</span><span class="p">,</span><span class="mf">487.0</span>       <span class="mi">3</span><span class="p">,</span><span class="mf">487.0</span>     <span class="mi">3</span><span class="p">,</span><span class="mi">487</span>        <span class="mi">3</span><span class="p">,</span><span class="mi">487</span>           <span class="mf">0.0</span>  <span class="n">connect</span>
+     <span class="mf">0.0</span>            <span class="mi">1</span><span class="p">,</span><span class="mi">342</span>          <span class="mi">1</span>       <span class="mi">1</span><span class="p">,</span><span class="mf">342.0</span>       <span class="mi">1</span><span class="p">,</span><span class="mf">342.0</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">342</span>        <span class="mi">1</span><span class="p">,</span><span class="mi">342</span>           <span class="mf">0.0</span>  <span class="n">bind</span>
+
+<span class="n">Report</span> <span class="n">file</span> <span class="n">moved</span> <span class="n">to</span> <span class="s2">&quot;/lustre/home/ca-munozcjj/gpudocs/profilers/nsys/phase3/report2.nsys-rep&quot;</span>
+<span class="n">Report</span> <span class="n">file</span> <span class="n">moved</span> <span class="n">to</span> <span class="s2">&quot;/lustre/home/ca-munozcjj/gpudocs/profilers/nsys/phase3/report2.sqlite&quot;</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>In the above example we explicitly didn’t include cuda tracing
+(<code class="docutils literal notranslate"><span class="pre">--trace=nvtx,osrt,opengl</span></code>) as this currently produces a <code class="docutils literal notranslate"><span class="pre">core</span> <span class="pre">dumped</span></code>
+error message. At the moment this limits the information provided by the
+profiler. The tech team is currently investigating.</p>
+</div>
+</div></div>
+<p>The <code class="docutils literal notranslate"><span class="pre">nsys</span></code> command has several possible options available (see
+<code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">--help</span></code>), among them <code class="docutils literal notranslate"><span class="pre">--stats=true</span></code> triggers the generation of
+a statistics summary and the creation of two files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">report1</span><span class="o">.</span><span class="n">qdrep</span>
+<span class="n">report1</span><span class="o">.</span><span class="n">sqlite</span>
+</pre></div>
+</div>
+<p>The statistics summary output includes different CUDA operations performed by our
+program including the time consumed by our main kernel <cite>addVectorsInto</cite>. Additionally,
+it also provides us statistical information about how much time is spent transferring
+data back and forth between the GPU and the CPU. At this point we could make changes
+to our code (e.g. change the launch configuration, memory prefetching) and explore
+its impact on these numbers to try to find optimal settings.</p>
+</section>
+<section id="visualize-profiler-results">
+<h4>Visualize profiler results<a class="headerlink" href="#visualize-profiler-results" title="Permalink to this heading"></a></h4>
+<p>The files generated by <code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span></code> can in principle be used to explore our code
+timeline using NVIDIA visual profiler Nsight Systems. However, Isambard doesn’t currently
+support X11 connections but the files may still be useful if the user has a local
+installation of the visual profiler.</p>
+</section>
+</section>
+<section id="arm-forge-map">
+<h3>Arm Forge MAP<a class="headerlink" href="#arm-forge-map" title="Permalink to this heading"></a></h3>
+<p>MAP - part of the Arm Forge toolsuite for high performance software - is an intuitive
+graphical profiler that can show how much time was spent on each line of code.</p>
+<section id="id2">
+<h4>Loading the profiler<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<p>You can access Arm Forge toolset (MAP, DDT and Performance Reports) on both MACS and
+Phase3 with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module use /software/x86/modulefiles
+$ module load tools/arm-forge/20.1
+</pre></div>
+</div>
+<p>You can use MAP’s GPU profiling capabilities when working with CUDA programs
+(CUDA kernels generated by OpenACC, CUDA Fortran, or off loaded OpenMP regions are
+not yet supported by Arm MAP).</p>
+</section>
+<section id="compiler-flags-and-compilation">
+<h4>Compiler flags and compilation<a class="headerlink" href="#compiler-flags-and-compilation" title="Permalink to this heading"></a></h4>
+<p>Consider the <a class="reference download internal" download="" href="../_downloads/80345c900751ad11a92c40b007a96d5f/vector-add.cu"><code class="xref download docutils literal notranslate"><span class="pre">previous</span> <span class="pre">example</span> <span class="pre">using</span> <span class="pre">CUDA</span> <span class="pre">C++</span></code></a>.
+In order to prepare our program to be profiled with MAP we need to compile it with
+debugging symbols (<code class="docutils literal notranslate"><span class="pre">-g</span></code>) and in some cases it might need to be relinked. Typically
+you should keep optimization flags enabled when profiling (rather than profiling a
+debug build). This will give more representative results. The recommended set of
+compilation flags for CUDA kernels are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">lineinfo</span> <span class="o">-</span><span class="n">O3</span>
+</pre></div>
+</div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-4-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="0">MACS</button><button aria-controls="panel-4-4-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-1" name="4-1" role="tab" tabindex="-1">Phase 3</button></div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><p>Therefore we can compile our example program with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ qsub -I -q pascalq -l select=1:ngpus=1 -l walltime=01:00:00
+</pre></div>
+</div>
+<p>Once our session is granted and we are placed on the GPU node where
+we can load and compile the code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load cuda11.2/toolkit/11.2.0
+$ nvcc -c -o vector-add.o -g -lineinfo -O3 vector-add.cu
+$ nvcc vector-add.o -o vector-add
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-4-1" class="sphinx-tabs-panel" hidden="true" id="panel-4-4-1" name="4-1" role="tabpanel" tabindex="0"><p>Therefore we can compile our example program with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ qsub -I -q ampereq -l select=1:ngpus=1 -l walltime=01:00:00
+</pre></div>
+</div>
+<p>Once our session is granted and we are placed on the GPU node where
+we can load and compile the code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load nvidia/21.11
+$ nvcc -c -o vector-add.o -g -lineinfo -O3 vector-add.cu
+$ nvcc vector-add.o -o vector-add
+</pre></div>
+</div>
+</div></div>
+<p>This generates a <cite>vector-add</cite> executable in our current directory. There are two
+alternative methods to run MAP on our executable and generate a report (a map file)
+with the profiling information for later analysis. The first method uses an interactive
+session on a GPU node while the second runs MAP through a job script. Both methods
+allow you to interact with the profiler through the command line but the former also
+allows you to run the profiler’s GUI and analize the results as soon as the program
+completes execution so it is useful for relatively short runtime programs.</p>
+</section>
+<section id="running-the-profiler">
+<h4>Running the profiler<a class="headerlink" href="#running-the-profiler" title="Permalink to this heading"></a></h4>
+<p>The following examples show how to run MAP on MACS, please adapt the instructions
+(i.e. select corresponding  partitions and module files) to run on Phase3.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-5-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-5-5-0" name="5-0" role="tab" tabindex="0">Interactive session</button><button aria-controls="panel-5-5-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-5-5-1" name="5-1" role="tab" tabindex="-1">Job Script</button></div><div aria-labelledby="tab-5-5-0" class="sphinx-tabs-panel" id="panel-5-5-0" name="5-0" role="tabpanel" tabindex="0"><blockquote>
+<div><p>With an interactive session you can run the profiler through the command
+line or using MAP’s GUI. In both cases you first need to request the
+interactive session.</p>
+</div></blockquote>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-6-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-6-6-0" name="6-0" role="tab" tabindex="0">CLI</button><button aria-controls="panel-6-6-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-6-6-1" name="6-1" role="tab" tabindex="-1">GUI</button></div><div aria-labelledby="tab-6-6-0" class="sphinx-tabs-panel" id="panel-6-6-0" name="6-0" role="tabpanel" tabindex="0"><p>Request an interactive session (no need to do it again if already
+in an interactive session):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[login-01 ~]$ qsub -I -q pascalq -l select=1:ngpus=1 -l walltime=01:00:00
+</pre></div>
+</div>
+<p>To run the profiler using the command line follow this steps:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[pascal-003 ~]$ module use /software/x86/modulefiles
+[pascal-003 ~]$ module load tools/arm-forge/20.1
+[pascal-003 ~]$ ALLINEA_SAMPLER_INTERVAL=1 map --profile vector-add
+Arm Forge 21.0 - Arm MAP
+
+Profiling          : /lustre/home/ca-munozcjj/gpudocs/profilers/arm/macs/vector-add
+Allinea sampler    : not preloading
+MPI implementation : Auto-Detect (None)
+
+All values were calculated correctly. Well done.
+
+MAP analysing program...
+MAP gathering samples...
+MAP generated /lustre/home/ca-munozcjj/gpudocs/profilers/arm/macs/vector-add_1p_1n_40t_2022-10-14_19-42.map
+</pre></div>
+</div>
+<p>The environment variable <cite>ALLINEA_SAMPLER_INTERVAL</cite> controls how often
+samples are taken in your code (in ms). By default MAP will sample the code
+every 20 ms but if the code runs for a small amount of time (like in our
+example) it might be good to increase the sampling rate (the maximum sampling
+rate is 1000 Hz or 1 ms).</p>
+<p>If all goes well MAP will generate a map file in the current directory which
+can be analised later on with MAP GUI on the login nodes.</p>
+</div><div aria-labelledby="tab-6-6-1" class="sphinx-tabs-panel" hidden="true" id="panel-6-6-1" name="6-1" role="tabpanel" tabindex="0"><p>To run MAP’s GUI we need to access the MACS cluster  with X11 enabled:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh -Y login.isambard
+</pre></div>
+</div>
+<p>We need to request an interactive session with X11 enabled:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[login-01 ~]$ qsub -I -X -q pascalq -l select=1:ngpus=1 -l walltime=01:00:00
+qsub: waiting for job 62482.gw4head to start
+qsub: job 62482.gw4head ready
+
+cd /home/ca-munozcjj/pbs.62482.gw4head.x8z
+xauth:  file /home/ca-munozcjj/pbs.62482.gw4head.x8z/.Xauthority does not exist
+</pre></div>
+</div>
+<p>When the request is granted you should be placed in the allocated node.
+You can now load Arm Forge and execute MAP:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[pascal-003 ~]$ module use /software/x86/modulefiles
+[pascal-003 ~]$ module load tools/arm-forge/20.1
+[pascal-003 ~]$ export ALLINEA_SAMPLER_INTERVAL=1
+[pascal-003 ~]$ map
+</pre></div>
+</div>
+<p>The environment variable <cite>ALLINEA_SAMPLER_INTERVAL</cite> controls how often
+samples are taken in your code (in ms). By default MAP will sample the code
+every 20 ms but if the code runs for a small amount of time (like in our
+example) it might be good to increase the sampling rate (the maximum sampling
+rate is 1000 Hz or 1 ms).</p>
+<p>If everything goes well you should see a new window similar to the left
+figure below. Select <strong>Profile a program</strong>, this will open a new window
+where you can search for the program to be profiled in the field
+<strong>Application</strong> (right figure below).</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<img alt="MAP GUI initial window" src="../_images/isambard-macs-arm-forge-map-01.png" />
+</figure>
+</td>
+<td><figure class="align-default">
+<img alt="MAP GUI search for application to profile" src="../_images/isambard-macs-arm-forge-map-02.png" />
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Select and open the application to profile (left figure below). Back on
+the <strong>Run</strong> menu there are several options that allow you to control for
+example the different <strong>Metrics</strong> to be monitored. Select the <strong>CUDA
+Kernel Analysis</strong> field to extract additional information from your CUDA
+kernels.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<img alt="MAP GUI select program" src="../_images/isambard-macs-arm-forge-map-03.png" />
+</figure>
+</td>
+<td><figure class="align-default">
+<img alt="MAP GUI GPU metrics" src="../_images/isambard-macs-arm-forge-map-04.png" />
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Select <strong>Run</strong> and the profiler will start analysing the code. On completion
+a new window will open with the analysis results, a map file will also be
+generated in our current directory, for example
+<cite>vector-add_1p_1n_2022-08-11_18-56.map</cite>, you can use this file to explore
+the profiler results again later on if needed. On the results window there
+are several sections with useful information. Arm MAP makes it very easy to
+observe how much time was consumed on the CPU and GPU. The <strong>Main thread
+activity</strong> timeline (top section circled in red) shows in purple the time
+spent by the CPU waiting for the GPU while green indicates the time spent
+on the CPU.
+The <strong>Main Thread Stacks</strong> section (bottom region circled in blue) shows a
+more detailed description of the functions being accessed organised by spent
+time.  We can immediately see that our code is spending a lot of time (30.3%
+of the whole program duration) on the CPU, on the <cite>initWith</cite> host function.
+This suggests that our code could potentially benefit from accelerating this
+function by making it a GPU kernel.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/isambard-macs-arm-forge-map-05.png"><img alt="MAP results window" src="../_images/isambard-macs-arm-forge-map-05.png" style="width: 842.0px; height: 628.0px;" /></a>
+</figure>
+</div></div>
+</div><div aria-labelledby="tab-5-5-1" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-1" name="5-1" role="tabpanel" tabindex="0"><p>A potentially more convenient way to run MAP is through the job scheduler
+(especially for jobs with long runtimes). The method is very similar to running
+the profiler through the command line but a job script with appropiate directives
+to interact with the job scheduler is also needed. On Isambard we use PBS PRO and
+the following job script could give you a good starting point:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#PBS -N pascalq
+#PBS -q pascalq
+#PBS -l select=1:ncpus=16:ngpus=1
+#PBS -l walltime=00:15:00
+
+set -eu
+
+module purge
+module load cuda11.2/toolkit/11.2.0
+module use /software/x86/modulefiles
+module load tools/arm-forge/20.1
+module list
+
+# change WORKDIR to point to your program location
+WORKDIR=/home/$USER/gpudocs/profilers/arm/macs
+cd $WORKDIR
+
+# compile
+nvcc -c -o vector-add.o -g -lineinfo -O3 vector-add.cu
+nvcc vector-add.o -o vector-add
+
+# profile
+ALLINEA_SAMPLER_INTERVAL=1 map --profile vector-add
+</pre></div>
+</div>
+<p>The environment variable <cite>ALLINEA_SAMPLER_INTERVAL</cite> controls how often
+samples are taken in your code (in ms). By default MAP will sample the code
+every 20 ms but if the code runs for a small amount of time (like in our
+example) it might be good to increase the sampling rate (the maximum sampling
+rate is 1000 Hz or 1 ms).</p>
+<p>As with the command line interactive method, the above script will produce a map
+file that can then be used to start MAP on the login nodes to analyse the profiler
+results. Don’t forget to ammend the <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">walltime</span></code> and <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">select</span></code> options to
+fit your program requirements.</p>
+</div></div>
+</section>
+<section id="load-a-profile-data-file">
+<h4>Load a profile data file<a class="headerlink" href="#load-a-profile-data-file" title="Permalink to this heading"></a></h4>
+<p>If later on you want to explore again the results produced by MAP, you don’t need to
+request an interactive session anymore, it is enough to connect to the system with
+X11 enabled, load the arm-forge module and run map on the login nodes. Then on the
+startup menu select <strong>LOAD PROFILE DATA FILE</strong> to load a profile data file from a
+previous run (left image below). Then select the appropiate map file (right image
+below). A new window with the profiler results will appear.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<img alt="load profile data file" src="../_images/isambard-macs-arm-forge-map-06.png" />
+</figure>
+</td>
+<td><figure class="align-default">
+<img alt="select map file" src="../_images/isambard-macs-arm-forge-map-07.png" />
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<img alt="MAP previous results window" src="../_images/isambard-macs-arm-forge-map-08.png" />
+</figure>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="benchmarking">
+<h2>Benchmarking<a class="headerlink" href="#benchmarking" title="Permalink to this heading"></a></h2>
+<p>We compare the performnace of some of the GPU devices available on Isambard (NVIDIA
+P100, NVIDIA V100 and NVIDIA A100) using several popular CNN models for visual
+classification implemented in Pytorch.</p>
+<p>The first test uses a randomly generated dataset and is run on a single GPU.
+The source code for the test can be found in <a class="reference external" href="https://github.com/ARCCA/pytorch-gpu-benchmark-synthetic">https://github.com/ARCCA/pytorch-gpu-benchmark-synthetic</a></p>
+<p>The reported time is the average time spent in 50 batches (12 images per
+batch).</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-7-7-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-7-7-0" name="7-0" role="tab" tabindex="0">Inference</button><button aria-controls="panel-7-7-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-7-7-1" name="7-1" role="tab" tabindex="-1">Training</button></div><div aria-labelledby="tab-7-7-0" class="sphinx-tabs-panel" id="panel-7-7-0" name="7-0" role="tabpanel" tabindex="0"><figure class="align-default">
+<img alt="Inference Results" src="../_images/synthetic_inference.png" />
+</figure>
+</div><div aria-labelledby="tab-7-7-1" class="sphinx-tabs-panel" hidden="true" id="panel-7-7-1" name="7-1" role="tabpanel" tabindex="0"><figure class="align-default">
+<img alt="Training Results" src="../_images/synthetic_training.png" />
+</figure>
+</div></div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="support.html" class="btn btn-neutral float-left" title="Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tools/ddt.html" class="btn btn-neutral float-right" title="Arm DDT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, GW4.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

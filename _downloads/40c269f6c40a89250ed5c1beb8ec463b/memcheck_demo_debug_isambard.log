@@ -1,0 +1,85 @@
+========= COMPUTE-SANITIZER
+========= Invalid __global__ write of size 4 bytes
+=========     at 0x30 in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo.cu:6:unaligned_kernel(void)
+=========     by thread (0,0,0) in block (0,0,0)
+=========     Address 0x15551a800001 is misaligned
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========     Host Frame:cuLaunchKernel [0x155551cdbdc8]
+=========                in /cm/local/apps/cuda/libs/current/lib64/libcuda.so.1
+=========     Host Frame: [0x40967b]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame: [0x456130]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame: [0x40516d]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:__device_stub__Z16unaligned_kernelv(void) [0x404ed2]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:unaligned_kernel(void) [0x404f1d]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:run_unaligned(void) [0x404c8f]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:main [0x404dbc]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:__libc_start_main [0x1555533c86a3]
+=========                in /lib64/libc.so.6
+=========     Host Frame:_start [0x404ace]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+========= 
+========= Invalid __global__ write of size 4 bytes
+=========     at 0x38 in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo.cu:10:out_of_bounds_kernel(void)
+=========     by thread (0,0,0) in block (0,0,0)
+=========     Address 0x87654320 is out of bounds
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========     Host Frame:cuLaunchKernel [0x155551cdbdc8]
+=========                in /cm/local/apps/cuda/libs/current/lib64/libcuda.so.1
+=========     Host Frame: [0x40967b]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame: [0x456130]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame: [0x40516d]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:__device_stub__Z20out_of_bounds_kernelv(void) [0x404fc9]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:out_of_bounds_kernel(void) [0x405014]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:run_out_of_bounds(void) [0x404d4c]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:main [0x404dc1]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:__libc_start_main [0x1555533c86a3]
+=========                in /lib64/libc.so.6
+=========     Host Frame:_start [0x404ace]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+========= 
+========= Leaked 1024 bytes at 0x15551aa00000
+=========     Saved host backtrace up to driver entry point at cudaMalloc time
+=========     Host Frame:cuMemAlloc_v2 [0x155551d13b97]
+=========                in /cm/local/apps/cuda/libs/current/lib64/libcuda.so.1
+=========     Host Frame: [0x433ebe]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame: [0x40a1bb]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame: [0x43f92c]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:main [0x404db7]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:__libc_start_main [0x1555533c86a3]
+=========                in /lib64/libc.so.6
+=========     Host Frame:_start [0x404ace]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+========= 
+========= Program hit invalid argument (error 1) on CUDA API call to cudaFree.
+=========     Saved host backtrace up to driver entry point at error
+=========     Host Frame: [0x155551e33373]
+=========                in /cm/local/apps/cuda/libs/current/lib64/libcuda.so.1
+=========     Host Frame: [0x43ffc5]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:main [0x404dd2]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+=========     Host Frame:__libc_start_main [0x1555533c86a3]
+=========                in /lib64/libc.so.6
+=========     Host Frame:_start [0x404ace]
+=========                in /lustre/home/ca-munozcjj/gpudocs/files/memcheck_demo
+========= 
+========= LEAK SUMMARY: 1024 bytes leaked in 1 allocations
+========= ERROR SUMMARY: 4 errors
