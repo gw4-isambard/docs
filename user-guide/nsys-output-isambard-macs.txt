@@ -1,0 +1,94 @@
+Collecting data...
+All values were calculated correctly. Well done.
+Processing events...
+Capturing symbol files...
+Saving temporary "/var/tmp/pbs.59996.gw4head/nsys-report-a2a5-559b-a761-9ba6.qdstrm" file to disk...
+Creating final output files...
+
+Processing [==============================================================100%]
+Saved report file to "/var/tmp/pbs.59996.gw4head/nsys-report-a2a5-559b-a761-9ba6.qdrep"
+Exporting 21697 events: [=================================================100%]
+
+Exported successfully to
+/var/tmp/pbs.59996.gw4head/nsys-report-a2a5-559b-a761-9ba6.sqlite
+
+Generating CUDA API Statistics...
+CUDA API Statistics (nanoseconds)
+
+Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name
+-------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
+   64.1       287742959           3      95914319.7           31610       287670830  cudaMallocManaged
+   28.0       125588589           1     125588589.0       125588589       125588589  cudaDeviceSynchronize
+    8.0        35735765           3      11911921.7        10924248        12877577  cudaFree
+    0.0           49154           1         49154.0           49154           49154  cudaLaunchKernel
+
+
+
+
+Generating CUDA Kernel Statistics...
+CUDA Kernel Statistics (nanoseconds)
+
+Time(%)      Total Time   Instances         Average         Minimum         Maximum  Name
+-------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------------------------------------------
+  100.0       125590094           1     125590094.0       125590094       125590094  addVectorsInto(float*, float*, float*, int)
+
+
+
+Generating CUDA Memory Operation Statistics...
+CUDA Memory Operation Statistics (nanoseconds)
+
+Time(%)      Total Time  Operations         Average         Minimum         Maximum  Name
+-------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
+   77.8        27403374        3450          7943.0            1098           44971  [CUDA Unified Memory memcpy HtoD]
+   22.2         7819653        1150          6799.7             732           38479  [CUDA Unified Memory memcpy DtoH]
+
+
+CUDA Memory Operation Statistics (KiB)
+
+              Total      Operations              Average            Minimum              Maximum  Name
+-------------------  --------------  -------------------  -----------------  -------------------  --------------------------------------------------------------------------------
+         585948.000            3450              169.840              4.000             1020.000  [CUDA Unified Memory memcpy HtoD]
+         195316.000            1150              169.840              4.000             1020.000  [CUDA Unified Memory memcpy DtoH]
+
+
+
+
+Generating Operating System Runtime API Statistics...
+Operating System Runtime API Statistics (nanoseconds)
+
+Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name
+-------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
+   84.1      1655258416          90      18391760.2           36428       100129785  poll
+    8.7       171812553          79       2174842.4           18716        21119503  sem_timedwait
+    4.6        90750151         802        113154.8            1020        32925829  ioctl
+    2.0        38514232         102        377590.5            1327        12830833  mmap
+    0.2         3296748          29        113681.0            1075         1103165  fopen
+    0.2         3235094           1       3235094.0         3235094         3235094  fflush
+    0.2         3032036           6        505339.3            1062         2670607  fclose
+    0.0          591167          98          6032.3            1561           15621  open64
+    0.0          533813           1        533813.0          533813          533813  fwrite
+    0.0          500728           4        125182.0            1902          482612  fread
+    0.0          409392           5         81878.4            1267          125335  fcntl
+    0.0          359123           4         89780.7           83207           97768  pthread_create
+    0.0          103816           3         34605.3           30800           42164  fgets
+    0.0           50423          15          3361.5            1556            4795  write
+    0.0           39391          11          3581.0            1379            5948  munmap
+    0.0           24094           5          4818.8            2158            8960  open
+    0.0            6367           2          3183.5            3012            3355  socket
+    0.0            5262           1          5262.0            5262            5262  pipe2
+    0.0            4426           1          4426.0            4426            4426  connect
+    0.0            2569           2          1284.5            1107            1462  read
+    0.0            2079           2          1039.5            1033            1046  pthread_mutex_trylock
+    0.0            1082           1          1082.0            1082            1082  bind
+
+
+
+
+Generating NVTX Push-Pop Range Statistics...
+NVTX Push-Pop Range Statistics (nanoseconds)
+
+
+
+
+Report file moved to "/lustre/home/ca-munozcjj/pbs.59996.gw4head.x8z/report1.qdrep"
+Report file moved to "/lustre/home/ca-munozcjj/pbs.59996.gw4head.x8z/report1.sqlite"

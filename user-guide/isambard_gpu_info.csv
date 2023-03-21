@@ -1,0 +1,5 @@
+queue,nodes,Accessible from login node,GPU Model,GPUs per node,Memory per GPU (GB),Cores per GPU,Tensor cores per GPU,CPU Model,CPUs per node
+pascalq,4,login-01.isambard.gw4.ac.uk,Nvidia Tesla P100,2,16,3584,"N/A",InteL Xeon E5-2695,36
+voltaq,4,login-01.isambard.gw4.ac.uk,Nvidia Tesla V100,1,16,5120,640 (1st gen),Intel Xeon Gold 6230,40
+ampereq,2,p3login01.isambard.gw4.ac.uk,Nvidia Ampere A100,4,40,6912,432 (3rd gen),AMD EPYC 7543P,64
+instinctq,2,p3login01.isambard.gw4.ac.uk,AMD Instinct MI100,4,32,7680,"N/A",AMD EPYC 7543P,64
