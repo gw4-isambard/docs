@@ -19,11 +19,9 @@ Service Status
 --------------------
 
 .. important::
-    Since 27 Feb. 2023
+    Since 17 Apr. 2023
     
-    All login nodes and access to storage are online.
-
-    A64fx updated to 22.06 CPE.
+    XCI system scheduler issues.
     
 System Status
 -------------
@@ -32,7 +30,7 @@ System Status
     25 Jan. 2023
     
     - Login: Available.
-    - XCI (ARM ThunderX2): Available.
+    - XCI (ARM ThunderX2): Scheduler issue, all jobs experiencing issues since 13th Apr,  vendor support notified.
     - MACS: Available.
     - A64fx: Available.
     - Phase 3: Available.
