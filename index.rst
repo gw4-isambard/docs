@@ -19,9 +19,9 @@ Service Status
 --------------------
 
 .. important::
-    Since 17 Apr. 2023
+    Since 18 Apr. 2023
     
-    XCI system scheduler issues.
+    XCI system scheduler resolved.
     
 System Status
 -------------
@@ -30,7 +30,7 @@ System Status
     25 Jan. 2023
     
     - Login: Available.
-    - XCI (ARM ThunderX2): Scheduler issue, all jobs experiencing issues since 13th Apr,  vendor support notified.
+    - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
     - Phase 3: Available.
