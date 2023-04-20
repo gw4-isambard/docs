@@ -142,10 +142,10 @@ module load nvhpc/22.9
 </pre></div>
 </div>
 <p>To submit a job with 1 GPU and 1 CPU use:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -I -q ampereq -l select=1:ncpus=1:ngpus=1
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -I -q ampereq -l select=1:ncpus=1:ngpus=1:mem=100G
 </pre></div>
 </div>
-<p>This sets <cite>CUDA_VISIBLE_DEVICES</cite> to a UUID (unique id) of a GPU that PBS provided you.</p>
+<p>This sets <cite>CUDA_VISIBLE_DEVICES</cite> to a UUID (unique id) of a GPU that PBS provided you and sets 100GB of memory along with 1 CPU.</p>
 </section>
 <section id="amd-gpu">
 <h2>AMD GPU<a class="headerlink" href="#amd-gpu" title="Permalink to this heading"></a></h2>

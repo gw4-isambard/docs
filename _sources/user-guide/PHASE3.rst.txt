@@ -26,9 +26,9 @@ To submit a job with 1 GPU and 1 CPU use:
 
 .. code-block:: text
 
-  qsub -I -q ampereq -l select=1:ncpus=1:ngpus=1
+  qsub -I -q ampereq -l select=1:ncpus=1:ngpus=1:mem=100G
   
-This sets `CUDA_VISIBLE_DEVICES` to a UUID (unique id) of a GPU that PBS provided you.
+This sets `CUDA_VISIBLE_DEVICES` to a UUID (unique id) of a GPU that PBS provided you and sets 100GB of memory along with 1 CPU.
 
 AMD GPU
 =======
