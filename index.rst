@@ -19,9 +19,9 @@ Service Status
 --------------------
 
 .. important::
-    Since 18 Apr. 2023
+    Since 26 Apr. 2023
     
-    XCI system scheduler resolved.
+    All services back in operation following IPA issues.
     
 System Status
 -------------
