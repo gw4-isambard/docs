@@ -146,7 +146,7 @@
 </section>
 <section id="batch-job">
 <h2>Batch job<a class="headerlink" href="#batch-job" title="Permalink to this heading"></a></h2>
-<p>MACS example:</p>
+<p>MACS MPI example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -q pascalq</span>
 <span class="c1">#PBS -l select=2</span>
@@ -156,13 +156,22 @@ module<span class="w"> </span>load<span class="w"> </span>intel-parallel-studio-
 mpirun<span class="w"> </span>hostname
 </pre></div>
 </div>
-<p>XC50 example:</p>
+<p>XC50 MPI example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -q arm</span>
 <span class="c1">#PBS -l select=2</span>
 <span class="c1">#PBS -l walltime=00:01:00</span>
 
 aprun<span class="w"> </span>-n<span class="w"> </span><span class="m">32</span><span class="w"> </span>hostname
+</pre></div>
+</div>
+<p>XC50 Multi-threaded (e.g. OpenMP) example.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -q arm</span>
+<span class="c1">#PBS -l select=2</span>
+<span class="c1">#PBS -l walltime=00:01:00</span>
+
+aprun<span class="w"> </span>-d<span class="w"> </span><span class="m">32</span><span class="w"> </span>hostname
 </pre></div>
 </div>
 <p>Such a script saved as <code class="docutils literal notranslate"><span class="pre">filename.pbs</span></code> file can be submitted to queue using:</p>
