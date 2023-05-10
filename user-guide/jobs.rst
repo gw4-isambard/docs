@@ -35,7 +35,7 @@ To see the available queues and their current state:
 Batch job
 =========
 
-MACS example:
+MACS MPI example:
 
 .. code-block:: bash
 
@@ -47,7 +47,7 @@ MACS example:
  module load intel-parallel-studio-xe/compilers/64
  mpirun hostname
 
-XC50 example:
+XC50 MPI example:
 
 .. code-block:: bash
 
@@ -57,6 +57,17 @@ XC50 example:
  #PBS -l walltime=00:01:00
 
  aprun -n 32 hostname
+
+XC50 Multi-threaded (e.g. OpenMP) example.
+
+.. code-block:: bash
+
+ #!/bin/bash
+ #PBS -q arm
+ #PBS -l select=2
+ #PBS -l walltime=00:01:00
+
+ aprun -d 32 hostname
 
 Such a script saved as ``filename.pbs`` file can be submitted to queue using:
 
