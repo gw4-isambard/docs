@@ -175,7 +175,7 @@ module load nvhpc/22.9
 </section>
 <section id="running-a-job">
 <h3>Running a job<a class="headerlink" href="#running-a-job" title="Permalink to this heading"></a></h3>
-<p>The system can use Intel MPI and Compilers.  For example to run a job on a single node the milanq:</p>
+<p>For example to run a job on a single node the milanq:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -q milanq -l select=1:ncpus=128:mpiprocs=128
 </pre></div>
 </div>
@@ -184,7 +184,7 @@ module load nvhpc/22.9
 </pre></div>
 </div>
 <p>This will place each request on different nodes - since we have hyperthreading enabled it would otherwise place them on the same node.</p>
-<p>Then use ssh to launch the MPI job</p>
+<p>Then use Cray module to launch the MPI job</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>module load cray-pals
 mpirun hostname
 </pre></div>
@@ -212,7 +212,7 @@ module load IntelOneApi/mpi
 </section>
 <section id="id3">
 <h3>Running a job<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
-<p>The system can use Intel MPI and Compilers.  For example to run a job on a single node the milanq:</p>
+<p>The system can use Intel MPI and related Compilers (load modules as above).  For example to run a job on a single node the milanq:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -q milanq -l select=1:ncpus=128:mpiprocs=128
 </pre></div>
 </div>
