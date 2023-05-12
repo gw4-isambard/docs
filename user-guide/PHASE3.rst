@@ -71,7 +71,7 @@ To compile with MPI and OpenMP, the following can be used:
 Running a job
 ~~~~~~~~~~~~~
 
-The system can use Intel MPI and Compilers.  For example to run a job on a single node the milanq:
+For example to run a job on a single node the milanq:
 
 .. code-block:: text
 
@@ -85,7 +85,7 @@ To run on 2 nodes you could use:
   
 This will place each request on different nodes - since we have hyperthreading enabled it would otherwise place them on the same node.
 
-Then use ssh to launch the MPI job
+Then use Cray module to launch the MPI job
 
 .. code-block:: text
   
@@ -123,7 +123,7 @@ To compile with MPI, the following can be used:
 Running a job
 ~~~~~~~~~~~~~
 
-The system can use Intel MPI and Compilers.  For example to run a job on a single node the milanq:
+The system can use Intel MPI and related Compilers (load modules as above).  For example to run a job on a single node the milanq:
 
 .. code-block:: text
 
