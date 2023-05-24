@@ -21,7 +21,7 @@ Service Status
 .. important::
     Since 24 May. 2023
     
-    IPA issues being seen again - currently under investigation.
+    Service operational - IPA issues resolved.
     
 System Status
 -------------
