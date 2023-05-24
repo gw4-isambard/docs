@@ -19,9 +19,9 @@ Service Status
 --------------------
 
 .. important::
-    Since 26 Apr. 2023
+    Since 24 May. 2023
     
-    All services back in operation following IPA issues.
+    IPA issues being seen again - currently under investigation.
     
 System Status
 -------------
