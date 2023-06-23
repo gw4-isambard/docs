@@ -19,15 +19,15 @@ Service Status
 --------------------
 
 .. important::
-    Since 24 May. 2023
+    Since 23 June. 2023
     
-    Service operational - IPA issues resolved.
+    Service operational but support desk currently experiencing issues due to configuration change to backend O365 configuration causing emails not to be sent from the servicedesk.  We are looking at getting this resolved as soon as possible.
     
 System Status
 -------------
 
 .. important::
-    25 Jan. 2023
+    23 June. 2023
     
     - Login: Available.
     - XCI (ARM ThunderX2): Available.
