@@ -19,21 +19,23 @@ Service Status
 --------------------
 
 .. important::
-    Since 23 June. 2023
+    Since 26 June. 2023
+
+    Phase 3 is currently experiencing Lustre connection issues and we are working with supplier to work on a fix.
     
-    Service operational but support desk currently experiencing issues due to configuration change to backend O365 configuration causing emails not to be sent from the servicedesk.  We are looking at getting this resolved as soon as possible.
+    Support desk currently experiencing issues due to configuration change to backend O365 configuration causing emails not to be sent from the servicedesk.  We are looking at getting this resolved as soon as possible.
     
 System Status
 -------------
 
 .. important::
-    23 June. 2023
+    26 June. 2023
     
     - Login: Available.
     - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
-    - Phase 3: Available.
+    - Phase 3: Lustre connectivity issues.
 
 Acknowledging Isambard
 ----------------------
