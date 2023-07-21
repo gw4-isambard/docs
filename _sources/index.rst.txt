@@ -24,6 +24,7 @@ Service Status
     Service operational.
 
     PHASE 3
+
     Due to migration to newer storage old data can found read-only at /lustreOld
     e.g. previous home directory at /lustreOld/home
 
