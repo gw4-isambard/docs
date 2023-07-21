@@ -19,14 +19,18 @@ Service Status
 --------------------
 
 .. important::
-    Since 3 July. 2023
+    Since 21 July. 2023
 
     Service operational.
 
-    MAINTENANCE: Maintenance will be performed on phase 3 system between **10th July** and **24th July** where access to phase 3 will be switched off whilst work is performed such as software upgrades, stroage changes and preparations for new hardware coming in 2023.  Due to newer storage will be connected to support the upgrades therefore:
+    PHASE 3
+    Due to migration to newer storage old data can found read-only at /lustreOld
+    e.g. previous home directory at /lustreOld/home
 
-    - after maintenance is completed data will need to be migrated from another Isambard system to the new storage on phase 3.  Apologies for the disruption this will cause but will allow easier longer-term support.  
-    - A64FX users who have used the /home.old location early access period will need to migrate the data to another location.
+    We have already copied over software from /lustreOld/software/x86 to the new
+    /lustre location.
+
+    For any issues please contact isambard-support@gw4.ac.uk
 
     
 System Status
