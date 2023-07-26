@@ -19,11 +19,13 @@ Service Status
 --------------------
 
 .. important::
-    Since 21 July. 2023
+    Since 23 July. 2023
 
-    Service operational.
+    Service issues.
 
-    PHASE 3
+    The Servicedesk is currently experiencing issues so please be patient whilst we work with our email provider to fix this issue.
+
+    NOTE ON PHASE 3
 
     Due to migration to newer storage old data can found read-only at /lustreOld
     e.g. previous home directory at /lustreOld/home
