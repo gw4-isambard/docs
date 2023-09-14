@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -118,16 +118,16 @@
            <div itemprop="articleBody">
              
   <section id="running-jobs">
-<h1>Running jobs<a class="headerlink" href="#running-jobs" title="Permalink to this heading"></a></h1>
+<h1>Running jobs<a class="headerlink" href="#running-jobs" title="Link to this heading"></a></h1>
 <p>Isambard uses the PBS Pro scheduler to manage compute resources and run jobs according to “fairshare” rather than fixed allocations.</p>
 <p>The MACS, XCI &amp; A64FX use separate schedulers, jobs must be submitted from the login nodes for the relevant system.</p>
 <section id="limits">
-<h2>Limits<a class="headerlink" href="#limits" title="Permalink to this heading"></a></h2>
+<h2>Limits<a class="headerlink" href="#limits" title="Link to this heading"></a></h2>
 <p>Users can submit any number of jobs but only two jobs per-user per-queue will run at the same time.</p>
 <p>All jobs default to 24 hours walltime, you can set this lower in your job script to increase the chance of your job starting.</p>
 </section>
 <section id="queue-configuration">
-<h2>Queue configuration<a class="headerlink" href="#queue-configuration" title="Permalink to this heading"></a></h2>
+<h2>Queue configuration<a class="headerlink" href="#queue-configuration" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><cite>arm</cite>     - Run on XCI Marvell Thunder X2 nodes</p></li>
 <li><p><cite>arm-dev</cite> - Run interactively on up to 4x XCI Thunder X2 nodes</p></li>
@@ -145,7 +145,7 @@
 </div>
 </section>
 <section id="batch-job">
-<h2>Batch job<a class="headerlink" href="#batch-job" title="Permalink to this heading"></a></h2>
+<h2>Batch job<a class="headerlink" href="#batch-job" title="Link to this heading"></a></h2>
 <p>MACS MPI example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -q pascalq</span>
@@ -180,7 +180,7 @@ aprun<span class="w"> </span>-d<span class="w"> </span><span class="m">32</span>
 </div>
 </section>
 <section id="interactive-job">
-<h2>Interactive job<a class="headerlink" href="#interactive-job" title="Permalink to this heading"></a></h2>
+<h2>Interactive job<a class="headerlink" href="#interactive-job" title="Link to this heading"></a></h2>
 <p>Passing the <code class="docutils literal notranslate"><span class="pre">-I</span></code> flag to <code class="docutils literal notranslate"><span class="pre">qsub</span></code> allows a compute node to be used interactively.</p>
 <p>For example, to request an interactive job on one of the Pascal nodes utilizing 1 GPU and 16 of the 36 available Broadwell CPU cores, use the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub<span class="w"> </span>-I<span class="w"> </span>-q<span class="w"> </span>pascalq<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">16</span>:ngpus<span class="o">=</span><span class="m">1</span>
@@ -189,7 +189,7 @@ aprun<span class="w"> </span>-d<span class="w"> </span><span class="m">32</span>
 <p>For XCI, compilations can be run on the login nodes <code class="docutils literal notranslate"><span class="pre">xcil00</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">xcil01</span></code>. Small development jobs can be run in the interactive queue <code class="docutils literal notranslate"><span class="pre">arm-dev</span></code>.</p>
 </section>
 <section id="specifying-resources">
-<h2>Specifying resources<a class="headerlink" href="#specifying-resources" title="Permalink to this heading"></a></h2>
+<h2>Specifying resources<a class="headerlink" href="#specifying-resources" title="Link to this heading"></a></h2>
 <p>To avoid blocking resources which aren’t being used by your job, it is important to specify the correct amount of resources in your job script.</p>
 <p>For example, this command declares that your job will run on a single node and will use one of the two available GPUs. The omission of the <cite>ncpus</cite> attribute causes it to default to <cite>1</cite>, meaning other jobs can enter the system to use any of the remaining 35 Broadwell CPU cores and the unused GPU.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub<span class="w"> </span>-I<span class="w"> </span>-q<span class="w"> </span>pascalq<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ngpus<span class="o">=</span><span class="m">1</span>
@@ -198,7 +198,7 @@ aprun<span class="w"> </span>-d<span class="w"> </span><span class="m">32</span>
 <p>If you request <cite>ngpus=2</cite>, then any subsequently submitted job requesting a GPU will not run on the same node until a node is freed. Similarly setting <cite>ncpus=36</cite> will block any jobs from running.</p>
 </section>
 <section id="usage-history">
-<h2>Usage History<a class="headerlink" href="#usage-history" title="Permalink to this heading"></a></h2>
+<h2>Usage History<a class="headerlink" href="#usage-history" title="Link to this heading"></a></h2>
 <p>You can see limited amount of job history by using the <code class="docutils literal notranslate"><span class="pre">-x</span></code> flag on <code class="docutils literal notranslate"><span class="pre">qstat</span></code>, for example</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qstat<span class="w"> </span>-x<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
 qstat<span class="w"> </span>-x<span class="w"> </span>-f<span class="w"> </span>&lt;JOBID&gt;

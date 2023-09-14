@@ -12,12 +12,12 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/tabs.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/tabs.js?v=3030b3cb"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -148,7 +148,7 @@
            <div itemprop="articleBody">
              
   <section id="using-gpus-on-isambard">
-<h1>Using GPUs on Isambard<a class="headerlink" href="#using-gpus-on-isambard" title="Permalink to this heading"></a></h1>
+<h1>Using GPUs on Isambard<a class="headerlink" href="#using-gpus-on-isambard" title="Link to this heading"></a></h1>
 <p>This section presents information about GPU usage on Isambard. It is divided
 in subsections describing general information about the avaible hardware and
 common tasks associated with GPU-based workflows:</p>
@@ -162,7 +162,7 @@ Learning tend to work with Python-based workflows. This subsection is focused
 on helping them transition from a local system (e.g. laptop) to an HPC system.</p></li>
 </ul>
 <section id="general-gpu-usage">
-<h2>General GPU Usage<a class="headerlink" href="#general-gpu-usage" title="Permalink to this heading"></a></h2>
+<h2>General GPU Usage<a class="headerlink" href="#general-gpu-usage" title="Link to this heading"></a></h2>
 <p>The PBS Pro scheduler controls the access to GPUs on a node such that access is
 only granted when the resource is requested specifically. With PBS Pro GPUs can
 be requested at job submission time via the following additional directive:</p>
@@ -186,7 +186,7 @@ modules themselves, for example in the MAC cluster:</p>
 </div>
 </section>
 <section id="cuda-versions-hardware-differences">
-<h2>CUDA Versions &amp; Hardware Differences<a class="headerlink" href="#cuda-versions-hardware-differences" title="Permalink to this heading"></a></h2>
+<h2>CUDA Versions &amp; Hardware Differences<a class="headerlink" href="#cuda-versions-hardware-differences" title="Link to this heading"></a></h2>
 <p>Isambard currently supports CUDA 11.2 (driver v460.32.03) on the <cite>pascalq</cite> and
 <cite>voltaq</cite> partitions; and CUDA 11.4 (driver v515.65.01) on the <cite>ampereq</cite> partition.
 AMD’s Linux kernel module, AMDgpu, is available on the <cite>instinctq</cite> partition
@@ -195,7 +195,7 @@ AMD’s Linux kernel module, AMDgpu, is available on the <cite>instinctq</cite> 
 Some important differences between the available GPU devices available on Isambard
 are summarized in the table bellow:</p>
 <table class="docutils align-default" id="id3">
-<caption><span class="caption-text">GPUs info</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<caption><span class="caption-text">GPUs info</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 10%" />
@@ -275,7 +275,7 @@ single operation. This capability is specially significant for AI/DL/ML
 applications that rely on large matrix operations.</p>
 </section>
 <section id="operating-mode">
-<h2>Operating mode<a class="headerlink" href="#operating-mode" title="Permalink to this heading"></a></h2>
+<h2>Operating mode<a class="headerlink" href="#operating-mode" title="Link to this heading"></a></h2>
 <p>NVIDIA GPU cards can be operated in a number of Compute Modes. In short the
 difference is whether multiple processes (and, theoretically, users) can access
 (share) a GPU or if a GPU is exclusively bound to a single process.  It is
@@ -292,9 +292,9 @@ done
 <p>A sensible output should appear in the job output file.</p>
 </section>
 <section id="setting-up-a-work-environment">
-<h2>Setting up a work environment<a class="headerlink" href="#setting-up-a-work-environment" title="Permalink to this heading"></a></h2>
+<h2>Setting up a work environment<a class="headerlink" href="#setting-up-a-work-environment" title="Link to this heading"></a></h2>
 <section id="running-python-based-workflows-on-isambard">
-<h3>Running Python based workflows on Isambard<a class="headerlink" href="#running-python-based-workflows-on-isambard" title="Permalink to this heading"></a></h3>
+<h3>Running Python based workflows on Isambard<a class="headerlink" href="#running-python-based-workflows-on-isambard" title="Link to this heading"></a></h3>
 <p>The traditional method to interact with remote HPC and cloud systems is through
 the command line (via the <code class="docutils literal notranslate"><span class="pre">ssh</span></code> and <code class="docutils literal notranslate"><span class="pre">scp</span></code> commands), and although this might
 require some adjustments for users more familar with GUIs like JupyterLab, it is
@@ -304,7 +304,7 @@ environment, Python in this example, as it is one of the most popular languages
 used by researchers in the fields on Machine and Deep Learning.</p>
 </section>
 <section id="copying-data">
-<h3>Copying data<a class="headerlink" href="#copying-data" title="Permalink to this heading"></a></h3>
+<h3>Copying data<a class="headerlink" href="#copying-data" title="Link to this heading"></a></h3>
 <p>To work on Isambard with Python scripts written locally in our Desktop or Laptop
 computer we need to transfer them over. Depending on our platform we can do this
 using the <code class="docutils literal notranslate"><span class="pre">scp</span></code> command provided by Linux and MacOS to copy individual files and
@@ -336,7 +336,7 @@ readings_06.py                                100%  718     7.6KB/s   00:00
 </div>
 </section>
 <section id="installing-python-libraries">
-<h3>Installing Python libraries<a class="headerlink" href="#installing-python-libraries" title="Permalink to this heading"></a></h3>
+<h3>Installing Python libraries<a class="headerlink" href="#installing-python-libraries" title="Link to this heading"></a></h3>
 <p>The <strong>recommended approach</strong> is to create a Python  virtual environment with a
 <cite>requirements.txt</cite> file which includes a list of all packages (and possibly
 versions) needed for your work. This file can be created and used in your local
@@ -413,7 +413,7 @@ environment. To deactivate the environment:</p>
 </div>
 </section>
 <section id="launching-a-gpu-job">
-<h3>Launching a GPU job<a class="headerlink" href="#launching-a-gpu-job" title="Permalink to this heading"></a></h3>
+<h3>Launching a GPU job<a class="headerlink" href="#launching-a-gpu-job" title="Link to this heading"></a></h3>
 <p>Consider the following test Python code that uses Numba to compute the value of a
 Gaussian probability density function at x with given mean and sigma:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
@@ -493,7 +493,7 @@ our script.</p>
 </section>
 </section>
 <section id="identifying-memory-access-errors-with-nvidia-compute-sanitizer">
-<h2>Identifying memory access errors with NVIDIA Compute Sanitizer<a class="headerlink" href="#identifying-memory-access-errors-with-nvidia-compute-sanitizer" title="Permalink to this heading"></a></h2>
+<h2>Identifying memory access errors with NVIDIA Compute Sanitizer<a class="headerlink" href="#identifying-memory-access-errors-with-nvidia-compute-sanitizer" title="Link to this heading"></a></h2>
 <p>Compute Sanitizer is a functional correctness checking suite included in the CUDA
 toolkit. This suite contains multiple tools that can perform different type of checks.
 The <code class="docutils literal notranslate"><span class="pre">memcheck</span></code> tool is capable of precisely detecting and attributing out of bounds
@@ -506,7 +506,7 @@ synchronization primitives. This section focuses on the use of <code class="docu
 main steps to access the tool on Hawk, and demonstrates how apply it on a simple
 example. You can find more details on the <a class="reference external" href="https://docs.nvidia.com/compute-sanitizer/ComputeSanitizer/index.html">user manual for Compute Sanitizer</a>.</p>
 <section id="accessing-memcheck">
-<h3>Accessing memcheck<a class="headerlink" href="#accessing-memcheck" title="Permalink to this heading"></a></h3>
+<h3>Accessing memcheck<a class="headerlink" href="#accessing-memcheck" title="Link to this heading"></a></h3>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">MACS</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Phase 3</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>To access NVIDIA Compute Sanitizer on Isambard, load the latest CUDA module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load cuda11.2/toolkit/11.2.0
@@ -578,7 +578,7 @@ Version 2021.3.1
 </div>
 </section>
 <section id="compilation">
-<h3>Compilation<a class="headerlink" href="#compilation" title="Permalink to this heading"></a></h3>
+<h3>Compilation<a class="headerlink" href="#compilation" title="Link to this heading"></a></h3>
 <p>Use the following command to compile the code above with details about line numbers
 where errors occur:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nvcc -Xcompiler -rdynamic -lineinfo -o memcheck_demo memcheck_demo.cu
@@ -591,7 +591,7 @@ in stack backtrace. Note that when using <code class="docutils literal notransla
 specified using the <code class="docutils literal notranslate"><span class="pre">-Xcompiler</span></code> option.</p>
 </section>
 <section id="running-nvidia-compute-sanitizer">
-<h3>Running NVIDIA Compute Sanitizer<a class="headerlink" href="#running-nvidia-compute-sanitizer" title="Permalink to this heading"></a></h3>
+<h3>Running NVIDIA Compute Sanitizer<a class="headerlink" href="#running-nvidia-compute-sanitizer" title="Link to this heading"></a></h3>
 <p>Running CUDA programs on Isambard requires access to a GPU node. There is two options
 available, an interactive session and a job script. If you attempt to run CUDA programs
 on the login nodes or compute nodes without GPU access you may receive a error message
@@ -674,7 +674,7 @@ mv $logfile $PBS_O_WORKDIR
 </div></div>
 </section>
 <section id="compute-sanitizer-memcheck-output">
-<h3>Compute Sanitizer memcheck output<a class="headerlink" href="#compute-sanitizer-memcheck-output" title="Permalink to this heading"></a></h3>
+<h3>Compute Sanitizer memcheck output<a class="headerlink" href="#compute-sanitizer-memcheck-output" title="Link to this heading"></a></h3>
 <p>Exporing the output produced by memcheck we can find useful information like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=========</span> <span class="n">Invalid</span> <span class="n">__global__</span> <span class="n">write</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">4</span> <span class="nb">bytes</span>
 <span class="o">=========</span>     <span class="n">at</span> <span class="mh">0x30</span> <span class="ow">in</span> <span class="o">/</span><span class="n">lustre</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ca</span><span class="o">-</span><span class="n">munozcjj</span><span class="o">/</span><span class="n">gpudocs</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="n">memcheck_demo</span><span class="o">.</span><span class="n">cu</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="n">unaligned_kernel</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
@@ -688,13 +688,13 @@ benefit from further reviewing (line 6 in this example).</p>
 </section>
 </section>
 <section id="profiling">
-<h2>Profiling<a class="headerlink" href="#profiling" title="Permalink to this heading"></a></h2>
+<h2>Profiling<a class="headerlink" href="#profiling" title="Link to this heading"></a></h2>
 <section id="nvidia-nsight-systems">
-<h3>NVIDIA Nsight Systems<a class="headerlink" href="#nvidia-nsight-systems" title="Permalink to this heading"></a></h3>
+<h3>NVIDIA Nsight Systems<a class="headerlink" href="#nvidia-nsight-systems" title="Link to this heading"></a></h3>
 <p>Isambard offers access to NVIDIA Nsight Systems and NVIDIA compilers as part of its
 standard module files.</p>
 <section id="loading-the-profiler">
-<h4>Loading the profiler<a class="headerlink" href="#loading-the-profiler" title="Permalink to this heading"></a></h4>
+<h4>Loading the profiler<a class="headerlink" href="#loading-the-profiler" title="Link to this heading"></a></h4>
 <p>To access NVIDIA Nsight Systems on Isambard run the following command:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">MACS</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Phase 3</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><p>On MACS users can access CUDA either on the login and compute nodes:</p>
@@ -712,7 +712,7 @@ NVIDIA Nsight Systems version 2021.4.1.73-08591f7
 </div></div>
 </section>
 <section id="example-cuda-c-program">
-<h4>Example CUDA C++ program<a class="headerlink" href="#example-cuda-c-program" title="Permalink to this heading"></a></h4>
+<h4>Example CUDA C++ program<a class="headerlink" href="#example-cuda-c-program" title="Link to this heading"></a></h4>
 <p>The usual workflow involves wriing code in CUDA C++, compiling,
 profiling, analysing, optimising and repeating. Consider the
 following code:</p>
@@ -821,7 +821,7 @@ int main()
 </div>
 </section>
 <section id="id1">
-<h4>Compilation<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<h4>Compilation<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">MACS</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Phase 3</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><p>The above code can be compiled and tested using an interactive session:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ qsub -I -q voltaq -l select=1:ngpus=1 -l walltime=01:00:00
@@ -1039,7 +1039,7 @@ to our code (e.g. change the launch configuration, memory prefetching) and explo
 its impact on these numbers to try to find optimal settings.</p>
 </section>
 <section id="visualize-profiler-results">
-<h4>Visualize profiler results<a class="headerlink" href="#visualize-profiler-results" title="Permalink to this heading"></a></h4>
+<h4>Visualize profiler results<a class="headerlink" href="#visualize-profiler-results" title="Link to this heading"></a></h4>
 <p>The files generated by <code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span></code> can in principle be used to explore our code
 timeline using NVIDIA visual profiler Nsight Systems. However, Isambard doesn’t currently
 support X11 connections but the files may still be useful if the user has a local
@@ -1047,11 +1047,11 @@ installation of the visual profiler.</p>
 </section>
 </section>
 <section id="arm-forge-map">
-<h3>Arm Forge MAP<a class="headerlink" href="#arm-forge-map" title="Permalink to this heading"></a></h3>
+<h3>Arm Forge MAP<a class="headerlink" href="#arm-forge-map" title="Link to this heading"></a></h3>
 <p>MAP - part of the Arm Forge toolsuite for high performance software - is an intuitive
 graphical profiler that can show how much time was spent on each line of code.</p>
 <section id="id2">
-<h4>Loading the profiler<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<h4>Loading the profiler<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
 <p>You can access Arm Forge toolset (MAP, DDT and Performance Reports) on both MACS and
 Phase3 with the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module use /software/x86/modulefiles
@@ -1063,7 +1063,7 @@ $ module load tools/arm-forge/20.1
 not yet supported by Arm MAP).</p>
 </section>
 <section id="compiler-flags-and-compilation">
-<h4>Compiler flags and compilation<a class="headerlink" href="#compiler-flags-and-compilation" title="Permalink to this heading"></a></h4>
+<h4>Compiler flags and compilation<a class="headerlink" href="#compiler-flags-and-compilation" title="Link to this heading"></a></h4>
 <p>Consider the <a class="reference download internal" download="" href="../_downloads/80345c900751ad11a92c40b007a96d5f/vector-add.cu"><code class="xref download docutils literal notranslate"><span class="pre">previous</span> <span class="pre">example</span> <span class="pre">using</span> <span class="pre">CUDA</span> <span class="pre">C++</span></code></a>.
 In order to prepare our program to be profiled with MAP we need to compile it with
 debugging symbols (<code class="docutils literal notranslate"><span class="pre">-g</span></code>) and in some cases it might need to be relinked. Typically
@@ -1106,7 +1106,7 @@ allows you to run the profiler’s GUI and analize the results as soon as the pr
 completes execution so it is useful for relatively short runtime programs.</p>
 </section>
 <section id="running-the-profiler">
-<h4>Running the profiler<a class="headerlink" href="#running-the-profiler" title="Permalink to this heading"></a></h4>
+<h4>Running the profiler<a class="headerlink" href="#running-the-profiler" title="Link to this heading"></a></h4>
 <p>The following examples show how to run MAP on MACS, please adapt the instructions
 (i.e. select corresponding  partitions and module files) to run on Phase3.</p>
 <div class="sphinx-tabs docutils container">
@@ -1269,7 +1269,7 @@ fit your program requirements.</p>
 </div></div>
 </section>
 <section id="load-a-profile-data-file">
-<h4>Load a profile data file<a class="headerlink" href="#load-a-profile-data-file" title="Permalink to this heading"></a></h4>
+<h4>Load a profile data file<a class="headerlink" href="#load-a-profile-data-file" title="Link to this heading"></a></h4>
 <p>If later on you want to explore again the results produced by MAP, you don’t need to
 request an interactive session anymore, it is enough to connect to the system with
 X11 enabled, load the arm-forge module and run map on the login nodes. Then on the
@@ -1299,7 +1299,7 @@ below). A new window with the profiler results will appear.</p>
 </section>
 </section>
 <section id="benchmarking">
-<h2>Benchmarking<a class="headerlink" href="#benchmarking" title="Permalink to this heading"></a></h2>
+<h2>Benchmarking<a class="headerlink" href="#benchmarking" title="Link to this heading"></a></h2>
 <p>We compare the performnace of some of the GPU devices available on Isambard (NVIDIA
 P100, NVIDIA V100 and NVIDIA A100) using several popular CNN models for visual
 classification implemented in Pytorch.</p>

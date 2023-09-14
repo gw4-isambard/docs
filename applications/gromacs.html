@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -121,31 +121,31 @@
            <div itemprop="articleBody">
              
   <section id="gromacs">
-<h1>GROMACS<a class="headerlink" href="#gromacs" title="Permalink to this heading"></a></h1>
+<h1>GROMACS<a class="headerlink" href="#gromacs" title="Link to this heading"></a></h1>
 <section id="useful-links">
-<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this heading"></a></h2>
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://manual.gromacs.org/documentation/current/user-guide/index.html">GROMACS user documentation</a></p></li>
 </ul>
 </section>
 <section id="licensing">
-<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this heading"></a></h2>
+<h2>Licensing<a class="headerlink" href="#licensing" title="Link to this heading"></a></h2>
 <p>GROMACS is open source (see the <a class="reference external" href="https://github.com/gromacs/gromacs/blob/master/COPYING">GROMACS License Agreement</a>).</p>
 </section>
 <section id="version">
-<h2>Version<a class="headerlink" href="#version" title="Permalink to this heading"></a></h2>
+<h2>Version<a class="headerlink" href="#version" title="Link to this heading"></a></h2>
 <p>The following versions of GROMACS are currently available:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">apps/gromacs/2018.4</span></code> (MPI enabled, no double precision)</p></li>
 </ul>
 </section>
 <section id="running">
-<h2>Running<a class="headerlink" href="#running" title="Permalink to this heading"></a></h2>
+<h2>Running<a class="headerlink" href="#running" title="Link to this heading"></a></h2>
 <section id="example-job-submission-script">
-<h3>Example Job Submission Script<a class="headerlink" href="#example-job-submission-script" title="Permalink to this heading"></a></h3>
+<h3>Example Job Submission Script<a class="headerlink" href="#example-job-submission-script" title="Link to this heading"></a></h3>
 </section>
 <section id="arm">
-<h3>Arm<a class="headerlink" href="#arm" title="Permalink to this heading"></a></h3>
+<h3>Arm<a class="headerlink" href="#arm" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># Select 128 nodes (maximum of 8192 cores)</span>
@@ -169,7 +169,7 @@ aprun<span class="w"> </span>-n<span class="w"> </span><span class="m">8192</spa
 </div>
 </section>
 <section id="notes">
-<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h3>
+<h3>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h3>
 <p>For maximum performance, you may wish to tune the MPI/OpenMP decomposition.
 At large scale, you may find that reducing the number of MPI ranks and increasing the number of OpenMP threads yields better performance.</p>
 <p>GROMACS can also use tabulated Ewald non-bonded kernels instead of an analytical approach, which can improve performance for smaller node counts (use <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">GMX_NBNXN_EWALD_TABLE=1</span></code> to enable this feature).</p>

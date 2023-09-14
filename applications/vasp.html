@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -127,34 +127,34 @@
            <div itemprop="articleBody">
              
   <section id="vasp">
-<h1>VASP<a class="headerlink" href="#vasp" title="Permalink to this heading"></a></h1>
+<h1>VASP<a class="headerlink" href="#vasp" title="Link to this heading"></a></h1>
 <section id="useful-links">
-<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this heading"></a></h2>
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.vasp.at/">Vasp</a></p></li>
 <li><p><a class="reference external" href="http://www.vasp.at/index.php/documentation">Documentation</a></p></li>
 </ul>
 </section>
 <section id="licensing">
-<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this heading"></a></h2>
+<h2>Licensing<a class="headerlink" href="#licensing" title="Link to this heading"></a></h2>
 <p>Vasp is licensed software and is not currently provided on Isambard.  If you hold a license you can build Vasp using the instructions below.  For further details about the license and to purchase one please visit the <a class="reference external" href="http://www.vasp.at/">Vasp website</a>.</p>
 </section>
 <section id="access">
-<h2>Access<a class="headerlink" href="#access" title="Permalink to this heading"></a></h2>
+<h2>Access<a class="headerlink" href="#access" title="Link to this heading"></a></h2>
 <p>Vasp is not currently available on Isambard.</p>
 </section>
 <section id="versions">
-<h2>Versions<a class="headerlink" href="#versions" title="Permalink to this heading"></a></h2>
+<h2>Versions<a class="headerlink" href="#versions" title="Link to this heading"></a></h2>
 <p>The use and build instructions are for Vasp 5.4.4.</p>
 </section>
 <section id="running">
-<h2>Running<a class="headerlink" href="#running" title="Permalink to this heading"></a></h2>
+<h2>Running<a class="headerlink" href="#running" title="Link to this heading"></a></h2>
 <p>To run Vasp on Isambard you will need to provide your source code.  Instructions for compiling on Isambard are provided below.</p>
 <section id="example-job-submission-scripts">
-<h3>Example Job Submission Scripts<a class="headerlink" href="#example-job-submission-scripts" title="Permalink to this heading"></a></h3>
+<h3>Example Job Submission Scripts<a class="headerlink" href="#example-job-submission-scripts" title="Link to this heading"></a></h3>
 </section>
 <section id="arm">
-<h3>Arm<a class="headerlink" href="#arm" title="Permalink to this heading"></a></h3>
+<h3>Arm<a class="headerlink" href="#arm" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#PBS -N vasp_job</span>
 
@@ -181,7 +181,7 @@ aprun<span class="w"> </span>-n<span class="w"> </span><span class="m">64</span>
 </div>
 </section>
 <section id="x86">
-<h3>x86<a class="headerlink" href="#x86" title="Permalink to this heading"></a></h3>
+<h3>x86<a class="headerlink" href="#x86" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#PBS -N vasp_job</span>
 
@@ -212,9 +212,9 @@ mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">36</spa
 </section>
 </section>
 <section id="compilation">
-<h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this heading"></a></h2>
+<h2>Compilation<a class="headerlink" href="#compilation" title="Link to this heading"></a></h2>
 <section id="id2">
-<h3>Arm<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<h3>Arm<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <p>Instructions for building Vasp on Arm:</p>
 <p>Download <a class="reference download internal" download="" href="../_downloads/c272c94bc89242c938e46b59b25bb1e9/makefile.include.arm"><code class="xref download docutils literal notranslate"><span class="pre">makefile.include.arm</span></code></a> and copy it to <cite>makefile.include</cite> in the root of the source folder</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load modules for currently recommended VASP build - see build instructions for more info</span>
@@ -228,7 +228,7 @@ make<span class="w"> </span>all
 </div>
 </section>
 <section id="id3">
-<h3>x86<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<h3>x86<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <p>Instructions for building Vasp on x86:</p>
 <p>Download <a class="reference download internal" download="" href="../_downloads/6731eab6e80d1ed229ae5e08407d317c/makefile.include.x86"><code class="xref download docutils literal notranslate"><span class="pre">makefile.include.x86</span></code></a> and copy it to <cite>makefile.include</cite> in the root of the source folder.  Alternatively copy makefile.include.linux_intel from the <cite>arch</cite> folder as these files are identical.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load modules for build</span>

@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -116,7 +116,7 @@
            <div itemprop="articleBody">
              
   <section id="multi-architecture-comparison-system">
-<h1>Multi-Architecture Comparison System<a class="headerlink" href="#multi-architecture-comparison-system" title="Permalink to this heading"></a></h1>
+<h1>Multi-Architecture Comparison System<a class="headerlink" href="#multi-architecture-comparison-system" title="Link to this heading"></a></h1>
 <p>Isambard MACS hosts many nodes of different architectures:</p>
 <ul class="simple">
 <li><p>2x Login nodes with <a class="reference external" href="https://ark.intel.com/content/www/us/en/ark/products/91316/intel-xeon-processor-e5-2695-v4-45m-cache-2-10-ghz.html">Intel Xeon “Broadwell”</a> CPU</p></li>
@@ -130,7 +130,7 @@
 <p>Most MACS nodes run Red Hat Enterprise Linux 7 with the Cray software stack. Power 9 nodes run Red Hat Enterprise Linux (Little-Endian) 7 with IBM compilers &amp; IBM Power AI.</p>
 <p>All nodes are connected via 100 Gigabit EDR Infiniband. The login nodes are connected to the Internet via a 10 Gigabit link to the <a class="reference external" href="https://www.jisc.ac.uk/janet">Janet Network</a>.</p>
 <section id="ibm-power-9">
-<h2>IBM Power 9<a class="headerlink" href="#ibm-power-9" title="Permalink to this heading"></a></h2>
+<h2>IBM Power 9<a class="headerlink" href="#ibm-power-9" title="Link to this heading"></a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Service unavailable as of 7 Oct 2020 both nodes have crashed and require in person intervention to be rebooted.</p>
@@ -145,7 +145,7 @@ ssh power-002
 </pre></div>
 </div>
 <section id="hardware">
-<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading"></a></h3>
+<h3>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h3>
 <p>There are two nodes, power-001 &amp; power-002 - Each with two sockets of Power 9 CPU. Each socket is attached to an Nvidia V100 GPU via NVLink at aprox. 150GB/s with coherent memory access to the 280GB of system memory. There is an X-Bus link between the two GPUs.</p>
 <p>External documentation: <a class="reference external" href="https://www.redbooks.ibm.com/redpapers/pdfs/redp5472.pdf">IBM Power System AC922 Technical Overview - IBM Redbooks</a></p>
 <p>Power AI frameworks found under <code class="docutils literal notranslate"><span class="pre">/opt/DL</span></code>, add them to your environment by running <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/DL/&lt;framework&gt;/bin/&lt;framework&gt;-activate</span></code> unless stated in the right-column:</p>

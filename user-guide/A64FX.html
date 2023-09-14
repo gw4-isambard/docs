@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -118,7 +118,7 @@
            <div itemprop="articleBody">
              
   <section id="a64fx-fujitsu">
-<h1>A64FX - Fujitsu<a class="headerlink" href="#a64fx-fujitsu" title="Permalink to this heading"></a></h1>
+<h1>A64FX - Fujitsu<a class="headerlink" href="#a64fx-fujitsu" title="Link to this heading"></a></h1>
 <p>All documentation for the A64fx Isambard hackathon on March 23/24 2021 can be found <a class="reference external" href="https://github.com/gw4-isambard/docs/tree/master/hackathons">here.</a></p>
 <p>HPE Apollo 80 cabinet, codenamed A64FX. Available since February 2021.</p>
 <ul class="simple">
@@ -143,7 +143,7 @@
 <li><p>Shared Lustre filesystem with XCI &amp; MACS: <code class="docutils literal notranslate"><span class="pre">/home</span></code>, <code class="docutils literal notranslate"><span class="pre">/projects</span></code>, <code class="docutils literal notranslate"><span class="pre">/software</span></code></p></li>
 </ul>
 <section id="running-jobs">
-<h2>Running Jobs<a class="headerlink" href="#running-jobs" title="Permalink to this heading"></a></h2>
+<h2>Running Jobs<a class="headerlink" href="#running-jobs" title="Link to this heading"></a></h2>
 <p>The system uses PBS Pro and the queue for the A64FX nodes is <code class="docutils literal notranslate"><span class="pre">a64fx</span></code>.
 It can only be used from the A64FX login nodes.</p>
 <p>A job is requested as follows:</p>
@@ -153,7 +153,7 @@ It can only be used from the A64FX login nodes.</p>
 <p>…where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the number of nodes required.</p>
 </section>
 <section id="modules">
-<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this heading"></a></h2>
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading"></a></h2>
 <p>By default, the Cray programming environment is loaded.
 A64FX-specific modules are exposed from <code class="docutils literal notranslate"><span class="pre">/lustre/software/aarch64/modulefiles</span></code>.</p>
 <p>The Bristol HPC group also maintains a shared modules space where you may find additional useful tools, but keep in mind that these may not always be up-to-date.
@@ -162,7 +162,7 @@ To use it: <code class="docutils literal notranslate"><span class="pre">module</
 Make sure that your job scripts load all the modules needed to run your application.</p>
 </section>
 <section id="compilers">
-<h2>Compilers<a class="headerlink" href="#compilers" title="Permalink to this heading"></a></h2>
+<h2>Compilers<a class="headerlink" href="#compilers" title="Link to this heading"></a></h2>
 <p>All major HPC compilers targetting AArch64 are available through modules:</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -200,7 +200,7 @@ Make sure that your job scripts load all the modules needed to run your applicat
 </ul>
 </section>
 <section id="mpi">
-<h2>MPI<a class="headerlink" href="#mpi" title="Permalink to this heading"></a></h2>
+<h2>MPI<a class="headerlink" href="#mpi" title="Link to this heading"></a></h2>
 <p>The default MPI library is CRAY MVAPICH, available though <code class="docutils literal notranslate"><span class="pre">cray-mvapich2_noslurm_nogpu</span></code>.
 It can be used with the GCC and Cray Compilers.</p>
 <p>The Bristol modules space has builds of Open MPI with UCX:</p>
@@ -216,7 +216,7 @@ It can be used with the GCC and Cray Compilers.</p>
 </ul>
 </section>
 <section id="hdf5">
-<h2>HDF5<a class="headerlink" href="#hdf5" title="Permalink to this heading"></a></h2>
+<h2>HDF5<a class="headerlink" href="#hdf5" title="Link to this heading"></a></h2>
 <p>Current versions of Cray HDF5 Parallel (<cite>cray-hdf5-parallel/1.12.0.2</cite>) require the following modules and environment variables in order to work.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; module load cray-mvapich2_noslurm_nogpu
 &gt; module load cray-hdf5-parallel
@@ -234,7 +234,7 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
 <p>Fixes are planned for later versions of Cray PE.</p>
 </section>
 <section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading"></a></h2>
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://www.fujitsu.com/global/products/computing/servers/supercomputer/a64fx">Fujitsu’s website</a> includes an A64FX Datasheet and Microarchitecture Manual.
 The architecture manual can also be found <a class="reference external" href="https://github.com/fujitsu/A64FX">on GitHub</a>.</p>
 </section>
