@@ -121,6 +121,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
 
    policies/terms.rst
    policies/privacy.rst
+   policies/applications.rst
 
 
 Indices and tables
