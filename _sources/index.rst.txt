@@ -21,7 +21,7 @@ Service Status
 .. important::
     Since 3 Nov. 2023
 
-    Currently experiencing network issues so service is interrupted whilst we investigate.
+    Previous networking issues have now been fixed.  Access should be restored.
 
     
 System Status
@@ -30,7 +30,7 @@ System Status
 .. important::
     3 Nov. 2023
     
-    - Login: Unavilable.
+    - Login: Available.
     - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
