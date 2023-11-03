@@ -19,30 +19,18 @@ Service Status
 --------------------
 
 .. important::
-    Since 23 July. 2023
+    Since 3 Nov. 2023
 
-    Service issues.
-
-    The Servicedesk is currently experiencing issues so please be patient whilst we work with our email provider to fix this issue.
-
-    NOTE ON PHASE 3
-
-    Due to migration to newer storage old data can found read-only at /lustreOld
-    e.g. previous home directory at /lustreOld/home
-
-    We have already copied over software from /lustreOld/software/x86 to the new
-    /lustre location.
-
-    For any issues please contact isambard-support@gw4.ac.uk
+    Currently experiencing network issues so service is interrupted whilst we investigate.
 
     
 System Status
 -------------
 
 .. important::
-    26 June. 2023
+    3 Nov. 2023
     
-    - Login: Available.
+    - Login: Unavilable.
     - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
