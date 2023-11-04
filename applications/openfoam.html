@@ -203,7 +203,7 @@ wget<span class="w"> </span><span class="s2">&quot;https://dl.openfoam.com/sourc
 tar<span class="w"> </span>zxvf<span class="w"> </span>OpenFOAM-v2012.tgz
 <span class="nb">cd</span><span class="w"> </span>OpenFOAM-v2012
 patch<span class="w"> </span>-p1<span class="w"> </span>&lt;<span class="w"> </span>openfoam-v2012-cray.patch
-cat<span class="w"> </span>&gt;<span class="w"> </span>etc/prefs.h<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+cat<span class="w"> </span>&gt;<span class="w"> </span>etc/prefs.sh<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">export WM_COMPILER=Cray</span>
 <span class="s">export WM_MPLIB=CRAY-MPICH</span>
 <span class="s">EOF</span>

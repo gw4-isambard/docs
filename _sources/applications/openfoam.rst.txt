@@ -85,7 +85,7 @@ Patch for OpenFOAM v2012 :download:`openfoam-v2012-cray.patch <openfoam/openfoam
     tar zxvf OpenFOAM-v2012.tgz
     cd OpenFOAM-v2012
     patch -p1 < openfoam-v2012-cray.patch
-    cat > etc/prefs.h <<EOF
+    cat > etc/prefs.sh <<EOF
     export WM_COMPILER=Cray
     export WM_MPLIB=CRAY-MPICH
     EOF
