@@ -127,60 +127,6 @@ Patch for waves2Foam `waves2Foam-cray.patch`.
      # F77 = f77
      # AR = ar rcv
      AR = ar -rcv
-    ca-tgreen@xcil00:~/OpenFOAM/ca-tgreen-v2012/applications/utilities/waves2Foam> clear
-    ca-tgreen@xcil00:~/OpenFOAM/ca-tgreen-v2012/applications/utilities/waves2Foam> svn diff
-    Index: ThirdParty/Allwmake
-    ===================================================================
-    --- ThirdParty/Allwmake (revision 2156)
-    +++ ThirdParty/Allwmake (working copy)
-    @@ -33,6 +33,8 @@
-         compileFlag=1;
-     fi
-
-    +compileFlag=0
-    +
-     ## COMPILE LAPACK
-     if [ "$compileFlag" == "1" ]
-     then
-    @@ -196,7 +198,7 @@
-         echo "Compiling fenton4Foam"
-         echo
-         cd $fentonName
-    -    gfortran -o $WAVES_APPBIN/$fentonName $fentonName.f fft.f
-    +    ftn -o $WAVES_APPBIN/$fentonName $fentonName.f fft.f
-         cd $OLDPWD
-     else
-         echo
-    Index: ThirdParty/settings/oceanWave3DSettings/common.mk
-    ===================================================================
-    --- ThirdParty/settings/oceanWave3DSettings/common.mk   (revision 2156)
-    +++ ThirdParty/settings/oceanWave3DSettings/common.mk   (working copy)
-    @@ -16,9 +16,10 @@
-     BUILDDIR = $(PWD)/../build
-
-
-    -FC       = gfortran
-    +FC       = ftn
-     LIBDIRS  = -L$(PWD)/../lib
-    -LINLIB   = -ltmglib_gfortran -llapack_gfortran  -lskit_gfortran -lblas
-    +#LINLIB   = -ltmglib_gfortran -llapack_gfortran  -lskit_gfortran -lblas
-    +LINLIB   = -lskit_gfortran
-     DBFLAGS  = -pg -g -O0 -fPIC -fbounds-check -ffpe-trap=invalid,zero,overflow -ffree-line-length-none
-     OPTFLAGS = -O3 -fPIC -ffpe-trap=invalid,zero,overflow -ffree-line-length-none -fstack-protector-all
-     SHLIBFLAGS  = -shared -O2 -fPIC -fbounds-check -ffpe-trap=invalid,zero,overflow -ffree-line-length-none -fstack-protector-all
-    Index: ThirdParty/settings/sparseSettings/makefile
-    ===================================================================
-    --- ThirdParty/settings/sparseSettings/makefile (revision 2156)
-    +++ ThirdParty/settings/sparseSettings/makefile (working copy)
-    @@ -20,7 +20,7 @@
-     # Last Updated:  May 9, 1994.
-
-     SHELL = /bin/sh
-    -F77 = gfortran
-    +F77 = ftn
-     # F77 = f77
-     # AR = ar rcv
-     AR = ar -rcv
 
 Patch for OpenFOAM v2012 `openfoam-v2012-cray.patch`
 
