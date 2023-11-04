@@ -84,7 +84,7 @@ Patch for OpenFOAM v2012 :download:`openfoam-v2012-cray.patch <openfoam/openfoam
     wget "https://dl.openfoam.com/source/v2012/OpenFOAM-v2012.tgz"
     tar zxvf OpenFOAM-v2012.tgz
     cd OpenFOAM-v2012
-    patch -p0 < openfoam-v2012-cray.patch
+    patch -p1 < openfoam-v2012-cray.patch
     cat > etc/prefs.h <<EOF
     export WM_COMPILER=Cray
     export WM_MPLIB=CRAY-MPICH
@@ -104,7 +104,7 @@ Patch for OpenFOAM v2012 :download:`openfoam-v2012-cray.patch <openfoam/openfoam
     cd $FOAM_RUN/../applications/utilities
     svn co http://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.6/other/waves2Foam
     cd waves2Foam
-    patch -p0 < waves2Foam-cray.patch
+    patch -p1 < waves2Foam-cray.patch
     export WAVES_GSL_INCLUDE=$HOME/gsl/include
     export WAVES_GSL_LIB=$HOME/gsl/lib
     ./Allwmake
