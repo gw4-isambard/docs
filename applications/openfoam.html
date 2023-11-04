@@ -246,60 +246,6 @@ module<span class="w"> </span>swap<span class="w"> </span>PrgEnv-cray<span class
 <span class="w"> </span># F77 = f77
 <span class="w"> </span># AR = ar rcv
 <span class="w"> </span>AR = ar -rcv
-ca-tgreen@xcil00:~/OpenFOAM/ca-tgreen-v2012/applications/utilities/waves2Foam&gt; clear
-ca-tgreen@xcil00:~/OpenFOAM/ca-tgreen-v2012/applications/utilities/waves2Foam&gt; svn diff
-<span class="gh">Index: ThirdParty/Allwmake</span>
-<span class="gh">===================================================================</span>
-<span class="gd">--- ThirdParty/Allwmake (revision 2156)</span>
-<span class="gi">+++ ThirdParty/Allwmake (working copy)</span>
-<span class="gu">@@ -33,6 +33,8 @@</span>
-<span class="w"> </span>    compileFlag=1;
-<span class="w"> </span>fi
-
-<span class="gi">+compileFlag=0</span>
-<span class="gi">+</span>
-<span class="w"> </span>## COMPILE LAPACK
-<span class="w"> </span>if [ &quot;$compileFlag&quot; == &quot;1&quot; ]
-<span class="w"> </span>then
-<span class="gu">@@ -196,7 +198,7 @@</span>
-<span class="w"> </span>    echo &quot;Compiling fenton4Foam&quot;
-<span class="w"> </span>    echo
-<span class="w"> </span>    cd $fentonName
-<span class="gd">-    gfortran -o $WAVES_APPBIN/$fentonName $fentonName.f fft.f</span>
-<span class="gi">+    ftn -o $WAVES_APPBIN/$fentonName $fentonName.f fft.f</span>
-<span class="w"> </span>    cd $OLDPWD
-<span class="w"> </span>else
-<span class="w"> </span>    echo
-<span class="gh">Index: ThirdParty/settings/oceanWave3DSettings/common.mk</span>
-<span class="gh">===================================================================</span>
-<span class="gd">--- ThirdParty/settings/oceanWave3DSettings/common.mk   (revision 2156)</span>
-<span class="gi">+++ ThirdParty/settings/oceanWave3DSettings/common.mk   (working copy)</span>
-<span class="gu">@@ -16,9 +16,10 @@</span>
-<span class="w"> </span>BUILDDIR = $(PWD)/../build
-
-
-<span class="gd">-FC       = gfortran</span>
-<span class="gi">+FC       = ftn</span>
-<span class="w"> </span>LIBDIRS  = -L$(PWD)/../lib
-<span class="gd">-LINLIB   = -ltmglib_gfortran -llapack_gfortran  -lskit_gfortran -lblas</span>
-<span class="gi">+#LINLIB   = -ltmglib_gfortran -llapack_gfortran  -lskit_gfortran -lblas</span>
-<span class="gi">+LINLIB   = -lskit_gfortran</span>
-<span class="w"> </span>DBFLAGS  = -pg -g -O0 -fPIC -fbounds-check -ffpe-trap=invalid,zero,overflow -ffree-line-length-none
-<span class="w"> </span>OPTFLAGS = -O3 -fPIC -ffpe-trap=invalid,zero,overflow -ffree-line-length-none -fstack-protector-all
-<span class="w"> </span>SHLIBFLAGS  = -shared -O2 -fPIC -fbounds-check -ffpe-trap=invalid,zero,overflow -ffree-line-length-none -fstack-protector-all
-<span class="gh">Index: ThirdParty/settings/sparseSettings/makefile</span>
-<span class="gh">===================================================================</span>
-<span class="gd">--- ThirdParty/settings/sparseSettings/makefile (revision 2156)</span>
-<span class="gi">+++ ThirdParty/settings/sparseSettings/makefile (working copy)</span>
-<span class="gu">@@ -20,7 +20,7 @@</span>
-<span class="w"> </span># Last Updated:  May 9, 1994.
-
-<span class="w"> </span>SHELL = /bin/sh
-<span class="gd">-F77 = gfortran</span>
-<span class="gi">+F77 = ftn</span>
-<span class="w"> </span># F77 = f77
-<span class="w"> </span># AR = ar rcv
-<span class="w"> </span>AR = ar -rcv
 </pre></div>
 </div>
 <p>Patch for OpenFOAM v2012 <cite>openfoam-v2012-cray.patch</cite></p>
