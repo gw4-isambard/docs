@@ -202,6 +202,7 @@ mkdir<span class="w"> </span>~/openfoam_build<span class="w"> </span><span class
 wget<span class="w"> </span><span class="s2">&quot;https://dl.openfoam.com/source/v2012/OpenFOAM-v2012.tgz&quot;</span>
 tar<span class="w"> </span>zxvf<span class="w"> </span>OpenFOAM-v2012.tgz
 <span class="nb">cd</span><span class="w"> </span>OpenFOAM-v2012
+wget<span class="w"> </span>https://gw4-isambard.github.io/docs/_downloads/2715d75882c08a00bd1aba36238d9e81/openfoam-v2012-cray.patch
 patch<span class="w"> </span>-p1<span class="w"> </span>&lt;<span class="w"> </span>openfoam-v2012-cray.patch
 cat<span class="w"> </span>&gt;<span class="w"> </span>etc/prefs.sh<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">export WM_COMPILER=Cray</span>
@@ -222,7 +223,8 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$FOAM_RU
 <span class="nb">cd</span><span class="w"> </span><span class="nv">$FOAM_RUN</span>/../applications/utilities
 svn<span class="w"> </span>co<span class="w"> </span>http://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.6/other/waves2Foam
 <span class="nb">cd</span><span class="w"> </span>waves2Foam
-patch<span class="w"> </span>-p1<span class="w"> </span>&lt;<span class="w"> </span>waves2Foam-cray.patch
+wget<span class="w"> </span>https://gw4-isambard.github.io/docs/_downloads/c11f9204e929135797e1de3ff9909b2d/waves2Foam-cray.patch
+patch<span class="w"> </span>-p0<span class="w"> </span>&lt;<span class="w"> </span>waves2Foam-cray.patch
 <span class="nb">export</span><span class="w"> </span><span class="nv">WAVES_GSL_INCLUDE</span><span class="o">=</span><span class="nv">$HOME</span>/gsl/include
 <span class="nb">export</span><span class="w"> </span><span class="nv">WAVES_GSL_LIB</span><span class="o">=</span><span class="nv">$HOME</span>/gsl/lib
 ./Allwmake
