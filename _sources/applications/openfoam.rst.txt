@@ -94,7 +94,7 @@ Patch for OpenFOAM v2012 :download:`openfoam-v2012-cray.patch <openfoam/openfoam
     ./Allwmake -s -j 8 -l
 
     cd ~/openfoam_build
-    wget https://mirror.ibcp.fr/pub/gnu/gsl/gsl-latest.tar.gz
+    wget https://ftp.gnu.org/gnu/gsl/
     tar zxvf gsl-latest.tar.gz
     cd gsl-*/
     ./configure --prefix=$HOME/gsl CC=cc
