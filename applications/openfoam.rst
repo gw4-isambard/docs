@@ -107,8 +107,10 @@ Patch for OpenFOAM v2012 :download:`openfoam-v2012-cray.patch <openfoam/openfoam
     cd waves2Foam
     wget https://raw.githubusercontent.com/gw4-isambard/docs/master/applications/openfoam/waves2Foam-cray.patch
     patch -p0 < waves2Foam-cray.patch
-    export WAVES_GSL_INCLUDE=$HOME/gsl/include
-    export WAVES_GSL_LIB=$HOME/gsl/lib
+    cp bin/bashrc.org bin/bashrc
+    chmod a+x ./bin/bashrc
+    sed -i 's|WAVES_GSL_INCLUDE=.*|WAVES_GSL_INCLUDE=$HOME/gsl/include|' bin/bashrc
+    sed -i 's|WAVES_GSL_LIB=.*|WAVES_GSL_LIB=$HOME/gsl/lib|' bin/bashrc
     ./Allwmake
 
 This should now be built.
