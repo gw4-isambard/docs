@@ -225,8 +225,10 @@ svn<span class="w"> </span>co<span class="w"> </span>http://svn.code.sf.net/p/op
 <span class="nb">cd</span><span class="w"> </span>waves2Foam
 wget<span class="w"> </span>https://raw.githubusercontent.com/gw4-isambard/docs/master/applications/openfoam/waves2Foam-cray.patch
 patch<span class="w"> </span>-p0<span class="w"> </span>&lt;<span class="w"> </span>waves2Foam-cray.patch
-<span class="nb">export</span><span class="w"> </span><span class="nv">WAVES_GSL_INCLUDE</span><span class="o">=</span><span class="nv">$HOME</span>/gsl/include
-<span class="nb">export</span><span class="w"> </span><span class="nv">WAVES_GSL_LIB</span><span class="o">=</span><span class="nv">$HOME</span>/gsl/lib
+cp<span class="w"> </span>bin/bashrc.org<span class="w"> </span>bin/bashrc
+chmod<span class="w"> </span>a+x<span class="w"> </span>./bin/bashrc
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s|WAVES_GSL_INCLUDE=.*|WAVES_GSL_INCLUDE=$HOME/gsl/include|&#39;</span><span class="w"> </span>bin/bashrc
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s|WAVES_GSL_LIB=.*|WAVES_GSL_LIB=$HOME/gsl/lib|&#39;</span><span class="w"> </span>bin/bashrc
 ./Allwmake
 </pre></div>
 </div>
