@@ -19,16 +19,17 @@ Service Status
 --------------------
 
 .. important::
-    Since 3 Nov. 2023
+    Since 23 Nov. 2023
 
-    Previous networking issues have now been fixed.  Access should be restored.
+    PHASE 3 PLANNED MAINTENANCE Mon 27th - Tue 28th Nov 2023
+    Phase 3 system will be undergoing maintenance to upgrade the network within the cluster.
 
     
 System Status
 -------------
 
 .. important::
-    3 Nov. 2023
+    23 Nov. 2023
     
     - Login: Available.
     - XCI (ARM ThunderX2): Available.
