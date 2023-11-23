@@ -56,6 +56,7 @@
 <li class="toctree-l1"><a class="reference internal" href="XCI.html">XCI - Marvell Thunder X2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A64FX.html">A64FX - Fujitsu</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Phase 3 System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lustre-storage">Lustre Storage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nvidia-gpu">Nvidia GPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#amd-gpu">AMD GPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cray-compiler">Cray Compiler</a><ul>
@@ -135,6 +136,13 @@
 </ul>
 <p>Phase 3 nodes run Red Hat Enterprise Linux 8 with the Cray software stack.</p>
 <p>All nodes are connected via Slingshot 10. The login nodes are connected to the Internet via a 10 Gigabit link to the <a class="reference external" href="https://www.jisc.ac.uk/janet">Janet Network</a>.</p>
+<section id="lustre-storage">
+<h2>Lustre Storage<a class="headerlink" href="#lustre-storage" title="Link to this heading"></a></h2>
+<p>Due to migration to newer storage old data can found read-only at /lustreOld
+e.g. previous home directory at /lustreOld/home</p>
+<p>We have already copied over software from /lustreOld/software/x86 to the new
+/lustre location.</p>
+</section>
 <section id="nvidia-gpu">
 <h2>Nvidia GPU<a class="headerlink" href="#nvidia-gpu" title="Link to this heading"></a></h2>
 <p>There is a Nvidia SDK install on each of the <cite>ampereq</cite> nodes in <cite>/opt/nvidia</cite> but you can also load a latest version using:</p>
