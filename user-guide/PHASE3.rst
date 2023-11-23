@@ -12,6 +12,15 @@ Phase 3 nodes run Red Hat Enterprise Linux 8 with the Cray software stack.
 
 All nodes are connected via Slingshot 10. The login nodes are connected to the Internet via a 10 Gigabit link to the `Janet Network <https://www.jisc.ac.uk/janet>`_.
 
+Lustre Storage
+==============
+
+Due to migration to newer storage old data can found read-only at /lustreOld
+e.g. previous home directory at /lustreOld/home
+
+We have already copied over software from /lustreOld/software/x86 to the new
+/lustre location.
+
 Nvidia GPU
 ==========
 
