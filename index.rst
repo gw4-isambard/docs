@@ -35,7 +35,7 @@ System Status
     - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
-    - Phase 3: Available.
+    - Phase 3: Maintenance, unavailable.
 
 Acknowledging Isambard
 ----------------------
