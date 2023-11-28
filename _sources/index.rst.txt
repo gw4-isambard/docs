@@ -19,23 +19,23 @@ Service Status
 --------------------
 
 .. important::
-    Since 23 Nov. 2023
+    Since 28 Nov. 2023
 
-    PHASE 3 PLANNED MAINTENANCE Mon 27th - Tue 28th Nov 2023
-    Phase 3 system will be undergoing maintenance to upgrade the network within the cluster.
+    PHASE 3 back online after maintenance.
+    MACS, XCI, A64FX is currently experiencing storage connectivity issues, currently working with supplier support to find cause.
 
     
 System Status
 -------------
 
 .. important::
-    23 Nov. 2023
+    28 Nov. 2023
     
-    - Login: Available.
-    - XCI (ARM ThunderX2): Available.
-    - MACS: Available.
-    - A64fx: Available.
-    - Phase 3: Maintenance, unavailable.
+    - Login bastion: Available.
+    - XCI (ARM ThunderX2): Unavailable.
+    - MACS: Unavailable.
+    - A64fx: Unavailable.
+    - Phase 3: Available.
 
 Acknowledging Isambard
 ----------------------
