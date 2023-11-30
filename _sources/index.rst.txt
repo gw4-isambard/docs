@@ -19,22 +19,22 @@ Service Status
 --------------------
 
 .. important::
-    Since 28 Nov. 2023
+    Since 30 Nov. 2023
 
     PHASE 3 back online after maintenance.
-    MACS, XCI, A64FX is currently experiencing storage connectivity issues, currently working with supplier support to find cause.
+    Previous filesystem issues now resolved.
 
     
 System Status
 -------------
 
 .. important::
-    28 Nov. 2023
+    30 Nov. 2023
     
     - Login bastion: Available.
-    - XCI (ARM ThunderX2): Unavailable.
-    - MACS: Unavailable.
-    - A64fx: Unavailable.
+    - XCI (ARM ThunderX2): Available.
+    - MACS: Available.
+    - A64fx: Available.
     - Phase 3: Available.
 
 Acknowledging Isambard
