@@ -152,6 +152,59 @@ Then use ssh to laucnh the MPI job
   
   mpirun -launcher ssh hostname
 
+Apptainer/Singularity
+=====================
 
-  
+To allow containers to run on the system, which is common for GPU applications, we have installed apptainer (fork from original Singularity project).
 
+Nvidia
+~~~~~~~~~~~~~
+
+For example to download a Nvidia Tensorflow container run on the login node:
+
+.. code-block:: text
+
+  apptainer pull docker://nvcr.io/nvidia/tensorflow:23.11-tf2-py3
+
+To run this on a Nvidia GPU
+
+.. code-block:: text
+
+  qsub -I -q ampereq -l select=1:ngpus=1:mem=64g
+
+Then run on the compute node:
+
+.. code-block:: text
+
+  apptainer shell tensorflow_23.11-tf2-py3.sif
+
+Due to issue with initialisation of these containers with apptainer, rerun a script:
+
+.. code-block:: text
+
+  source /etc/shinit_v2
+
+Then run `python3` with some Tensorflow code.
+
+AMD
+~~~
+
+Similar can be done on AMD GPUs in instinctq downloading container on login node:
+
+.. code-block:: text
+
+  apptainer pull docker://rocm/tensorflow
+
+Then run on the AMD GPU queue.
+
+.. code-block:: text
+
+  qsub -I -q instinctq -l select=1:mem=64g -l place=excl
+
+Finally run the container
+
+.. code-block:: text
+
+  apptainer shell tensorflow_latest.sif
+
+And then turn `python3`

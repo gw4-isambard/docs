@@ -71,6 +71,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#id3">Running a job</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#apptainer-singularity">Apptainer/Singularity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nvidia">Nvidia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#amd">AMD</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
@@ -236,6 +241,46 @@ module load IntelOneApi/mpi
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mpirun -launcher ssh hostname
 </pre></div>
 </div>
+</section>
+</section>
+<section id="apptainer-singularity">
+<h2>Apptainer/Singularity<a class="headerlink" href="#apptainer-singularity" title="Link to this heading"></a></h2>
+<p>To allow containers to run on the system, which is common for GPU applications, we have installed apptainer (fork from original Singularity project).</p>
+<section id="nvidia">
+<h3>Nvidia<a class="headerlink" href="#nvidia" title="Link to this heading"></a></h3>
+<p>For example to download a Nvidia Tensorflow container run on the login node:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>apptainer pull docker://nvcr.io/nvidia/tensorflow:23.11-tf2-py3
+</pre></div>
+</div>
+<p>To run this on a Nvidia GPU</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -I -q ampereq -l select=1:ngpus=1:mem=64g
+</pre></div>
+</div>
+<p>Then run on the compute node:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>apptainer shell tensorflow_23.11-tf2-py3.sif
+</pre></div>
+</div>
+<p>Due to issue with initialisation of these containers with apptainer, rerun a script:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>source /etc/shinit_v2
+</pre></div>
+</div>
+<p>Then run <cite>python3</cite> with some Tensorflow code.</p>
+</section>
+<section id="amd">
+<h3>AMD<a class="headerlink" href="#amd" title="Link to this heading"></a></h3>
+<p>Similar can be done on AMD GPUs in instinctq downloading container on login node:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>apptainer pull docker://rocm/tensorflow
+</pre></div>
+</div>
+<p>Then run on the AMD GPU queue.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>qsub -I -q instinctq -l select=1:mem=64g -l place=excl
+</pre></div>
+</div>
+<p>Finally run the container</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>apptainer shell tensorflow_latest.sif
+</pre></div>
+</div>
+<p>And then turn <cite>python3</cite></p>
 </section>
 </section>
 </section>
