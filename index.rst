@@ -19,18 +19,18 @@ Service Status
 --------------------
 
 .. important::
-    Since 18 Dec. 2023
+    Since 19 Dec. 2023
 
-    XCI system is currently UNAVAILABLE due to cooling issue within datacentre.
+    XCI system is back ONLINE following datacentre issues.
     
 System Status
 -------------
 
 .. important::
-    18 Dec. 2023
+    19 Dec. 2023
     
     - Login bastion: Available.
-    - XCI (ARM ThunderX2): Unavailable.
+    - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
     - Phase 3: Available.
