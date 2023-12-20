@@ -19,9 +19,9 @@ Service Status
 --------------------
 
 .. important::
-    Since 19 Dec. 2023
+    Since 20 Dec. 2023
 
-    XCI system is back ONLINE following datacentre issues.
+    IPA issues across cluster that may cause problems for all users.  Working with IPA experts to resolve.
     
 System Status
 -------------
