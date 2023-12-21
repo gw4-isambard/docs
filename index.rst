@@ -19,9 +19,9 @@ Service Status
 --------------------
 
 .. important::
-    Since 20 Dec. 2023
+    Since 21 Dec. 2023
 
-    IPA issues across cluster that may cause problems for all users.  Working with IPA experts to resolve.
+    IPA issues have been resolved.
     
 System Status
 -------------
