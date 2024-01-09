@@ -19,9 +19,9 @@ Service Status
 --------------------
 
 .. important::
-    Since 3 Jan. 2023
+    Since 9 Jan. 2023
 
-    MACS system currently experiencing scheduler issues.  Working with supplier for a fix.
+    MACS system back online.
     
 System Status
 -------------
@@ -31,7 +31,7 @@ System Status
     
     - Login bastion: Available.
     - XCI (ARM ThunderX2): Available.
-    - MACS: Available with service issues.
+    - MACS: Available.
     - A64fx: Available.
     - Phase 3: Available.
 
