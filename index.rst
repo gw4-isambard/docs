@@ -22,6 +22,7 @@ Service Status
     Since 11 Jan. 2024
 
     XCI system has a fault on one of the submission xcimom nodes.  Some jobs are currently in a inconsistent state and will be rectified when the hardware is fixed.
+    Mon 15 Jan. 2024 - XCI system will be unavailable to fix the issue with the xcimom node. 
     
 System Status
 -------------
