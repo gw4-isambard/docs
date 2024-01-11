@@ -19,18 +19,18 @@ Service Status
 --------------------
 
 .. important::
-    Since 9 Jan. 2023
+    Since 11 Jan. 2024
 
-    MACS system back online.
+    XCI system has a fault on one of the submission xcimom nodes.  Some jobs are currently in a inconsistent state and will be rectified when the hardware is fixed.
     
 System Status
 -------------
 
 .. important::
-    3 Jan. 2023
+    11 Jan. 2024
     
     - Login bastion: Available.
-    - XCI (ARM ThunderX2): Available.
+    - XCI (ARM ThunderX2): Available but errors about previous jobs on broken submission node.
     - MACS: Available.
     - A64fx: Available.
     - Phase 3: Available.
