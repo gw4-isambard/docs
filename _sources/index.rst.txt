@@ -19,19 +19,18 @@ Service Status
 --------------------
 
 .. important::
-    Since 11 Jan. 2024
+    Since 16 Jan. 2024
 
-    XCI system has a fault on one of the submission xcimom nodes.  Some jobs are currently in a inconsistent state and will be rectified when the hardware is fixed.
-    Mon 15 Jan. 2024 - XCI system will be unavailable to fix the issue with the xcimom node. 
+    XCI system back after maintenance.
     
 System Status
 -------------
 
 .. important::
-    11 Jan. 2024
+    16 Jan. 2024
     
     - Login bastion: Available.
-    - XCI (ARM ThunderX2): Available but errors about previous jobs on broken submission node.
+    - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
     - Phase 3: Available.
