@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GROMACS &mdash; GW4-Isambard  documentation</title>
+  <title>Arepo &mdash; GW4-Isambard  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
@@ -21,9 +21,7 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="OpenFOAM" href="openfoam.html" />
-    <link rel="prev" title="Firedrake" href="firedrake.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -71,23 +69,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../tools/gdb4hpc.html">gdb4hpc</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Applications</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="covidsim.html">CovidSim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dedalus.html">Dedalus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dlmonte.html">DL_MONTE 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firedrake.html">Firedrake</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">GROMACS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#useful-links">Useful links</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#licensing">Licensing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version">Version</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running">Running</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#example-job-submission-script">Example Job Submission Script</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#arm">Arm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="gromacs.html">GROMACS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="openfoam.html">OpenFOAM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="orca.html">ORCA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vasp.html">VASP</a></li>
@@ -113,9 +100,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">GROMACS</li>
+      <li class="breadcrumb-item active">Arepo</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/gw4-isambard/docs/blob/master/applications/gromacs.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gw4-isambard/docs/blob/master/applications/arepo.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -123,24 +110,98 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="gromacs">
-<h1>GROMACS<a class="headerlink" href="#gromacs" title="Link to this heading"></a></h1>
+  <section id="arepo">
+<h1>Arepo<a class="headerlink" href="#arepo" title="Link to this heading"></a></h1>
 <section id="useful-links">
 <h2>Useful links<a class="headerlink" href="#useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="http://manual.gromacs.org/documentation/current/user-guide/index.html">GROMACS user documentation</a></p></li>
+<li><p><a class="reference external" href="https://arepo-code.org">Arepo homepage</a></p></li>
 </ul>
 </section>
 <section id="licensing">
 <h2>Licensing<a class="headerlink" href="#licensing" title="Link to this heading"></a></h2>
-<p>GROMACS is open source (see the <a class="reference external" href="https://github.com/gromacs/gromacs/blob/master/COPYING">GROMACS License Agreement</a>).</p>
+<p>Arepo is released under GPLv3 (see the <a class="reference external" href="https://gitlab.mpcdf.mpg.de/vrs/arepo/-/blob/master/LICENSE">Arepo licence</a>).</p>
 </section>
 <section id="version">
 <h2>Version<a class="headerlink" href="#version" title="Link to this heading"></a></h2>
-<p>The following versions of GROMACS are currently available:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">apps/gromacs/2018.4</span></code> (MPI enabled, no double precision)</p></li>
-</ul>
+<p>Latest version on Arepo</p>
+</section>
+<section id="building">
+<h2>Building<a class="headerlink" href="#building" title="Link to this heading"></a></h2>
+<p>We should load the Cray hdf5 module</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>cray-hdf5
+</pre></div>
+</div>
+<p>So on XCI system you can:</p>
+<p>Install GSL with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://ftp.gnu.org/gnu/gsl/gsl-latest.tar.gz
+
+tar<span class="w"> </span>xxvf<span class="w"> </span>gsl-latest.tar.gz
+
+<span class="nb">cd</span><span class="w"> </span>gsl-*
+
+./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="nv">$HOME</span>/gsl<span class="w"> </span><span class="nv">CC</span><span class="o">=</span>cc
+
+make<span class="w"> </span>-j
+
+make<span class="w"> </span>install
+</pre></div>
+</div>
+<p>Then in Arepo specify in Makefile.systype</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SYSTYPE</span><span class="o">=</span><span class="s2">&quot;XCI&quot;</span>
+</pre></div>
+</div>
+<p>And in Makefile</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Isambard XCI</span>
+
+ifeq<span class="w"> </span><span class="o">(</span><span class="k">$(</span>SYSTYPE<span class="k">)</span>,<span class="s2">&quot;XCI&quot;</span><span class="o">)</span>
+<span class="nv">CC</span><span class="o">=</span>cc
+
+<span class="c1"># compiler and its optimization options</span>
+<span class="nv">OPTIMIZE</span><span class="w">  </span><span class="o">=</span>
+
+<span class="c1"># overwrite default:</span>
+
+<span class="nv">MPICH_INCL</span><span class="o">=</span>
+<span class="nv">MPICH_LIB</span><span class="w"> </span><span class="o">=</span>
+<span class="nv">GSL_INCL</span><span class="w">  </span><span class="o">=</span><span class="w"> </span>-I<span class="k">$(</span>HOME<span class="k">)</span>/gsl/include
+<span class="nv">GSL_LIB</span><span class="w">   </span><span class="o">=</span><span class="w"> </span>-L<span class="k">$(</span>HOME<span class="k">)</span>/gsl/lib<span class="w"> </span>-lgsl<span class="w"> </span>-lgslcblas
+<span class="nv">HWLOC_LIB</span><span class="w"> </span><span class="o">=</span>
+
+<span class="c1"># libraries that are included on demand, depending on Config.sh options</span>
+
+<span class="nv">FFTW_INCL</span><span class="w"> </span><span class="o">=</span>
+<span class="nv">FFTW_LIBS</span><span class="w"> </span><span class="o">=</span>
+<span class="nv">HDF5_INCL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-DH5_USE_16_API
+<span class="nv">HDF5_LIB</span><span class="w">  </span><span class="o">=</span>
+<span class="nv">HWLOC_INCL</span><span class="o">=</span>
+
+endif
+</pre></div>
+</div>
+<p>Then:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>cray-hdf5
+
+module<span class="w"> </span>load<span class="w"> </span>cray-fftw
+
+make
+</pre></div>
+</div>
+<p>Then it should compile an Arepo executable.</p>
+<p>To use and build examples a venv is required:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>cray-python
+
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+
+.<span class="w"> </span>venv/bin/activate
+
+pip<span class="w"> </span>install<span class="w"> </span>“numpy&lt;<span class="m">1</span>.20”
+
+pip<span class="w"> </span>install<span class="w"> </span>h5py
+</pre></div>
+</div>
+<p>(numpy&lt;1.20 needed due to broken code using np.int)</p>
+<p>Then followed docs on using examples.</p>
 </section>
 <section id="running">
 <h2>Running<a class="headerlink" href="#running" title="Link to this heading"></a></h2>
@@ -151,8 +212,8 @@
 <h3>Arm<a class="headerlink" href="#arm" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-<span class="c1"># Select 128 nodes (maximum of 8192 cores)</span>
-<span class="c1">#PBS -l select=128</span>
+<span class="c1"># Select 1 nodes (maximum of 64 cores)</span>
+<span class="c1">#PBS -l select=1</span>
 
 <span class="c1"># Set maximum job walltime</span>
 <span class="c1">#PBS -l walltime=00:30:00</span>
@@ -160,14 +221,13 @@
 <span class="c1"># Change to the directory the script was submitted from</span>
 <span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
 
-<span class="c1"># Load the desired version of GROMACS</span>
-module<span class="w"> </span>load<span class="w"> </span>apps/gromacs/2018.4
+<span class="c1"># Load required GSL</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:<span class="nv">$HOME</span>/gsl/lib
 
 <span class="c1"># Launch 8192 MPI ranks (64 per node, 1 per core)</span>
-<span class="c1"># Launch 4 OpenMP threads per rank (using 4-way hyperthreading)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">4</span>
-aprun<span class="w"> </span>-n<span class="w"> </span><span class="m">8192</span><span class="w"> </span>-d<span class="w"> </span><span class="m">4</span><span class="w"> </span>-j<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-s<span class="w"> </span>input.tpr<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">4</span>
+<span class="c1"># Launch 1 OpenMP threads per rank (NOT using 4-way hyperthreading)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+aprun<span class="w"> </span>-n<span class="w"> </span><span class="m">64</span><span class="w"> </span>-d<span class="w"> </span><span class="m">1</span><span class="w"> </span>-j<span class="w"> </span><span class="m">1</span><span class="w"> </span>Arepo
 </pre></div>
 </div>
 </section>
@@ -175,7 +235,6 @@ aprun<span class="w"> </span>-n<span class="w"> </span><span class="m">8192</spa
 <h3>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h3>
 <p>For maximum performance, you may wish to tune the MPI/OpenMP decomposition.
 At large scale, you may find that reducing the number of MPI ranks and increasing the number of OpenMP threads yields better performance.</p>
-<p>GROMACS can also use tabulated Ewald non-bonded kernels instead of an analytical approach, which can improve performance for smaller node counts (use <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">GMX_NBNXN_EWALD_TABLE=1</span></code> to enable this feature).</p>
 </section>
 </section>
 </section>
@@ -183,10 +242,7 @@ At large scale, you may find that reducing the number of MPI ranks and increasin
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="firedrake.html" class="btn btn-neutral float-left" title="Firedrake" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="openfoam.html" class="btn btn-neutral float-right" title="OpenFOAM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
