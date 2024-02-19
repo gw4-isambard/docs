@@ -83,6 +83,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
    :maxdepth: 1
    :caption: Applications
 
+   applications/arepo
    applications/covidsim
    applications/dedalus
    applications/dlmonte
