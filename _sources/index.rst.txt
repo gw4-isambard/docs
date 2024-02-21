@@ -19,21 +19,21 @@ Service Status
 --------------------
 
 .. important::
-    Since 16 Jan. 2024
+    Since 21 Feb. 2024
 
-    XCI system back after maintenance.
+    System-wide issues (e.g. hostname lookups) that require external support to fix.  Apologies for disruption.
     
 System Status
 -------------
 
 .. important::
-    16 Jan. 2024
+    21 Feb. 2024
     
     - Login bastion: Available.
-    - XCI (ARM ThunderX2): Available.
-    - MACS: Available.
-    - A64fx: Available.
-    - Phase 3: Available.
+    - XCI (ARM ThunderX2): Unavailable.
+    - MACS: Unavailable.
+    - A64fx: Unavailable.
+    - Phase 3: Unavailable.
 
 Acknowledging Isambard
 ----------------------
