@@ -19,21 +19,21 @@ Service Status
 --------------------
 
 .. important::
-    Since 21 Feb. 2024
+    Since 28 Feb. 2024
 
-    System-wide issues (e.g. hostname lookups) that require external support to fix.  Apologies for disruption.
+    Previous issues fixed, no new issues.
     
 System Status
 -------------
 
 .. important::
-    21 Feb. 2024
+    28 Feb. 2024
     
     - Login bastion: Available.
-    - XCI (ARM ThunderX2): Unavailable.
-    - MACS: Unavailable.
-    - A64fx: Unavailable.
-    - Phase 3: Unavailable.
+    - XCI (ARM ThunderX2): Available.
+    - MACS: Available.
+    - A64fx: Available.
+    - Phase 3: Available.
 
 Acknowledging Isambard
 ----------------------
