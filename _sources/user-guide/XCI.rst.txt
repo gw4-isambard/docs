@@ -20,7 +20,26 @@ Cray XC50 cabinet, codenamed XCI, containing 20’992 ARM cores. Available since
 Running
 =======
 
-Since the XCI system uses Cray ALPS to run jobs all compute intensive executables need to be run with ``aprun`` to run on the compute nodes otherwise the jobs can run on the MOM nodes that can cause problems.
+Since the XCI system uses Cray ALPS to run jobs all compute intensive executables need to be run with ``aprun`` to run on the compute nodes otherwise the jobs can run on the MOM nodes that can cause problems. e.g
+
+```
+aprun -n 64 my_mpi.exe
+```
+
+For multithreaded OpenMP applications you could try:
+
+```
+export OMP_NUM_THREADS=64
+aprun -d 64 my_openmp.exe
+```
+
+For hybrid multithread with 64 MPI tasks and 4 OpenMP threads (using 4 hardware threads on XCI) you could use
+
+```
+export OMP_NUM_THREADS=4
+aprun -n 64 -d 4 -j 4
+```
+
 
 Queues
 ======
