@@ -145,19 +145,19 @@
 <section id="running">
 <h2>Running<a class="headerlink" href="#running" title="Link to this heading"></a></h2>
 <p>Since the XCI system uses Cray ALPS to run jobs all compute intensive executables need to be run with <code class="docutils literal notranslate"><span class="pre">aprun</span></code> to run on the compute nodes otherwise the jobs can run on the MOM nodes that can cause problems. e.g</p>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">aprun</span> <span class="pre">-n</span> <span class="pre">64</span> <span class="pre">my_mpi.exe</span>
-<span class="pre">`</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aprun</span> <span class="o">-</span><span class="n">n</span> <span class="mi">64</span> <span class="n">my_mpi</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
 <p>For multithreaded OpenMP applications you could try:</p>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">export</span> <span class="pre">OMP_NUM_THREADS=64</span>
-<span class="pre">aprun</span> <span class="pre">-d</span> <span class="pre">64</span> <span class="pre">my_openmp.exe</span>
-<span class="pre">`</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">64</span>
+<span class="n">aprun</span> <span class="o">-</span><span class="n">d</span> <span class="mi">64</span> <span class="n">my_openmp</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
 <p>For hybrid multithread with 64 MPI tasks and 4 OpenMP threads (using 4 hardware threads on XCI) you could use</p>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">export</span> <span class="pre">OMP_NUM_THREADS=4</span>
-<span class="pre">aprun</span> <span class="pre">-n</span> <span class="pre">64</span> <span class="pre">-d</span> <span class="pre">4</span> <span class="pre">-j</span> <span class="pre">4</span>
-<span class="pre">`</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">aprun</span> <span class="o">-</span><span class="n">n</span> <span class="mi">64</span> <span class="o">-</span><span class="n">d</span> <span class="mi">4</span> <span class="o">-</span><span class="n">j</span> <span class="mi">4</span>
+</pre></div>
+</div>
 </section>
 <section id="queues">
 <h2>Queues<a class="headerlink" href="#queues" title="Link to this heading"></a></h2>
