@@ -85,6 +85,7 @@ Research outputs that have made use of Isambard should acknowledge the facility 
 
    applications/arepo
    applications/covidsim
+   applications/dune
    applications/dedalus
    applications/dlmonte
    applications/firedrake
