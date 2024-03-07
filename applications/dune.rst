@@ -68,6 +68,9 @@ Arm
     # Load Spack
     . /software/arm64/spack/share/spack/setup-env.sh
 
+    # Load exact version of module
+    spack load dune/azja5nw
+
     # Add to LD_LIBRARY_PATH
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`spack location -i dune/azja5nw`/lib64
     
