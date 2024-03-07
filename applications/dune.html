@@ -185,6 +185,9 @@ module<span class="w"> </span>swap<span class="w"> </span>PrgEnv-cray<span class
 <span class="c1"># Load Spack</span>
 .<span class="w"> </span>/software/arm64/spack/share/spack/setup-env.sh
 
+<span class="c1"># Load exact version of module</span>
+spack<span class="w"> </span>load<span class="w"> </span>dune/azja5nw
+
 <span class="c1"># Add to LD_LIBRARY_PATH</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:<span class="sb">`</span>spack<span class="w"> </span>location<span class="w"> </span>-i<span class="w"> </span>dune/azja5nw<span class="sb">`</span>/lib64
 
