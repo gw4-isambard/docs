@@ -19,9 +19,9 @@ Service Status
 --------------------
 
 .. important::
-    Since 28 Feb. 2024
+    Since 21 Mar. 2024
 
-    Previous issues fixed, no new issues.
+    Phase 3 login node is currently offline.
     
 System Status
 -------------
@@ -33,7 +33,7 @@ System Status
     - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
-    - Phase 3: Available.
+    - Phase 3: Login unavailable.
 
 Acknowledging Isambard
 ----------------------
