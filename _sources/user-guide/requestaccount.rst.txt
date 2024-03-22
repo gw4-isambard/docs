@@ -51,6 +51,8 @@ Scroll down to the ``SSH Public Key`` section, and enter a public SSH key:
 On Linux/macOS systems, your public SSH key will typically be found under ``.ssh/id_rsa.pub`` in your home directory.
 If you do not have one yet, you can create one by running ``ssh-keygen -t rsa`` from a terminal.
 
+For further examples, ARCHER2 provide `instructions <https://docs.archer2.ac.uk/user-guide/connecting/>`_ for various operating systems.
+
 Request account on Isambard
 ---------------------------
 
