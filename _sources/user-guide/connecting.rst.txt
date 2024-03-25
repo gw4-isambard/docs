@@ -128,6 +128,7 @@ Putty provides a shell to a remote server.  As in the instructions for Linux a p
    - Enter 'isambard.gw4.ac.uk' for 'Proxy hostname'
    - Enter your username for 'Username'
    - Enter 'plink %proxyhost -l %user -agent -nc %host:%port' for 'Telnet command, or local proxy command'
+   - Make sure Pageant is used when using the above command since plink needs to use the ssh key information.
 
 .. image:: ../images/putty_proxy.png
 
