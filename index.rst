@@ -17,11 +17,13 @@ A Cray Sonexion 3000 storage cabinet provides 900 terabytes of Lustre storage.
 
 Service Status
 --------------------
+.. important::
+    The Isambard 2 service will **shutdown in June 2024** and be replaced with a entirely new Isambard 3 service.  Data management is the *responsibility of the user* therefore we require all important data moved off Isambard 2 before it is shutdown.  Support will only be provided for operational issues until the shutdown. Further information will be provided over the coming months.
 
 .. important::
-    Since 21 Mar. 2024
+    Since 9 Apr. 2024
 
-    Previous issues now been rectified - service operational.
+    Service operational.
     
 System Status
 -------------
