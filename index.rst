@@ -40,7 +40,7 @@ System Status
 Mailing list
 ------------
 
-An anouncement mailing list is availale to be kept informed of important news regarding the service.  Archives and managing your subscription is available at `JiscMail GW4-ISAMBARD-COMMUNITY https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=GW4-ISAMBARD-COMMUNITY`_
+An anouncement mailing list is availale to be kept informed of important news regarding the service.  Archives and managing your subscription is available at `JiscMail GW4-ISAMBARD-COMMUNITY <https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=GW4-ISAMBARD-COMMUNITY>`_
 
 Acknowledging Isambard
 ----------------------
