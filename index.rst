@@ -23,7 +23,7 @@ Service Status
 .. important::
     Since 29 Apr. 2024
 
-    XCI system experiencing issues along with datacentre issues and engineers are called.  Further information will be provided later today.
+    XCI system is back in operations following earlier outage.
     
 System Status
 -------------
@@ -32,7 +32,7 @@ System Status
     28 Feb. 2024
     
     - Login bastion: Available.
-    - XCI (ARM ThunderX2): Unavailable.
+    - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
     - Phase 3: Available.
