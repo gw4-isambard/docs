@@ -21,21 +21,21 @@ Service Status
     The Isambard 2 service will **shutdown in June 2024** and be replaced with an entirely new Isambard 3 service.  Data management is the *responsibility of the user* therefore we require all important data moved off Isambard 2 before it is shutdown.  Support will only be provided for operational issues until the shutdown. Further information will be provided over the coming months.
 
 .. important::
-    Since 29 Apr. 2024
+    Since 22 May. 2024
 
-    XCI system is back in operations following earlier outage.
+    Authentication issues reported and service desk is currently also having issues.  We are working on fixing these issues with help from suppliers.
     
 System Status
 -------------
 
 .. important::
-    28 Feb. 2024
+    22 May. 2024
     
     - Login bastion: Available.
-    - XCI (ARM ThunderX2): Available.
-    - MACS: Available.
-    - A64fx: Available.
-    - Phase 3: Available.
+    - XCI (ARM ThunderX2): Unavailable.
+    - MACS: Unavailable.
+    - A64fx: Unavailable.
+    - Phase 3: Unavailable.
 
 Mailing list
 ------------
