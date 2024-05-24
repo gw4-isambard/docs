@@ -1,6 +1,9 @@
 Phase 3 System
 ------------------------------------
 
+.. important::
+    On Tuesday June 4th 2024 at 9am "PHASE 3" will be switched OFF and will be moved to Bristol to be part of Isambard 3 which will be launched over the summer.
+
 Isambard Phase 3, just like the MACS, hosts many nodes of different architectures:
 
 * 1x Login nodes with `AMD EPYC 7713 64-Core Processor "Milan" <https://www.amd.com/en/products/cpu/amd-epyc-7713>`_ CPU
