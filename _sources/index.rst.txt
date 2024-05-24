@@ -20,22 +20,24 @@ Service Status
 .. important::
     The Isambard 2 service will **shutdown in June 2024** and be replaced with an entirely new Isambard 3 service.  Data management is the *responsibility of the user* therefore we require all important data moved off Isambard 2 before it is shutdown.  Support will only be provided for operational issues until the shutdown. Further information will be provided over the coming months.
 
-.. important::
-    Since 22 May. 2024
+    On Tuesday June 4th 2024 at 9am "PHASE 3" will be switched OFF and will be moved to Bristol to be part of Isambard 3 which will be launched over the summer.
 
-    Authentication issues reported and service desk is currently also having issues.  We are working on fixing these issues with help from suppliers.
+.. important::
+    Since 24 May. 2024
+
+    Servicdesk is having issues but we can still see emails but please be patient if response is delayed.
     
 System Status
 -------------
 
 .. important::
-    22 May. 2024
+    24 May. 2024
     
     - Login bastion: Available.
-    - XCI (ARM ThunderX2): Unavailable.
-    - MACS: Unavailable.
-    - A64fx: Unavailable.
-    - Phase 3: Unavailable.
+    - XCI (ARM ThunderX2): Available.
+    - MACS: Available.
+    - A64fx: Available.
+    - Phase 3: Available.
 
 Mailing list
 ------------
