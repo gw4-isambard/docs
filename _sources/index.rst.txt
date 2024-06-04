@@ -23,21 +23,21 @@ Service Status
     On Tuesday June 4th 2024 at 9am "PHASE 3" will be switched OFF and will be moved to Bristol to be part of Isambard 3 which will be launched over the summer.
 
 .. important::
-    Since 24 May. 2024
+    Since 4 Jun. 2024
 
-    Servicdesk is having issues but we can still see emails but please be patient if response is delayed.
+    No known issues.
     
 System Status
 -------------
 
 .. important::
-    24 May. 2024
+    4 Jun. 2024
     
     - Login bastion: Available.
     - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
-    - Phase 3: Available.
+    - Phase 3: Switched off - see announcement above.
 
 Mailing list
 ------------
