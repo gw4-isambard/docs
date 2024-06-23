@@ -23,17 +23,17 @@ Service Status
     On Tuesday June 4th 2024 at 9am "PHASE 3" will be switched OFF and will be moved to Bristol to be part of Isambard 3 which will be launched over the summer.
 
 .. important::
-    Since 4 Jun. 2024
+    Since 23 Jun. 2024
 
-    No known issues.
+    Network issues affecting external access.  Further investigation will take place beginning of this coming week.
     
 System Status
 -------------
 
 .. important::
-    4 Jun. 2024
+    23 Jun. 2024
     
-    - Login bastion: Available.
+    - Login bastion: Network access issues.
     - XCI (ARM ThunderX2): Available.
     - MACS: Available.
     - A64fx: Available.
