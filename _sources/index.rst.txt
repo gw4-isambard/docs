@@ -28,7 +28,7 @@ Service Status
 .. warning::
     Since 3 Jul. 2024
 
-    **MACS SYSTEM JOB SUBMISSION ISSUES**
+    **MACS JOB SUBMISSION ISSUES**
 
     The MACS system is currently experiencing issues with job submissions.  We are in conversation with our vendor to help resolve this.
     
