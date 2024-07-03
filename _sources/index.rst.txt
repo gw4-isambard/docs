@@ -20,7 +20,7 @@ Service Status
 .. warning::
     Since 3 Jul. 2024
 
-    * SERVICE AT-RISK on 9th July 2024 from 2pm. *
+    **SERVICE AT-RISK on 9th July 2024 from 2pm.**
     On Tuesday 9th July there will be maintenance on the Janet network link to Isambard 2 which will cause intermittent interruption to services from about 2pm onwards.  Depending on outcome further work on Wednesday may be required. 
 
 
