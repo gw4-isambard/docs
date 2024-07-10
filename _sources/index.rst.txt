@@ -19,14 +19,14 @@ Service Status
 --------------------
 
 .. warning::
-    Since 3 Jul. 2024
+    Since 10 Jul. 2024
 
-    **SERVICE AT-RISK on 9th July 2024 from 2pm.**
+    **NETWORK MAINTENANCE COMPLETED**
 
-    On Tuesday 9th July there will be maintenance on the Janet network link to Isambard 2 which will cause intermittent interruption to services from about 2pm onwards.  Depending on outcome further work on Wednesday may be required. 
+    Work performed on the Janet network link was completed.  Please report any further network issues via the servicedesk.
 
 .. warning::
-    Since 3 Jul. 2024
+    Since 10 Jul. 2024
 
     **MACS JOB SUBMISSION ISSUES**
 
@@ -42,7 +42,7 @@ System Status
 -------------
 
 .. important::
-    3 Jul. 2024
+    10 Jul. 2024
     
     - Login bastion: Available.
     - XCI (ARM ThunderX2): Available.
