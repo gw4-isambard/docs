@@ -19,19 +19,9 @@ Service Status
 --------------------
 
 .. warning::
-    Since 10 Jul. 2024
+    Since 29 Jul. 2024
 
-    **NETWORK MAINTENANCE COMPLETED**
-
-    Work performed on the Janet network link was completed.  Please report any further network issues via the servicedesk.
-
-.. warning::
-    Since 10 Jul. 2024
-
-    **MACS JOB SUBMISSION ISSUES**
-
-    The MACS system is currently experiencing issues with job submissions.  We are in conversation with our vendor to help resolve this.
-    
+    Issue with MACS now fixed.
 
 .. important::
     The Isambard 2 service will **shutdown in 2024** (service extended from previous June date to now be after the summer) and be replaced with an entirely new Isambard 3 service.  Data management is the *responsibility of the user* therefore we require all important data moved off Isambard 2 before it is shutdown.  Support will only be provided for operational issues until the shutdown. Further information will be provided over the coming months.
@@ -42,11 +32,11 @@ System Status
 -------------
 
 .. important::
-    10 Jul. 2024
+    29 Jul. 2024
     
     - Login bastion: Available.
     - XCI (ARM ThunderX2): Available.
-    - MACS: Job submission issues.
+    - MACS: Available.
     - A64fx: Available.
     - Phase 3: Switched off - see announcement above.
 
