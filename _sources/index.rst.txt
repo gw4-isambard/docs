@@ -9,6 +9,9 @@ Isambard User Documentation
 Isambard is a HPC service provided by `GW4 <http://gw4.ac.uk>`_ and the `UK Met Office <https://www.metoffice.gov.uk>`_.
 The system is funded by `EPSRC <http://www.epsrc.ac.uk>`_ and is one of a number of `Tier-2 HPC facilities <http://www.hpc-uk.ac.uk/facilities/>`_ in the UK.
 
+.. warning::
+SERVICE WILL END ON **9AM MONDAY SEPTEMBER 30TH** AND REPLACED BY ISAMBARD 3 - FURTHER INFOMATION TO FOLLOW FOR ISAMBARD 3.
+
 Isambard is a Cray XC50 system which comprises 20,992 cores, and is one of the world's first production Arm-based supercomputers. While Isambard is not based on the more common x86 processors from Intel and AMD, most software compiles and runs on Isambard with no or minimal changes.
 
 Each of the 329 compute nodes contain two 32-core Marvell ThunderX2 processors running at 2.5 GHz. 160 nodes have 256 GB and 169 have 512 GB of memory, both at DDR4-2666MHz.
@@ -19,14 +22,14 @@ Service Status
 --------------------
 
 .. warning::
-    Since 29 Jul. 2024
+    Since 18 Aug. 2024
 
-    Issue with MACS now fixed.
+    No known issues.
 
 .. important::
-    The Isambard 2 service will **shutdown in 2024** (service extended from previous June date to now be after the summer) and be replaced with an entirely new Isambard 3 service.  Data management is the *responsibility of the user* therefore we require all important data moved off Isambard 2 before it is shutdown.  Support will only be provided for operational issues until the shutdown. Further information will be provided over the coming months.
+    The Isambard 2 service will **shutdown at 9am on Monday 30th September 2024** and be replaced with an entirely new Isambard 3 service.  Data management is the *responsibility of the user* therefore we require all important data moved off Isambard 2 before it is shutdown.  Support will only be provided for operational issues until the shutdown. Further information will be provided on Isambard 3 in September.
 
-    On Tuesday June 4th 2024 at 9am the "PHASE 3" was switched OFF and was moved to Bristol to be part of Isambard 3 which will be launched over the summer.
+    On Tuesday June 4th 2024 at 9am the "PHASE 3" was switched OFF and was moved to Bristol to be part of Isambard 3.
     
 System Status
 -------------
