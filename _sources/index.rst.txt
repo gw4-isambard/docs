@@ -10,7 +10,7 @@ Isambard is a HPC service provided by `GW4 <http://gw4.ac.uk>`_ and the `UK Met 
 The system is funded by `EPSRC <http://www.epsrc.ac.uk>`_ and is one of a number of `Tier-2 HPC facilities <http://www.hpc-uk.ac.uk/facilities/>`_ in the UK.
 
 .. warning::
-SERVICE WILL END ON **9AM MONDAY SEPTEMBER 30TH** AND REPLACED BY ISAMBARD 3 - FURTHER INFOMATION TO FOLLOW FOR ISAMBARD 3.
+    SERVICE WILL END ON **9AM MONDAY SEPTEMBER 30TH** AND REPLACED BY ISAMBARD 3 - FURTHER INFOMATION TO FOLLOW FOR ISAMBARD 3.
 
 Isambard is a Cray XC50 system which comprises 20,992 cores, and is one of the world's first production Arm-based supercomputers. While Isambard is not based on the more common x86 processors from Intel and AMD, most software compiles and runs on Isambard with no or minimal changes.
 
