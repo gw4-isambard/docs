@@ -17,7 +17,9 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          python3 -m pip install --user -r requirements.txt
+          python3 -m venv /opt/venv
+          /opt/venv/bin/activate
+          python3 -m pip install -r requirements.txt
           sphinx-build -M html . _build
 
       - name: Deploy 🚀
