@@ -17,7 +17,7 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          python3 -m pip install -r requirements.txt
+          python3 -m pip install --user -r requirements.txt
           sphinx-build -M html . _build
 
       - name: Deploy 🚀
