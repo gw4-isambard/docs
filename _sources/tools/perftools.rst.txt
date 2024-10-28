@@ -1,4 +1,0 @@
-Cray perftools (CrayPAT)
-========================
-
-TODO
