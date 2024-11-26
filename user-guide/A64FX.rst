@@ -95,6 +95,14 @@ Current versions of Cray HDF5 Parallel (`cray-hdf5-parallel/1.12.0.2`) require t
 
 Fixes are planned for later versions of Cray PE.
 
+Julia
+----
+
+Julia (tested for v1.6.0) and most of its functionalities work on A64FX with the binaries provided on [julialang.org](https://julialang.org/downloads/).
+However, half precision/Float16/fp16 arithmetic on A64FX are not enabled in v1.6.0 and v1.6.1, see [#40216](https://github.com/JuliaLang/julia/issues/40216).
+A fix is presented in that issue which requires building Julia from source, which has been successfully tested on Isambard.
+The SVE on A64FX can currently not made use of in Julia through issues with LLVM12, see [#40308](https://github.com/JuliaLang/julia/issues/40308)
+
 Documentation
 -------------
 
